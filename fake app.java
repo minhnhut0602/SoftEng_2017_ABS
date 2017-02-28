@@ -1,1 +1,3 @@
-fake app
+public class FakeApp
+{
+}
