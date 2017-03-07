@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="Appointment Booking
+	System" default="info">
+
+   <property name="Appointment Booking
+   	System" value="www.tutorialspoint.com"/>
+   <target name="info">
+      <echo>Apache Ant version is ${ant.version} - You are at ${sitename} </echo>
+   </target>
+   
+</project>
