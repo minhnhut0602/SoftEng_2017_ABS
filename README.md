@@ -7,9 +7,9 @@ business, e.g., a hairdresser, a gym, or dentist.
 
 ## Contributors
 
-Daniel Caddaye - s3383022
-Cory Patterson - s3600197
-Marco Riotto - s3606584
+Daniel Caddaye - s3383022,
+Cory Patterson - s3600197,
+Marco Riotto - s3606584.
 
 ## License
 
