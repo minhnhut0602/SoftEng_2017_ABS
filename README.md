@@ -9,7 +9,8 @@ business, e.g., a hairdresser, a gym, or dentist.
 
 Daniel Caddaye - s3383022,
 Cory Patterson - s3600197,
-Marco Riotto - s3606584.
+Marco Riotto - s3606584,
+Sohum Raut - s3377766.
 
 ## License
 
