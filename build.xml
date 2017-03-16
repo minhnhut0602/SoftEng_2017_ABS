@@ -2,10 +2,14 @@
 <project name="Appointment Booking
 	System" default="info">
 
-   <property name="Appointment Booking
-   	System" value="www.tutorialspoint.com"/>
-   <target name="info">
-      <echo>Apache Ant version is ${ant.version} - You are at ${sitename} </echo>
-   </target>
-   
+	<property name="sitename" value="Appointment Booking
+	System" />
+	<target name="info">
+		<echo>Apache Ant version is ${ant.version} - You are at ${sitename} </echo>
+	</target>
+
+	<target name="build">
+
+	</target>
+
 </project>
