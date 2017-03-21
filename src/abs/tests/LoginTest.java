@@ -12,10 +12,8 @@ import abs.controller.UserAuth;
 import abs.model.Customer;
 
 /**
- * @author Daniel Caddaye
  * 
- *         This tests the UserAuth class. Checks login a user Checks register a
- *         user
+ * This tests the UserAuth class. Checks login a user Checks register a user
  *
  */
 public class LoginTest {
@@ -63,33 +61,32 @@ public class LoginTest {
 		boolean result = auth.registerUser(new Customer(name, email, address, phone, pass));
 		assertTrue(result == true);
 	}
-	
+
 	@Test
 	public void loginWithoutRegistering() {
-		//use an invalid username and password
-		
+		// use an invalid username and password
+
 	}
-	
+
 	@Test
 	public void loginWithRegisteredUser() {
-		//use a valid username and password
-		
+		// use a valid username and password
+
 	}
-	
-	@Test 
+
+	@Test
 	public void registerAUser() {
-		//register a user with proper credentials
+		// register a user with proper credentials
 	}
-	
+
 	@Test
 	public void noUsernameRegister() {
-		//try registering without username
+		// try registering without username
 	}
-	
-	@Test 
+
+	@Test
 	public void noPasswordRegister() {
-		//try to register without a password
+		// try to register without a password
 	}
-	
 
 }

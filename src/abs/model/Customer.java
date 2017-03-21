@@ -4,7 +4,7 @@
 package abs.model;
 
 /**
- * @author Daniel Caddaye
+ * 
  *
  */
 public class Customer extends AbstractUser {

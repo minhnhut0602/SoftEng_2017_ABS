@@ -1,7 +1,7 @@
 package abs.model;
 
 /**
- * @author Daniel Caddaye
+ * 
  *
  */
 public abstract class AbstractUser implements User {

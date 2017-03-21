@@ -1,8 +1,7 @@
 
 /**
- * @author Daniel Caddaye
  * 
- *         All test files
+ * All test files
  *
  */
 package abs.tests;
