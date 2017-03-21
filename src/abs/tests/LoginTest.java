@@ -33,5 +33,33 @@ public class LoginTest {
 	public void test() {
 		fail("Not yet implemented");
 	}
+	
+	@Test
+	public void loginWithoutRegistering() {
+		//use an invalid username and password
+		
+	}
+	
+	@Test
+	public void loginWithRegisteredUser() {
+		//use a valid username and password
+		
+	}
+	
+	@Test 
+	public void registerAUser() {
+		//register a user with proper credentials
+	}
+	
+	@Test
+	public void noUsernameRegister() {
+		//try registering without username
+	}
+	
+	@Test 
+	public void noPasswordRegister() {
+		//try to register without a password
+	}
+	
 
 }
