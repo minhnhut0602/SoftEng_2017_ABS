@@ -29,6 +29,33 @@ public class LoginTest {
 	protected String pass;
 	protected double phone;
 
+	@Test
+	public void loginWithoutRegistering() {
+		// use an invalid username and password
+
+	}
+
+	@Test
+	public void loginWithRegisteredUser() {
+		// use a valid username and password
+
+	}
+
+	@Test
+	public void noPasswordRegister() {
+		// try to register without a password
+	}
+
+	@Test
+	public void noUsernameRegister() {
+		// try registering without username
+	}
+
+	@Test
+	public void registerAUser() {
+		// register a user with proper credentials
+	}
+
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -60,33 +87,6 @@ public class LoginTest {
 
 		boolean result = auth.registerUser(new Customer(name, email, address, phone, pass));
 		assertTrue(result == true);
-	}
-
-	@Test
-	public void loginWithoutRegistering() {
-		// use an invalid username and password
-
-	}
-
-	@Test
-	public void loginWithRegisteredUser() {
-		// use a valid username and password
-
-	}
-
-	@Test
-	public void registerAUser() {
-		// register a user with proper credentials
-	}
-
-	@Test
-	public void noUsernameRegister() {
-		// try registering without username
-	}
-
-	@Test
-	public void noPasswordRegister() {
-		// try to register without a password
 	}
 
 }
