@@ -1,7 +1,7 @@
 package abs.model;
 
 /**
- * @author Daniel Caddaye
+ * 
  *
  */
 public abstract class AbstractUser implements User {
@@ -10,6 +10,11 @@ public abstract class AbstractUser implements User {
 	private String name;
 	private String password; // Hashed??
 
+	/**
+	 * @param name
+	 * @param email
+	 * @param password
+	 */
 	public AbstractUser(String name, String email, String password) {
 		super();
 		this.name = name;
