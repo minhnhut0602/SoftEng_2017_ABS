@@ -29,33 +29,6 @@ public class LoginTest {
 	protected String pass;
 	protected double phone;
 
-	@Test
-	public void loginWithoutRegistering() {
-		// use an invalid username and password
-
-	}
-
-	@Test
-	public void loginWithRegisteredUser() {
-		// use a valid username and password
-
-	}
-
-	@Test
-	public void noPasswordRegister() {
-		// try to register without a password
-	}
-
-	@Test
-	public void noUsernameRegister() {
-		// try registering without username
-	}
-
-	@Test
-	public void registerAUser() {
-		// register a user with proper credentials
-	}
-
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -87,6 +60,43 @@ public class LoginTest {
 
 		boolean result = auth.registerUser(new Customer(name, email, address, phone, pass));
 		assertTrue(result == true);
+	}
+
+
+	@Test
+	public void loginWithoutRegistering() {
+		// use an invalid username and password
+		assertFalse(auth.authenticateUser("unregistered@email.com", "unregisteredPassword12!"));
+	}
+
+	@Test
+	public void loginWithRegisteredUser() {
+		// use a valid username and password
+		
+		//not sure if the testRegister is persistent so i registered the user again. but that might fail this one
+		auth.registerUser(new Customer(name, email, address, phone, pass));
+		assertTrue(auth.authenticateUser(email, pass));
+	}
+
+	@Test
+	public void noUsernameRegister() {
+		// try registering without username
+		
+		assertFalse(auth.registerUser(new Customer("", email, address, phone, pass)));
+	}
+
+	@Test
+	public void noPasswordRegister() {
+		// try to register without a password
+		assertFalse(auth.registerUser(new Customer(name, email, address, phone, "")));
+	}
+	
+	@Test 
+	public void alreadyRegisteredUser() {
+		// try registering a use who is already registered
+		
+		auth.registerUser(new Customer(name, email, address, phone, pass));
+		arrestFalse(auth.registerUser(new Customer(name, email, address, phone, pass)));
 	}
 
 }
