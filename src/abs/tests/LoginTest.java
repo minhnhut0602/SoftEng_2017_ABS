@@ -27,7 +27,7 @@ public class LoginTest {
 	protected String name;
 
 	protected String pass;
-	protected double phone;
+	protected int phone;
 
 	/**
 	 * @throws java.lang.Exception
@@ -39,7 +39,7 @@ public class LoginTest {
 		email = "test@gmail.com";
 		pass = "TestPass123";
 		address = "123 Fake St, Melbourne";
-		phone = 0396657777D;
+		phone = 396657777;
 	}
 
 	/**
