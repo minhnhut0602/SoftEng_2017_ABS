@@ -4,7 +4,7 @@
  *
  * <p>
  * Includes validation of user input for login and registration. Unique email
- * check, and menu input validation.
+ * check, and menu input validation and password invalid.
  * </p>
  * 
  * @see abs.exceptions.RegistrationNonUniqueException
@@ -12,5 +12,7 @@
  * @see abs.exceptions.MenuInputException MenuInputException
  * @see abs.exceptions.RegistrationValidationException
  *      RegistrationValidationException
+ * @see abs.exceptions.PasswordInvalidException PasswordInvalidException
+ * 
  */
 package abs.exceptions;

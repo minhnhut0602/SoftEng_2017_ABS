@@ -1,0 +1,13 @@
+# Business Info
+Daniels Dentists
+Daniel might not be a dentist but he tried very hard.
+34 McTeeth St Melbourne
+96952345
+Daniel
+admin@danielsdentist.com
+root
+# Employees
+daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
+garry,thu,8am-2pm,fri,2pm-6pm
+# Bookings
+daniel,mon,10:30,daniel,mon,11:00,daniel,mon,11:30,daniel,tue,12:00,garry,fri,2:00,garry,fri,2:30

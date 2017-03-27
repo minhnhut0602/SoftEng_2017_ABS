@@ -4,27 +4,35 @@ package abs.model;
 //Essentially creating our own Date Time Data Type plus things that interact with it
 
 public class Availability {
-	private int date;
-	private int time;
+	private String date;
+	private String time;
 
-	public Availability(int date, int time) {
+	/**
+	 * Instantiates a new availability.
+	 *
+	 * @param date
+	 *            the date
+	 * @param time
+	 *            the time
+	 */
+	public Availability(String date, String time) {
 		this.date = date;
 		this.time = time;
 	}
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public int getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public void setTime(int time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
