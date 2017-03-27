@@ -21,4 +21,11 @@ public class Booking {
 		this.slot = slot;
 		this.staff = staff;
 	}
+
+	@Override
+	public String toString() {
+		return "Booking [slot=" + slot + ", staff=" + staff + "]";
+	}
+	
+	
 }

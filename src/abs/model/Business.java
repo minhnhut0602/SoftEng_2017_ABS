@@ -38,4 +38,11 @@ public class Business {
 		this.avBookings = avBookings;
 	}
 
+	@Override
+	public String toString() {
+		return "Business [name=" + name + ", desc=" + desc + ", staff=" + staff + ", avBookings=" + avBookings + "]";
+	}
+	
+	
+
 }

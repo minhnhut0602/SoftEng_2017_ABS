@@ -23,6 +23,8 @@ public class Utilities {
 	/** The business info file name/type. */
 	private String businessInfoFileName = "businessinfo.txt";
 
+	private Business business;
+
 	/**
 	 * Reads the data from business file and instantiates it.
 	 *
@@ -43,8 +45,7 @@ public class Utilities {
 																		// bookings
 
 				/**
-				 * TODO read first Word -> name, next line until '.' is
-				 * description.
+				 * Read first Word -> name, next line until '.' is description.
 				 * 
 				 * e.g Damian Dentists Damian has run his family dentistry for
 				 * over 25 years and prides himself on his work.
@@ -63,30 +64,35 @@ public class Utilities {
 
 				name = bufferedReader.readLine();
 				desc = bufferedReader.readLine();
-				if (bufferedReader.readLine().contains("Employees")) // Signals
-				// employee data
-				{
-					String[] employee;
-					while ((employee = bufferedReader.readLine().split(",")).length > 1) {
+				String emTest = bufferedReader.readLine();
 
-						List<Availability> availabilities = null;
+				if ((emTest != null)) {
 
-						for (int i = 1; i < employee.length; i++) {
-							i++;
+					if (emTest.contains("Employees")) // Signals
+					// employee data
+					{
+						String[] employee;
+						while ((employee = bufferedReader.readLine().split(",")).length > 1) {
+
+							List<Availability> availabilities = null;
 							availabilities = new ArrayList<Availability>(); // Employee's
-																			// Availabilities
-							availabilities.add(new Availability(employee[i - 1], employee[i]));
+							// Availabilities
+							for (int i = 1; i < employee.length; i++) {
+								i++;
 
+								availabilities.add(new Availability(employee[i - 1], employee[i]));
+
+							}
+							staff.add(new Employee(employee[0], availabilities));
 						}
-						staff.add(new Employee(employee[0], availabilities));
-					}
 
+					} // Format incorrect
 				} // else no employees
+				String line = bufferedReader.readLine();
+				if (line != null) {
+					String[] bookings = line.split(",");
 
-				String[] bookings;
-				if (bufferedReader.readLine().contains("Employees")) // Signals
-				{
-					while ((bookings = bufferedReader.readLine().split(",")).length > 1) {
+					if (bookings.length > 1) {
 
 						for (int i = 0; i < bookings.length; i++) { // for all
 																	// bookings
@@ -96,10 +102,10 @@ public class Utilities {
 							i++;
 						} // TODO match employeeID to employee object.
 
-					}
-				}
+					} // incorrect format
+				} // else no bookings
 
-				new Business(name, desc, staff, avBookings);
+				business = new Business(name, desc, staff, avBookings);
 
 				reader.close(); // Close file
 				return 0;
@@ -109,7 +115,9 @@ public class Utilities {
 							// correctly
 			}
 
-		} catch (FileNotFoundException e) {
+		} catch (
+
+		FileNotFoundException e) {
 			return -1; // File not found
 
 		} catch (IOException e) {
@@ -119,6 +127,13 @@ public class Utilities {
 
 		return -3; // Unimplemented
 
+	}
+
+	public Business getBusiness() {
+		if (business == null) {
+			readBusinessData();
+		}
+		return business;
 	}
 
 	/**
@@ -154,7 +169,7 @@ public class Utilities {
 		return -1;
 	}
 
-	public int writeData(String type) {
+	public int writeData(String type) { // TODO
 		if (type == "customer") {
 			return -3;
 		}
