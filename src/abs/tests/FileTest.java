@@ -1,12 +1,16 @@
 
 package abs.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import abs.controller.Utilities;
+import abs.model.Business;
+import abs.model.User;
 
 /**
  * Tests the Utilities class. Importing and exporting data to file.
@@ -58,8 +62,11 @@ public class FileTest {
 	 */
 	@Test
 	public void testWriteData() {
-		String type = null;
-		int result = utils.writeData(type);
+		utils.readData();
+		List<User> customers = utils.getCustomers();
+		Business business = utils.getBusiness();
+		int result = utils.writeData(business, customers);
+		System.out.println(result);
 		assertTrue(result == 0);
 	}
 

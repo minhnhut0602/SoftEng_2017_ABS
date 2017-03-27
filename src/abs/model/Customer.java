@@ -10,6 +10,7 @@ package abs.model;
 public class Customer extends AbstractUser {
 
 	private String address;
+
 	private int phone;
 
 	/**
@@ -20,6 +21,14 @@ public class Customer extends AbstractUser {
 		super(name, email, password);
 		this.address = address;
 		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public int getPhone() {
+		return phone;
 	}
 
 	@Override

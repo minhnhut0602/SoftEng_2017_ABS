@@ -17,10 +17,6 @@ public class Employee {
 		return availabilities;
 	}
 
-	public void setAvailabilities(List<Availability> availabilities) {
-		this.availabilities = availabilities;
-	}
-
 	/**
 	 * @return the employees name
 	 */
@@ -28,10 +24,13 @@ public class Employee {
 		return name;
 	}
 
+	public void setAvailabilities(List<Availability> availabilities) {
+		this.availabilities = availabilities;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [name=" + name + ", availabilities=" + availabilities + "]";
 	}
-	
 
 }

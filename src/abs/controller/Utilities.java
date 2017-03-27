@@ -1,12 +1,15 @@
 package abs.controller;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import abs.model.AbstractUser;
 import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;
@@ -78,6 +81,21 @@ public class Utilities {
 		this.splitChar = splitChar;
 	}
 
+	public Business getBusiness() {
+		if (business == null) {
+			readBusinessData();
+		}
+		return business;
+	}
+
+	public List<User> getCustomers() {
+		return customers;
+	}
+
+	public Owner getOwner() {
+		return owner;
+	}
+
 	/**
 	 * Reads the data from business info file and instantiates it.
 	 *
@@ -92,6 +110,8 @@ public class Utilities {
 			if (bufferedReader.readLine().contains("Business Info")) {
 				String name; // Business name
 				String desc; // Business description
+				String address; // Business address
+				int number; // Business contact number
 
 				// Business's employees
 				List<Employee> staff = new ArrayList<Employee>();
@@ -101,11 +121,14 @@ public class Utilities {
 
 				name = bufferedReader.readLine();
 				desc = bufferedReader.readLine();
+				address = bufferedReader.readLine();
+				number = Integer.parseInt(bufferedReader.readLine());
 
 				// Create owner user.
 				String ownerName = bufferedReader.readLine();
 				String ownerEmail = bufferedReader.readLine();
-				String ownerPass = "root"; // TODO update for encryption
+				String ownerPass = bufferedReader.readLine();// TODO update for
+																// encryption
 
 				owner = new Owner(ownerName, ownerEmail, ownerPass);
 
@@ -154,7 +177,7 @@ public class Utilities {
 					} // Else no bookings
 				} // Else no employees or bookings
 
-				business = new Business(name, desc, staff, avBookings);
+				business = new Business(name, desc, address, number, staff, avBookings);
 
 				reader.close(); // Close file
 				return 0; // Success
@@ -176,17 +199,6 @@ public class Utilities {
 
 		return -3; // Unimplemented
 
-	}
-
-	public Business getBusiness() {
-		if (business == null) {
-			readBusinessData();
-		}
-		return business;
-	}
-
-	public Owner getOwner() {
-		return owner;
 	}
 
 	/**
@@ -233,10 +245,6 @@ public class Utilities {
 
 	}
 
-	public List<User> getCustomers() {
-		return customers;
-	}
-
 	/**
 	 * Reads the data from both files and instantiates it.
 	 *
@@ -252,23 +260,145 @@ public class Utilities {
 		return -2;
 	}
 
+	public int writeBusinessData(Business business) {
+
+		FileWriter writer = null;
+		BufferedWriter bufferedWriter = null;
+		try {
+			writer = new FileWriter(filePath + businessInfoFileName);
+			bufferedWriter = new BufferedWriter(writer);
+
+			// Wrote business info
+			bufferedWriter.write("# Business Info\n");
+			bufferedWriter.write(business.getName());
+			bufferedWriter.newLine();
+			bufferedWriter.write(business.getDesc());
+			bufferedWriter.newLine();
+			bufferedWriter.write(business.getAddress());
+			bufferedWriter.newLine();
+			bufferedWriter.write(Integer.toString(business.getPhone()));
+			bufferedWriter.newLine();
+
+			// write owner user info
+			Owner owner = getOwner();
+			bufferedWriter.write(owner.getName());
+			bufferedWriter.newLine();
+			bufferedWriter.write(owner.getEmail());
+			bufferedWriter.newLine();
+			bufferedWriter.write(owner.getPassword());
+			bufferedWriter.newLine();
+
+			// Write employee data
+			bufferedWriter.write("# Employees\n");
+			List<Employee> staff = business.getStaff();
+			for (int i = 0; i < staff.size(); i++) {
+				bufferedWriter.write(staff.get(i).getName());
+				List<Availability> staffAvalib = staff.get(i).getAvailabilities();
+				for (int j = 0; j < staffAvalib.size(); j++) {
+					bufferedWriter.write(splitChar + staffAvalib.get(j).getDate());
+					bufferedWriter.write(splitChar + staffAvalib.get(j).getTime());
+				}
+				bufferedWriter.newLine();
+			}
+
+			// Write available bookings data
+			bufferedWriter.write("# Bookings\n");
+			List<Booking> avBookings = business.getAvBookings();
+			for (int i = 0; i < avBookings.size(); i++) {
+				if (i == 0) {
+					bufferedWriter.write(avBookings.get(i).getStaff());
+					Availability slot = avBookings.get(i).getSlot();
+					bufferedWriter.write(splitChar + slot.getDate());
+					bufferedWriter.write(splitChar + slot.getTime());
+				} else {
+					bufferedWriter.write(splitChar + avBookings.get(i).getStaff());
+					Availability slot = avBookings.get(i).getSlot();
+					bufferedWriter.write(splitChar + slot.getDate());
+					bufferedWriter.write(splitChar + slot.getTime());
+				}
+
+			}
+
+			return 0;
+		} catch (IOException e) {
+			return -2; //
+		} finally {
+
+			try {
+
+				if (bufferedWriter != null)
+					bufferedWriter.close();
+
+				if (writer != null)
+					writer.close();
+
+			} catch (IOException ex) {
+
+			}
+		}
+
+	}
+
+	public int writeCustomerData(List<User> customer) {
+		FileWriter writer = null;
+		BufferedWriter bufferedWriter = null;
+		try {
+			writer = new FileWriter(filePath + customerInfoFileName);
+			bufferedWriter = new BufferedWriter(writer);
+
+			// Wrote customer info
+			bufferedWriter.write("# Customer Info\n");
+			bufferedWriter.write("# name,email,address,phone,password\n");
+
+			List<User> customeres = getCustomers();
+			for (int i = 0; i < customers.size(); i++) {
+				bufferedWriter.write(((AbstractUser) customeres.get(i)).getName());
+
+				bufferedWriter.write(splitChar + ((AbstractUser) customeres.get(i)).getEmail());
+
+				bufferedWriter.write(splitChar + ((Customer) customeres.get(i)).getAddress());
+
+				bufferedWriter.write(splitChar + ((Customer) customeres.get(i)).getPhone());
+
+				bufferedWriter.write(splitChar + ((AbstractUser) customeres.get(i)).getPassword());
+				bufferedWriter.newLine();
+
+			}
+
+			return 0;
+		} catch (IOException e) {
+			return -2; //
+		} finally {
+
+			try {
+
+				if (bufferedWriter != null)
+					bufferedWriter.close();
+
+				if (writer != null)
+					writer.close();
+
+			} catch (IOException ex) {
+
+			}
+		}
+
+	}
+
 	/**
 	 * @param type
 	 *            The type of data to write to file, business, customer or both
-	 * @return an int to show success/fail. 1 file not found, -3 unimplemented,
-	 *         0 success.
+	 * @return an int to show success/fail. -1 error, -3 unimplemented, 0
+	 *         success.
 	 */
-	public int writeData(String type) { // TODO
-		if (type == "customer") {
-			return -3;
-		}
+	public int writeData(Business business, List<User> customer) { // TODO
 
-		else if (type == "business") {
-			return -3;
-		} else { // Write both
-
-			return -3;
+		int bus = writeBusinessData(business);
+		int cus = writeCustomerData(customer);
+		if ((bus == 0) && (cus == 0)) {
+			return 0;
 		}
+		return -1;
 
 	}
 }
