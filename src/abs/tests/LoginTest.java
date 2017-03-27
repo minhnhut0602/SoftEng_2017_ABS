@@ -62,6 +62,7 @@ public class LoginTest {
 		assertTrue(result == true);
 	}
 
+
 	@Test
 	public void loginWithoutRegistering() {
 		// use an invalid username and password
