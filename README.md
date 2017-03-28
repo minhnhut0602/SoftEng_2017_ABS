@@ -16,7 +16,7 @@ Sohum Raut - s3377766.
 
 MIT License
 
-Copyright (c) [2017] [RMIT University School of Computer Science ]
+Copyright (c) [2017] RMIT University School of Computer Science
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
