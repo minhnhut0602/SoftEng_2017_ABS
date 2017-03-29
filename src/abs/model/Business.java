@@ -24,6 +24,8 @@ public class Business {
 	/** The Available bookings. */
 	private List<Booking> avBookings = new ArrayList<Booking>();
 
+	private Owner owner;
+
 	/**
 	 * Instantiates a new business.
 	 * 
@@ -41,8 +43,8 @@ public class Business {
 	 * @param avBookings
 	 *            the available bookings
 	 */
-	public Business(String name, String desc, String address, int phone, List<Employee> staff,
-			List<Booking> avBookings) {
+	public Business(String name, String desc, String address, int phone, List<Employee> staff, List<Booking> avBookings,
+			Owner owner) {
 		super();
 		this.name = name;
 		this.desc = desc;
@@ -50,6 +52,7 @@ public class Business {
 		this.phone = phone;
 		this.staff = staff;
 		this.avBookings = avBookings;
+		this.owner = owner;
 	}
 
 	public String getAddress() {
@@ -74,6 +77,10 @@ public class Business {
 
 	public List<Employee> getStaff() {
 		return staff;
+	}
+	
+	public Owner getOwner() {
+		return owner;
 	}
 
 	@Override
