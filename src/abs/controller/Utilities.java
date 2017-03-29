@@ -99,7 +99,6 @@ public class Utilities {
 	 */
 	public int readBusinessData() {
 
-		// TODO update method to loop for multiple businesses
 		businesses = new ArrayList<Business>();
 
 		try {
@@ -182,14 +181,15 @@ public class Utilities {
 					businesses.add(new Business(name, desc, address, number, staff, avBookings, owner));
 
 				} else {
-
+					reader.close(); // Close file
+					bufferedReader.close(); // Close file
 					return -2; // File exists but is empty or not formatted
 								// correctly
 				}
 			}
 
-			bufferedReader.close(); // Close file
 			reader.close(); // Close file
+			bufferedReader.close(); // Close file
 			return 0; // Success
 
 		} catch (FileNotFoundException e) {
@@ -270,8 +270,6 @@ public class Utilities {
 		try {
 			writer = new FileWriter(filePath + businessInfoFileName);
 			bufferedWriter = new BufferedWriter(writer);
-
-			// TODO i = 0 for now, when multi business surround with loop
 
 			for (Business business : businessesWr) {
 
@@ -400,7 +398,7 @@ public class Utilities {
 	 * @return an int to show success/fail. -1 error, -3 unimplemented, 0
 	 *         success.
 	 */
-	public int writeData(List<Business> businessesWr, List<User> customerWr) { // TODO
+	public int writeData(List<Business> businessesWr, List<User> customerWr) {
 
 		int bus = writeBusinessData(businessesWr);
 		int cus = writeCustomerData(customerWr);
