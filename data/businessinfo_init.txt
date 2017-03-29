@@ -1,8 +1,8 @@
 # Business Info
 Daniels Dentists
 Daniel might not be a dentist but he tried very hard.
-34 McTeeth St Melbourne
-96952345
+34 McTeeth St Melbourne 3000
+0396952345
 Daniel
 admin@danielsdentist.com
 root
