@@ -47,9 +47,8 @@ public class Utilities {
 
 	private String splitChar;
 
-	private Business business;
+	private List<Business> businesses;
 	private List<User> customers;
-	private Owner owner;
 
 	/**
 	 * 
@@ -81,19 +80,15 @@ public class Utilities {
 		this.splitChar = splitChar;
 	}
 
-	public Business getBusiness() {
-		if (business == null) {
+	public List<Business> getBusiness() {
+		if (businesses == null) {
 			readBusinessData();
 		}
-		return business;
+		return businesses;
 	}
 
 	public List<User> getCustomers() {
 		return customers;
-	}
-
-	public Owner getOwner() {
-		return owner;
 	}
 
 	/**
@@ -103,6 +98,9 @@ public class Utilities {
 	 *         invalid formatting, -3 unimplemented, 0 success.
 	 */
 	public int readBusinessData() {
+
+		// TODO update method to loop for multiple businesses
+
 		try {
 			FileReader reader = new FileReader(filePath + businessInfoFileName);
 			BufferedReader bufferedReader = new BufferedReader(reader);
@@ -119,6 +117,8 @@ public class Utilities {
 				// Available bookings
 				List<Booking> avBookings = new ArrayList<Booking>();
 
+				businesses = new ArrayList<Business>();
+
 				name = bufferedReader.readLine();
 				desc = bufferedReader.readLine();
 				address = bufferedReader.readLine();
@@ -130,7 +130,7 @@ public class Utilities {
 				String ownerPass = bufferedReader.readLine();// TODO update for
 																// encryption
 
-				owner = new Owner(ownerName, ownerEmail, ownerPass);
+				Owner owner = new Owner(ownerName, ownerEmail, ownerPass);
 
 				// Checks if document is empty
 				String emTest = bufferedReader.readLine();
@@ -177,7 +177,7 @@ public class Utilities {
 					} // Else no bookings
 				} // Else no employees or bookings
 
-				business = new Business(name, desc, address, number, staff, avBookings);
+				businesses.add(new Business(name, desc, address, number, staff, avBookings, owner));
 
 				reader.close(); // Close file
 				return 0; // Success
@@ -218,8 +218,8 @@ public class Utilities {
 				while ((line = bufferedReader.readLine()) != null) {
 					if (!(line.startsWith("#"))) {
 						String[] customerIn = line.split(splitChar);
-						int phone = Integer.parseInt(customerIn[3]);
-						customers.add(new Customer(customerIn[0], customerIn[1], customerIn[2], phone, customerIn[4]));
+						customers.add(new Customer(customerIn[0], customerIn[1], customerIn[2], customerIn[3],
+								customerIn[4]));
 					}
 				}
 
@@ -260,7 +260,7 @@ public class Utilities {
 		return -2;
 	}
 
-	public int writeBusinessData(Business business) {
+	public int writeBusinessData(List<Business> businessesWr) {
 
 		FileWriter writer = null;
 		BufferedWriter bufferedWriter = null;
@@ -268,19 +268,23 @@ public class Utilities {
 			writer = new FileWriter(filePath + businessInfoFileName);
 			bufferedWriter = new BufferedWriter(writer);
 
+			// TODO i = 0 for now, when multi business surround with loop
+
+			int k = 0;
+
 			// Wrote business info
 			bufferedWriter.write("# Business Info\n");
-			bufferedWriter.write(business.getName());
+			bufferedWriter.write(businessesWr.get(k).getName());
 			bufferedWriter.newLine();
-			bufferedWriter.write(business.getDesc());
+			bufferedWriter.write(businessesWr.get(k).getDesc());
 			bufferedWriter.newLine();
-			bufferedWriter.write(business.getAddress());
+			bufferedWriter.write(businessesWr.get(k).getAddress());
 			bufferedWriter.newLine();
-			bufferedWriter.write(Integer.toString(business.getPhone()));
+			bufferedWriter.write(Integer.toString(businessesWr.get(k).getPhone()));
 			bufferedWriter.newLine();
 
 			// write owner user info
-			Owner owner = getOwner();
+			Owner owner = businessesWr.get(k).getOwner();
 			bufferedWriter.write(owner.getName());
 			bufferedWriter.newLine();
 			bufferedWriter.write(owner.getEmail());
@@ -290,7 +294,7 @@ public class Utilities {
 
 			// Write employee data
 			bufferedWriter.write("# Employees\n");
-			List<Employee> staff = business.getStaff();
+			List<Employee> staff = businessesWr.get(k).getStaff();
 			for (int i = 0; i < staff.size(); i++) {
 				bufferedWriter.write(staff.get(i).getName());
 				List<Availability> staffAvalib = staff.get(i).getAvailabilities();
@@ -303,7 +307,7 @@ public class Utilities {
 
 			// Write available bookings data
 			bufferedWriter.write("# Bookings\n");
-			List<Booking> avBookings = business.getAvBookings();
+			List<Booking> avBookings = businessesWr.get(k).getAvBookings();
 			for (int i = 0; i < avBookings.size(); i++) {
 				if (i == 0) {
 					bufferedWriter.write(avBookings.get(i).getStaff());
@@ -391,10 +395,10 @@ public class Utilities {
 	 * @return an int to show success/fail. -1 error, -3 unimplemented, 0
 	 *         success.
 	 */
-	public int writeData(Business business, List<User> customer) { // TODO
+	public int writeData(List<Business> businessesWr, List<User> customerWr) { // TODO
 
-		int bus = writeBusinessData(business);
-		int cus = writeCustomerData(customer);
+		int bus = writeBusinessData(businesses);
+		int cus = writeCustomerData(customerWr);
 		if ((bus == 0) && (cus == 0)) {
 			return 0;
 		}

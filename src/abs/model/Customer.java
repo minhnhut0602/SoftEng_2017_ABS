@@ -11,13 +11,13 @@ public class Customer extends AbstractUser {
 
 	private String address;
 
-	private int phone;
+	private String phone;
 
 	/**
 	 * 
 	 */
 
-	public Customer(String name, String email, String address, int phone, String password) {
+	public Customer(String name, String email, String address, String phone, String password) {
 		super(name, email, password);
 		this.address = address;
 		this.phone = phone;
@@ -27,7 +27,7 @@ public class Customer extends AbstractUser {
 		return address;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 

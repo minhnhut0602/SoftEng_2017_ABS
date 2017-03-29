@@ -57,7 +57,7 @@ public class MenuTest {
 		dataBus = utils.getBusiness();
 
 		// Owner data for login tests
-		ownerData = utils.getOwner();
+		ownerData = dataBus.getOwner();
 
 		// Customer data for login test
 		customerData = utils.getCustomers();

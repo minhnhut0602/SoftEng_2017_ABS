@@ -64,8 +64,8 @@ public class FileTest {
 	public void testWriteData() {
 		utils.readData();
 		List<User> customers = utils.getCustomers();
-		Business business = utils.getBusiness();
-		int result = utils.writeData(business, customers);
+		List<Business> businesses = utils.getBusiness();
+		int result = utils.writeData(businesses, customers);
 		//System.out.println(result);
 		assertTrue(result == 0);
 	}
