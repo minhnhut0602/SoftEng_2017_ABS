@@ -370,7 +370,7 @@ public class Utilities {
 				bufferedWriter.write(splitChar + ((AbstractUser) customeres.get(i)).getPassword());
 				bufferedWriter.newLine();
 
-				// TODO loop through users booked, bookings
+				// loop through users booked, bookings
 				if (!((AbstractUser) customeres.get(i)).getBookings().isEmpty()) {
 					bufferedWriter.write("# Bookings\n");
 					List<Booking> bookings = ((AbstractUser) customeres.get(i)).getBookings();
