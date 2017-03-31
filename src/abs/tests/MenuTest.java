@@ -92,7 +92,6 @@ public class MenuTest {
 													// menu
 		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
-		menu = new Menu();
 		User loginReturn = menu.loginMenu();
 
 		// Test what method Prints
@@ -104,8 +103,18 @@ public class MenuTest {
 
 	@Test
 	public void testMenuDispayRegisterScreen() {
+		// Simulate input of name,email,address,phone,password
+		dummyIn = "Dave,dave@gmail.com,123 test St,0404044044,root";
 
-		fail("Not yet implemented"); // TODO
+		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
+
+		User loginReturn = menu.registerMenu();
+
+		// Test what method Prints
+		String expectedOutputa = "Welcome to the Appointment Booking System\n"
+				+ "To Register Please enter your details seperated by a comma/n"
+				+ "e.g. name,email,address,phone,password/n";
+		assertEquals(expectedOutputa, outContent.toString());
 
 	}
 
