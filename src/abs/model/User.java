@@ -2,5 +2,12 @@ package abs.model;
 
 public interface User {
 
-	// TODO Add methods
+	public String getEmail();
+
+	public String getName();
+
+	public String getPassword();
+
+	@Override
+	public String toString();
 }

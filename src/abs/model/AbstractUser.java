@@ -13,7 +13,7 @@ public abstract class AbstractUser implements User {
 	private String email;
 
 	private String password; // Hashed??
-	
+
 	private List<Booking> bookings = new ArrayList<Booking>();
 
 	/**
@@ -28,14 +28,17 @@ public abstract class AbstractUser implements User {
 		this.password = password;
 	}
 
+	@Override
 	public String getEmail() {
 		return email;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public String getPassword() {
 		return password;
 	}
@@ -52,7 +55,7 @@ public abstract class AbstractUser implements User {
 	public void setBookings(List<Booking> bookings) {
 		this.bookings = bookings;
 	}
-	
+
 	// to add a booking the booking is added to the list in the user.
 	public boolean addBooking(Booking booking){
 		//appends the booking time
