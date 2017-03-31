@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import abs.model.AbstractUser;
 import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;
@@ -357,15 +356,15 @@ public class Utilities {
 
 			List<User> customeres = getCustomers();
 			for (int i = 0; i < customers.size(); i++) {
-				bufferedWriter.write(((AbstractUser) customeres.get(i)).getName());
+				bufferedWriter.write(customeres.get(i).getName());
 
-				bufferedWriter.write(splitChar + ((AbstractUser) customeres.get(i)).getEmail());
+				bufferedWriter.write(splitChar + (customeres.get(i)).getEmail());
 
 				bufferedWriter.write(splitChar + ((Customer) customeres.get(i)).getAddress());
 
 				bufferedWriter.write(splitChar + ((Customer) customeres.get(i)).getPhone());
 
-				bufferedWriter.write(splitChar + ((AbstractUser) customeres.get(i)).getPassword());
+				bufferedWriter.write(splitChar + (customeres.get(i)).getPassword());
 				bufferedWriter.newLine();
 
 			}
