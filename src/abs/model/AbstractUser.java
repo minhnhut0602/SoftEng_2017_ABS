@@ -28,14 +28,17 @@ public abstract class AbstractUser implements User {
 		this.password = password;
 	}
 
+	@Override
 	public String getEmail() {
 		return email;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public String getPassword() {
 		return password;
 	}

@@ -13,10 +13,14 @@ public class Customer extends AbstractUser {
 
 	private String phone;
 
-	/**
-	 * 
-	 */
 
+	/**
+	 * @param name
+	 * @param email
+	 * @param address
+	 * @param phone
+	 * @param password
+	 */
 	public Customer(String name, String email, String address, String phone, String password) {
 		super(name, email, password);
 		this.address = address;

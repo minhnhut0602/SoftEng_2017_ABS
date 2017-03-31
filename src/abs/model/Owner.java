@@ -5,6 +5,11 @@ public class Owner extends AbstractUser {
 	
 	private Business business;
 
+	/**
+	 * @param name
+	 * @param email
+	 * @param password
+	 */
 	public Owner(String name, String email, String password) {
 		super(name, email, password);
 		// TODO Auto-generated constructor stub
