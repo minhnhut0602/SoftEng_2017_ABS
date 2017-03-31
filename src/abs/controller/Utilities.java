@@ -129,7 +129,6 @@ public class Utilities {
 				String ownerEmail = bufferedReader.readLine();
 				String ownerPass = bufferedReader.readLine();// TODO update for
 																// encryption
-
 				Owner owner = new Owner(ownerName, ownerEmail, ownerPass);
 
 				// Checks if document is empty
@@ -177,7 +176,9 @@ public class Utilities {
 					} // Else no bookings
 				} // Else no employees or bookings
 
-				businesses.add(new Business(name, desc, address, number, staff, avBookings, owner));
+				Business business = new Business(name, desc, address, number, staff, avBookings, owner);
+				owner.setBusiness(business);
+				businesses.add(business);
 
 				reader.close(); // Close file
 				return 0; // Success

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.model;
 
 /**
@@ -12,7 +9,6 @@ public class Customer extends AbstractUser {
 	private String address;
 
 	private String phone;
-
 
 	/**
 	 * @param name
