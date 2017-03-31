@@ -33,7 +33,7 @@ public class MenuTest {
 	private Utilities utils;
 	private int dataRead;
 	private Menu menu;
-	private Business dataBus;
+	private List<Business> dataBus;
 	private Owner ownerData;
 	private List<User> customerData;
 	String dummyIn;
@@ -57,7 +57,7 @@ public class MenuTest {
 		dataBus = utils.getBusiness();
 
 		// Owner data for login tests
-		ownerData = dataBus.getOwner();
+		ownerData = dataBus.get(0).getOwner();
 
 		// Customer data for login test
 		customerData = utils.getCustomers();
@@ -93,7 +93,7 @@ public class MenuTest {
 		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
 		menu = new Menu();
-		int loginReturn = menu.loginMenu();
+		User loginReturn = menu.loginMenu();
 
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
