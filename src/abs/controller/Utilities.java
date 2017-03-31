@@ -178,92 +178,17 @@ public class Utilities {
 						} // Else no bookings
 					} // Else no employees or bookings
 
-					businesses.add(new Business(name, desc, address, number, staff, avBookings, owner));
+					Business business = new Business(name, desc, address, number, staff, avBookings, owner);
+					owner.setBusiness(business);
+					businesses.add(business);
 
-<<<<<<< HEAD
 				} else {
 					reader.close(); // Close file
 					bufferedReader.close(); // Close file
 					return -2; // File exists but is empty or not formatted
 								// correctly
 				}
-=======
-				// Business's employees
-				List<Employee> staff = new ArrayList<Employee>();
 
-				// Available bookings
-				List<Booking> avBookings = new ArrayList<Booking>();
-
-				businesses = new ArrayList<Business>();
-
-				name = bufferedReader.readLine();
-				desc = bufferedReader.readLine();
-				address = bufferedReader.readLine();
-				number = Integer.parseInt(bufferedReader.readLine());
-
-				// Create owner user.
-				String ownerName = bufferedReader.readLine();
-				String ownerEmail = bufferedReader.readLine();
-				String ownerPass = bufferedReader.readLine();// TODO update for
-																// encryption
-				Owner owner = new Owner(ownerName, ownerEmail, ownerPass);
-
-				// Checks if document is empty
-				String emTest = bufferedReader.readLine();
-				if ((emTest != null)) {
-
-					// Checks for employee data
-					if (emTest.contains("Employees")) {
-						String[] employee;
-						// Employee data is CSV
-						while ((employee = bufferedReader.readLine().split(splitChar)).length > 1) {
-
-							List<Availability> availabilities = null;
-							availabilities = new ArrayList<Availability>();
-
-							// Adds the employees availabilities, if any.
-							for (int i = 1; i < employee.length; i++) {
-								i++;
-								availabilities.add(new Availability(employee[i - 1], employee[i]));
-							} // close for
-
-							// adds new employee
-							staff.add(new Employee(employee[0], availabilities));
-						} // close while
-
-					} // else format incorrect
-
-					String line = bufferedReader.readLine();
-					if (line != null) {
-						String[] bookings = line.split(splitChar);
-
-						if (bookings.length > 1) {
-
-							for (int i = 0; i < bookings.length; i++) { // for
-																		// all
-																		// bookings
-								i++;
-								avBookings.add(
-										new Booking((new Availability(bookings[i], bookings[i + 1])), bookings[i - 1]));
-								i++;
-								// TODO match employeeID to employee object.
-							} // close for
-
-						} // Else incorrect bookings format
-					} // Else no bookings
-				} // Else no employees or bookings
-
-				Business business = new Business(name, desc, address, number, staff, avBookings, owner);
-				owner.setBusiness(business);
-				businesses.add(business);
-
-				reader.close(); // Close file
-				return 0; // Success
-			} else {
-				reader.close(); // Close file
-				return -2; // File exists but is empty or not formatted
-							// correctly
->>>>>>> refs/remotes/origin/Users
 			}
 
 			reader.close(); // Close file
