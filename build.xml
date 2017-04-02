@@ -30,6 +30,10 @@
 		</jar>
 	</target>
 	
+	<target name="run" depends="build-jar" >
+		<java jar="${build.dir}/ABS.jar" fork="true" />
+	</target>
+	
 	
 	<target name="info">
 		<echo>Apache Ant version is ${ant.version} - You are at ${sitename} </echo>
