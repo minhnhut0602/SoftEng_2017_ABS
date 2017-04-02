@@ -23,7 +23,7 @@
 	</target>
 	
 	<target name="build-jar" >
-		<jar destfile="${build.dir}/project.jar" basedir="${build.dir}" >
+		<jar destfile="${build.dir}/ABS.jar" basedir="${build.dir}" >
 			<manifest>
 				<attribute name="Main-Class" value="view.Main" />		
 			</manifest>
