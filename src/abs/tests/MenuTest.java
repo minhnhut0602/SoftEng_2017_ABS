@@ -70,7 +70,7 @@ public class MenuTest {
 
 	@Test
 	public void testMenuDispayMainMenu() {
-		dummyIn = "1"; // Sending dummy input to menu
+		dummyIn = "0"; // Sending dummy input to menu
 		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
 		int mainMenu = menu.mainMenu(); // Prints main menu, prompts for login
@@ -121,18 +121,8 @@ public class MenuTest {
 
 	@Test
 	public void testMenuDispayBusinessSelection() {
-		dummyIn = "1"; // Sending dummy input to menu
-		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
-		int mainMenu = menu.businessSelect(); // Prints main menu, prompts for
-												// login
-		// or register.
-
-		// TEST what method prints
-		String expectedOutput = "Welcome to the Appointment Booking System\n" + "Please select an option:\n"
-				+ "1. Daniel's Dentists\n";
-
-		assertEquals(expectedOutput, outContent.toString());
+		fail("Not yet implemented"); // TODO
 
 	}
 
@@ -146,7 +136,7 @@ public class MenuTest {
 
 	@Test
 	public void testMenuDispayCustomerDashboard() {
-		dummyIn = "1"; // Sending dummy input to menu
+		dummyIn = "0"; // Sending dummy input to menu
 		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
 		int mainMenu = menu.customerDashboard(); // Prints main menu,
