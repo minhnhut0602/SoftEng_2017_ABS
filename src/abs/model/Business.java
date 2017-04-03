@@ -24,6 +24,7 @@ public class Business {
 	/** The Available bookings. */
 	private List<Booking> avBookings = new ArrayList<Booking>();
 
+	/** The owner of the business. */
 	private Owner owner;
 
 	/**
