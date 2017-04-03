@@ -1,15 +1,42 @@
 <?xml version="1.0"?>
-<project name="Appointment Booking
-	System" default="info">
+<project name="Appointment Booking System" basedir="." default="build">
 
-	<property name="sitename" value="Appointment Booking
-	System" />
+	<property name="sitename" value="Appointment Booking System" />
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="ABS" />
+	
+	<path id="masterPath" >
+		<pathelement path="${build.dir}" />
+	</path>
+	
+	<target name="build" description="Compile the source code" >
+		<mkdir dir="${build.dir}" />
+		<javac destdir="${build.dir}" source="1.8" target="1.8" debug="true" deprecation="false" optimize="false" failonerror="true" includeantruntime="false" >
+			<src path="${src.dir}" />
+			<exclude name="abs/tests/**" />
+			<classpath refid="masterPath" />
+		</javac>
+	</target>
+	
+	<target name="clean" description="Clean out the directories" >
+		<delete dir="${build.dir}" />
+	</target>
+	
+	<target name="build-jar" >
+		<jar destfile="${build.dir}/ABS.jar" basedir="${build.dir}" >
+			<manifest>
+				<attribute name="Main-Class" value="view.Main" />		
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="run" depends="build-jar" >
+		<java jar="${build.dir}/ABS.jar" fork="true" />
+	</target>
+	
+	
 	<target name="info">
 		<echo>Apache Ant version is ${ant.version} - You are at ${sitename} </echo>
-	</target>
-
-	<target name="build">
-
 	</target>
 
 </project>
