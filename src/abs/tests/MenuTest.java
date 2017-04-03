@@ -14,6 +14,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import abs.controller.UserAuth;
 import abs.controller.Utilities;
 import abs.model.Business;
 import abs.model.Customer;
@@ -33,7 +34,7 @@ public class MenuTest {
 	private Utilities utils;
 	private int dataRead;
 	private Menu menu;
-	private Business dataBus;
+	private List<Business> dataBus;
 	private Owner ownerData;
 	private List<User> customerData;
 	String dummyIn;
@@ -57,7 +58,7 @@ public class MenuTest {
 		dataBus = utils.getBusiness();
 
 		// Owner data for login tests
-		ownerData = dataBus.getOwner();
+		ownerData = dataBus.get(0).getOwner();
 
 		// Customer data for login test
 		customerData = utils.getCustomers();
@@ -92,8 +93,7 @@ public class MenuTest {
 													// menu
 		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
-		menu = new Menu();
-		int loginReturn = menu.loginMenu();
+		User loginReturn = menu.loginMenu();
 
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
@@ -104,8 +104,18 @@ public class MenuTest {
 
 	@Test
 	public void testMenuDispayRegisterScreen() {
+		// Simulate input of name,email,address,phone,password
+		dummyIn = "Dave,dave@gmail.com,123 test St,0404044044,root";
 
-		fail("Not yet implemented"); // TODO
+		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
+
+		User loginReturn = menu.registerMenu();
+
+		// Test what method Prints
+		String expectedOutputa = "Welcome to the Appointment Booking System\n"
+				+ "To Register Please enter your details seperated by a comma/n"
+				+ "e.g. name,email,address,phone,password/n";
+		assertEquals(expectedOutputa, outContent.toString());
 
 	}
 
@@ -126,9 +136,31 @@ public class MenuTest {
 
 	@Test
 	public void testMenuDispayCustomerDashboard() {
+		dummyIn = "0"; // Sending dummy input to menu
+		System.setIn(new ByteArrayInputStream(dummyIn.getBytes()));
 
-		fail("Not yet implemented"); // TODO
+		int mainMenu = menu.customerDashboard(); // Prints main menu,
+													// prompts for login
+		// or register.
+		String customerLoginEm = "stacy.d@gmail.com";
 
+		String customerLoginPa = "stacypassword";
+		UserAuth ua = new UserAuth();
+		boolean userLogin = ua.authUser(customerLoginEm, customerLoginPa);
+
+		if (!userLogin) {
+			fail("User failed to login");
+		}
+
+		String custName = "Stacy";
+
+		// TEST what method prints
+		String expectedOutput = "Welcome " + custName + " to the Appointment Booking System\n"
+				+ "Please select an option:\n" + "1. View avaliable bookings\n" + "2. View my bookings\n"
+				+ "3. Logout\n" + "4. Exit\n";
+
+		assertEquals(expectedOutput, outContent.toString()); // Compared the
+																// output of
 	}
 
 	@After
