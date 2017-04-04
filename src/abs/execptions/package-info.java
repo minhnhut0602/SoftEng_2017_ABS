@@ -1,6 +1,0 @@
-
-/**
- *
- *
- */
-package abs.execptions;

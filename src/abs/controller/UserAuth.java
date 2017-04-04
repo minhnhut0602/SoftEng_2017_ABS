@@ -1,7 +1,5 @@
 package abs.controller;
 
-import abs.model.User;
-
 public class UserAuth {
 
 	public boolean authUser(String email, String Password) {
@@ -9,8 +7,7 @@ public class UserAuth {
 
 	}
 
-	public boolean registerUser(User user) { // Not sure what the params should
-												// be here
+	public boolean registerUser(String name, String email, String password, String address, String phone) {
 		return false;
 
 	}
