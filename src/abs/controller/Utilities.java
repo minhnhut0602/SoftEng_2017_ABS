@@ -292,6 +292,35 @@ public class Utilities {
 		return -2;
 	}
 
+	/**
+	 * Set all the systems customers
+	 * 
+	 * 
+	 * @param customers
+	 *            A List of all the customers
+	 */
+	public void setCustomers(List<User> customers) {
+		this.customers = customers;
+	}
+
+	/**
+	 * @param customer
+	 *            A single new customer
+	 * @return True for successful add, false if param is null or already exists
+	 */
+	public boolean addCustomers(Customer customer) {
+		if (customer != null) { // Not null
+			if (!customers.contains(customer)) { // Not existing.
+				this.customers.add(customer);
+				return true;
+			} else {
+				return false;
+			}
+		} else
+			return false;
+
+	}
+
 	public int writeBusinessData(List<Business> businessesWr) {
 
 		FileWriter writer = null;
