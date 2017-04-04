@@ -1,39 +1,39 @@
 # Business Info
-Daniels Dentists
+Daniel's Dentists
 Daniel might not be a dentist but he tried very hard.
-34 McTeeth St Melbourne 3000
+34 McTeeth Street Melbourne 3000
 396952345
 Daniel
-admin@danielsdentist.com
+admin@danielsdentists.com
 root
 # Employees
-daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
-garry,thu,8am-2pm,fri,2pm-6pm
+Daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
+Gary,thu,8am-2pm,fri,2pm-6pm
 # Bookings
-daniel,mon,10:30,daniel,mon,11:00,daniel,mon,11:30,daniel,tue,12:00,garry,fri,2:00,garry,fri,2:30
+Daniel,mon,10:30,Daniel,mon,11:00,Daniel,mon,11:30,Daniel,tue,12:00,Gary,fri,2:00,Gary,fri,2:30
 # Business Info
-Daniels Hair Salon
-Daniel might not have hair but he can cut yours off.
-34 McHair St Melbourne 3000
-396952345
-Daniel
-admin@danielsHair.com
+Cory's Counselling
+Cory isnt alowd to leave, so tell him your problems.
+12 Thought Road Melbourne 3000
+396955555
+Cory
+admin@coryscounselling.com
 root
 # Employees
-daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
-garry,thu,8am-2pm,fri,2pm-6pm
+Cory,mon,8am-5pm,tue,4pm-6pm,thu,10am-2pm
+Mary,thu,8am-2pm,fri,2pm-6pm
 # Bookings
-daniel,mon,10:30,daniel,mon,11:00,daniel,mon,11:30,daniel,tue,12:00,garry,fri,2:00,garry,fri,2:30
+Cory,mon,10:30,Cory,mon,11:00,Mary,tue,12:00,Mary,fri,2:00,Mary,fri,2:30
 # Business Info
-Daniels Ninjas
-Daniel might not like ninjas but he does sell them
-34 McNinja St Melbourne 3000
-396952345
-Daniel
-admin@danielsNinjas.com
+Marco's Manicures
+Since marco lost his hands he loves to help you with yours!
+4 Cuticles Street Melbourne 3000
+394822345
+Marco
+admin@marcosmanicures.com
 root
 # Employees
-daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
-garry,thu,8am-2pm,fri,2pm-6pm
+Marco,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
+Havor,mon,2pm-5pm,thu,10am-6pm
 # Bookings
-daniel,mon,10:30,daniel,mon,11:00,daniel,mon,11:30,daniel,tue,12:00,garry,fri,2:00,garry,fri,2:30
+Marco,mon,10:00,Marco,mon,11:30,Marco,mon,12:30,Havor,tue,1:00,Havor,fri,1:30,Havor,fri,3:00

@@ -35,11 +35,11 @@ public class FileTest {
 	@Test
 	public void testReadBusinessData() {
 		int result = utils.readBusinessData();
-//		for (Business business : utils.getBusiness())
-//		{
-//			System.out.println(business.getName());
-//		}
-//		System.out.println(result);
+		// for (Business business : utils.getBusiness())
+		// {
+		// System.out.println(business.getName());
+		// }
+		// System.out.println(result);
 		assertTrue(result == 0);
 	}
 
@@ -48,6 +48,7 @@ public class FileTest {
 	 */
 	@Test
 	public void testReadCustomerData() {
+		utils.readBusinessData();
 		int result = utils.readCustomerData();
 		assertTrue(result == 0);
 	}

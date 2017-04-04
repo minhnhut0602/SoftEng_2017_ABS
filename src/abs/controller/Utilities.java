@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import abs.model.AbstractUser;
 import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;
@@ -179,6 +180,9 @@ public class Utilities {
 
 					Business business = new Business(name, desc, address, number, staff, avBookings, owner);
 					owner.setBusiness(business);
+					for (Booking booking : avBookings) {
+						booking.setBusiness(business);
+					}
 					businesses.add(business);
 
 				} else {
@@ -223,9 +227,32 @@ public class Utilities {
 				while ((line = bufferedReader.readLine()) != null) {
 					if (!(line.startsWith("#"))) {
 						String[] customerIn = line.split(splitChar);
-						customers.add(new Customer(customerIn[0], customerIn[1], customerIn[2], customerIn[3],
-								customerIn[4]));
+						Customer customer = new Customer(customerIn[0], customerIn[1], customerIn[2], customerIn[3],
+								customerIn[4]);
+						customers.add(customer);
+						if ((line = bufferedReader.readLine()).contains("Booking")) {
+							line = bufferedReader.readLine();
+							String[] bookingIn = line.split(splitChar);
+
+							for (int i = 0; i < bookingIn.length; i++) {
+								i++;
+								i++;
+								Booking booking = new Booking((new Availability(bookingIn[i], bookingIn[i + 1])),
+										bookingIn[i - 1]);
+								customer.addBooking(booking);
+
+								for (Business business : businesses) {
+									if (business.getName().equals(bookingIn[i - 2])) {
+										booking.setBusiness(business);
+									}
+
+								} // close for
+								i++;
+							}
+						}
+
 					}
+
 				}
 
 				reader.close(); // Close file
@@ -378,11 +405,13 @@ public class Utilities {
 					List<Booking> bookings = ((AbstractUser) customeres.get(i)).getBookings();
 					for (int j = 0; j < bookings.size(); j++) {
 						if (j == 0) {
-							bufferedWriter.write(bookings.get(j).getStaff());
+							bufferedWriter.write(bookings.get(j).getBusiness().getName());
+							bufferedWriter.write(splitChar + bookings.get(j).getStaff());
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
 							bufferedWriter.write(splitChar + slot.getTime());
 						} else {
+							bufferedWriter.write(bookings.get(j).getBusiness().getName());
 							bufferedWriter.write(splitChar + bookings.get(j).getStaff());
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
@@ -390,7 +419,10 @@ public class Utilities {
 						}
 
 					}
+					bufferedWriter.write("\n");
 
+				} else {
+					bufferedWriter.write("#\n");
 				}
 
 			}

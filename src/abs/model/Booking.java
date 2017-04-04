@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.model;
 
 /**
@@ -10,6 +7,7 @@ public class Booking {
 
 	private Availability slot;
 	private String staff;
+	private Business business;
 
 	/**
 	 * Instantiates a new booking.
@@ -32,9 +30,17 @@ public class Booking {
 		return staff;
 	}
 
+	public Business getBusiness() {
+		return business;
+	}
+
+	public void setBusiness(Business business) {
+		this.business = business;
+	}
+
 	@Override
 	public String toString() {
-		return "Booking [slot=" + slot + ", staff=" + staff + "]";
+		return "Booking [slot=" + slot + ", staff=" + staff + ", business=" + business + "]";
 	}
 
 }
