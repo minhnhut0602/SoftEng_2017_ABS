@@ -45,7 +45,8 @@ public abstract class AbstractUser implements User {
 
 	@Override
 	public String toString() {
-		return "AbstractUser [name=" + name + ", email=" + email + ", password=" + password + "]";
+		return "AbstractUser [name=" + name + ", email=" + email + ", password=" + password + ", bookings=" + bookings
+				+ "]";
 	}
 
 	public List<Booking> getBookings() {
@@ -57,13 +58,13 @@ public abstract class AbstractUser implements User {
 	}
 
 	// to add a booking the booking is added to the list in the user.
-	public boolean addBooking(Booking booking){
-		//appends the booking time
+	public boolean addBooking(Booking booking) {
+		// appends the booking time
 		this.bookings.add(booking);
-		
-		//eventually we should sort the list after appending, or better yet insert into the list where it should actually go.
-		
-		
+
+		// eventually we should sort the list after appending, or better yet
+		// insert into the list where it should actually go.
+
 		return true;
 	}
 

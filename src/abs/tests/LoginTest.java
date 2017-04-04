@@ -10,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import abs.controller.UserAuth;
-import abs.model.Customer;
 
 /**
  * 
