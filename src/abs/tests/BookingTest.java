@@ -1,10 +1,15 @@
 package abs.tests;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import abs.controller.UserAuth;
+import abs.controller.Utilities;
+import abs.model.User;
 
 /**
  * Tests the functions of the Bookings class
@@ -47,8 +52,26 @@ public class BookingTest {
 
 	@Test
 	public void makeBooking() {
-		// TODO
-		fail("Not yet implemented");
+
+		Utilities utils = new Utilities();
+		UserAuth auth = new UserAuth();
+		auth.authUser("valid@validemail.com", "validpassword");
+		User customer = auth.getActiveUser();
+		Booking booking = utils.getBusiness().get(0);
+		Boolean test1 = customer.addBooking(booking);
+
+		// tests if you can take a valid booking.
+		assertTrue(test1);
+
+		// checks if the booking is in customer array
+		assertTrue(customer.getBookings.contains(booking));
+
+		// Checks if that booking is marked
+		assertFalse(utils.getBusiness().get(0).getAvBookings().contains(booking));
+
+		// Checks if it stops you adding an existing or taken booking
+		assertFalse(customer.addBooking(booking));
+
 	}
 
 	@Test

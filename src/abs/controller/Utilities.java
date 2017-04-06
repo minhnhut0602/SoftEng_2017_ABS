@@ -165,8 +165,8 @@ public class Utilities {
 																		// all
 																		// bookings
 								i++;
-								avBookings.add(
-										new Booking((new Availability(bookings[i], bookings[i + 1])), bookings[i - 1]));
+								avBookings.add(new Booking((new Availability(bookings[i], bookings[i + 1])),
+										bookings[i - 1], "Available"));
 								i++;
 								// TODO match employeeID to employee object.
 							} // close for
@@ -177,6 +177,11 @@ public class Utilities {
 
 				Business business = new Business(name, desc, address, number, staff, avBookings, owner);
 				owner.setBusiness(business);
+
+				for (Booking booking : avBookings) {
+					booking.setBusniness(business);
+				}
+
 				businesses.add(business);
 
 				reader.close(); // Close file
