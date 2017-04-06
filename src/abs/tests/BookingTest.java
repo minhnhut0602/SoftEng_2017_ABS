@@ -1,5 +1,6 @@
 package abs.tests;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -9,6 +10,7 @@ import org.junit.Test;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
+import abs.model.Booking;
 import abs.model.User;
 
 /**
@@ -57,7 +59,7 @@ public class BookingTest {
 		UserAuth auth = new UserAuth();
 		auth.authUser("valid@validemail.com", "validpassword");
 		User customer = auth.getActiveUser();
-		Booking booking = utils.getBusiness().get(0);
+		Booking booking = utils.getBusiness().get(0).getAvBookings().get(0);
 		Boolean test1 = customer.addBooking(booking);
 
 		// tests if you can take a valid booking.
@@ -76,7 +78,21 @@ public class BookingTest {
 
 	@Test
 	public void cancelBooking() {
-		// TODO
-		fail("Not yet implemented");
+		Utilities utils = new Utilities();
+		UserAuth auth = new UserAuth();
+		auth.authUser("valid@validemail.com", "validpassword");
+		User customer = auth.getActiveUser();
+		Booking booking = utils.getBusiness().get(0).getAvBookings().get(0);
+		Booking booking2 = utils.getBusiness().get(0).getAvBookings().get(1);
+		Boolean test1 = customer.cancelBooking(booking);
+
+		// cancel an exsting booking
+		assertTrue(test1);
+
+		// checks if the booking is removed
+		assertFalse(customer.getBookings.contains(booking));
+
+		// cancel a non existing booking
+		assertTrue(customer.cancelBooking(booking2));
 	}
 }
