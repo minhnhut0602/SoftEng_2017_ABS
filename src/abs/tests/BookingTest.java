@@ -10,7 +10,9 @@ import org.junit.Test;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
+import abs.exceptions.PasswordInvalidException;
 import abs.model.Booking;
+import abs.model.Customer;
 import abs.model.User;
 
 /**
@@ -57,22 +59,26 @@ public class BookingTest {
 
 		Utilities utils = new Utilities();
 		UserAuth auth = new UserAuth();
-		auth.authUser("valid@validemail.com", "validpassword");
+		try {
+			auth.authUser("valid@validemail.com", "validpassword");
+		} catch (PasswordInvalidException e) {
+			fail("Invalid credentials");
+		}
 		User customer = auth.getActiveUser();
 		Booking booking = utils.getBusiness().get(0).getAvBookings().get(0);
-		Boolean test1 = customer.addBooking(booking);
+		Boolean test1 = ((Customer) customer).addBooking(booking);
 
 		// tests if you can take a valid booking.
 		assertTrue(test1);
 
 		// checks if the booking is in customer array
-		assertTrue(customer.getBookings.contains(booking));
+		assertTrue(((Customer) customer).getBookings().contains(booking));
 
 		// Checks if that booking is marked
 		assertFalse(utils.getBusiness().get(0).getAvBookings().contains(booking));
 
 		// Checks if it stops you adding an existing or taken booking
-		assertFalse(customer.addBooking(booking));
+		assertFalse(((Customer) customer).addBooking(booking));
 
 	}
 
@@ -80,19 +86,23 @@ public class BookingTest {
 	public void cancelBooking() {
 		Utilities utils = new Utilities();
 		UserAuth auth = new UserAuth();
-		auth.authUser("valid@validemail.com", "validpassword");
+		try {
+			auth.authUser("valid@validemail.com", "validpassword");
+		} catch (PasswordInvalidException e) {
+			fail("Invalid credentials");
+		}
 		User customer = auth.getActiveUser();
 		Booking booking = utils.getBusiness().get(0).getAvBookings().get(0);
 		Booking booking2 = utils.getBusiness().get(0).getAvBookings().get(1);
-		Boolean test1 = customer.cancelBooking(booking);
+		Boolean test1 = ((Customer) customer).cancelBooking(booking);
 
-		// cancel an exsting booking
+		// cancel an existing booking
 		assertTrue(test1);
 
 		// checks if the booking is removed
-		assertFalse(customer.getBookings.contains(booking));
+		assertFalse(((Customer) customer).getBookings().contains(booking));
 
 		// cancel a non existing booking
-		assertTrue(customer.cancelBooking(booking2));
+		assertTrue(((Customer) customer).cancelBooking(booking2));
 	}
 }
