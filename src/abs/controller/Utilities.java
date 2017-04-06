@@ -429,9 +429,9 @@ public class Utilities {
 				bufferedWriter.newLine();
 
 				// loop through users booked, bookings
-				if (!((AbstractUser) customeres.get(i)).getBookings().isEmpty()) {
+				if (!((Customer) customeres.get(i)).getBookings().isEmpty()) {
 					bufferedWriter.write("# Bookings\n");
-					List<Booking> bookings = ((AbstractUser) customeres.get(i)).getBookings();
+					List<Booking> bookings = ((Customer) customeres.get(i)).getBookings();
 					for (int j = 0; j < bookings.size(); j++) {
 						if (j == 0) {
 							bufferedWriter.write(bookings.get(j).getBusiness().getName());
