@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.model;
 
 /**
@@ -10,7 +7,7 @@ public class Booking {
 
 	private Availability slot;
 	private String staff;
-	private Business busniness;
+	private Business business;
 	private String status;
 
 	/**
@@ -35,12 +32,12 @@ public class Booking {
 		return staff;
 	}
 
-	public Business getBusniness() {
-		return busniness;
+	public Business getBusiness() {
+		return business;
 	}
 
-	public void setBusniness(Business busniness) {
-		this.busniness = busniness;
+	public void setBusiness(Business business) {
+		this.business = business;
 	}
 
 	public String getStatus() {
@@ -49,11 +46,14 @@ public class Booking {
 
 	public void setStatus(String status) {
 		this.status = status;
+
 	}
 
 	@Override
 	public String toString() {
-		return "Booking [slot=" + slot + ", staff=" + staff + ", busniness=" + busniness + ", status=" + status + "]";
+
+		return "Booking [slot=" + slot + ", staff=" + staff + ", busniness=" + business + ", status=" + status + "]";
+
 	}
 
 }
