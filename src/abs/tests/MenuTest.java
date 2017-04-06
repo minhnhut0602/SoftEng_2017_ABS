@@ -3,7 +3,8 @@
  */
 package abs.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -20,7 +21,6 @@ import abs.controller.UserAuth;
 import abs.controller.Utilities;
 import abs.exceptions.PasswordInvalidException;
 import abs.model.Business;
-import abs.model.Customer;
 import abs.model.Owner;
 import abs.model.User;
 import abs.view.Menu;
@@ -137,9 +137,7 @@ public class MenuTest {
 
 		// TEST what method prints
 		String expectedOutput = "Welcome to the Appointment Booking System\n" + "Please select an option:\n"
-				+ "1. Daniel's Dentists\n"
-				+ "2. Cory's Counselling\n"
-				+ "3. Marco's Manicures\n"
+				+ "1. Daniel's Dentists\n" + "2. Cory's Counselling\n" + "3. Marco's Manicures\n"
 				+ "4. Sohum's Salon\n";
 
 		assertEquals(expectedOutput, outContent.toString());

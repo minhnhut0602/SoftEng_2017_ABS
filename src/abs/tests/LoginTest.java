@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.tests;
 
 import static org.junit.Assert.assertFalse;
@@ -16,9 +13,13 @@ import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 
 /**
+ * This tests the UserAuth class.
  * 
- * This tests the UserAuth class. Checks login a user Checks register a user
+ * <p>
+ * Tests: login a user, register a user with valid and invalid data.
+ * </p>
  *
+ * @see abs.controller.UserAuth UserAuth
  */
 public class LoginTest {
 
@@ -32,6 +33,19 @@ public class LoginTest {
 
 	protected String pass;
 	protected String phone;
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		auth = new UserAuth();
+		name = "TestName";
+		email = "test@gmail.com";
+		pass = "TestPass123";
+		address = "123 Fake St, Melbourne";
+		phone = "0396657777";
+	}
 
 	@Test
 	public void alreadyRegisteredUser() {
@@ -108,19 +122,6 @@ public class LoginTest {
 		} catch (RegistrationValidationException e) {
 			assertTrue(true);
 		}
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-		auth = new UserAuth();
-		name = "TestName";
-		email = "test@gmail.com";
-		pass = "TestPass123";
-		address = "123 Fake St, Melbourne";
-		phone = "0396657777";
 	}
 
 	/**

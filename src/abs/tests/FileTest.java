@@ -1,4 +1,3 @@
-
 package abs.tests;
 
 import static org.junit.Assert.assertTrue;
@@ -13,8 +12,13 @@ import abs.model.Business;
 import abs.model.User;
 
 /**
- * Tests the Utilities class. Importing and exporting data to file.
- *
+ * Tests the Utilities class.
+ * 
+ * <p>
+ * Tests: reading data separate and together, writing data
+ * </p>
+ * 
+ * @see abs.controller.Utilities Utilities
  */
 public class FileTest {
 

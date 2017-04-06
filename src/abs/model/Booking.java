@@ -8,6 +8,7 @@ public class Booking {
 	private Availability slot;
 	private String staff;
 	private Business business;
+	private String status;
 
 	/**
 	 * Instantiates a new booking.
@@ -17,9 +18,10 @@ public class Booking {
 	 * @param staff
 	 *            the staff
 	 */
-	public Booking(Availability slot, String staff) {
+	public Booking(Availability slot, String staff, String status) {
 		this.slot = slot;
 		this.staff = staff;
+		this.status = status;
 	}
 
 	public Availability getSlot() {
@@ -38,9 +40,20 @@ public class Booking {
 		this.business = business;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+
+	}
+
 	@Override
 	public String toString() {
-		return "Booking [slot=" + slot + ", staff=" + staff + ", business=" + business + "]";
+
+		return "Booking [slot=" + slot + ", staff=" + staff + ", busniness=" + business + ", status=" + status + "]";
+
 	}
 
 }
