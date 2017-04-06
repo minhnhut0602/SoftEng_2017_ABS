@@ -137,7 +137,10 @@ public class MenuTest {
 
 		// TEST what method prints
 		String expectedOutput = "Welcome to the Appointment Booking System\n" + "Please select an option:\n"
-				+ "1. Daniels Dentists\n";
+				+ "1. Daniel's Dentists\n"
+				+ "2. Cory's Counselling\n"
+				+ "3. Marco's Manicures\n"
+				+ "4. Sohum's Salon\n";
 
 		assertEquals(expectedOutput, outContent.toString());
 

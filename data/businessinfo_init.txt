@@ -2,7 +2,7 @@
 Daniel's Dentists
 Daniel might not be a dentist but he tried very hard.
 34 McTeeth Street Melbourne 3000
-0396952345
+396952345
 Daniel
 admin@danielsdentists.com
 root
@@ -15,7 +15,7 @@ Daniel,mon,10:30,Daniel,mon,11:00,Daniel,mon,11:30,Daniel,tue,12:00,Gary,fri,2:0
 Cory's Counselling
 Cory isnt alowd to leave, so tell him your problems.
 12 Thought Road Melbourne 3000
-0396955555
+396955555
 Cory
 admin@coryscounselling.com
 root
@@ -28,7 +28,7 @@ Cory,mon,10:30,Cory,mon,11:00,Mary,tue,12:00,Mary,fri,2:00,Mary,fri,2:30
 Marco's Manicures
 Since marco lost his hands he loves to help you with yours!
 4 Cuticles Street Melbourne 3000
-0394822345
+394822345
 Marco
 admin@marcosmanicures.com
 root
@@ -37,3 +37,16 @@ Marco,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
 Havor,mon,2pm-5pm,thu,10am-6pm
 # Bookings
 Marco,mon,10:00,Marco,mon,11:30,Marco,mon,12:30,Havor,tue,1:00,Havor,fri,1:30,Havor,fri,3:00
+# Business Info
+Sohum's Salon
+Since sohum went bald he just likes to play with hair again!
+4 Folicals RD Melbourne 3000
+394822345
+Sohum
+admin@sohumssalon.com
+root
+# Employees
+Sohum,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
+Wendy,mon,2pm-5pm,thu,10am-6pm
+# Bookings
+Sohum,mon,10:00,Sohum,mon,11:30,Sohum,mon,12:30,Sohum,tue,1:00,Wendy,fri,1:30,Wendy,fri,3:00
