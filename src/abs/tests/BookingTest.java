@@ -28,32 +28,6 @@ import abs.model.User;
  */
 public class BookingTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void viewAllBookings() {
-		// TODO
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void viewCustomerBookings() {
-		// TODO
-		fail("Not yet implemented");
-	}
-
 	@Test
 	public void makeBooking() {
 
@@ -74,7 +48,7 @@ public class BookingTest {
 		// checks if the booking is in customer array
 		assertTrue(((Customer) customer).getBookings().contains(booking));
 
-		// Checks if that booking is marked
+		// Checks if that booking is marked as taken
 		assertFalse(utils.getBusiness().get(0).getAvBookings().contains(booking));
 
 		// Checks if it stops you adding an existing or taken booking
