@@ -133,8 +133,7 @@ public class LoginTest {
 		try {
 			result = auth.authUser(email, pass);
 		} catch (PasswordInvalidException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail("Credentials error");
 		}
 		assertTrue(result == true);
 	}
@@ -149,9 +148,10 @@ public class LoginTest {
 		boolean result = false;
 		try {
 			result = auth.registerUser(name, email, address, phone, pass);
-		} catch (RegistrationNonUniqueException | RegistrationValidationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (RegistrationNonUniqueException e) {
+			fail("Existing Error");
+		} catch (RegistrationValidationException e) {
+			fail("Format Error");
 		}
 		assertTrue(result == true);
 	}
