@@ -186,7 +186,7 @@ public class Utilities {
 					businesses.add(business);
 
 				} else {
-					reader.close(); // Close fileF
+					reader.close(); // Close file
 					bufferedReader.close(); // Close file
 					return -2; // File exists but is empty or not formatted
 								// correctly
