@@ -22,10 +22,10 @@
 		<delete dir="${build.dir}" />
 	</target>
 	
-	<target name="build-jar" >
+	<target name="build-jar" depends="build" >
 		<jar destfile="${build.dir}/ABS.jar" basedir="${build.dir}" >
 			<manifest>
-				<attribute name="Main-Class" value="view.Main" />		
+				<attribute name="Main-Class" value="abs.view.Main" />		
 			</manifest>
 		</jar>
 	</target>
