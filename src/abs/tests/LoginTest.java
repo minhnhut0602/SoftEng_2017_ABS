@@ -1,25 +1,20 @@
+/**
+ * 
+ */
 package abs.tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import abs.controller.UserAuth;
-import abs.exceptions.PasswordInvalidException;
-import abs.exceptions.RegistrationNonUniqueException;
-import abs.exceptions.RegistrationValidationException;
 
 /**
- * This tests the UserAuth class.
  * 
- * <p>
- * Tests: login a user, register a user with valid and invalid data.
- * </p>
+ * This tests the UserAuth class. Checks login a user Checks register a user
  *
- * @see abs.controller.UserAuth UserAuth
  */
 public class LoginTest {
 
@@ -34,6 +29,43 @@ public class LoginTest {
 	protected String pass;
 	protected String phone;
 
+	@Test
+	public void alreadyRegisteredUser() {
+		// try registering a use who is already registered
+
+		auth.registerUser(name, email, address, phone, pass);
+		assertFalse(auth.registerUser(name, email, address, phone, pass));
+	}
+
+	@Test
+	public void loginWithoutRegistering() {
+		// use an invalid username and password
+		assertFalse(auth.authUser("unregistered@email.com", "unregisteredPassword12!"));
+	}
+
+	@Test
+	public void loginWithRegisteredUser() {
+		// use a valid username and password
+
+		// not sure if the testRegister is persistent so i registered the user
+		// again. but that might fail this one
+		auth.registerUser(name, email, address, phone, pass);
+		assertTrue(auth.authUser(email, pass));
+	}
+
+	@Test
+	public void noPasswordRegister() {
+		// try to register without a password
+		assertFalse(auth.registerUser(name, email, address, phone, ""));
+	}
+
+	@Test
+	public void noUsernameRegister() {
+		// try registering without username
+
+		assertFalse(auth.registerUser("", email, address, phone, pass));
+	}
+
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -47,94 +79,12 @@ public class LoginTest {
 		phone = "0396657777";
 	}
 
-	@Test
-	public void alreadyRegisteredUser() {
-		// try registering a use who is already registered
-
-		try {
-			auth.registerUser(name, email, address, phone, pass);
-		} catch (RegistrationNonUniqueException e) {
-			fail("Existing Error");
-		} catch (RegistrationValidationException e) {
-			fail("Format error");
-		}
-
-		try {
-			auth.registerUser(name, email, address, phone, pass);
-		} catch (RegistrationNonUniqueException e) {
-			assertTrue(true);
-		} catch (RegistrationValidationException e) {
-			fail("Format error");
-		}
-	}
-
-	@Test
-	public void loginWithoutRegistering() {
-		// use an invalid username and password
-		try {
-			auth.authUser("unregistered@email.com", "unregisteredPassword12!");
-		} catch (PasswordInvalidException e) {
-			assertTrue(true);
-		}
-	}
-
-	@Test
-	public void loginWithRegisteredUser() {
-		// use a valid username and password
-
-		// not sure if the testRegister is persistent so i registered the user
-		// again. but that might fail this one
-		try {
-			auth.registerUser(name, email, address, phone, pass);
-		} catch (RegistrationNonUniqueException e) {
-			fail("Existing Error");
-		} catch (RegistrationValidationException e) {
-			fail("Format error");
-		}
-
-		try {
-			assertTrue(auth.authUser(email, pass));
-		} catch (PasswordInvalidException e) {
-			fail("Credentials error");
-		}
-	}
-
-	@Test
-	public void noPasswordRegister() {
-		// try to register without a password
-		try {
-			auth.registerUser(name, email, address, phone, "");
-		} catch (RegistrationNonUniqueException e) {
-			fail("Existing Error");
-		} catch (RegistrationValidationException e) {
-			assertTrue(true);
-		}
-	}
-
-	@Test
-	public void noUsernameRegister() {
-		// try registering without username
-
-		try {
-			assertFalse(auth.registerUser("", email, address, phone, pass));
-		} catch (RegistrationNonUniqueException e) {
-			fail("Existing Error");
-		} catch (RegistrationValidationException e) {
-			assertTrue(true);
-		}
-	}
-
 	/**
 	 * Test Login, authUser method
 	 */
 	@Test
 	public void testLogin() {
-		boolean result = false;
-		try {
-			result = auth.authUser(email, pass);
-		} catch (PasswordInvalidException e) {
-			fail("Credentials error");
-		}
+		boolean result = auth.authUser(email, pass);
 		assertTrue(result == true);
 	}
 
@@ -145,14 +95,7 @@ public class LoginTest {
 	@Test
 	public void testRegister() {
 
-		boolean result = false;
-		try {
-			result = auth.registerUser(name, email, address, phone, pass);
-		} catch (RegistrationNonUniqueException e) {
-			fail("Existing Error");
-		} catch (RegistrationValidationException e) {
-			fail("Format Error");
-		}
+		boolean result = auth.registerUser(name, email, address, phone, pass);
 		assertTrue(result == true);
 	}
 
