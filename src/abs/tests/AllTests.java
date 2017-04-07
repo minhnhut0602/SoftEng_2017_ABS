@@ -7,11 +7,11 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * This is a test suite to run all the test cases.
  * 
- * <p><i>Note please add here any additional tests created.<i></p>
+ * Note please add here any additional tests created.
  *
  */
 @RunWith(Suite.class)
-@SuiteClasses({ FileTest.class, LoginTest.class, MenuTest.class, BookingTest.class })
+@SuiteClasses({ FileTest.class, LoginTest.class, MenuTest.class })
 public class AllTests {
 
 }

@@ -169,7 +169,7 @@ public class Utilities {
 																			// bookings
 									i++;
 									avBookings.add(new Booking((new Availability(bookings[i], bookings[i + 1])),
-											bookings[i - 1], "Available"));
+											bookings[i - 1]));
 									i++;
 									// TODO match employeeID to employee object.
 								} // close for
@@ -238,7 +238,7 @@ public class Utilities {
 								i++;
 								i++;
 								Booking booking = new Booking((new Availability(bookingIn[i], bookingIn[i + 1])),
-										bookingIn[i - 1], "Booked");
+										bookingIn[i - 1]);
 								customer.addBooking(booking);
 
 								for (Business business : businesses) {
@@ -429,9 +429,9 @@ public class Utilities {
 				bufferedWriter.newLine();
 
 				// loop through users booked, bookings
-				if (!((Customer) customeres.get(i)).getBookings().isEmpty()) {
+				if (!((AbstractUser) customeres.get(i)).getBookings().isEmpty()) {
 					bufferedWriter.write("# Bookings\n");
-					List<Booking> bookings = ((Customer) customeres.get(i)).getBookings();
+					List<Booking> bookings = ((AbstractUser) customeres.get(i)).getBookings();
 					for (int j = 0; j < bookings.size(); j++) {
 						if (j == 0) {
 							bufferedWriter.write(bookings.get(j).getBusiness().getName());
