@@ -100,6 +100,7 @@ public class UserAuth {
 		StringTokenizer addressTokeniser = new StringTokenizer(address);
 		int index = 0;
 		
+		/* tokenises adress */
 		while (addressTokeniser.hasMoreTokens())
 		{
 		    addressToks.add(index, addressTokeniser.nextToken());
@@ -107,12 +108,13 @@ public class UserAuth {
 		}
 		
 		
-		
+		/* checks the first entry for a number */
 		int currentFocus = 0;
 		if(addressToks.get(currentFocus).contains("[0-9]+")){
 			currentFocus++;
 		}
 		
+		/* loops through all tokens checking for illegal characters, stops on last two */
 		while(currentFocus < addressToks.size()-3){
 			if(addressToks.get(currentFocus).contains("[a-zA-Z,]+")){
 				currentFocus++;
@@ -122,6 +124,8 @@ public class UserAuth {
 			}
 
 		}
+		
+		/* checks last two tokens for postcode and state */
 		while(currentFocus < addressToks.size()-1){
 			
 		
@@ -148,102 +152,27 @@ public class UserAuth {
 		
 		
 		/* VALIDATE PHONE */
-		if(phone.replaceAll("\\s+","").matches("[0-9]+") && (phone.length() = 10 || phone.length() = 8)){
+		if(phone.replaceAll("\\s+","").matches("[0-9]+")){
+			if(phone.length() == 10 || phone.length() == 8)){
 			/* Do nothing */
+			}else{
+				return false;
+				/* ERROR: phone number incorrect length */
+			}
 
 		}else{
 			return false;
-			/* ERROR: invalid state provided */
+			/* ERROR: phone number has illegal characters*/
 
 		}
 		
-		
-		
-		
+		/* REGISTER NEW USER */
+		customers customer = new customers(name, email, password, address, phone);
 		
 		
 	return false;	
 	}
 		
-		/*
-		int apartmentNumber, streetNumber, postcode;
-		String streetName, suburbName, state, tempString;
-		
-		if(authUser(email, password) == false){
-			return false;
-		}
-		
-		if(name == null){
-			return false;
-		}
-		
-		if(address != null){
-			
-			String delim1 = "/";
-			String delim2 = " ";
-			
-			if(address.contains("/") && isDigit(address.charAt(0));){
-				StringTokenizer st1  = new StringTokenizer(address, delim1);
-				
-				apartmentNumber = address.nextToken();
-				streetNumber = address.nextToken();
-
-			}else{
-				return false;
-			}
-			*/
-		
-			/* Redo this rubbish */
-		
-		/*
-			StringTokenizer st2  = new StringTokenizer(address, delim2);
-			
-			address.nextToken();
-			streetName = address.nextToken();
-			suburbName = address.nextToken();
-			
-			if(address.hasMoreTokens()){
-			tempString = address.nextToken();
-			if(tempString.matches(".*[0-9].*")){
-				postcode = tempString;
-			}else{
-				suburbName = tempString;
-			}
-			}else{
-				return false;
-			}
-			
-			if(address.hasMoreTokens()){
-			tempString = address.nextToken();
-			if(tempString.matches(".*[0-9].*")){
-				postcode = tempString;
-			}else{
-				state = tempString;
-			}
-			}else{
-				return false;
-			}
-				
-			if(address.hasMoreTokens()){
-			tempString = address.nextToken();
-			if(tempString.matches(".*[0-9].*")){
-				postcode = tempString;
-			}else{
-				return false;
-			}
-			}else{
-				return false;
-			}
-		}
-		
-		if(phone.matches(".*[a-z].*")){
-			return false;
-		}
-		
-		return false;
-
-	
-	*/
 	
 
 }
