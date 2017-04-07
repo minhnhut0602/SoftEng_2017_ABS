@@ -1,6 +1,7 @@
 package abs.model;
 // Owner Class (implements User)
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Owner extends AbstractUser {
@@ -37,6 +38,17 @@ public class Owner extends AbstractUser {
 	//set the Business
 	public void setBusiness(Business business) {
 		this.business = business;
+	}
+	
+	//shows all the times a business is booked
+	public void viewBookings(){
+		//save the booking temporarily
+		List<Booking> bookings = business.getAvBookings();
+		
+		for(int i = 0; i < bookings.size(); i++){
+			System.out.println(bookings.get(i).getSlot().getTime() + " " + bookings.get(i).getSlot().getDate() + " " + bookings.get(i).getStatus());
+			
+		}
 	}
 
 }
