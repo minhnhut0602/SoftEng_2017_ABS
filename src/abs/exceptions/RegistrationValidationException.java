@@ -24,7 +24,6 @@ public class RegistrationValidationException extends Exception {
 		super("The input of: " + value + " for: " + field + " is invalid.");
 		this.field = field;
 		this.value = value;
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
