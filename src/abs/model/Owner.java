@@ -1,6 +1,8 @@
 package abs.model;
 // Owner Class (implements User)
 
+import java.util.List;
+
 public class Owner extends AbstractUser {
 
 	/** The owners business. */
@@ -11,8 +13,10 @@ public class Owner extends AbstractUser {
 	 * @param email
 	 * @param password
 	 */
-	public Owner(String name, String email, String password) {
-		super(name, email, password);
+	
+	//construct an owner type object
+	public Owner(String name, String email, String password, List<Booking> bookings) {
+		super(name, email, password, bookings);
 	}
 
 	@Override
@@ -20,11 +24,13 @@ public class Owner extends AbstractUser {
 		return "Owner [name=" + this.getName() + ", email=" + this.getEmail() + ", password=" + this.getPassword()
 				+ "]";
 	}
-
+	
+	//returns Business
 	public Business getBusiness() {
 		return business;
 	}
-
+	
+	//set the Business
 	public void setBusiness(Business business) {
 		this.business = business;
 	}

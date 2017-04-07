@@ -21,8 +21,8 @@ public class Customer extends AbstractUser {
 	 * @param phone
 	 * @param password
 	 */
-	public Customer(String name, String email, String address, String phone, String password) {
-		super(name, email, password);
+	public Customer(String name, String email, String address, String phone, String password, List<Booking> bookings) {
+		super(name, email, password, bookings);
 		this.address = address;
 		this.phone = phone;
 	}
