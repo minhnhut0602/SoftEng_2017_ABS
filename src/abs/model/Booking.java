@@ -14,9 +14,11 @@ public class Booking {
 	 * Instantiates a new booking.
 	 *
 	 * @param slot
-	 *            the slot
+	 *            the slot an availability
 	 * @param staff
-	 *            the staff
+	 *            the staff a string
+	 * @param status
+	 *            the status of the booking a string (booked or available)
 	 */
 	public Booking(Availability slot, String staff, String status) {
 		this.slot = slot;

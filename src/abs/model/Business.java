@@ -1,5 +1,4 @@
 package abs.model;
-//Business Class
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +78,7 @@ public class Business {
 	public List<Employee> getStaff() {
 		return staff;
 	}
-	
+
 	public Owner getOwner() {
 		return owner;
 	}

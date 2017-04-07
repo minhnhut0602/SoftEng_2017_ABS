@@ -8,7 +8,7 @@ import abs.model.User;
 public class UserAuth {
 	private User activeUser;
 
-	public void UserAuth() {
+	public UserAuth() {
 		this.activeUser = null;
 	}
 

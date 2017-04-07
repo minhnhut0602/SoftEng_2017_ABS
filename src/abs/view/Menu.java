@@ -24,6 +24,17 @@ public class Menu {
 	private Business activeBusiness;
 	private UserAuth userAuth;
 
+	/**
+	 * This constructor used the default scanner.
+	 * 
+	 * @param utils
+	 *            A utilities object that loads/stores the data
+	 * @param userAuth
+	 *            a UserAuth object that verifies and stores active user info.
+	 * 
+	 * 
+	 * @see #Menu(Scanner, Utilities, UserAuth)
+	 */
 	public Menu(Utilities utils, UserAuth userAuth) {
 		super();
 		this.sc = new Scanner(System.in);
@@ -31,6 +42,18 @@ public class Menu {
 		this.userAuth = userAuth;
 	}
 
+	/**
+	 * For default scanner see other constructor.
+	 * 
+	 * @param sc
+	 *            a specified scanner, used for testing
+	 * @param utils
+	 *            A utilities object that loads/stores the data
+	 * @param userAuth
+	 *            a UserAuth object that verifies and stores active user info.
+	 * 
+	 * @see #Menu(Utilities, UserAuth)
+	 */
 	public Menu(Scanner sc, Utilities utils, UserAuth userAuth) {
 		super();
 		this.sc = sc;
@@ -38,23 +61,29 @@ public class Menu {
 		this.userAuth = userAuth;
 	}
 
+	/**
+	 * @return the business selected by the user
+	 */
 	public Business getActiveBusiness() {
 		return activeBusiness;
 	}
 
 	/**
+	 * Prints the main menu prompting for login or register.
+	 * 
+	 * 
 	 * @return the int value of the users selection.
 	 */
 	public int mainMenu() {
-		String selection;
 
+		String selection;
 		boolean valid = false;
 
 		System.out.printf("Welcome to the Appointment Booking System\n" + "Please select an option:\n" + "1. Login\n"
 				+ "2. Register\n");
 		selection = sc.next();
 
-		while (valid != true) {
+		while (valid != true) {// isnt a valid selection
 			try {
 				if (Integer.parseInt(selection) != 1 && Integer.parseInt(selection) != 2) {
 					throw new MenuInputException(selection);
@@ -74,6 +103,9 @@ public class Menu {
 	}
 
 	/**
+	 * Prints the login screen. Accepts credentials and attempts to log the user
+	 * in.
+	 * 
 	 * @return the logged in user, else null
 	 */
 	public User loginMenu() {
@@ -127,6 +159,10 @@ public class Menu {
 	}
 
 	/**
+	 * Prints the registration screen. Accepts user registration info and
+	 * attempts to register an log that user in.
+	 * 
+	 * 
 	 * @return the newly registered and logged in user, else null
 	 */
 	public User registerMenu() {
@@ -189,7 +225,8 @@ public class Menu {
 	}
 
 	/**
-	 * Upon a valid selection the active business is set as the selection.
+	 * Prints the business selection screen. Upon a valid selection the active
+	 * business is set as the selection.
 	 * 
 	 * 
 	 * @return the int value of the users selection.
@@ -235,6 +272,10 @@ public class Menu {
 	}
 
 	/**
+	 * Prints the customer dashboard for the active user and the active
+	 * business.
+	 * 
+	 * 
 	 * @return the int value of the users selection.
 	 */
 	public int customerDashboard() {
@@ -273,7 +314,7 @@ public class Menu {
 	}
 
 	/**
-	 * Prints the Business info.
+	 * Prints the Business info for the active business.
 	 *
 	 * @return the int value of the selection, 1 - back, 2 exit
 	 */
