@@ -2,6 +2,7 @@ package abs.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * 
@@ -21,6 +22,13 @@ public class Customer extends AbstractUser {
 	 * @param phone
 	 * @param password
 	 */
+	
+	public Customer(String name, String email, String address, String phone, String password) {
+		super(name, email, password);
+		this.address = address;
+		this.phone = phone;
+	}
+	
 	public Customer(String name, String email, String address, String phone, String password, List<Booking> bookings) {
 		super(name, email, password, bookings);
 		this.address = address;
@@ -85,8 +93,26 @@ public class Customer extends AbstractUser {
 	 * @return
 	 */
 	public boolean cancelBooking(Booking booking) {
+		
+		for(int i = 0; i < this.bookings.size(); i++){
+			if(booking.getSlot().getDate().compareTo(this.bookings.get(i).getSlot().getDate()) == 0 ){
+				//compare the time
+				if(booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) == 0){
+					//remove the booking
+					this.bookings.remove(i);
+				}
+			}
+		}
+		return false;
+	}
 
-		return this.bookings.remove(booking);
+	public void viewBookings() {
+		//loop over the list of bookings stored for this user
+		for(int i = 0; i < this.bookings.size(); i++){
+			System.out.println(this.bookings.get(i).getSlot().getTime() + " " + this.bookings.get(i).getSlot().getDate());
+		}
+		//print them out nicely
+		
 	}
 
 }

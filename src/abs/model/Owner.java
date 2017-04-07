@@ -14,6 +14,10 @@ public class Owner extends AbstractUser {
 	 * @param password
 	 */
 	
+	public Owner(String name, String email, String password) {
+		super(name, email, password);
+	}
+	
 	//construct an owner type object
 	public Owner(String name, String email, String password, List<Booking> bookings) {
 		super(name, email, password, bookings);
