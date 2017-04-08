@@ -24,6 +24,17 @@ public class Menu {
 	private Business activeBusiness;
 	private UserAuth userAuth;
 
+	/**
+	 * This constructor used the default scanner.
+	 * 
+	 * @param utils
+	 *            A utilities object that loads/stores the data
+	 * @param userAuth
+	 *            a UserAuth object that verifies and stores active user info.
+	 * 
+	 * 
+	 * @see #Menu(Scanner, Utilities, UserAuth)
+	 */
 	public Menu(Utilities utils, UserAuth userAuth) {
 		super();
 		this.sc = new Scanner(System.in);
@@ -31,6 +42,18 @@ public class Menu {
 		this.userAuth = userAuth;
 	}
 
+	/**
+	 * For default scanner see other constructor.
+	 * 
+	 * @param sc
+	 *            a specified scanner, used for testing
+	 * @param utils
+	 *            A utilities object that loads/stores the data
+	 * @param userAuth
+	 *            a UserAuth object that verifies and stores active user info.
+	 * 
+	 * @see #Menu(Utilities, UserAuth)
+	 */
 	public Menu(Scanner sc, Utilities utils, UserAuth userAuth) {
 		super();
 		this.sc = sc;
@@ -38,23 +61,29 @@ public class Menu {
 		this.userAuth = userAuth;
 	}
 
+	/**
+	 * @return the business selected by the user
+	 */
 	public Business getActiveBusiness() {
 		return activeBusiness;
 	}
 
 	/**
+	 * Prints the main menu prompting for login or register.
+	 * 
+	 * 
 	 * @return the int value of the users selection.
 	 */
 	public int mainMenu() {
-		String selection;
 
+		String selection;
 		boolean valid = false;
 
 		System.out.printf("Welcome to the Appointment Booking System\n" + "Please select an option:\n" + "1. Login\n"
 				+ "2. Register\n");
 		selection = sc.next();
 
-		while (valid != true) {
+		while (valid != true) {// isnt a valid selection
 			try {
 				if (Integer.parseInt(selection) != 1 && Integer.parseInt(selection) != 2) {
 					throw new MenuInputException(selection);
@@ -74,6 +103,9 @@ public class Menu {
 	}
 
 	/**
+	 * Prints the login screen. Accepts credentials and attempts to log the user
+	 * in.
+	 * 
 	 * @return the logged in user, else null
 	 */
 	public User loginMenu() {
@@ -85,11 +117,6 @@ public class Menu {
 				+ "Please enter your email and password seperated by a comma\n" + "e.g. email,password\n");
 		System.out.printf("To return to the main menu enter exit\n");
 		selection = sc.next();
-
-		// if the user wants to return, exit loop without login
-		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
-			valid = true;
-		}
 
 		while (valid != true) {
 
@@ -111,9 +138,7 @@ public class Menu {
 																					// login
 							valid = true; // if login true then return
 						}
-					} else if (!(selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT"))) { // any
-						// invalid
-						// entry
+					} else { // any invalid entry
 						throw new MenuInputException(selection);
 					}
 				}
@@ -134,6 +159,10 @@ public class Menu {
 	}
 
 	/**
+	 * Prints the registration screen. Accepts user registration info and
+	 * attempts to register an log that user in.
+	 * 
+	 * 
 	 * @return the newly registered and logged in user, else null
 	 */
 	public User registerMenu() {
@@ -145,12 +174,7 @@ public class Menu {
 				+ "To Register Please enter your details seperated by a comma\n"
 				+ "e.g. name,email,address,phone,password\n");
 		System.out.printf("To return to the main menu enter exit\n");
-		selection = sc.next();
-
-		// if the user wants to return, exit loop without login
-		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
-			valid = true;
-		}
+		selection = sc.nextLine();
 
 		while (valid != true) {
 
@@ -174,22 +198,20 @@ public class Menu {
 
 							valid = true; // if register true then return
 						}
-					} else if (!(selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT"))) { // any
-																														// invalid
-																														// entry
+					} else { // any invalid entry
 						throw new MenuInputException(selection);
 					}
 				}
 			} catch (MenuInputException e) { // invalid entry
 				System.out.printf("Sorry " + e.getInputS() + " is an invalid selection, please try again\n");
 				System.out.printf("To return to the main menu enter exit\n");
-				selection = sc.next();
+				selection = sc.nextLine();
 
 				// If the registered info is already registered
 			} catch (RegistrationNonUniqueException e) {
 				System.out.printf(e.getMessage());
 				System.out.printf("\nTo return to the main menu enter exit\n");
-				selection = sc.next();
+				selection = sc.nextLine();
 
 				// if there are 5 fields but one or more is invalid
 			} catch (RegistrationValidationException e) {
@@ -203,12 +225,13 @@ public class Menu {
 	}
 
 	/**
-	 * Upon a valid selection the active business is set as the selection.
+	 * Prints the business selection screen. Upon a valid selection the active
+	 * business is set as the selection.
 	 * 
 	 * 
 	 * @return the int value of the users selection.
 	 */
-	public void businessSelect() {
+	public int businessSelect() {
 		String selection;
 
 		boolean valid = false;
@@ -245,10 +268,14 @@ public class Menu {
 
 			}
 		}
-
+		return Integer.parseInt(selection);
 	}
 
 	/**
+	 * Prints the customer dashboard for the active user and the active
+	 * business.
+	 * 
+	 * 
 	 * @return the int value of the users selection.
 	 */
 	public int customerDashboard() {
@@ -287,7 +314,7 @@ public class Menu {
 	}
 
 	/**
-	 * Prints the Business info.
+	 * Prints the Business info for the active business.
 	 *
 	 * @return the int value of the selection, 1 - back, 2 exit
 	 */
