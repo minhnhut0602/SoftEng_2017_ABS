@@ -1,4 +1,7 @@
 # Customer Info
 # name,email,address,phone,password
-Stacy,stacy.d@gmail.com,123 M Street bendigo vic 3550,0355555555,stacypassword
-Jerry,bigj@live.com.au,45 Vic rd Melbourne Vic 3000,0414141414,bigjpass
+Stacy Drum,stacy.d@gmail.com,123 Mobe Street Bendigo VIC 3550,0355555555,stacypassword
+# Bookings
+Daniel's Dentists,Daniel,mon,10:00
+Jerry Lucio,bigj@live.com.au,45 Victoria Pde Melbourne Vic 3000,0414141414,bigjpass
+#

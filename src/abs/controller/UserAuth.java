@@ -1,5 +1,6 @@
 package abs.controller;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -8,10 +9,18 @@ import abs.exceptions.PasswordInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Customer;
+
+import abs.exceptions.PasswordInvalidException;
+import abs.exceptions.RegistrationNonUniqueException;
+import abs.exceptions.RegistrationValidationException;
+
 import abs.model.User;
 
 public class UserAuth {
+	
 
+	
+	
 	/* Utilities object */
 	private Utilities util;
 
@@ -36,7 +45,17 @@ public class UserAuth {
 			customers = new ArrayList<User>();
 		}
 	}
-
+  
+  /**
+	 * Auth user.
+	 *
+	 * @param email
+	 *            the email
+	 * @param Password
+	 *            the password
+	 * @return true, if successful
+	 * @throws PasswordInvalidException
+	 */
 	public boolean authUser(String email, String password) throws PasswordInvalidException {
 
 		/* check if the list is empty */
@@ -67,7 +86,26 @@ public class UserAuth {
 		throw new PasswordInvalidException();
 
 	}
-
+  
+/**
+	 * Register user.
+	 *
+	 * @param name
+	 *            the name
+	 * @param email
+	 *            the email
+	 * @param password
+	 *            the password
+	 * @param address
+	 *            the address
+	 * @param phone
+	 *            the phone
+	 * @return true, if successful
+	 * @throws RegistrationNonUniqueException
+	 *             the registration non unique exception
+	 * @throws RegistrationValidationException
+	 *             the registration validation exception
+	 */
 	public boolean registerUser(String name, String email, String password, String address, String phone)
 			throws RegistrationValidationException, RegistrationNonUniqueException {
 
@@ -253,8 +291,13 @@ public class UserAuth {
 		return activeUser;
 	}
 
+	public User getActiveUser() {
+
+		return this.activeUser;
+	}
+
 	public void setActiveUser(User activeUser) {
 		this.activeUser = activeUser;
-	}
+
 
 }
