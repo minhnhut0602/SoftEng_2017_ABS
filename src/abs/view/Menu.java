@@ -143,7 +143,7 @@ public class Menu {
 
 		System.out.printf("Welcome to the Appointment Booking System\n"
 				+ "To Register Please enter your details seperated by a comma\n"
-				+ "e.g. name,email,address,phone,password\n");
+				+ "e.g. name,email,password,address,phone\n");
 		System.out.printf("To return to the main menu enter exit\n");
 		selection = sc.nextLine();
 

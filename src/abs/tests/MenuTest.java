@@ -122,7 +122,7 @@ public class MenuTest {
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
 				+ "To Register Please enter your details seperated by a comma\n"
-				+ "e.g. name,email,address,phone,password\n" + "To return to the main menu enter exit\n";
+				+ "e.g. name,email,password,address,phone\n" + "To return to the main menu enter exit\n";
 		assertEquals(expectedOutputa, outContent.toString());
 
 	}
