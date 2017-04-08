@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import abs.model.AbstractUser;
 import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;

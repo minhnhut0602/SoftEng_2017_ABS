@@ -1,13 +1,8 @@
 package abs.model;
+//Availability Class
 
-/**
- * The Class Availability.
- * <p>
- * Essentially creating our own Date Time pair class. plus things that interact
- * with it.
- * </p>
- *
- */
+//Essentially creating our own Date Time Data Type plus things that interact with it
+
 public class Availability {
 	private String date;
 	private String time;
@@ -16,9 +11,9 @@ public class Availability {
 	 * Instantiates a new availability.
 	 *
 	 * @param date
-	 *            the date as a string
+	 *            the date
 	 * @param time
-	 *            the time as a string
+	 *            the time
 	 */
 	public Availability(String date, String time) {
 		this.date = date;
