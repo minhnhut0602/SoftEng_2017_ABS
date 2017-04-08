@@ -38,8 +38,8 @@ public class MenuTest {
 	private int dataRead;
 	private Menu menu;
 	private List<Business> dataBus;
-	// private Owner ownerData;
-	// private List<User> customerData;
+	private Owner ownerData;
+	private List<User> customerData;
 	private String dummyIn;
 	private PrintStream stdout = System.out;
 	private InputStream stdin = System.in;
@@ -63,10 +63,10 @@ public class MenuTest {
 		dataBus = utils.getBusiness();
 
 		// Owner data for login tests
-		// ownerData = dataBus.get(0).getOwner();
+		ownerData = dataBus.get(0).getOwner();
 
 		// Customer data for login test
-		// customerData = utils.getCustomers();
+		customerData = utils.getCustomers();
 
 		// New menu object should set up the menu object
 
@@ -131,8 +131,8 @@ public class MenuTest {
 		dummyIn = "1"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
-		int mainMenu = menu.businessSelect(); // Prints main menu, prompts for
-												// login
+		menu.businessSelect(); // Prints main menu, prompts for
+								// login
 		// or register.
 
 		// TEST what method prints

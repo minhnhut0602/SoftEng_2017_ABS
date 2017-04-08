@@ -3,21 +3,11 @@ package abs.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 
- * The employee class.
- * 
- * Has Availability
- *
- */
+//Employee Class 
 public class Employee {
 	private String name;
 	private List<Availability> availabilities = new ArrayList<Availability>();
 
-	/**
-	 * @param name
-	 * @param availabilities
-	 */
 	public Employee(String name, List<Availability> availabilities) {
 		this.name = name;
 		this.availabilities = availabilities;
@@ -34,7 +24,7 @@ public class Employee {
 		return name;
 	}
 
-	public void setAvailafbilities(List<Availability> availabilities) {
+	public void setAvailabilities(List<Availability> availabilities) {
 		this.availabilities = availabilities;
 	}
 

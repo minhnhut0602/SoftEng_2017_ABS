@@ -1,15 +1,11 @@
 package abs.model;
 
-//import java.util.ArrayList;
-//import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * The abstract user class implements the user interface. and is extended by
- * customer and owner.
+ * 
  *
- * @see User User Interface
- * @see Owner
- * @see Customer
  */
 public abstract class AbstractUser implements User {
 
@@ -17,15 +13,15 @@ public abstract class AbstractUser implements User {
 	private String email;
 
 	private String password; // Hashed??
-
-//	private List<Booking> bookings = new ArrayList<Booking>();
+	
+	private List<Booking> bookings = new ArrayList<Booking>();
 
 	/**
 	 * @param name
 	 * @param email
 	 * @param password
 	 */
-
+	
 	public AbstractUser(String name, String email, String password) {
 		super();
 		this.name = name;
@@ -33,13 +29,14 @@ public abstract class AbstractUser implements User {
 		this.password = password;
 	}
 
-//	public AbstractUser(String name, String email, String password, List<Booking> bookings) {
-//		super();
-//		this.name = name;
-//		this.email = email;
-//		this.password = password;
-//		this.setBookings(bookings);
-//	}
+	
+	public AbstractUser(String name, String email, String password, List<Booking> bookings) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.setBookings(bookings);
+	}
 
 	@Override
 	public String getEmail() {
@@ -61,12 +58,12 @@ public abstract class AbstractUser implements User {
 		return "AbstractUser [name=" + name + ", email=" + email + ", password=" + password + "]";
 	}
 
-//	public List<Booking> getBookings() {
-//		return bookings;
-//	}
-//
-//	public void setBookings(List<Booking> bookings) {
-//		this.bookings = bookings;
-//	}
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
+	}
 
 }
