@@ -4,23 +4,115 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import abs.model.Customer;
 import abs.model.User;
 
 public class UserAuth {
 	
-	Utilities util = new Utilities();
+	/* Utilities object */
+	private Utilities util;
 	
-	List<User> customers = util.getCustomers();
+	/* list of registered customer */
+	private List<User> customers;
 	
-	/*  */
+	/* active user for the login session */
+	private User activeUser;
 	
-	public boolean authUser(String email, String Password) {
+	
+	/* Constructor that takes a utilities object */
+	public UserAuth(Utilities utility){
+		this.util = utility;
+		this.customers = util.getCustomers();
+	}
+	
+	/* constructor that creates it's own utilities object if needed*/
+	public UserAuth(){
+		util = new Utilities();
+		customers = new ArrayList<User>();
+	}
+	
+	public boolean authUser(String email, String password) {
 		
+		/* check if the list is empty */
 		
+		if(this.customers == null){
+			return false;
+		}
+		
+		/* step through the customer list */
+		for(int i = 0; i < customers.size(); i++){
+			
+			/* check the email is the same */
+			if(this.customers.get(i).getEmail().equals(email)){
+				
+				/* check the password is the same */
+				if(this.customers.get(i).getPassword().equals(password)){
+					
+					/* set this user as the active user */
+					this.activeUser = this.customers.get(i);
+					
+					/* end method */
+					return true;
+				}
+			}
+		}
+		
+		/* went through the whole list and didn't find the user */
+		return false;
+		
+	}
+
+	public boolean registerUser(String name, String email, String password, String address, String phone) {
+		
+		/* VALIDATE NAME */
+		if(name == null || name == ""){
+			return false;
+			/* ERROR: name is empty */
+
+		}
+		
+		/* VALIDATE EMAIL AND PASSWORD */
+		if(email == null || email == ""){
+			return false;
+		}
+		
+		if(password == null || password == ""){
+			return false;
+		}
+		
+		/* VALIDATE ADDRESS */
+		if(address == null || address == ""){
+			return false;
+		}
+		
+		/* VALIDATE PHONE */
+		if(phone == null || phone == ""){
+			return false;
+		}
+		
+		/* check to see if the email exists, meaning the customer must already be registered */
+		for(int i = 0; i < this.customers.size(); i++){
+			if(this.customers.get(i).getEmail().compareTo(email) == 0){
+				return false;
+			}
+		}
+		
+		/* REGISTER NEW USER */
+		Customer customer = new Customer(name, email, password, address, phone);
+		this.customers.add(customer);
+		
+		return true;
+	
+	}
+	
+	/* email validation */
+	public boolean validateEmail(String email){
+		
+
 		/* VALIDATE EMAIL */
 		int counter, emailLength;
 		
-		if (email.length() == 0 || Password.length() == 0 || email.matches(".*[ \\(),:;<>[]\"].*")){
+		if (email.length() == 0  /*|| email.matches(".*[ \\(),:;<>[]\"].*") */){
 			return false;
 			/* ERROR: password or email is empty */
 
@@ -58,44 +150,34 @@ public class UserAuth {
 
 					}
 				}
-				
-
-				
 			}
-			
-			
 		}
 		
-		/* no validation for passwords, anything at this point that is not an empty string is accepted */
-		
-		
-		/* ***NEEDS TO BE LOOKED AT*** this will check with current email accounts to ensure there are no already existing emails accounts by the same name */
-		if(email.equals(customers.get(0).getEmail())){
-			return false;
-			/* ERROR: email already exists */
-
-		}
-		
-
+		return false;
 	}
+	
+	/* validate the phone number */
+	public boolean validatePhone(String phone){
+		if(phone.replaceAll(" ","").matches("[0-9]+")){
+			if(phone.length() == 10 || phone.length() == 8){
+			/* Do nothing */
+			}else{
+				return false;
+				/* ERROR: phone number incorrect length */
+			}
 
-	public boolean registerUser(String name, String email, String password, String address, String phone) {
-		
-		/* VALIDATE NAME */
-		if(name == null){
+		}else{
 			return false;
-			/* ERROR: name is empty */
+			/* ERROR: phone number has illegal characters*/
 
 		}
 		
-		/* VVALIDATE EMAIL AND PASSWORD */
-		if(authUser(email, password) == false){
-			return false;
-			/* ERROR: email or password did not validate */
-
-		}
+		return true;
+	}
+	
+	/* validate address */
+	public boolean validateAddress(String address){
 		
-		/* VALIDATE ADDRESS */
 		ArrayList<String> addressToks = new ArrayList<String>();
 		StringTokenizer addressTokeniser = new StringTokenizer(address);
 		int index = 0;
@@ -127,50 +209,38 @@ public class UserAuth {
 		
 		/* checks last two tokens for postcode and state */
 		while(currentFocus < addressToks.size()-1){
-			
-		
-		if(addressToks.get(currentFocus).matches("[0-9]+")){
-			if(addressToks.get(currentFocus).length() == 4){
-				currentFocus++;
-			}else{
-				return false;
-				/* ERROR: Post code not 4 digits */
-
-			}
-		}
-		if(addressToks.get(currentFocus).matches("[a-zA-Z]+")){
-			if(addressToks.get(currentFocus).toUpperCase().matches("VIC|NSW|ACT|WA|SA|TAS")){
-				currentFocus++;
-			}else{
-				return false;
-				/* ERROR: invalid state provided */
 				
+			
+			if(addressToks.get(currentFocus).matches("[0-9]+")){
+				if(addressToks.get(currentFocus).length() == 4){
+					currentFocus++;
+				}else{
+					return false;
+					/* ERROR: Post code not 4 digits */
+	
+				}
 			}
-		}
-		
+			if(addressToks.get(currentFocus).matches("[a-zA-Z]+")){
+				if(addressToks.get(currentFocus).toUpperCase().matches("VIC|NSW|ACT|WA|SA|TAS")){
+					currentFocus++;
+				}else{
+					return false;
+					/* ERROR: invalid state provided */
+					
+				}
+			}
+			
 		}/* While loop end */
 		
-		
-		/* VALIDATE PHONE */
-		if(phone.replaceAll("\\s+","").matches("[0-9]+")){
-			if(phone.length() == 10 || phone.length() == 8)){
-			/* Do nothing */
-			}else{
-				return false;
-				/* ERROR: phone number incorrect length */
-			}
+		return true;
+	}
 
-		}else{
-			return false;
-			/* ERROR: phone number has illegal characters*/
+	public User getActiveUser() {
+		return activeUser;
+	}
 
-		}
-		
-		/* REGISTER NEW USER */
-		customers customer = new customers(name, email, password, address, phone);
-		
-		
-	return false;	
+	public void setActiveUser(User activeUser) {
+		this.activeUser = activeUser;
 	}
 		
 	

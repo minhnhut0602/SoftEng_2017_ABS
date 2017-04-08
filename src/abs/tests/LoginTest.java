@@ -78,16 +78,10 @@ public class LoginTest {
 		pass = "TestPass123";
 		address = "123 Fake St, Melbourne";
 		phone = "0396657777";
+		
+		
 	}
 
-	/**
-	 * Test Login, authUser method
-	 */
-	@Test
-	public void testLogin() {
-		boolean result = auth.authUser(email, pass);
-		assertTrue(result == true);
-	}
 
 	/**
 	 * Test user registration, registerUser method
@@ -96,7 +90,7 @@ public class LoginTest {
 	@Test
 	public void testRegister() {
 
-		boolean result = auth.registerUser(name, email, address, phone, pass);
+		boolean result = auth.registerUser(name, "email@email", "12345", address, phone);
 		assertTrue(result == true);
 	}
 
