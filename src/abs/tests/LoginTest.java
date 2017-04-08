@@ -52,7 +52,9 @@ public class LoginTest {
 		// try registering a use who is already registered
 
 		try {
-			auth.registerUser(name, email, address, phone, pass);
+
+			auth.registerUser(name, email, pass, address, phone);
+
 		} catch (RegistrationNonUniqueException e) {
 			fail("Existing Error");
 		} catch (RegistrationValidationException e) {
@@ -60,7 +62,9 @@ public class LoginTest {
 		}
 
 		try {
-			auth.registerUser(name, email, address, phone, pass);
+
+			auth.registerUser(name, email, pass, address, phone);
+
 		} catch (RegistrationNonUniqueException e) {
 			assertTrue(true);
 		} catch (RegistrationValidationException e) {
@@ -85,12 +89,15 @@ public class LoginTest {
 		// not sure if the testRegister is persistent so i registered the user
 		// again. but that might fail this one
 		try {
-			auth.registerUser(name, email, address, phone, pass);
+			auth.registerUser(name, email, pass, address, phone);
+
 		} catch (RegistrationNonUniqueException e) {
 			fail("Existing Error");
 		} catch (RegistrationValidationException e) {
 			fail("Format error");
 		}
+
+		auth.setActiveUser(null);
 
 		try {
 			assertTrue(auth.authUser(email, pass));
@@ -103,7 +110,9 @@ public class LoginTest {
 	public void noPasswordRegister() {
 		// try to register without a password
 		try {
-			auth.registerUser(name, email, address, phone, "");
+
+			auth.registerUser(name, email, "", address, phone);
+
 		} catch (RegistrationNonUniqueException e) {
 			fail("Existing Error");
 		} catch (RegistrationValidationException e) {
@@ -116,26 +125,15 @@ public class LoginTest {
 		// try registering without username
 
 		try {
-			assertFalse(auth.registerUser("", email, address, phone, pass));
+
+			assertFalse(auth.registerUser("", email, pass, address, phone));
+
 		} catch (RegistrationNonUniqueException e) {
 			fail("Existing Error");
 		} catch (RegistrationValidationException e) {
 			assertTrue(true);
 		}
-	}
 
-	/**
-	 * Test Login, authUser method
-	 */
-	@Test
-	public void testLogin() {
-		boolean result = false;
-		try {
-			result = auth.authUser(email, pass);
-		} catch (PasswordInvalidException e) {
-			fail("Credentials error");
-		}
-		assertTrue(result == true);
 	}
 
 	/**
@@ -147,7 +145,9 @@ public class LoginTest {
 
 		boolean result = false;
 		try {
-			result = auth.registerUser(name, email, address, phone, pass);
+
+			result = auth.registerUser(name, "email@email", "12345", address, phone);
+
 		} catch (RegistrationNonUniqueException e) {
 			fail("Existing Error");
 		} catch (RegistrationValidationException e) {
