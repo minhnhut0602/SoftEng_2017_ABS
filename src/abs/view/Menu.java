@@ -86,6 +86,11 @@ public class Menu {
 		System.out.printf("To return to the main menu enter exit\n");
 		selection = sc.next();
 
+		// if the user wants to return, exit loop without login
+		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
+			valid = true;
+		}
+
 		while (valid != true) {
 
 			// if the user wants to return, exit loop without login
@@ -106,7 +111,9 @@ public class Menu {
 																					// login
 							valid = true; // if login true then return
 						}
-					} else { // any invalid entry
+					} else if (!(selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT"))) { // any
+						// invalid
+						// entry
 						throw new MenuInputException(selection);
 					}
 				}
@@ -138,7 +145,12 @@ public class Menu {
 				+ "To Register Please enter your details seperated by a comma\n"
 				+ "e.g. name,email,address,phone,password\n");
 		System.out.printf("To return to the main menu enter exit\n");
-		selection = sc.nextLine();
+		selection = sc.next();
+
+		// if the user wants to return, exit loop without login
+		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
+			valid = true;
+		}
 
 		while (valid != true) {
 
@@ -162,20 +174,22 @@ public class Menu {
 
 							valid = true; // if register true then return
 						}
-					} else { // any invalid entry
+					} else if (!(selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT"))) { // any
+																														// invalid
+																														// entry
 						throw new MenuInputException(selection);
 					}
 				}
 			} catch (MenuInputException e) { // invalid entry
 				System.out.printf("Sorry " + e.getInputS() + " is an invalid selection, please try again\n");
 				System.out.printf("To return to the main menu enter exit\n");
-				selection = sc.nextLine();
+				selection = sc.next();
 
 				// If the registered info is already registered
 			} catch (RegistrationNonUniqueException e) {
 				System.out.printf(e.getMessage());
 				System.out.printf("\nTo return to the main menu enter exit\n");
-				selection = sc.nextLine();
+				selection = sc.next();
 
 				// if there are 5 fields but one or more is invalid
 			} catch (RegistrationValidationException e) {
@@ -194,7 +208,7 @@ public class Menu {
 	 * 
 	 * @return the int value of the users selection.
 	 */
-	public int businessSelect() {
+	public void businessSelect() {
 		String selection;
 
 		boolean valid = false;
@@ -231,7 +245,7 @@ public class Menu {
 
 			}
 		}
-		return Integer.parseInt(selection);
+
 	}
 
 	/**
