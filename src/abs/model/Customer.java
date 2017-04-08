@@ -68,6 +68,11 @@ public class Customer extends AbstractUser {
 	 */
 	public boolean addBooking(Booking booking) {
 
+		// check to see if the list is empty
+		if (this.bookings == null) {
+			this.bookings.add(booking);
+		}
+
 		// loop over the list
 		for (int i = 0; i < this.bookings.size(); i++) {
 			// compare the booking with the already booked bookings
@@ -93,10 +98,6 @@ public class Customer extends AbstractUser {
 				// to the list since it got to the end
 				this.bookings.add(booking);
 			}
-		}
-
-		if (this.bookings == null) {
-			this.bookings.add(booking);
 		}
 
 		return true;
