@@ -7,7 +7,9 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * This is a test suite to run all the test cases.
  * 
- * <p><i>Note please add here any additional tests created.<i></p>
+ * <p>
+ * <i>Note please add here any additional tests created.<i>
+ * </p>
  *
  */
 @RunWith(Suite.class)

@@ -4,26 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The customer class extends abstractUser
- * 
- * 
+ * The customer class extends abstractUser.
+ *
  * @see AbstractUser
  * @see User
- *
  */
 public class Customer extends AbstractUser {
 
+	/** The customers address. */
 	private String address;
 
+	/** The customers contact number. */
 	private String phone;
+
+	/** The customers bookings. */
 	private List<Booking> bookings = new ArrayList<Booking>();
 
 	/**
+	 * Instantiates a new customer.
+	 *
 	 * @param name
+	 *            the name
 	 * @param email
+	 *            the email
 	 * @param address
+	 *            the address
 	 * @param phone
+	 *            the phone
 	 * @param password
+	 *            the password
 	 */
 
 	public Customer(String name, String email, String address, String phone, String password) {
@@ -39,32 +48,60 @@ public class Customer extends AbstractUser {
 	// this.phone = phone;
 	// }
 
+	/**
+	 * Gets the address.
+	 *
+	 * @return the address
+	 */
 	public String getAddress() {
 		return address;
 	}
 
+	/**
+	 * Gets the phone.
+	 *
+	 * @return the phone
+	 */
 	public String getPhone() {
 		return phone;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see abs.model.AbstractUser#toString()
+	 */
 	@Override
 	public String toString() {
 
 		return super.toString() + "Customer [address=" + address + ", phone=" + phone + "]";
 	}
 
+	/**
+	 * Gets the bookings.
+	 *
+	 * @return the bookings
+	 */
 	public List<Booking> getBookings() {
 		return bookings;
 	}
 
+	/**
+	 * Sets the bookings.
+	 *
+	 * @param bookings
+	 *            the new bookings
+	 */
 	public void setBookings(List<Booking> bookings) {
 		this.bookings = bookings;
 	}
 
-	/*
-	 * To add a booking the booking is added to the list in the user.
-	 * 
+	/**
+	 * Adds a new booking.
+	 *
 	 * @param booking
+	 *            the booking
+	 * @return true, if successful
 	 */
 	public boolean addBooking(Booking booking) {
 
@@ -104,8 +141,11 @@ public class Customer extends AbstractUser {
 	}
 
 	/**
+	 * Cancel booking.
+	 *
 	 * @param booking
-	 * @return
+	 *            the booking
+	 * @return true, if successful
 	 */
 	public boolean cancelBooking(Booking booking) {
 
@@ -122,6 +162,9 @@ public class Customer extends AbstractUser {
 		return false;
 	}
 
+	/**
+	 * View bookings prints the customers bookings.
+	 */
 	public void viewBookings() {
 		// loop over the list of bookings stored for this user
 		for (int i = 0; i < this.bookings.size(); i++) {

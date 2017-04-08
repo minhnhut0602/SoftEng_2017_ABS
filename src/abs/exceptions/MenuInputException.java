@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.exceptions;
 
 /**
@@ -11,16 +8,19 @@ package abs.exceptions;
  *
  */
 public class MenuInputException extends Exception {
-	/**
-	 * 
-	 */
+
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The int input from calling class. */
 	private int input;
 
+	/** The String input from calling class. */
 	private String inputS;
 
 	/**
+	 * f Instantiates a new menu input exception.
+	 *
 	 * @param input
 	 *            The users input on the menu. An int.
 	 */
@@ -30,8 +30,10 @@ public class MenuInputException extends Exception {
 	}
 
 	/**
-	 * @param inputs
-	 *            The users input on the menu. An String.
+	 * Instantiates a new menu input exception.
+	 *
+	 * @param inputS
+	 *            tThe users input on the menu. A String.
 	 */
 	public MenuInputException(String inputS) {
 		super("The inputed option is invlaid.");
@@ -40,6 +42,8 @@ public class MenuInputException extends Exception {
 	}
 
 	/**
+	 * Gets the input.
+	 *
 	 * @return input The int value the user entered.
 	 */
 	public int getInput() {
@@ -47,6 +51,8 @@ public class MenuInputException extends Exception {
 	}
 
 	/**
+	 * Gets the input String.
+	 *
 	 * @return inputS The string the user entered.
 	 */
 	public String getInputS() {

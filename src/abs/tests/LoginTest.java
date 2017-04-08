@@ -8,7 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import abs.controller.UserAuth;
-import abs.exceptions.PasswordInvalidException;
+import abs.controller.Utilities;
+import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 
@@ -33,13 +34,15 @@ public class LoginTest {
 
 	protected String pass;
 	protected String phone;
+	private Utilities utils;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-		auth = new UserAuth();
+		utils = new Utilities();
+		auth = new UserAuth(utils);
 		name = "TestName";
 		email = "test@gmail.com";
 		pass = "TestPass123";
@@ -73,7 +76,7 @@ public class LoginTest {
 		// use an invalid username and password
 		try {
 			auth.authUser("unregistered@email.com", "unregisteredPassword12!");
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			assertTrue(true);
 		}
 	}
@@ -94,7 +97,7 @@ public class LoginTest {
 
 		try {
 			assertTrue(auth.authUser(email, pass));
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("Credentials error");
 		}
 	}
@@ -132,7 +135,7 @@ public class LoginTest {
 		boolean result = false;
 		try {
 			result = auth.authUser(email, pass);
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("Credentials error");
 		}
 		assertTrue(result == true);

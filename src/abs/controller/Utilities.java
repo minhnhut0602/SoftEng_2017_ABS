@@ -21,10 +21,13 @@ import abs.model.User;
  * The Utilities class provides reads and imports data from file and can export
  * the system back to file.
  *
- * Can be run with default data with a no arg constructor or can use other data
- * files set manually.
+ * <p>
+ * Can be run with default data with a no parameter constructor or can use other
+ * data files set manually. <br>
+ * <i>You can read all data or just one or the other, same goes for
+ * writeData.</i></br>
+ * </p>
  * 
- * you can read all data or just one or the other, same goes for writeData
  * 
  * @see #Utilities() Utilities()
  * @see #Utilities(String, String, String, String) Utilities(String, String,
@@ -44,9 +47,13 @@ public class Utilities {
 	/** The business info file name/type. */
 	private String businessInfoFileName;
 
+	/** The split char. */
 	private String splitChar;
 
+	/** The businesses. */
 	private List<Business> businesses;
+
+	/** The customers. */
 	private List<User> customers;
 
 	/**
@@ -63,6 +70,8 @@ public class Utilities {
 	}
 
 	/**
+	 * Instantiates a new utilities.
+	 *
 	 * @param filePath
 	 *            Relative file path to data files.
 	 * @param customerInfoFileName
@@ -79,6 +88,11 @@ public class Utilities {
 		this.splitChar = splitChar;
 	}
 
+	/**
+	 * Gets the business.
+	 *
+	 * @return the business
+	 */
 	public List<Business> getBusiness() {
 		if (businesses == null) {
 			readBusinessData();
@@ -86,6 +100,11 @@ public class Utilities {
 		return businesses;
 	}
 
+	/**
+	 * Gets the customers.
+	 *
+	 * @return the customers
+	 */
 	public List<User> getCustomers() {
 		return customers;
 	}
@@ -292,9 +311,8 @@ public class Utilities {
 	}
 
 	/**
-	 * Set all the systems customers
-	 * 
-	 * 
+	 * Set all the systems customers.
+	 *
 	 * @param customers
 	 *            A List of all the customers
 	 */
@@ -303,6 +321,8 @@ public class Utilities {
 	}
 
 	/**
+	 * Adds the customers.
+	 *
 	 * @param customer
 	 *            A single new customer
 	 * @return True for successful add, false if param is null or already exists
@@ -320,6 +340,13 @@ public class Utilities {
 
 	}
 
+	/**
+	 * Write business data.
+	 *
+	 * @param businessesWr
+	 *            the businesses wr
+	 * @return the int
+	 */
 	public int writeBusinessData(List<Business> businessesWr) {
 
 		FileWriter writer = null;
@@ -403,6 +430,13 @@ public class Utilities {
 
 	}
 
+	/**
+	 * Write customer data.
+	 *
+	 * @param customer
+	 *            the customer
+	 * @return the int
+	 */
 	public int writeCustomerData(List<User> customer) {
 		FileWriter writer = null;
 		BufferedWriter bufferedWriter = null;
@@ -476,8 +510,12 @@ public class Utilities {
 	}
 
 	/**
-	 * @param type
-	 *            The type of data to write to file, business, customer or both
+	 * Write data.
+	 *
+	 * @param businessesWr
+	 *            the businesses wr
+	 * @param customerWr
+	 *            the customer wr
 	 * @return an int to show success/fail. -1 error, -3 unimplemented, 0
 	 *         success.
 	 */

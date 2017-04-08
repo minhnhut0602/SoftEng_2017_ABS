@@ -1,15 +1,51 @@
 package abs.controller;
 
-import abs.exceptions.PasswordInvalidException;
+import java.util.List;
+
+import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
+import abs.model.Business;
 import abs.model.User;
 
+/**
+ * The UserAuth class.
+ * 
+ * <p>
+ * This class validates and authenticates login and register requests.stores the
+ * active user.
+ * </p>
+ * 
+ * @see #getActiveUser()
+ * @see #authUser(String, String)
+ * @see #registerUser(String, String, String, String, String)
+ */
 public class UserAuth {
-	private User activeUser;
 
-	public UserAuth() {
+	/** The active/logged in user. */
+	private User activeUser;
+	private Utilities utils;
+	private List<User> owners;
+	private List<User> customers;
+
+	/**
+	 * Instantiates a new user auth.
+	 * 
+	 * <p>
+	 * Initializes the customer and owner list.
+	 * </p>
+	 * 
+	 * @param utils
+	 *            the utils the utilities object
+	 */
+	public UserAuth(Utilities utils) {
 		this.activeUser = null;
+		this.utils = utils;
+		this.customers = utils.getCustomers();
+
+		for (Business business : utils.getBusiness()) {
+			owners.add(business.getOwner());
+		}
 	}
 
 	/**
@@ -20,10 +56,11 @@ public class UserAuth {
 	 * @param Password
 	 *            the password
 	 * @return true, if successful
-	 * @throws PasswordInvalidException
+	 * @throws CredentialsInvalidException
+	 *             the password invalid exception
 	 */
-	public boolean authUser(String email, String Password) throws PasswordInvalidException {
-		throw new PasswordInvalidException();
+	public boolean authUser(String email, String Password) throws CredentialsInvalidException {
+		throw new CredentialsInvalidException();
 
 	}
 
@@ -52,11 +89,24 @@ public class UserAuth {
 
 	}
 
+	/**
+	 * Gets the active user/logged in user.
+	 * 
+	 * Null if there is none logged in.
+	 *
+	 * @return the active user
+	 */
 	public User getActiveUser() {
 
 		return this.activeUser;
 	}
 
+	/**
+	 * Sets the active user.
+	 *
+	 * @param activeUser
+	 *            the new active user
+	 */
 	public void setActiveUser(User activeUser) {
 		this.activeUser = activeUser;
 

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
-import abs.exceptions.PasswordInvalidException;
+import abs.exceptions.CredentialsInvalidException;
 import abs.model.Booking;
 import abs.model.Customer;
 import abs.model.User;
@@ -30,10 +30,10 @@ public class BookingTest {
 	public void makeBooking() {
 
 		Utilities utils = new Utilities();
-		UserAuth auth = new UserAuth();
+		UserAuth auth = new UserAuth(utils);
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("Invalid credentials");
 		}
 		User customer = auth.getActiveUser();
@@ -57,10 +57,10 @@ public class BookingTest {
 	@Test
 	public void cancelBooking() {
 		Utilities utils = new Utilities();
-		UserAuth auth = new UserAuth();
+		UserAuth auth = new UserAuth(utils);
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("Invalid credentials");
 		}
 		User customer = auth.getActiveUser();

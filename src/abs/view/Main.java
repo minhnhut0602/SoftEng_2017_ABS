@@ -4,16 +4,30 @@ import abs.controller.UserAuth;
 import abs.controller.Utilities;
 import abs.model.User;
 
+// TODO: Auto-generated Javadoc
 /**
  * The main class that runs the console based program.
  */
 public class Main {
+
+	/** The utils. */
 	static Utilities utils = new Utilities();
-	static UserAuth userAuth = new UserAuth();
+
+	/** The user auth. */
+	static UserAuth userAuth = new UserAuth(utils);
+
+	/** The menu. */
 	static Menu menu = new Menu(utils, userAuth);
 
+	/** The status. */
 	static int status = 0;
 
+	/**
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 */
 	public static void main(String[] args) {
 
 		while (status == 0) {
@@ -26,7 +40,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Main menu.
 	 */
 	private static void mainMenu() {
 		int select = menu.mainMenu();
@@ -45,7 +59,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Register.
 	 */
 	private static void register() {
 		User select = menu.registerMenu();
@@ -58,7 +72,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Login.
 	 */
 	private static void login() {
 		User select = menu.loginMenu();
@@ -74,7 +88,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Business select.
 	 */
 	private static void businessSelect() {
 		menu.businessSelect();
@@ -83,7 +97,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Customer dash.
 	 */
 	private static void customerDash() {
 		int select = menu.customerDashboard();
@@ -111,7 +125,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Owner dash.
 	 */
 	private static void ownerDash() {
 		// TODO Auto-generated method stub
@@ -119,7 +133,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * View my bookings.
 	 */
 	private static void viewMyBookings() {
 		// TODO Auto-generated method stub
@@ -127,7 +141,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * View avaliable bookings.
 	 */
 	private static void viewAvaliableBookings() {
 		// TODO Auto-generated method stub
@@ -135,7 +149,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Business info.
 	 */
 	private static void businessInfo() {
 
@@ -154,7 +168,7 @@ public class Main {
 	}
 
 	/**
-	 * 
+	 * Exit.
 	 */
 	private static void exit() {
 		System.out.println("Goodbye");

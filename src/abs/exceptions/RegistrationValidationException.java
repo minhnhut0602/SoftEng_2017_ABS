@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.exceptions;
 
 /**
@@ -10,11 +7,18 @@ package abs.exceptions;
  */
 public class RegistrationValidationException extends Exception {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 3L;
+
+	/** The field that was invalid */
 	private String field;
+
+	/** The value entered in the field. */
 	private String value;
 
 	/**
+	 * Instantiates a new registration validation exception.F
+	 *
 	 * @param field
 	 *            The invalid field
 	 * @param value
@@ -27,6 +31,8 @@ public class RegistrationValidationException extends Exception {
 	}
 
 	/**
+	 * Gets the field.
+	 *
 	 * @return field The offending field
 	 */
 	public String getField() {
@@ -34,6 +40,8 @@ public class RegistrationValidationException extends Exception {
 	}
 
 	/**
+	 * Gets the value.
+	 *
 	 * @return value the value entered
 	 */
 	public String getValue() {

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.exceptions;
 
 /**
@@ -8,11 +5,15 @@ package abs.exceptions;
  * valid email but invalid password.
  *
  */
-public class PasswordInvalidException extends Exception {
+public class CredentialsInvalidException extends Exception {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 4L;
 
-	public PasswordInvalidException() {
+	/**
+	 * Instantiates a new password invalid exception with default message.
+	 */
+	public CredentialsInvalidException() {
 		super("Im sorry but the password you entered is invalid. Please try again.");
 	}
 

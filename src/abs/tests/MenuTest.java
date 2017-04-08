@@ -10,7 +10,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.List;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -19,9 +18,7 @@ import org.junit.Test;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
-import abs.exceptions.PasswordInvalidException;
-import abs.model.Business;
-import abs.model.Owner;
+import abs.exceptions.CredentialsInvalidException;
 import abs.model.User;
 import abs.view.Menu;
 
@@ -37,7 +34,7 @@ public class MenuTest {
 	private Utilities utils;
 	private int dataRead;
 	private Menu menu;
-	private List<Business> dataBus;
+	// private List<Business> dataBus;
 	// private Owner ownerData;
 	// private List<User> customerData;
 	private String dummyIn;
@@ -60,7 +57,7 @@ public class MenuTest {
 		}
 
 		// Stores business data from file to compare with menu output
-		dataBus = utils.getBusiness();
+		// dataBus = utils.getBusiness();
 
 		// Owner data for login tests
 		// ownerData = dataBus.get(0).getOwner();
@@ -71,7 +68,7 @@ public class MenuTest {
 		// New menu object should set up the menu object
 
 		System.setOut(new PrintStream(outContent));
-		userAuth = new UserAuth();
+		userAuth = new UserAuth(utils);
 	}
 
 	@Test
@@ -132,7 +129,7 @@ public class MenuTest {
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
 		menu.businessSelect(); // Prints main menu, prompts for
-												// login
+								// login
 		// or register.
 
 		// TEST what method prints
@@ -163,11 +160,11 @@ public class MenuTest {
 		String customerLoginEm = "stacy.d@gmail.com";
 
 		String customerLoginPa = "stacypassword";
-		UserAuth ua = new UserAuth();
+		UserAuth ua = new UserAuth(utils);
 		boolean userLogin = false;
 		try {
 			userLogin = ua.authUser(customerLoginEm, customerLoginPa);
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("user not authed");
 		}
 

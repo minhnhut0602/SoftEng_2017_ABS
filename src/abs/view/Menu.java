@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
+import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.MenuInputException;
-import abs.exceptions.PasswordInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.User;
 
+// TODO: Auto-generated Javadoc
 /**
  * Class that prints the menu screens, accepts and validates inputs then returns
  * results.
@@ -19,9 +20,16 @@ import abs.model.User;
  */
 public class Menu {
 
+	/** The sc. */
 	private Scanner sc;
+
+	/** The utils. */
 	private Utilities utils;
+
+	/** The active business. */
 	private Business activeBusiness;
+
+	/** The user auth. */
 	private UserAuth userAuth;
 
 	/**
@@ -62,6 +70,8 @@ public class Menu {
 	}
 
 	/**
+	 * Gets the active business.
+	 *
 	 * @return the business selected by the user
 	 */
 	public Business getActiveBusiness() {
@@ -154,8 +164,8 @@ public class Menu {
 				System.out.printf("To return to the main menu enter exit\n");
 				selection = sc.next();
 
-			} catch (PasswordInvalidException e) { // if userAuth thorws
-													// password invalid.
+			} catch (CredentialsInvalidException e) { // if userAuth thorws
+														// password invalid.
 				System.out.printf(e.getMessage());
 				System.out.printf("\nTo return to the main menu enter exit\n");
 				selection = sc.next();
