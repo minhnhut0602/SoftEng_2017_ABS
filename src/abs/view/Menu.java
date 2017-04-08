@@ -118,6 +118,11 @@ public class Menu {
 		System.out.printf("To return to the main menu enter exit\n");
 		selection = sc.next();
 
+		// if the user wants to return, exit loop without login
+		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
+			valid = true;
+		}
+
 		while (valid != true) {
 
 			// if the user wants to return, exit loop without login
@@ -138,7 +143,9 @@ public class Menu {
 																					// login
 							valid = true; // if login true then return
 						}
-					} else { // any invalid entry
+					} else if (!(selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT"))) { // any
+																														// invalid
+																														// entry
 						throw new MenuInputException(selection);
 					}
 				}
@@ -176,6 +183,11 @@ public class Menu {
 		System.out.printf("To return to the main menu enter exit\n");
 		selection = sc.nextLine();
 
+		// if the user wants to return, exit loop without login
+		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
+			valid = true;
+		}
+
 		while (valid != true) {
 
 			// if the user wants to return, exit loop without login
@@ -198,7 +210,9 @@ public class Menu {
 
 							valid = true; // if register true then return
 						}
-					} else { // any invalid entry
+					} else if (!(selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT"))) { // any
+						// invalid
+						// entry
 						throw new MenuInputException(selection);
 					}
 				}
@@ -231,7 +245,7 @@ public class Menu {
 	 * 
 	 * @return the int value of the users selection.
 	 */
-	public int businessSelect() {
+	public void businessSelect() {
 		String selection;
 
 		boolean valid = false;
@@ -268,7 +282,7 @@ public class Menu {
 
 			}
 		}
-		return Integer.parseInt(selection);
+
 	}
 
 	/**

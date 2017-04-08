@@ -131,7 +131,7 @@ public class MenuTest {
 		dummyIn = "1"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
-		int mainMenu = menu.businessSelect(); // Prints main menu, prompts for
+		menu.businessSelect(); // Prints main menu, prompts for
 												// login
 		// or register.
 
