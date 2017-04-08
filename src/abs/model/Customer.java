@@ -60,6 +60,11 @@ public class Customer extends AbstractUser {
 	// to add a booking the booking is added to the list in the user.
 	public boolean addBooking(Booking booking) {
 		
+		//check to see if the list is empty
+		if(this.bookings == null){
+			this.bookings.add(booking);
+		}
+		
 		//loop over the list
 		for(int i = 0; i < this.bookings.size(); i++) {
 			//compare the booking with the already booked bookings
