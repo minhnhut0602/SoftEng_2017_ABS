@@ -100,6 +100,7 @@ public class Customer extends AbstractUser {
 				if(booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) == 0){
 					//remove the booking
 					this.bookings.remove(i);
+					return true;
 				}
 			}
 		}
