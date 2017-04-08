@@ -11,6 +11,8 @@ import org.junit.Test;
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
 import abs.exceptions.PasswordInvalidException;
+import abs.exceptions.RegistrationNonUniqueException;
+import abs.exceptions.RegistrationValidationException;
 import abs.model.Booking;
 import abs.model.Customer;
 import abs.model.User;
@@ -33,6 +35,11 @@ public class BookingTest {
 
 		Utilities utils = new Utilities();
 		UserAuth auth = new UserAuth();
+		try {
+			auth.registerUser("Test", "valid@validemail.com", "validpassword", "Test123", "1231231");
+		} catch (RegistrationValidationException | RegistrationNonUniqueException e1) {
+			fail("Register fail");
+		}
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
 		} catch (PasswordInvalidException e) {
@@ -60,6 +67,7 @@ public class BookingTest {
 	public void cancelBooking() {
 		Utilities utils = new Utilities();
 		UserAuth auth = new UserAuth();
+
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
 		} catch (PasswordInvalidException e) {

@@ -1,6 +1,5 @@
 package abs.controller;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -9,18 +8,10 @@ import abs.exceptions.PasswordInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Customer;
-
-import abs.exceptions.PasswordInvalidException;
-import abs.exceptions.RegistrationNonUniqueException;
-import abs.exceptions.RegistrationValidationException;
-
 import abs.model.User;
 
 public class UserAuth {
-	
 
-	
-	
 	/* Utilities object */
 	private Utilities util;
 
@@ -45,8 +36,8 @@ public class UserAuth {
 			customers = new ArrayList<User>();
 		}
 	}
-  
-  /**
+
+	/**
 	 * Auth user.
 	 *
 	 * @param email
@@ -86,8 +77,8 @@ public class UserAuth {
 		throw new PasswordInvalidException();
 
 	}
-  
-/**
+
+	/**
 	 * Register user.
 	 *
 	 * @param name
@@ -291,13 +282,8 @@ public class UserAuth {
 		return activeUser;
 	}
 
-	public User getActiveUser() {
-
-		return this.activeUser;
-	}
-
 	public void setActiveUser(User activeUser) {
 		this.activeUser = activeUser;
 
-
+	}
 }
