@@ -71,7 +71,7 @@ public class MenuTest {
 		// New menu object should set up the menu object
 
 		System.setOut(new PrintStream(outContent));
-		userAuth = new UserAuth();
+		userAuth = new UserAuth(utils);
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class MenuTest {
 	public void testMenuDispayLoginScreen() {
 
 		// Simulate input of correct email and password
-		dummyIn = "admin@danielsdentist.com,root"; // Sending dummy input to
+		dummyIn = "bigj@live.com.au,bigjpass"; // Sending dummy input to
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
 
@@ -104,7 +104,8 @@ public class MenuTest {
 
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
-				+ "Please enter your email and password seperated by a comma/n" + "e.g. email,password/n";
+				+ "Please enter your email and password seperated by a comma\n" + "e.g. email,password\n"
+				+ "To return to the main menu enter exit\n";
 		assertEquals(expectedOutputa, outContent.toString());
 
 	}
@@ -120,8 +121,8 @@ public class MenuTest {
 
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
-				+ "To Register Please enter your details seperated by a comma/n"
-				+ "e.g. name,email,address,phone,password/n";
+				+ "To Register Please enter your details seperated by a comma\n"
+				+ "e.g. name,email,address,phone,password\n" + "To return to the main menu enter exit\n";
 		assertEquals(expectedOutputa, outContent.toString());
 
 	}
@@ -157,16 +158,15 @@ public class MenuTest {
 		dummyIn = "1"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
-		int mainMenu = menu.customerDashboard(); // Prints main menu,
-													// prompts for login
-		// or register.
-		String customerLoginEm = "stacy.d@gmail.com";
 
-		String customerLoginPa = "stacypassword";
-		UserAuth ua = new UserAuth();
+		// or register.
+		String customerLoginEm = "bigj@live.com.au";
+
+		String customerLoginPa = "bigjpass";
+
 		boolean userLogin = false;
 		try {
-			userLogin = ua.authUser(customerLoginEm, customerLoginPa);
+			userLogin = userAuth.authUser(customerLoginEm, customerLoginPa);
 		} catch (PasswordInvalidException e) {
 			fail("user not authed");
 		}
@@ -175,12 +175,13 @@ public class MenuTest {
 			fail("User failed to login");
 		}
 
-		String custName = "Stacy";
-
+		String custName = "Jerry Lucio";
+		int mainMenu = menu.customerDashboard(); // Prints main menu,
+		// prompts for login
 		// TEST what method prints
 		String expectedOutput = "Welcome " + custName + " to the Appointment Booking System\n"
 				+ "Please select an option:\n" + "1. View avaliable bookings\n" + "2. View my bookings\n"
-				+ "3. Logout\n" + "4. View Business info\n" + "4. Exit\n";
+				+ "3. Logout\n" + "4. View Business info\n" + "5. Exit\n";
 
 		assertEquals(expectedOutput, outContent.toString()); // Compared the
 																// output of

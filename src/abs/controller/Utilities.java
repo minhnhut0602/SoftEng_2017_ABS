@@ -88,6 +88,9 @@ public class Utilities {
 	}
 
 	public List<User> getCustomers() {
+		if (customers == null) {
+			readData();
+		}
 		return customers;
 	}
 

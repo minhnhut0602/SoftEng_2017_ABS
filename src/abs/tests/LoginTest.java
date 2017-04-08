@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import abs.controller.UserAuth;
+import abs.controller.Utilities;
 import abs.exceptions.PasswordInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
@@ -33,13 +34,15 @@ public class LoginTest {
 
 	protected String pass;
 	protected String phone;
+	private Utilities utils;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-		auth = new UserAuth();
+		Utilities utils = new Utilities();
+		auth = new UserAuth(utils);
 		name = "TestName";
 		email = "test@gmail.com";
 		pass = "TestPass123";

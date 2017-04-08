@@ -28,14 +28,14 @@ public class UserAuth {
 	}
 
 	/* constructor that creates it's own utilities object if needed */
-	public UserAuth() {
-		util = new Utilities();
-		customers = new ArrayList<User>();
-		this.customers = util.getCustomers();
-		if (customers == null) {
-			customers = new ArrayList<User>();
-		}
-	}
+//	public UserAuth() {
+//		util = new Utilities();
+//		customers = new ArrayList<User>();
+//		this.customers = util.getCustomers();
+//		if (customers == null) {
+//			customers = new ArrayList<User>();
+//		}
+//	}
 
 	/**
 	 * Auth user.

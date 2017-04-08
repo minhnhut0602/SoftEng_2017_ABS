@@ -84,7 +84,7 @@ public class Menu {
 		System.out.printf("Welcome to the Appointment Booking System\n"
 				+ "Please enter your email and password seperated by a comma\n" + "e.g. email,password\n");
 		System.out.printf("To return to the main menu enter exit\n");
-		selection = sc.nextLine();
+		selection = sc.next();
 
 		// if the user wants to return, exit loop without login
 		if (selection.equals("exit") || selection.equals("Exit") || selection.equals("EXIT")) {
@@ -120,13 +120,13 @@ public class Menu {
 			} catch (MenuInputException e) { // invalid entry
 				System.out.printf("Sorry " + e.getInputS() + " is an invalid selection, please try again\n");
 				System.out.printf("To return to the main menu enter exit\n");
-				selection = sc.nextLine();
+				selection = sc.next();
 
 			} catch (PasswordInvalidException e) { // if userAuth thorws
 													// password invalid.
 				System.out.printf(e.getMessage());
 				System.out.printf("\nTo return to the main menu enter exit\n");
-				selection = sc.nextLine();
+				selection = sc.next();
 			}
 		}
 

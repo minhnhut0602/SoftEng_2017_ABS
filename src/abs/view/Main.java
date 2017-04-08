@@ -9,7 +9,7 @@ import abs.model.User;
  */
 public class Main {
 	static Utilities utils = new Utilities();
-	static UserAuth userAuth = new UserAuth();
+	static UserAuth userAuth = new UserAuth(utils);
 	static Menu menu = new Menu(utils, userAuth);
 
 	static int status = 0;

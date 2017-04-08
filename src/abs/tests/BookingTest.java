@@ -34,7 +34,7 @@ public class BookingTest {
 	public void makeBooking() {
 
 		Utilities utils = new Utilities();
-		UserAuth auth = new UserAuth();
+		UserAuth auth = new UserAuth(utils);
 		try {
 			auth.registerUser("Test", "valid@validemail.com", "validpassword", "Test123", "1231231");
 		} catch (RegistrationValidationException | RegistrationNonUniqueException e1) {
@@ -66,7 +66,7 @@ public class BookingTest {
 	@Test
 	public void cancelBooking() {
 		Utilities utils = new Utilities();
-		UserAuth auth = new UserAuth();
+		UserAuth auth = new UserAuth(utils);
 
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
