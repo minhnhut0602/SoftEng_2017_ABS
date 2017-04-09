@@ -2,32 +2,52 @@ package abs.view;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
-//import abs.model.Customer;
+import abs.model.Owner;
 import abs.model.User;
 
 /**
  * The main class that runs the console based program.
  */
 public class Main {
-	static Utilities utils = new Utilities();
-	static UserAuth userAuth = new UserAuth(utils);
-	static Menu menu = new Menu(utils, userAuth);
 
+	/** The Utilities object. */
+	static Utilities utils = new Utilities();
+
+	/** The user Auth object. */
+	static UserAuth userAuth;
+
+	/** The menu object. */
+	static Menu menu;
+
+	/** The exit status. */
 	static int status = 0;
 
+	/**
+	 * The main method.
+	 * 
+	 * <p>
+	 * Runs console version.
+	 * </p>
+	 * 
+	 * @param args
+	 *            the arguments
+	 */
 	public static void main(String[] args) {
-
+		utils.readData();
+		userAuth = new UserAuth(utils);
+		menu = new Menu(utils, userAuth);
 		while (status == 0) {
-			// runs the main menu until exit == true
-			// each sub-menu is called by the switch statements inside each
-			// static method in this class
+			// Initiates the menu.
+			// Runs until status is not 0.
 			mainMenu();
 		}
 
 	}
 
 	/**
+	 * Controls the Main menu.
 	 * 
+	 * @see Menu#mainMenu()
 	 */
 	private static void mainMenu() {
 		int select = menu.mainMenu();
@@ -40,42 +60,48 @@ public class Main {
 			register();
 			break;
 		default:
-			System.out.println("Invalid Return from mainMenu");
+			System.out.println("Invalid Return from the Main Menu");
 		}
 
 	}
 
 	/**
+	 * Controls the register menu.
 	 * 
+	 * @see Menu#registerMenu()
 	 */
 	private static void register() {
 		User select = menu.registerMenu();
 		System.out.println();
-		if (select != null) {
-			businessSelect();
-		} else
+		if (select == null) {
 			mainMenu();
-
+		} else if (select.getClass().getName().equals(Owner.class.getName())) {
+			ownerDash();
+		} else // A Customer
+			businessSelect();
 	}
 
 	/**
+	 * Controls the Login menu.
 	 * 
+	 * @see Menu#loginMenu()
 	 */
 	private static void login() {
 		User select = menu.loginMenu();
 		System.out.println();
 		if (select == null) {
 			mainMenu();
-		} else if (select.getClass().getName().equals("Owner")) {
+		} else if (select.getClass().getName().equals(Owner.class.getName())) {
 			ownerDash();
-		} else
+		} else // A Customer
 			businessSelect();
 
-		// TODO for owner dash check class of user.
 	}
 
 	/**
+	 * Controls the business select menu.
 	 * 
+	 * @see Menu#businessSelect()
 	 */
 	private static void businessSelect() {
 		menu.businessSelect();
@@ -84,14 +110,16 @@ public class Main {
 	}
 
 	/**
+	 * Controls the customer dashboard.
 	 * 
+	 * @see Menu#customerDashboard()
 	 */
 	private static void customerDash() {
 		int select = menu.customerDashboard();
 		System.out.println();
 		switch (select) {
 		case 1:
-			viewAvaliableBookings();
+			viewAvailablEBookings();
 			break;
 		case 2:
 			viewMyBookings();
@@ -107,20 +135,21 @@ public class Main {
 			exit();
 			break;
 		default:
-			System.out.println("Invalid Return from menu");
+			System.out.println("Invalid Return from the Customer Dashboard");
 		}
 	}
 
 	/**
+	 * Controls the Owner dashboard.
 	 * 
+	 * @see Menu#ownerDashboard()
 	 */
 	private static void ownerDash() {
-		//pass to menu class
+		// pass to menu class
 		int select = menu.ownerDashboard();
 		System.out.println();
 		switch (select) {
-		case 1:
-			//view bookings
+		case 1: // view bookings
 			menu.getActiveBusiness().displayBookings();
 			break;
 		case 2: // logout
@@ -134,49 +163,49 @@ public class Main {
 			exit();
 			break;
 		default:
-			System.out.println("Invalid Return from menu");
+			System.out.println("Invalid Return from the Owner Dashboard");
 		}
 
 	}
 
 	/**
+	 * Controls the customers bookings menu.
 	 * 
+	 * @see Menu#myBookings()
 	 */
 	private static void viewMyBookings() {
-		//pass to the menu class
+		// pass to the menu class
 		int select = menu.myBookings();
 		System.out.println();
 		switch (select) {
-		case 1:
-			//remove a booking
+		case 1: // remove a booking
 			menu.cancelBooking();
 			customerDash();
 			break;
-		case 2:
-			//go back to dashboard
+		case 2:// go back to dashboard
 			customerDash();
 			break;
 		default:
-			System.out.println("Invalid Return from menu");
+			System.out.println("Invalid Return from Customer Bookings");
 		}
 
 	}
 
 	/**
+	 * Controls view available bookings.
 	 * 
+	 * @see Menu#bookingOptions()
 	 */
-	private static void viewAvaliableBookings() {
+	private static void viewAvailablEBookings() {
 		// pass to the menu class
 		int select = menu.bookingOptions();
 		System.out.println();
 		switch (select) {
-		case 1:
-			//add a booking
+		case 1: // add a booking
 			menu.addBooking();
 			customerDash();
 			break;
-		case 2:
-			//return to the dahsboaard
+		case 2: // return to the dashboard
 			customerDash();
 			break;
 		default:
@@ -186,7 +215,9 @@ public class Main {
 	}
 
 	/**
+	 * Control Business info screen.
 	 * 
+	 * @see Menu#businessInfo()
 	 */
 	private static void businessInfo() {
 
@@ -205,11 +236,20 @@ public class Main {
 	}
 
 	/**
+	 * Exit program.
 	 * 
+	 * <i>Sets status to -1</i>
 	 */
 	private static void exit() {
+		System.out.println("Saving data to file...");
+		int result = utils.writeData(utils.getBusiness(), utils.getCustomers());
+		if (result != 0) {
+			System.out.print("Error saving data.\n");
+		} else
+			System.out.print("Success!\n");
 		System.out.println("Goodbye");
 		status = -1;
 
 	}
+
 }

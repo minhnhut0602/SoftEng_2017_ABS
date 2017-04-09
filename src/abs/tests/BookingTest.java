@@ -4,13 +4,11 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
-import abs.exceptions.PasswordInvalidException;
+import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Booking;
@@ -35,14 +33,16 @@ public class BookingTest {
 
 		Utilities utils = new Utilities();
 		UserAuth auth = new UserAuth(utils);
+
 		try {
 			auth.registerUser("Test", "valid@validemail.com", "validpassword", "Test123", "1231231");
 		} catch (RegistrationValidationException | RegistrationNonUniqueException e1) {
 			fail("Register fail");
 		}
+
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("Invalid credentials");
 		}
 		User customer = auth.getActiveUser();
@@ -67,19 +67,22 @@ public class BookingTest {
 	public void cancelBooking() {
 		Utilities utils = new Utilities();
 		UserAuth auth = new UserAuth(utils);
+
 		try {
 			auth.registerUser("Test", "valid@validemail.com", "validpassword", "Test123", "1231231");
 		} catch (RegistrationValidationException | RegistrationNonUniqueException e1) {
 			fail("Register fail");
 		}
+
 		try {
 			auth.authUser("valid@validemail.com", "validpassword");
-		} catch (PasswordInvalidException e) {
+		} catch (CredentialsInvalidException e) {
 			fail("Invalid credentials");
 		}
 		User customer = auth.getActiveUser();
 		Booking booking = utils.getBusiness().get(0).getAvBookings().get(0);
 		Booking booking2 = utils.getBusiness().get(0).getAvBookings().get(1);
+		@SuppressWarnings("unused")
 		Boolean add = ((Customer) customer).addBooking(booking);
 		Boolean test1 = ((Customer) customer).cancelBooking(booking);
 

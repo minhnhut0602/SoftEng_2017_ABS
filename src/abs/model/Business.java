@@ -1,9 +1,15 @@
 package abs.model;
-//Business Class
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Business class.
+ * 
+ * <p>
+ * The business stores its availabilities and staff.
+ * </p>
+ */
 public class Business {
 
 	/** The business name. */
@@ -29,8 +35,7 @@ public class Business {
 
 	/**
 	 * Instantiates a new business.
-	 * 
-	 * 
+	 *
 	 * @param name
 	 *            the business name
 	 * @param desc
@@ -43,6 +48,8 @@ public class Business {
 	 *            the staff
 	 * @param avBookings
 	 *            the available bookings
+	 * @param owner
+	 *            the owner
 	 */
 	public Business(String name, String desc, String address, int phone, List<Employee> staff, List<Booking> avBookings,
 			Owner owner) {
@@ -56,51 +63,96 @@ public class Business {
 		this.owner = owner;
 	}
 
+	/**
+	 * Gets the address.
+	 *
+	 * @return the address
+	 */
 	public String getAddress() {
 		return address;
 	}
 
+	/**
+	 * Gets the available bookings.
+	 *
+	 * @return the available bookings
+	 */
 	public List<Booking> getAvBookings() {
 		return avBookings;
 	}
 
+	/**
+	 * Gets the description.
+	 *
+	 * @return the description
+	 */
 	public String getDesc() {
 		return desc;
 	}
 
+	/**
+	 * Gets the business name.
+	 *
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Gets the phone number.
+	 *
+	 * @return the phone
+	 */
 	public int getPhone() {
 		return phone;
 	}
 
+	/**
+	 * Gets the staff.
+	 *
+	 * @return the staff
+	 */
 	public List<Employee> getStaff() {
 		return staff;
 	}
-	
+
+	/**
+	 * Gets the owner.
+	 *
+	 * @return the owner
+	 */
 	public Owner getOwner() {
 		return owner;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Business [name=" + name + ", desc=" + desc + ", staff=" + staff + ", avBookings=" + avBookings + "]";
 	}
 
+	/**
+	 * Displays the businesses available bookings.
+	 */
 	public void displayBookings() {
-		//check if there are any times entered
-		if(this.avBookings.size() == 0){
+		// check if there are any times entered
+		if (this.avBookings.size() == 0) {
 			System.out.println("Sorry, this business doesn't have any times entered, check back soon");
-		}else{
-			for(int i = 0; i < this.avBookings.size(); i++){
-				//loop over the bookings and print nicely
-				System.out.printf("<<--|" + i + ". [ " + this.avBookings.get(i).getStatus() + " ] " + this.avBookings.get(i).getSlot().getDate() + ", " + this.avBookings.get(i).getSlot().getTime() + " |-->> \n");
-				
+		} else {
+			for (int i = 0; i < this.avBookings.size(); i++) {
+				// loop over the bookings and print nicely
+				System.out.printf("<<--|" + i + ". [ " + this.avBookings.get(i).getStatus() + " ] "
+						+ this.avBookings.get(i).getSlot().getDate() + ", " + this.avBookings.get(i).getSlot().getTime()
+						+ " |-->> \n");
+
 			}
 		}
-		
+
 	}
 
 }

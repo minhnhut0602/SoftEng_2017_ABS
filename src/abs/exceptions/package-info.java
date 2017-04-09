@@ -12,7 +12,7 @@
  * @see abs.exceptions.MenuInputException MenuInputException
  * @see abs.exceptions.RegistrationValidationException
  *      RegistrationValidationException
- * @see abs.exceptions.PasswordInvalidException PasswordInvalidException
+ * @see abs.exceptions.CredentialsInvalidException CredentialsInvalidException
  * 
  */
 package abs.exceptions;

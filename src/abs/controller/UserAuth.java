@@ -4,68 +4,121 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import abs.exceptions.PasswordInvalidException;
+import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
+import abs.model.Business;
 import abs.model.Customer;
 import abs.model.User;
 
+/**
+ * The UserAuth class.
+ * 
+ * <p>
+ * This class validates and authenticates login and register requests.stores the
+ * active user.
+ * </p>
+ * 
+ * @see #getActiveUser()
+ * @see #authUser(String, String)
+ * @see #registerUser(String, String, String, String, String)
+ */
 public class UserAuth {
 
-	/* Utilities object */
-	private Utilities util;
+	/** The Utilities object. */
+	@SuppressWarnings("unused")
+	private Utilities utils;
 
-	/* list of registered customer */
+	/** The list of registered customers. */
 	private List<User> customers;
 
-	/* active user for the login session */
+	/** The active user for the login session. */
 	private User activeUser;
 
-	/* Constructor that takes a utilities object */
-	public UserAuth(Utilities utility) {
-		this.util = utility;
-		this.customers = util.getCustomers();
+	/** The owners. */
+	private List<User> owners;
+
+	/**
+	 * Instantiates a new user auth.
+	 * 
+	 * <p>
+	 * Initializes the customer and owner list.
+	 * </p>
+	 * 
+	 * @param utils
+	 *            the utils the utilities object
+	 */
+	public UserAuth(Utilities utils) {
+		this.activeUser = null;
+		this.utils = utils;
+		this.customers = utils.getCustomers();
+
+		this.owners = new ArrayList<User>();
+		for (Business business : utils.getBusiness()) {
+			owners.add(business.getOwner());
+		}
+
 	}
 
 	/* constructor that creates it's own utilities object if needed */
-//	public UserAuth() {
-//		util = new Utilities();
-//		customers = new ArrayList<User>();
-//		this.customers = util.getCustomers();
-//		if (customers == null) {
-//			customers = new ArrayList<User>();
-//		}
-//	}
+	// public UserAuth() {
+	// util = new Utilities();
+	// customers = new ArrayList<User>();
+	// this.customers = util.getCustomers();
+	// if (customers == null) {
+	// customers = new ArrayList<User>();
+	// }
+	// }
 
 	/**
 	 * Auth user.
 	 *
 	 * @param email
 	 *            the email
-	 * @param Password
+	 * @param password
 	 *            the password
 	 * @return true, if successful
-	 * @throws PasswordInvalidException
+	 * @throws CredentialsInvalidException
+	 *             the password invalid exception
 	 */
-	public boolean authUser(String email, String password) throws PasswordInvalidException {
+	public boolean authUser(String email, String password) throws CredentialsInvalidException {
 
 		/* check if the list is empty */
-
-		if (this.customers == null) {
+		if (this.customers.isEmpty() && this.owners.isEmpty()) {
 			return false;
-		}
+		} else if (!(this.customers.isEmpty())) {
+			/* step through the customer list */
+			for (int i = 0; i < customers.size(); i++) {
 
-		/* step through the customer list */
-		for (int i = 0; i < customers.size(); i++) {
+				/* check the email is the same */
+				if (this.customers.get(i).getEmail().equals(email)) {
+
+					/* check the password is the same */
+					if (this.customers.get(i).getPassword().equals(password)) {
+
+						/* set this user as the active user */
+						this.activeUser = this.customers.get(i);
+
+						/* end method */
+						return true;
+					}
+				}
+			}
+		}
+		// Both aren't empty, wasn't found in customer so must be a owner or
+		// invalid
+
+		/* step through the owner list */
+		for (int i = 0; i < owners.size(); i++) {
 
 			/* check the email is the same */
-			if (this.customers.get(i).getEmail().equals(email)) {
+			if (this.owners.get(i).getEmail().equals(email)) {
 
 				/* check the password is the same */
-				if (this.customers.get(i).getPassword().equals(password)) {
+				if (this.owners.get(i).getPassword().equals(password)) {
 
 					/* set this user as the active user */
-					this.activeUser = this.customers.get(i);
+					this.activeUser = this.owners.get(i);
 
 					/* end method */
 					return true;
@@ -73,8 +126,8 @@ public class UserAuth {
 			}
 		}
 
-		/* went through the whole list and didn't find the user */
-		throw new PasswordInvalidException();
+		/* went through both whole lists and didn't find the user */
+		throw new CredentialsInvalidException();
 
 	}
 
@@ -92,10 +145,10 @@ public class UserAuth {
 	 * @param phone
 	 *            the phone
 	 * @return true, if successful
-	 * @throws RegistrationNonUniqueException
-	 *             the registration non unique exception
 	 * @throws RegistrationValidationException
 	 *             the registration validation exception
+	 * @throws RegistrationNonUniqueException
+	 *             the registration non unique exception
 	 */
 	public boolean registerUser(String name, String email, String password, String address, String phone)
 			throws RegistrationValidationException, RegistrationNonUniqueException {
@@ -145,7 +198,13 @@ public class UserAuth {
 
 	}
 
-	/* email validation */
+	/**
+	 * Validate an email.
+	 *
+	 * @param email
+	 *            the email
+	 * @return true, if successful
+	 */
 	public boolean validateEmail(String email) {
 
 		/* VALIDATE EMAIL */
@@ -199,7 +258,13 @@ public class UserAuth {
 		return false;
 	}
 
-	/* validate the phone number */
+	/**
+	 * Validate a phone number.
+	 *
+	 * @param phone
+	 *            the phone
+	 * @return true, if successful
+	 */
 	public boolean validatePhone(String phone) {
 		if (phone.replaceAll(" ", "").matches("[0-9]+")) {
 			if (phone.length() == 10 || phone.length() == 8) {
@@ -218,7 +283,13 @@ public class UserAuth {
 		return true;
 	}
 
-	/* validate address */
+	/**
+	 * Validate an address.
+	 *
+	 * @param address
+	 *            the address
+	 * @return true, if successful
+	 */
 	public boolean validateAddress(String address) {
 
 		ArrayList<String> addressToks = new ArrayList<String>();
@@ -278,10 +349,23 @@ public class UserAuth {
 		return true;
 	}
 
+	/**
+	 * Gets the active user/logged in user.
+	 * 
+	 * Null if there is none logged in.
+	 *
+	 * @return the active user
+	 */
 	public User getActiveUser() {
 		return activeUser;
 	}
 
+	/**
+	 * Sets the active user.
+	 *
+	 * @param activeUser
+	 *            the new active user
+	 */
 	public void setActiveUser(User activeUser) {
 		this.activeUser = activeUser;
 

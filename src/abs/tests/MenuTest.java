@@ -10,7 +10,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.List;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -19,9 +18,7 @@ import org.junit.Test;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
-import abs.exceptions.PasswordInvalidException;
-import abs.model.Business;
-import abs.model.Owner;
+import abs.exceptions.CredentialsInvalidException;
 import abs.model.User;
 import abs.view.Menu;
 
@@ -37,9 +34,9 @@ public class MenuTest {
 	private Utilities utils;
 	private int dataRead;
 	private Menu menu;
-	private List<Business> dataBus;
-	private Owner ownerData;
-	private List<User> customerData;
+	// private List<Business> dataBus;
+	// private Owner ownerData;
+	// private List<User> customerData;
 	private String dummyIn;
 	private PrintStream stdout = System.out;
 	private InputStream stdin = System.in;
@@ -60,13 +57,13 @@ public class MenuTest {
 		}
 
 		// Stores business data from file to compare with menu output
-		dataBus = utils.getBusiness();
+		// dataBus = utils.getBusiness();
 
 		// Owner data for login tests
-		ownerData = dataBus.get(0).getOwner();
+		// ownerData = dataBus.get(0).getOwner();
 
 		// Customer data for login test
-		customerData = utils.getCustomers();
+		// customerData = utils.getCustomers();
 
 		// New menu object should set up the menu object
 
@@ -80,6 +77,7 @@ public class MenuTest {
 		String dummyIn = "1\r\n"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
+		@SuppressWarnings("unused")
 		int mainMenu = menu.mainMenu(); // Prints main menu, prompts for login
 		// or register.
 
@@ -100,6 +98,7 @@ public class MenuTest {
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
 
+		@SuppressWarnings("unused")
 		User loginReturn = menu.loginMenu();
 
 		// Test what method Prints
@@ -117,6 +116,7 @@ public class MenuTest {
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
 
+		@SuppressWarnings("unused")
 		User loginReturn = menu.registerMenu();
 
 		// Test what method Prints
@@ -164,10 +164,12 @@ public class MenuTest {
 
 		String customerLoginPa = "bigjpass";
 
+		UserAuth ua = new UserAuth(utils);
 		boolean userLogin = false;
 		try {
-			userLogin = userAuth.authUser(customerLoginEm, customerLoginPa);
-		} catch (PasswordInvalidException e) {
+			userLogin = ua.authUser(customerLoginEm, customerLoginPa);
+		} catch (CredentialsInvalidException e) {
+
 			fail("user not authed");
 		}
 
@@ -176,6 +178,7 @@ public class MenuTest {
 		}
 
 		String custName = "Jerry Lucio";
+		@SuppressWarnings("unused")
 		int mainMenu = menu.customerDashboard(); // Prints main menu,
 		// prompts for login
 		// TEST what method prints

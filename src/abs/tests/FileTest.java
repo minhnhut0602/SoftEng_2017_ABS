@@ -67,8 +67,7 @@ public class FileTest {
 	}
 
 	/**
-	 * Test method for
-	 * {@link abs.controller.Utilities#writeData(java.lang.String)}.
+	 * Test method for {@link abs.controller.Utilities#writeData(List, List)}.
 	 */
 	@Test
 	public void testWriteData() {
