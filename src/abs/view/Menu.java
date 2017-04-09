@@ -251,8 +251,6 @@ public class Menu {
 	 * Prints the business selection screen. Upon a valid selection the active
 	 * business is set as the selection.
 	 * 
-	 * 
-	 * @return the int value of the users selection.
 	 */
 	public void businessSelect() {
 		String selection;

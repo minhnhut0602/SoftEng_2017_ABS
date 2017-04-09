@@ -25,7 +25,7 @@ import abs.model.User;
  * Can be run with default data with a no parameter constructor or can use other
  * data files set manually. <br>
  * <i>You can read all data or just one or the other, same goes for
- * writeData.</i></br>
+ * writeData.</i>
  * </p>
  * 
  * 
@@ -33,7 +33,7 @@ import abs.model.User;
  * @see #Utilities(String, String, String, String) Utilities(String, String,
  *      String, String)
  * @see #readData()
- * @see #writeData(String)
+ * @see #writeData(List, List)
  * 
  */
 public class Utilities {
