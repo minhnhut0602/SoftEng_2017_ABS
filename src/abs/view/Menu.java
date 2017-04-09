@@ -450,14 +450,16 @@ public class Menu {
 			}
 		}
 		
-		//change the status to taken
-		activeBusiness.getAvBookings().get(Integer.parseInt(selection)).setStatus("Booked");;
-		
-		//call add booking and pass in the booking
-		((Customer) userAuth.getActiveUser()).addBooking(activeBusiness.getAvBookings().get(Integer.parseInt(selection)));
-		
-		
-		
+		//check and see if the status is booked
+		if(activeBusiness.getAvBookings().get(Integer.parseInt(selection)).getStatus().compareTo("Booked") == 0){
+			System.out.println("sorry, that appointment is already booked!");
+		}else{
+			//change the status to taken
+			activeBusiness.getAvBookings().get(Integer.parseInt(selection)).setStatus("Booked");
+			
+			//call add booking and pass in the booking
+			((Customer) userAuth.getActiveUser()).addBooking(activeBusiness.getAvBookings().get(Integer.parseInt(selection)));
+		}
 	}
 
 	public int ownerDashboard() {

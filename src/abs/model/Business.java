@@ -96,7 +96,7 @@ public class Business {
 		}else{
 			for(int i = 0; i < this.avBookings.size(); i++){
 				//loop over the bookings and print nicely
-				System.out.printf("<<--|" + i + ". [ " + this.avBookings.get(i).getStatus() + " ] " + this.avBookings.get(i).getSlot().getDate() + ", " + this.avBookings.get(i).getSlot().getTime() + " |-->> ");
+				System.out.printf("<<--|" + i + ". [ " + this.avBookings.get(i).getStatus() + " ] " + this.avBookings.get(i).getSlot().getDate() + ", " + this.avBookings.get(i).getSlot().getTime() + " |-->> \n");
 				
 			}
 		}
