@@ -2,7 +2,6 @@ package abs.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * 
@@ -59,6 +58,9 @@ public class Customer extends AbstractUser {
 
 	// to add a booking the booking is added to the list in the user.
 	public boolean addBooking(Booking booking) {
+		
+		//this is for adding the booking at a position if it is before any booking already added
+		int position = 0;
 
 		// check to see if the list is empty
 		if (this.bookings.isEmpty()) {
@@ -67,6 +69,11 @@ public class Customer extends AbstractUser {
 
 		// loop over the list
 		for (int i = 0; i < this.bookings.size(); i++) {
+			//update the position variable if needed
+			if(booking.getSlot().getDate().compareTo(this.bookings.get(i).getSlot().getDate()) < 0){
+				position = i;
+			}
+			
 			// compare the booking with the already booked bookings
 			// if the output is == to 0 then it is the same date
 			if (booking.getSlot().getDate().compareTo(this.bookings.get(i).getSlot().getDate()) == 0) {
@@ -79,18 +86,27 @@ public class Customer extends AbstractUser {
 				} else if (booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) > 0) {
 					// the booking is after the current booking, so put here
 					this.bookings.add(i + 1, booking);
+					
+					return true;
 				}
 			} else if (booking.getSlot().getDate().compareTo(this.bookings.get(i).getSlot().getDate()) > 0) {
 				// then the booking is the first to be made for this day, just
 				// insert at that position
 				this.bookings.add(i, booking);
+				
+				return true;
 
 			} else if (i == this.bookings.size()) {
-				// if you get to this statement that means you cna just append
+				// if you get to this statement that means you can just append
 				// to the list since it got to the end
 				this.bookings.add(booking);
-			}
+				
+				return true;
+			} 
 		}
+		
+		//if all else fails add at this position
+		this.bookings.add(position, booking);
 
 		return true;
 	}
@@ -115,13 +131,18 @@ public class Customer extends AbstractUser {
 	}
 
 	public void viewBookings() {
-		// loop over the list of bookings stored for this user
-		for (int i = 0; i < this.bookings.size(); i++) {
-			System.out
-					.println(this.bookings.get(i).getSlot().getTime() + " " + this.bookings.get(i).getSlot().getDate());
+		
+		
+		if(this.bookings.size() == 0){
+			System.out.println("Sorry, you don't have any bookings yet. Add one to view it here");
+		}else{
+			// loop over the list of bookings stored for this user
+			for (int i = 0; i < this.bookings.size(); i++) {
+				System.out.println("Here are your bookings!");
+				//print the booking date and time
+				System.out.println("<<-|[" + i + "]" + this.bookings.get(i).getSlot().getTime() + " " + this.bookings.get(i).getSlot().getDate() + "|->>");
+			}
 		}
-		// print them out nicely
-
 	}
 
-}
+}//end of class
