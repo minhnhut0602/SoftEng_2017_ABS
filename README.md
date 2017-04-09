@@ -12,6 +12,8 @@ Cory Patterson - s3600197,
 Marco Riotto - s3606584,
 Sohum Raut - s3377766.
 
+- Tuesday 5.30 - 56.07.95 (Mohammad)
+
 ## License
 
 [[MIT License]](LICENSE.md)
