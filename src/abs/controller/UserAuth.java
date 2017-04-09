@@ -53,6 +53,7 @@ public class UserAuth {
 		this.utils = utils;
 		this.customers = utils.getCustomers();
 
+		this.owners = new ArrayList<User>();
 		for (Business business : utils.getBusiness()) {
 			owners.add(business.getOwner());
 		}

@@ -95,7 +95,7 @@ public class Utilities {
 	 */
 	public List<Business> getBusiness() {
 		if (businesses == null) {
-			readBusinessData();
+			readData();
 		}
 		return businesses;
 	}
@@ -189,8 +189,9 @@ public class Utilities {
 																			// all
 																			// bookings
 									i++;
-									avBookings.add(new Booking((new Availability(bookings[i], bookings[i + 1])),
-											bookings[i - 1], "Available"));
+									i++;
+									avBookings.add(new Booking((new Availability(bookings[i - 1], bookings[i])),
+											bookings[i - 2], bookings[i + 1]));
 									i++;
 									// TODO match employeeID to employee object.
 								} // close for
@@ -258,13 +259,25 @@ public class Utilities {
 							for (int i = 0; i < bookingIn.length; i++) {
 								i++;
 								i++;
-								Booking booking = new Booking((new Availability(bookingIn[i], bookingIn[i + 1])),
-										bookingIn[i - 1], "Booked");
-								customer.addBooking(booking);
+
+								// Booking booking = new Booking((new
+								// Availability(bookingIn[i], bookingIn[i +
+								// 1])),
+								// bookingIn[i - 1], "Booked");
 
 								for (Business business : businesses) {
 									if (business.getName().equals(bookingIn[i - 2])) {
-										booking.setBusiness(business);
+										for (Booking booking : business.getAvBookings()) {
+											if (booking.getStatus().equals("Booked")) {
+												if (booking.getStaff().equals(bookingIn[i - 1])) {
+													if (booking.getSlot().getDate().equals(bookingIn[i])
+															&& booking.getSlot().getTime().equals(bookingIn[i + 1])) {
+														customer.addBooking(booking);
+													}
+												}
+											}
+										}
+
 									}
 
 								} // close for
@@ -402,11 +415,13 @@ public class Utilities {
 						Availability slot = avBookings.get(i).getSlot();
 						bufferedWriter.write(splitChar + slot.getDate());
 						bufferedWriter.write(splitChar + slot.getTime());
+						bufferedWriter.write(splitChar + (avBookings.get(i).getStatus()));
 					} else {
 						bufferedWriter.write(splitChar + avBookings.get(i).getStaff());
 						Availability slot = avBookings.get(i).getSlot();
 						bufferedWriter.write(splitChar + slot.getDate());
 						bufferedWriter.write(splitChar + slot.getTime());
+						bufferedWriter.write(splitChar + (avBookings.get(i).getStatus()));
 					}
 
 				}

@@ -10,7 +10,7 @@ root
 Daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
 Gary,thu,8am-2pm,fri,2pm-6pm
 # Bookings
-Daniel,mon,10:30,Daniel,mon,11:00,Daniel,mon,11:30,Daniel,tue,12:00,Gary,fri,2:00,Gary,fri,2:30
+Daniel,mon,10:00,Booked,Daniel,mon,10:30,Available,Daniel,mon,11:00,Available,Daniel,mon,11:30,Available,Daniel,tue,12:00,Available,Gary,fri,2:00,Available,Gary,fri,2:30,Available
 # Business Info
 Cory's Counselling
 Cory isnt alowd to leave, so tell him your problems.
@@ -23,7 +23,7 @@ root
 Cory,mon,8am-5pm,tue,4pm-6pm,thu,10am-2pm
 Mary,thu,8am-2pm,fri,2pm-6pm
 # Bookings
-Cory,mon,10:30,Cory,mon,11:00,Mary,tue,12:00,Mary,fri,2:00,Mary,fri,2:30
+Cory,mon,10:30,Available,Cory,mon,11:00,Available,Mary,tue,12:00,Available,Mary,fri,2:00,Available,Mary,fri,2:30,Available
 # Business Info
 Marco's Manicures
 Since marco lost his hands he loves to help you with yours!
@@ -36,7 +36,7 @@ root
 Marco,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
 Havor,mon,2pm-5pm,thu,10am-6pm
 # Bookings
-Marco,mon,10:00,Marco,mon,11:30,Marco,mon,12:30,Havor,tue,1:00,Havor,fri,1:30,Havor,fri,3:00
+Marco,mon,10:00,Available,Marco,mon,11:30,Available,Marco,mon,12:30,Available,Havor,tue,1:00,Available,Havor,fri,1:30,Available,Havor,fri,3:00,Available
 # Business Info
 Sohum's Salon
 Since sohum went bald he just likes to play with hair again!
@@ -49,4 +49,4 @@ root
 Sohum,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
 Wendy,mon,2pm-5pm,thu,10am-6pm
 # Bookings
-Sohum,mon,10:00,Sohum,mon,11:30,Sohum,mon,12:30,Sohum,tue,1:00,Wendy,fri,1:30,Wendy,fri,3:00
+Sohum,mon,10:00,Available,Sohum,mon,11:30,Available,Sohum,mon,12:30,Available,Sohum,tue,1:00,Available,Wendy,fri,1:30,Available,Wendy,fri,3:00,Available

@@ -13,10 +13,10 @@ public class Main {
 	static Utilities utils = new Utilities();
 
 	/** The user Auth object. */
-	static UserAuth userAuth = new UserAuth(utils);
+	static UserAuth userAuth;
 
 	/** The menu object. */
-	static Menu menu = new Menu(utils, userAuth);
+	static Menu menu;
 
 	/** The exit status. */
 	static int status = 0;
@@ -32,7 +32,9 @@ public class Main {
 	 *            the arguments
 	 */
 	public static void main(String[] args) {
-
+		utils.readData();
+		userAuth = new UserAuth(utils);
+		menu = new Menu(utils, userAuth);
 		while (status == 0) {
 			// Initiates the menu.
 			// Runs until status is not 0.
@@ -238,6 +240,12 @@ public class Main {
 	 * <i>Sets status to -1</i>
 	 */
 	private static void exit() {
+		System.out.println("Saving data to file...");
+		int result = utils.writeData(utils.getBusiness(), utils.getCustomers());
+		if (result != 0) {
+			System.out.print("Error saving data.\n");
+		} else
+			System.out.print("Success!\n");
 		System.out.println("Goodbye");
 		status = -1;
 
