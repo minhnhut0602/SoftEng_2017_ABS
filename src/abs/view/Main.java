@@ -119,7 +119,7 @@ public class Main {
 		System.out.println();
 		switch (select) {
 		case 1:
-			viewAvailablEBookings();
+			viewAvailableBookings();
 			break;
 		case 2:
 			viewMyBookings();
@@ -196,7 +196,7 @@ public class Main {
 	 * 
 	 * @see Menu#bookingOptions()
 	 */
-	private static void viewAvailablEBookings() {
+	private static void viewAvailableBookings() {
 		// pass to the menu class
 		int select = menu.bookingOptions();
 		System.out.println();
