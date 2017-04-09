@@ -2,7 +2,6 @@ package abs.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * 
@@ -115,13 +114,18 @@ public class Customer extends AbstractUser {
 	}
 
 	public void viewBookings() {
-		// loop over the list of bookings stored for this user
-		for (int i = 0; i < this.bookings.size(); i++) {
-			System.out
-					.println(this.bookings.get(i).getSlot().getTime() + " " + this.bookings.get(i).getSlot().getDate());
+		
+		
+		if(this.bookings.size() == 0){
+			System.out.println("Sorry, you don't have any bookings yet. Add one to view it here");
+		}else{
+			// loop over the list of bookings stored for this user
+			for (int i = 0; i < this.bookings.size(); i++) {
+				System.out.println("Here are your bookings!");
+				//print the booking date and time
+				System.out.println("<<-|[" + i + "]" + this.bookings.get(i).getSlot().getTime() + " " + this.bookings.get(i).getSlot().getDate() + "|->>");
+			}
 		}
-		// print them out nicely
-
 	}
 
-}
+}//end of class

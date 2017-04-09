@@ -2,6 +2,7 @@ package abs.view;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
+//import abs.model.Customer;
 import abs.model.User;
 
 /**
@@ -114,7 +115,27 @@ public class Main {
 	 * 
 	 */
 	private static void ownerDash() {
-		// TODO Auto-generated method stub
+		//pass to menu class
+		int select = menu.ownerDashboard();
+		System.out.println();
+		switch (select) {
+		case 1:
+			//view bookings
+			menu.getActiveBusiness().displayBookings();
+			break;
+		case 2: // logout
+			userAuth.setActiveUser(null);
+			mainMenu();
+			break;
+		case 3:
+			businessInfo();
+			break;
+		case 4:
+			exit();
+			break;
+		default:
+			System.out.println("Invalid Return from menu");
+		}
 
 	}
 
@@ -122,7 +143,22 @@ public class Main {
 	 * 
 	 */
 	private static void viewMyBookings() {
-		// TODO Auto-generated method stub
+		//pass to the menu class
+		int select = menu.myBookings();
+		System.out.println();
+		switch (select) {
+		case 1:
+			//remove a booking
+			menu.cancelBooking();
+			customerDash();
+			break;
+		case 2:
+			//go back to dashboard
+			customerDash();
+			break;
+		default:
+			System.out.println("Invalid Return from menu");
+		}
 
 	}
 
@@ -130,7 +166,22 @@ public class Main {
 	 * 
 	 */
 	private static void viewAvaliableBookings() {
-		// TODO Auto-generated method stub
+		// pass to the menu class
+		int select = menu.bookingOptions();
+		System.out.println();
+		switch (select) {
+		case 1:
+			//add a booking
+			menu.addBooking();
+			customerDash();
+			break;
+		case 2:
+			//return to the dahsboaard
+			customerDash();
+			break;
+		default:
+			System.out.println("Invalid Return from menu");
+		}
 
 	}
 
