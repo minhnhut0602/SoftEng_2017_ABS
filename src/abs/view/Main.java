@@ -2,7 +2,6 @@ package abs.view;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
-//import abs.model.Customer;
 import abs.model.User;
 
 /**
@@ -35,16 +34,15 @@ public class Main {
 	public static void main(String[] args) {
 
 		while (status == 0) {
-			// runs the main menu until exit == true
-			// each sub-menu is called by the switch statements inside each
-			// static method in this class
+			// Initiates the menu.
+			// Runs until status is not 0.
 			mainMenu();
 		}
 
 	}
 
 	/**
-	 * Control Main menu.
+	 * Controls the Main menu.
 	 * 
 	 * @see Menu#mainMenu()
 	 */
@@ -59,28 +57,29 @@ public class Main {
 			register();
 			break;
 		default:
-			System.out.println("Invalid Return from mainMenu");
+			System.out.println("Invalid Return from the Main Menu");
 		}
 
 	}
 
 	/**
-	 * Control register menu.
+	 * Controls the register menu.
 	 * 
 	 * @see Menu#registerMenu()
 	 */
 	private static void register() {
 		User select = menu.registerMenu();
 		System.out.println();
-		if (select != null) {
-			businessSelect();
-		} else
+		if (select == null) {
 			mainMenu();
-
+		} else if (select.getClass().getName().equals("Owner")) {
+			ownerDash();
+		} else // A Customer
+			businessSelect();
 	}
 
 	/**
-	 * Control Login menu.
+	 * Controls the Login menu.
 	 * 
 	 * @see Menu#loginMenu()
 	 */
@@ -91,13 +90,13 @@ public class Main {
 			mainMenu();
 		} else if (select.getClass().getName().equals("Owner")) {
 			ownerDash();
-		} else
+		} else // A Customer
 			businessSelect();
 
 	}
 
 	/**
-	 * Control business select.
+	 * Controls the business select menu.
 	 * 
 	 * @see Menu#businessSelect()
 	 */
@@ -108,7 +107,7 @@ public class Main {
 	}
 
 	/**
-	 * Control customer dashboard.
+	 * Controls the customer dashboard.
 	 * 
 	 * @see Menu#customerDashboard()
 	 */
@@ -133,20 +132,21 @@ public class Main {
 			exit();
 			break;
 		default:
-			System.out.println("Invalid Return from menu");
+			System.out.println("Invalid Return from the Customer Dashboard");
 		}
 	}
 
 	/**
-	 * Owner dashboard.
+	 * Controls the Owner dashboard.
+	 * 
+	 * @see Menu#ownerDashboard()
 	 */
 	private static void ownerDash() {
 		// pass to menu class
 		int select = menu.ownerDashboard();
 		System.out.println();
 		switch (select) {
-		case 1:
-			// view bookings
+		case 1: // view bookings
 			menu.getActiveBusiness().displayBookings();
 			break;
 		case 2: // logout
@@ -160,50 +160,49 @@ public class Main {
 			exit();
 			break;
 		default:
-			System.out.println("Invalid Return from menu");
+			System.out.println("Invalid Return from the Owner Dashboard");
 		}
 
 	}
 
 	/**
-	 * View customers my bookings.
+	 * Controls the customers bookings menu.
+	 * 
+	 * @see Menu#myBookings()
 	 */
 	private static void viewMyBookings() {
 		// pass to the menu class
 		int select = menu.myBookings();
 		System.out.println();
 		switch (select) {
-		case 1:
-			// remove a booking
+		case 1: // remove a booking
 			menu.cancelBooking();
 			customerDash();
 			break;
-		case 2:
-			// go back to dashboard
+		case 2:// go back to dashboard
 			customerDash();
 			break;
 		default:
-			System.out.println("Invalid Return from menu");
+			System.out.println("Invalid Return from Customer Bookings");
 		}
 
 	}
 
 	/**
-	 * View available bookings.
+	 * Controls view available bookings.
+	 * 
+	 * @see Menu#bookingOptions()
 	 */
-
 	private static void viewAvailablEBookings() {
 		// pass to the menu class
 		int select = menu.bookingOptions();
 		System.out.println();
 		switch (select) {
-		case 1:
-			// add a booking
+		case 1: // add a booking
 			menu.addBooking();
 			customerDash();
 			break;
-		case 2:
-			// return to the dahsboaard
+		case 2: // return to the dashboard
 			customerDash();
 			break;
 		default:
@@ -235,6 +234,8 @@ public class Main {
 
 	/**
 	 * Exit program.
+	 * 
+	 * <i>Sets status to -1</i>
 	 */
 	private static void exit() {
 		System.out.println("Goodbye");
