@@ -83,30 +83,46 @@ public class UserAuth {
 	public boolean authUser(String email, String password) throws CredentialsInvalidException {
 
 		/* check if the list is empty */
-
-		if (this.customers == null) {
+		if (this.customers == null && this.owners == null) {
 			return false;
-		}
+		} else if (!(this.customers == null)) {
+			/* step through the customer list */
+			for (int i = 0; i < customers.size(); i++) {
 
-		/* step through the customer list */
-		for (int i = 0; i < customers.size(); i++) {
+				/* check the email is the same */
+				if (this.customers.get(i).getEmail().equals(email)) {
 
-			/* check the email is the same */
-			if (this.customers.get(i).getEmail().equals(email)) {
+					/* check the password is the same */
+					if (this.customers.get(i).getPassword().equals(password)) {
 
-				/* check the password is the same */
-				if (this.customers.get(i).getPassword().equals(password)) {
+						/* set this user as the active user */
+						this.activeUser = this.customers.get(i);
 
-					/* set this user as the active user */
-					this.activeUser = this.customers.get(i);
+						/* end method */
+						return true;
+					}
+				}
+			}
+		} else if (!(this.owners == null)) {
+			/* step through the owner list */
+			for (int i = 0; i < owners.size(); i++) {
 
-					/* end method */
-					return true;
+				/* check the email is the same */
+				if (this.owners.get(i).getEmail().equals(email)) {
+
+					/* check the password is the same */
+					if (this.owners.get(i).getPassword().equals(password)) {
+
+						/* set this user as the active user */
+						this.activeUser = this.owners.get(i);
+
+						/* end method */
+						return true;
+					}
 				}
 			}
 		}
-
-		/* went through the whole list and didn't find the user */
+		/* went through both whole lists and didn't find the user */
 		throw new CredentialsInvalidException();
 
 	}
