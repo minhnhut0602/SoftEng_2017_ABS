@@ -7,10 +7,10 @@ Daniel
 admin@danielsdentists.com
 root
 # Employees
-Daniel,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm
-Gary,thu,8am-2pm,fri,2pm-6pm
+Daniel,3/4/17,8am-5pm,4/4/17,4pm-6pm,5/4/17,10am-2pm
+Gary,6/4/17,8am-2pm,7/4/17,2pm-6pm
 # Bookings
-Daniel,mon,10:00,Booked,Daniel,mon,10:30,Available,Daniel,mon,11:00,Available,Daniel,mon,11:30,Available,Daniel,tue,12:00,Available,Gary,fri,2:00,Available,Gary,fri,2:30,Available
+Daniel,3/4/17,10:00,Booked,Daniel,3/4/17,10:30,Available,Daniel,3/4/17,11:00,Available,Daniel,3/4/17,11:30,Available,Daniel,4/4/17,12:00,Available,Gary,7/4/17,2:00,Available,Gary,7/4/17,2:30,Available
 # Business Info
 Cory's Counselling
 Cory isnt alowd to leave, so tell him your problems.
@@ -20,10 +20,10 @@ Cory
 admin@coryscounselling.com
 root
 # Employees
-Cory,mon,8am-5pm,tue,4pm-6pm,thu,10am-2pm
-Mary,thu,8am-2pm,fri,2pm-6pm
+Cory,3/4/17,8am-5pm,4/4/17,4pm-6pm,6/4/17,10am-2pm
+Mary,6/4/17,8am-2pm,7/4/17,2pm-6pm
 # Bookings
-Cory,mon,10:30,Available,Cory,mon,11:00,Available,Mary,tue,12:00,Available,Mary,fri,2:00,Available,Mary,fri,2:30,Available
+Cory,3/4/17,10:30,Available,Cory,3/4/17,11:00,Available,Mary,4/4/17,12:00,Available,Mary,7/4/17,2:00,Available,Mary,7/4/17,2:30,Available
 # Business Info
 Marco's Manicures
 Since marco lost his hands he loves to help you with yours!
@@ -33,10 +33,10 @@ Marco
 admin@marcosmanicures.com
 root
 # Employees
-Marco,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
-Havor,mon,2pm-5pm,thu,10am-6pm
+Marco,3/4/17,8am-5pm,4/4/17,4pm-6pm,5/4/17,10am-2pm,6/4/17,8am-2pm
+Havor,3/4/17,2pm-5pm,6/4/17,10am-6pm
 # Bookings
-Marco,mon,10:00,Available,Marco,mon,11:30,Available,Marco,mon,12:30,Available,Havor,tue,1:00,Available,Havor,fri,1:30,Available,Havor,fri,3:00,Available
+Marco,3/4/17,10:00,Available,Marco,3/4/17,11:30,Available,Marco,3/4/17,12:30,Available,Havor,4/4/17,1:00,Available,Havor,7/4/17,1:30,Available,Havor,7/4/17,3:00,Available
 # Business Info
 Sohum's Salon
 Since sohum went bald he just likes to play with hair again!
@@ -46,7 +46,7 @@ Sohum
 admin@sohumssalon.com
 root
 # Employees
-Sohum,mon,8am-5pm,tue,4pm-6pm,wed,10am-2pm,thu,8am-2pm
-Wendy,mon,2pm-5pm,thu,10am-6pm
+Sohum,3/4/17,8am-5pm,4/4/17,4pm-6pm,5/4/17,10am-2pm,6/4/17,8am-2pm
+Wendy,3/4/17,2pm-5pm,6/4/17,10am-6pm
 # Bookings
-Sohum,mon,10:00,Available,Sohum,mon,11:30,Available,Sohum,mon,12:30,Available,Sohum,tue,1:00,Available,Wendy,fri,1:30,Available,Wendy,fri,3:00,Available
+Sohum,3/4/17,10:00,Available,Sohum,3/4/17,11:30,Available,Sohum,3/4/17,12:30,Available,Sohum,4/4/17,1:00,Available,Wendy,7/4/17,1:30,Available,Wendy,7/4/17,3:00,Available
