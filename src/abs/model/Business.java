@@ -136,4 +136,18 @@ public class Business {
 		return "Business [name=" + name + ", desc=" + desc + ", staff=" + staff + ", avBookings=" + avBookings + "]";
 	}
 
+	public void displayBookings() {
+		//check if there are any times entered
+		if(this.avBookings.size() == 0){
+			System.out.println("Sorry, this business doesn't have any times entered, check back soon");
+		}else{
+			for(int i = 0; i < this.avBookings.size(); i++){
+				//loop over the bookings and print nicely
+				System.out.printf("<<--|" + i + ". [ " + this.avBookings.get(i).getStatus() + " ] " + this.avBookings.get(i).getSlot().getDate() + ", " + this.avBookings.get(i).getSlot().getTime() + " |-->> \n");
+				
+			}
+		}
+		
+	}
+
 }

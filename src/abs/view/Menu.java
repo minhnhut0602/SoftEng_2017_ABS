@@ -10,6 +10,7 @@ import abs.exceptions.MenuInputException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
+import abs.model.Customer;
 import abs.model.User;
 
 /**
@@ -367,5 +368,185 @@ public class Menu {
 		}
 		return Integer.parseInt(selection);
 	}
+
+	public int bookingOptions() {
+		String selection;
+		
+		boolean valid = false;
+
+		//display Business available bookings
+		activeBusiness.displayBookings();
+		
+		//user can book a time or go back
+		System.out.printf("\nWould you like to: \n1.Book an Appointment\n2.Go Back");
+		
+		selection = sc.next();
+
+		while (valid != true) {
+			try {
+				if (Integer.parseInt(selection) != 1 && Integer.parseInt(selection) != 2) {
+					throw new MenuInputException(selection);
+				} else {
+					valid = true;
+				}
+			} catch (MenuInputException e) {
+				System.out.printf("Sorry " + e.getInput() + " is an invalid selection, please try again\n");
+				selection = sc.next();
+			} catch (NumberFormatException e) {
+				System.out.printf("Sorry only numbers are valid, please try again\n");
+				selection = sc.next();
+
+			}
+		}
+		
+		
+		return Integer.parseInt(selection);
+	}
+
+	public int myBookings() {
+		
+		String selection;
+		
+		boolean valid = false;
+		
+		//display the user's bookings
+		((Customer) userAuth.getActiveUser()).viewBookings();
+
+		System.out.printf("\nWould you like to: \n1.Remove a Booking\n2.Go Back");
+		selection = sc.next();
+
+		while (valid != true) {
+			try {
+				if (Integer.parseInt(selection) != 1 && Integer.parseInt(selection) != 2) {
+					throw new MenuInputException(selection);
+				} else {
+					valid = true;
+				}
+			} catch (MenuInputException e) {
+				System.out.printf("Sorry " + e.getInput() + " is an invalid selection, please try again\n");
+				selection = sc.next();
+			} catch (NumberFormatException e) {
+				System.out.printf("Sorry only numbers are valid, please try again\n");
+				selection = sc.next();
+
+			}
+		}
+		
+		return Integer.parseInt(selection);
+	}
+
+	 public void cancelBooking() {
+		//ask for a selection number (they are printed when displaying the bookings)
+		System.out.println("Please enter a booking number:");
+		
+		String selection;
+		
+		boolean valid = false;
+		
+		selection = sc.next();
+
+		while (valid != true) {
+			try {
+				if (Integer.parseInt(selection) <= 0 && Integer.parseInt(selection) >= ((Customer) userAuth.getActiveUser()).getBookings().size()) {
+					throw new MenuInputException(selection);
+				} else {
+					valid = true;
+				}
+			} catch (MenuInputException e) {
+				System.out.printf("Sorry " + e.getInput() + " is an invalid selection, please try again\n");
+				selection = sc.next();
+			} catch (NumberFormatException e) {
+				System.out.printf("Sorry only numbers are valid, please try again\n");
+				selection = sc.next();
+
+			}
+		}
+		
+		//btw, yes i know this line is yuck
+		//the selection number is on the list sop get rid of that booking and change the status
+		//changing the status
+		((Customer) userAuth.getActiveUser()).getBookings().get(Integer.parseInt(selection)).setStatus("Available");
+		((Customer) userAuth.getActiveUser()).cancelBooking(((Customer) userAuth.getActiveUser()).getBookings().get(Integer.parseInt(selection)));
+		//changing the status
+		
+	}
+
+	public void addBooking() {
+		//ask for a selection number (they are printed when displaying the bookings)
+		System.out.println("Please enter a booking number:");
+		
+		String selection;
+		
+		boolean valid = false;
+		
+		selection = sc.next();
+
+		while (valid != true) {
+			try {
+				if (Integer.parseInt(selection) < 0 && Integer.parseInt(selection) >= activeBusiness.getAvBookings().size()) {
+					throw new MenuInputException(selection);
+				} else {
+					valid = true;
+				}
+			} catch (MenuInputException e) {
+				System.out.printf("Sorry " + e.getInput() + " is an invalid selection, please try again\n");
+				selection = sc.next();
+			} catch (NumberFormatException e) {
+				System.out.printf("Sorry only numbers are valid, please try again\n");
+				selection = sc.next();
+
+			}
+		}
+		
+		//check and see if the status is booked
+		if(activeBusiness.getAvBookings().get(Integer.parseInt(selection)).getStatus().compareTo("Booked") == 0){
+			System.out.println("sorry, that appointment is already booked!");
+		}else{
+			//change the status to taken
+			activeBusiness.getAvBookings().get(Integer.parseInt(selection)).setStatus("Booked");
+			
+			//call add booking and pass in the booking
+			((Customer) userAuth.getActiveUser()).addBooking(activeBusiness.getAvBookings().get(Integer.parseInt(selection)));
+		}
+	}
+
+	public int ownerDashboard() {
+		//print menu options for owner, more to be added in part B
+		
+		String selection;
+		User customer = userAuth.getActiveUser(); // static call to the active
+													// user.
+		boolean valid = false;
+
+		System.out.printf("Welcome " + customer.getName() + " to the Appointment Booking System\n"
+				+ "Please select an option:\n" + "1. View avaliable bookings\n"
+				+ "2. Logout\n" + "3. View Business info\n" + "4. Exit\n");
+		selection = sc.next();
+		int[] options = { 1, 2, 3, 4};
+		while (valid != true) {
+			try {
+
+				for (int opt : options) {
+					if (Integer.parseInt(selection) == opt) {
+						valid = true;
+					}
+				}
+
+				if (!valid) {
+					throw new MenuInputException(selection);
+				}
+			} catch (MenuInputException e) {
+				System.out.printf("Sorry " + e.getInput() + " is an invalid selection, please try again\n");
+				selection = sc.next();
+			} catch (NumberFormatException e) {
+				System.out.printf("Sorry only numbers are valid, please try again\n");
+				selection = sc.next();
+
+			}
+		}
+		return Integer.parseInt(selection);
+	}
+	
+	
 
 }
