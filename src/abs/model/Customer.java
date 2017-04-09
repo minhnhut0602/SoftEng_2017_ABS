@@ -106,8 +106,10 @@ public class Customer extends AbstractUser {
 	public boolean addBooking(Booking booking) {
 
 		// check to see if the list is empty
-		if (this.bookings == null) {
-			this.bookings.add(booking);
+
+		if (this.bookings.isEmpty()) {
+			return this.bookings.add(booking);
+
 		}
 
 		// loop over the list

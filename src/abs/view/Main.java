@@ -4,27 +4,30 @@ import abs.controller.UserAuth;
 import abs.controller.Utilities;
 import abs.model.User;
 
-// TODO: Auto-generated Javadoc
 /**
  * The main class that runs the console based program.
  */
 public class Main {
 
-	/** The utils. */
+	/** The Utilities object. */
 	static Utilities utils = new Utilities();
 
-	/** The user auth. */
+	/** The user Auth object. */
 	static UserAuth userAuth = new UserAuth(utils);
 
-	/** The menu. */
+	/** The menu object. */
 	static Menu menu = new Menu(utils, userAuth);
 
-	/** The status. */
+	/** The exit status. */
 	static int status = 0;
 
 	/**
 	 * The main method.
-	 *
+	 * 
+	 * <p>
+	 * Runs console version.
+	 * </p>
+	 * 
 	 * @param args
 	 *            the arguments
 	 */
@@ -40,7 +43,9 @@ public class Main {
 	}
 
 	/**
-	 * Main menu.
+	 * Control Main menu.
+	 * 
+	 * @see Menu#mainMenu()
 	 */
 	private static void mainMenu() {
 		int select = menu.mainMenu();
@@ -59,7 +64,9 @@ public class Main {
 	}
 
 	/**
-	 * Register.
+	 * Control register menu.
+	 * 
+	 * @see Menu#registerMenu()
 	 */
 	private static void register() {
 		User select = menu.registerMenu();
@@ -72,7 +79,9 @@ public class Main {
 	}
 
 	/**
-	 * Login.
+	 * Control Login menu.
+	 * 
+	 * @see Menu#loginMenu()
 	 */
 	private static void login() {
 		User select = menu.loginMenu();
@@ -84,11 +93,12 @@ public class Main {
 		} else
 			businessSelect();
 
-		// TODO for owner dash check class of user.
 	}
 
 	/**
-	 * Business select.
+	 * Control business select.
+	 * 
+	 * @see Menu#businessSelect()
 	 */
 	private static void businessSelect() {
 		menu.businessSelect();
@@ -97,14 +107,16 @@ public class Main {
 	}
 
 	/**
-	 * Customer dash.
+	 * Control customer dashboard.
+	 * 
+	 * @see Menu#customerDashboard()
 	 */
 	private static void customerDash() {
 		int select = menu.customerDashboard();
 		System.out.println();
 		switch (select) {
 		case 1:
-			viewAvaliableBookings();
+			viewAvailableBookings();
 			break;
 		case 2:
 			viewMyBookings();
@@ -125,15 +137,15 @@ public class Main {
 	}
 
 	/**
-	 * Owner dash.
+	 * Owner dashboard.
 	 */
 	private static void ownerDash() {
-		// TODO Auto-generated method stub
+		// TODO part B
 
 	}
 
 	/**
-	 * View my bookings.
+	 * View customers my bookings.
 	 */
 	private static void viewMyBookings() {
 		// TODO Auto-generated method stub
@@ -141,15 +153,17 @@ public class Main {
 	}
 
 	/**
-	 * View avaliable bookings.
+	 * View available bookings.
 	 */
-	private static void viewAvaliableBookings() {
+	private static void viewAvailableBookings() {
 		// TODO Auto-generated method stub
 
 	}
 
 	/**
-	 * Business info.
+	 * Control Business info screen.
+	 * 
+	 * @see Menu#businessInfo()
 	 */
 	private static void businessInfo() {
 
@@ -168,11 +182,12 @@ public class Main {
 	}
 
 	/**
-	 * Exit.
+	 * Exit program.
 	 */
 	private static void exit() {
 		System.out.println("Goodbye");
 		status = -1;
 
 	}
+
 }

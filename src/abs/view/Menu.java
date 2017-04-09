@@ -12,7 +12,6 @@ import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.User;
 
-// TODO: Auto-generated Javadoc
 /**
  * Class that prints the menu screens, accepts and validates inputs then returns
  * results.
@@ -189,7 +188,7 @@ public class Menu {
 
 		System.out.printf("Welcome to the Appointment Booking System\n"
 				+ "To Register Please enter your details seperated by a comma\n"
-				+ "e.g. name,email,address,phone,password\n");
+				+ "e.g. name,email,password,address,phone\n");
 		System.out.printf("To return to the main menu enter exit\n");
 		selection = sc.nextLine();
 
@@ -241,7 +240,7 @@ public class Menu {
 			} catch (RegistrationValidationException e) {
 				System.out.printf(e.getMessage());
 				System.out.printf("\nTo return to the main menu enter exit\n");
-				selection = sc.next();
+				selection = sc.nextLine();
 			}
 		}
 

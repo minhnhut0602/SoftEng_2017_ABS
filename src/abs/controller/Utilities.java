@@ -106,6 +106,9 @@ public class Utilities {
 	 * @return the customers
 	 */
 	public List<User> getCustomers() {
+		if (customers == null) {
+			readData();
+		}
 		return customers;
 	}
 

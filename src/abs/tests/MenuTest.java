@@ -77,6 +77,7 @@ public class MenuTest {
 		String dummyIn = "1\r\n"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
+		@SuppressWarnings("unused")
 		int mainMenu = menu.mainMenu(); // Prints main menu, prompts for login
 		// or register.
 
@@ -93,15 +94,17 @@ public class MenuTest {
 	public void testMenuDispayLoginScreen() {
 
 		// Simulate input of correct email and password
-		dummyIn = "admin@danielsdentist.com,root"; // Sending dummy input to
+		dummyIn = "bigj@live.com.au,bigjpass"; // Sending dummy input to
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
 
+		@SuppressWarnings("unused")
 		User loginReturn = menu.loginMenu();
 
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
-				+ "Please enter your email and password seperated by a comma/n" + "e.g. email,password/n";
+				+ "Please enter your email and password seperated by a comma\n" + "e.g. email,password\n"
+				+ "To return to the main menu enter exit\n";
 		assertEquals(expectedOutputa, outContent.toString());
 
 	}
@@ -113,12 +116,13 @@ public class MenuTest {
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
 
+		@SuppressWarnings("unused")
 		User loginReturn = menu.registerMenu();
 
 		// Test what method Prints
 		String expectedOutputa = "Welcome to the Appointment Booking System\n"
-				+ "To Register Please enter your details seperated by a comma/n"
-				+ "e.g. name,email,address,phone,password/n";
+				+ "To Register Please enter your details seperated by a comma\n"
+				+ "e.g. name,email,password,address,phone\n" + "To return to the main menu enter exit\n";
 		assertEquals(expectedOutputa, outContent.toString());
 
 	}
@@ -154,17 +158,18 @@ public class MenuTest {
 		dummyIn = "1"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
 		menu = new Menu(fakeIn, utils, userAuth);
-		int mainMenu = menu.customerDashboard(); // Prints main menu,
-													// prompts for login
-		// or register.
-		String customerLoginEm = "stacy.d@gmail.com";
 
-		String customerLoginPa = "stacypassword";
+		// or register.
+		String customerLoginEm = "bigj@live.com.au";
+
+		String customerLoginPa = "bigjpass";
+
 		UserAuth ua = new UserAuth(utils);
 		boolean userLogin = false;
 		try {
 			userLogin = ua.authUser(customerLoginEm, customerLoginPa);
 		} catch (CredentialsInvalidException e) {
+
 			fail("user not authed");
 		}
 
@@ -172,12 +177,14 @@ public class MenuTest {
 			fail("User failed to login");
 		}
 
-		String custName = "Stacy";
-
+		String custName = "Jerry Lucio";
+		@SuppressWarnings("unused")
+		int mainMenu = menu.customerDashboard(); // Prints main menu,
+		// prompts for login
 		// TEST what method prints
 		String expectedOutput = "Welcome " + custName + " to the Appointment Booking System\n"
 				+ "Please select an option:\n" + "1. View avaliable bookings\n" + "2. View my bookings\n"
-				+ "3. Logout\n" + "4. View Business info\n" + "4. Exit\n";
+				+ "3. Logout\n" + "4. View Business info\n" + "5. Exit\n";
 
 		assertEquals(expectedOutput, outContent.toString()); // Compared the
 																// output of
