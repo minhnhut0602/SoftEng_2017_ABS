@@ -1,0 +1,697 @@
+Daniel Caddaye completed slack logs on Compile submission materials5 minutes ago
+DCDaniel Caddaye completed compile meeting minutes on Compile submission materials34 minutes ago
+DCDaniel Caddaye completed high level architecture diagram & exported class diagram on Compile submission materials34 minutes ago
+DCDaniel Caddaye completed meeting minutes on Documentation Checklist34 minutes ago
+MRMarco Riotto completed logs of all tools: file listing tools used for comms and development of the software on Documentation Checklistan hour ago
+MRMarco Riotto completed High level architecture diagram on Documentation Checklist2 hours ago
+DCDaniel Caddaye completed Peer Assesment on Compile submission materials2 hours ago
+DCDaniel Caddaye completed exported git documentation wiki on Compile submission materials2 hours ago
+CP
+Cory Patterson attached ABSWiki.pdf to Compile submission materials  
+2 hours ago
+DCDaniel Caddaye completed Peer Assesments(group or individual tba) on Documentation Checklist2 hours ago
+DCDaniel Caddaye completed Read Me file: names, studnet number, contribution(of100), what part each person is responsible for on Documentation Checklist2 hours ago
+DCDaniel Caddaye moved Develop documentation on git. from Working on now to Done3 hours ago
+DCDaniel Caddaye marked the due date on Develop documentation on git. complete3 hours ago
+DCDaniel Caddaye changed the due date of Assignment Spec - Part B to 1 May at 09:003 hours ago
+DC
+Daniel Caddaye attached SEPT Assignment Part B(1).pdf to Assignment Spec - Part B  
+3 hours ago
+DCDaniel Caddaye added Assignment Spec - Part B to Documents3 hours ago
+DCDaniel Caddaye completed Test case documentation: describes status of tests(passed/being fixed/etc) http://users.csc.calpoly.edu/~jdalbey/206/Assign/HowToTestCase.html on Documentation Checklist3 hours ago
+DC
+Daniel Caddaye on Compile submission materials
+@sohumraut1 could you do the compiling of meeting min and user stories. then the slack and trello exports.
+3 hours ago
+MR
+Marco Riotto on Compile submission materials
+well thats funny
+3 hours ago
+MRMarco Riotto moved Documentation Checklist from Working on now to Documents3 hours ago
+DC
+Daniel Caddaye on Documentation Checklist
+the screen shots of leantesting are on the other card for submission materials
+3 hours ago
+MRMarco Riotto added Sohum Raut to Documentation Checklist3 hours ago
+MRMarco Riotto removed Mohammad from Documentation Checklist3 hours ago
+MRMarco Riotto removed Sohum Raut from Documentation Checklist3 hours ago
+MRMarco Riotto added Mohammad to Documentation Checklist3 hours ago
+MRMarco Riotto added Sohum Raut to Documentation Checklist3 hours ago
+MRMarco Riotto added Daniel Caddaye to Documentation Checklist3 hours ago
+MRMarco Riotto added Cory Patterson to Documentation Checklist3 hours ago
+MRMarco Riotto joined Documentation Checklist3 hours ago
+MRMarco Riotto completed How to documentation: installing, running, compiliing on Documentation Checklist3 hours ago
+MRMarco Riotto completed Class diagram on Documentation Checklist3 hours ago
+MRMarco Riotto added documentation to Documentation Checklist4 hours ago
+MRMarco Riotto added Documentation Checklist to Working on now4 hours ago
+CP
+Cory Patterson on Develop documentation on git.
+I'm working on the usage doc on git
+4 hours ago
+DCDaniel Caddaye completed added class diagram on Compile submission materials4 hours ago
+DC
+Daniel Caddaye attached ABS-Class diagram.pdf to Compile submission materials  
+4 hours ago
+DCDaniel Caddaye moved Develop class diagram from Working on now to Done4 hours ago
+DCDaniel Caddaye marked the due date on Develop class diagram complete4 hours ago
+DCDaniel Caddaye archived list Functional Requirements Part A4 hours ago
+CPCory Patterson moved Manual Functionality Testing from Working on now to Done4 hours ago
+CPCory Patterson completed Try to use every Menu function on Manual Functionality Testing4 hours ago
+CPCory Patterson completed Compile and run the program on Manual Functionality Testing4 hours ago
+CPCory Patterson completed remove bookings on Manual Functionality Testing4 hours ago
+CPCory Patterson completed add bookings on Manual Functionality Testing4 hours ago
+DC
+Daniel Caddaye attached docs.zip to Compile submission materials  
+4 hours ago
+DC
+Daniel Caddaye attached 2017-04-09 (2).png to Compile submission materials 
+5 hours ago
+DCDaniel Caddaye completed leantesting screenshots on Compile submission materials5 hours ago
+DC
+Daniel Caddaye attached 2017-04-09 (3).png to Compile submission materials 
+5 hours ago
+DCDaniel Caddaye completed login as different users on Manual Functionality Testing5 hours ago
+DCDaniel Caddaye moved User cancels a booking P:Low E: 3 hours from Working on now to Done5 hours ago
+DCDaniel Caddaye marked the due date on User cancels a booking P:Low E: 3 hours complete5 hours ago
+DCDaniel Caddaye completed booking is made available to others on User cancels a booking P:Low E: 3 hours5 hours ago
+DCDaniel Caddaye completed menu option to cancel on User cancels a booking P:Low E: 3 hours5 hours ago
+DCDaniel Caddaye moved View my bookings P:Med E:2 hours from Working on now to Done5 hours ago
+DCDaniel Caddaye completed menu option to display on View my bookings P:Med E:2 hours5 hours ago
+DCDaniel Caddaye moved Viewing Bookings P:Med E:3 hours from Working on now to Done5 hours ago
+DCDaniel Caddaye completed menu option to display on Viewing Bookings P:Med E:3 hours5 hours ago
+DCDaniel Caddaye marked the due date on Viewing Bookings P:Med E:3 hours complete5 hours ago
+DCDaniel Caddaye moved User can make a booking P:High E: 5 hours from Working on now to Done5 hours ago
+DCDaniel Caddaye marked the due date on User can make a booking P:High E: 5 hours complete5 hours ago
+DCDaniel Caddaye completed menu options on User can make a booking P:High E: 5 hours5 hours ago
+DCDaniel Caddaye completed shows conformation message on User can make a booking P:High E: 5 hours5 hours ago
+SRSohum Raut moved Compile submission materials from Working on now to Documentsa day ago
+DCDaniel Caddaye completed double check all the JUnit Tests pass on Manual Functionality Testingyesterday at 22:45
+DCDaniel Caddaye completed load data on Manual Functionality Testingyesterday at 22:45
+DCDaniel Caddaye completed save data on Manual Functionality Testingyesterday at 22:45
+DCDaniel Caddaye marked the due date on Auto build tools setup completeyesterday at 22:44
+DCDaniel Caddaye moved User can make a booking P:High E: 5 hours from Done to Working on nowyesterday at 22:44
+DCDaniel Caddaye marked the due date on User can make a booking P:High E: 5 hours incompleteyesterday at 22:44
+DCDaniel Caddaye completed user can select only a booking that is not already booked on User can make a booking P:High E: 5 hoursyesterday at 22:44
+DCDaniel Caddaye marked the due date on User can make a booking P:High E: 5 hours completeyesterday at 22:44
+DCDaniel Caddaye moved User cancels a booking P:Low E: 3 hours from Done to Working on nowyesterday at 22:43
+DCDaniel Caddaye moved View my bookings P:Med E:2 hours from Done to Working on nowyesterday at 22:43
+DCDaniel Caddaye moved Viewing Bookings P:Med E:3 hours from Done to Working on nowyesterday at 22:43
+DCDaniel Caddaye marked the due date on Viewing Bookings P:Med E:3 hours incompleteyesterday at 22:43
+DCDaniel Caddaye marked the due date on Viewing Bookings P:Med E:3 hours completeyesterday at 22:42
+DCDaniel Caddaye moved Login P:High E: 8 hours from Working on now to Doneyesterday at 22:42
+DCDaniel Caddaye moved Registering as a User P:High E:5 hours from Working on now to Doneyesterday at 22:42
+DCDaniel Caddaye completed Exception for already registered details (not password just check email) on Registering as a User P:High E:5 hoursyesterday at 22:42
+DCDaniel Caddaye completed Exception for not filled out or if the field is just spaces on Registering as a User P:High E:5 hoursyesterday at 22:42
+DCDaniel Caddaye completed Exception for wrong details on Registering as a User P:High E:5 hoursyesterday at 22:42
+DCDaniel Caddaye completed Throw appropriate exceptions on Registering as a User P:High E:5 hoursyesterday at 22:42
+DCDaniel Caddaye completed On success, create a new user object (stored in an array?) on Registering as a User P:High E:5 hoursyesterday at 22:42
+DCDaniel Caddaye completed Validate email on Registering as a User P:High E:5 hoursyesterday at 22:42
+DCDaniel Caddaye marked the due date on Registering as a User P:High E:5 hours completeyesterday at 22:42
+DCDaniel Caddaye completed Log in successfully with valid user on Login P:High E: 8 hoursyesterday at 22:42
+DCDaniel Caddaye completed Validate username on Login P:High E: 8 hoursyesterday at 22:42
+DCDaniel Caddaye marked the due date on Login P:High E: 8 hours completeyesterday at 22:42
+CPCory Patterson added Checklist to Manual Functionality Testingyesterday at 17:04
+CPCory Patterson added Manual Functionality Testing to Working on nowyesterday at 17:03
+CP
+Cory Patterson on Develop class diagram
+I'll update with my stuff added shortly
+7 Apr at 23:36
+DCDaniel Caddaye completed exported javadocs on Compile submission materials7 Apr at 23:21
+DC
+Daniel Caddaye on Develop class diagram
+@board So the class diagram is up to date with the code so far.
+7 Apr at 23:03
+CPCory Patterson completed booking is canceled and removed from display on User cancels a booking P:Low E: 3 hours7 Apr at 21:47
+CPCory Patterson completed user can cancel the booking on User cancels a booking P:Low E: 3 hours7 Apr at 21:47
+CPCory Patterson completed User can select one of their bookings on User cancels a booking P:Low E: 3 hours7 Apr at 21:47
+CPCory Patterson completed a user can view all their own bookings on View my bookings P:Med E:2 hours7 Apr at 21:47
+CPCory Patterson marked user can search by Staff member or day incomplete on Viewing Bookings P:Med E:3 hours7 Apr at 21:47
+CPCory Patterson completed shows if the slot if available or not on Viewing Bookings P:Med E:3 hours7 Apr at 21:47
+CPCory Patterson completed shows all slots for the day in time order on Viewing Bookings P:Med E:3 hours7 Apr at 21:47
+CPCory Patterson completed user can search by Staff member or day on Viewing Bookings P:Med E:3 hours7 Apr at 21:47
+CPCory Patterson added Marco Riotto to Registering as a User P:High E:5 hours7 Apr at 21:47
+CPCory Patterson left Registering as a User P:High E:5 hours7 Apr at 21:47
+CPCory Patterson moved User cancels a booking P:Low E: 3 hours from Sprint Backlog to Done7 Apr at 21:39
+CPCory Patterson moved User can make a booking P:High E: 5 hours from Sprint Backlog to Done7 Apr at 21:39
+CPCory Patterson moved View my bookings P:Med E:2 hours from Sprint Backlog to Done7 Apr at 21:38
+CPCory Patterson moved Viewing Bookings P:Med E:3 hours from Sprint Backlog to Done7 Apr at 21:38
+CPCory Patterson removed Marco Riotto from User cancels a booking P:Low E: 3 hours7 Apr at 20:52
+CPCory Patterson joined User cancels a booking P:Low E: 3 hours7 Apr at 20:52
+CPCory Patterson joined Viewing Bookings P:Med E:3 hours7 Apr at 18:26
+CPCory Patterson removed Marco Riotto from Viewing Bookings P:Med E:3 hours7 Apr at 18:26
+DCDaniel Caddaye made inviting on this board available to its admins7 Apr at 13:52
+DCDaniel Caddaye moved Login P:High E: 8 hours from Sprint Backlog to Working on now7 Apr at 13:52
+DCDaniel Caddaye moved Registering as a User P:High E:5 hours from Sprint Backlog to Working on now7 Apr at 13:52
+DCDaniel Caddaye added Cory Patterson to View my bookings P:Med E:2 hours7 Apr at 13:51
+DCDaniel Caddaye joined Program displays login page P:High E:3 hours7 Apr at 13:51
+DCDaniel Caddaye removed Sohum Raut from Program displays login page P:High E:3 hours7 Apr at 13:51
+DCDaniel Caddaye removed Sohum Raut from JUnit Tests for Menu Class7 Apr at 13:51
+DCDaniel Caddaye marked the due date on View my bookings P:Med E:2 hours incomplete7 Apr at 13:50
+DCDaniel Caddaye removed Sohum Raut from View my bookings P:Med E:2 hours7 Apr at 13:50
+DCDaniel Caddaye marked a user can view all their own bookings incomplete on View my bookings P:Med E:2 hours7 Apr at 13:50
+DCDaniel Caddaye moved View my bookings P:Med E:2 hours from Done to Sprint Backlog7 Apr at 13:50
+DC
+Daniel Caddaye on JUnit Tests for Menu Class
+@sohumraut1 Where?
+7 Apr at 11:33
+SRSohum Raut completed a user can view all their own bookings on View my bookings P:Med E:2 hours7 Apr at 10:56
+SRSohum Raut added Marco Riotto to Viewing Bookings P:Med E:3 hours7 Apr at 10:54
+SRSohum Raut left Viewing Bookings P:Med E:3 hours7 Apr at 10:54
+SRSohum Raut moved Viewing Bookings P:Med E:3 hours from Done to Sprint Backlog7 Apr at 10:54
+SRSohum Raut removed Daniel Caddaye from Program displays login page P:High E:3 hours7 Apr at 10:53
+SRSohum Raut joined Program displays login page P:High E:3 hours7 Apr at 10:53
+SR
+Sohum Raut on JUnit Tests for Menu Class
+Added some the JUnit Men Class Tests which were passed successfully.
+7 Apr at 10:48
+SRSohum Raut joined JUnit Tests for Menu Class7 Apr at 10:48
+SRSohum Raut moved View my bookings P:Med E:2 hours from Sprint Backlog to Done7 Apr at 10:46
+SRSohum Raut marked the due date on View my bookings P:Med E:2 hours complete7 Apr at 10:46
+SRSohum Raut removed Marco Riotto from View my bookings P:Med E:2 hours7 Apr at 10:46
+SRSohum Raut joined View my bookings P:Med E:2 hours7 Apr at 10:46
+SRSohum Raut moved Viewing Bookings P:Med E:3 hours from Sprint Backlog to Done7 Apr at 10:45
+SRSohum Raut removed Cory Patterson from Viewing Bookings P:Med E:3 hours7 Apr at 10:45
+SRSohum Raut joined Viewing Bookings P:Med E:3 hours7 Apr at 10:45
+DCDaniel Caddaye completed Display login -» sohum working on the actual display, just call the method on Login P:High E: 8 hours7 Apr at 00:49
+CPCory Patterson completed Prompt for registration details (listed in the variables of user class) on Registering as a User P:High E:5 hours6 Apr at 23:48
+CPCory Patterson completed Implement userAuth class on Login P:High E: 8 hours6 Apr at 23:47
+CPCory Patterson completed Implement abstract user class on Login P:High E: 8 hours6 Apr at 23:47
+CPCory Patterson completed Implement user class methods on Login P:High E: 8 hours6 Apr at 23:47
+DCDaniel Caddaye added Sohum Raut to Compile submission materials6 Apr at 23:42
+DCDaniel Caddaye removed Marco Riotto from User can make a booking P:High E: 5 hours6 Apr at 23:42
+DCDaniel Caddaye added Cory Patterson to User can make a booking P:High E: 5 hours6 Apr at 23:42
+DCDaniel Caddaye added Marco Riotto to User cancels a booking P:Low E: 3 hours6 Apr at 23:42
+DCDaniel Caddaye left User cancels a booking P:Low E: 3 hours6 Apr at 23:42
+DCDaniel Caddaye added Marco Riotto to View my bookings P:Med E:2 hours6 Apr at 23:41
+DCDaniel Caddaye removed Sohum Raut from View my bookings P:Med E:2 hours6 Apr at 23:41
+DCDaniel Caddaye moved Program displays login page P:High E:3 hours from Sprint Backlog to Done6 Apr at 23:41
+DCDaniel Caddaye joined Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye removed Sohum Raut from Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye completed Display the dashboard options on Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye completed display business selection on Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye completed Display register option on Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye completed Prompt for username on Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye completed Prompt for password on Program displays login page P:High E:3 hours6 Apr at 23:41
+DCDaniel Caddaye marked the due date on Program displays login page P:High E:3 hours complete6 Apr at 23:41
+DCDaniel Caddaye completed junit test on User cancels a booking P:Low E: 3 hours6 Apr at 13:27
+DCDaniel Caddaye completed junit test on User can make a booking P:High E: 5 hours6 Apr at 13:27
+DCDaniel Caddaye added Week 6 [Tute 4/4/17] to Meeting Records5 Apr at 00:03
+DCDaniel Caddaye added Sohum Raut to View my bookings P:Med E:2 hours5 Apr at 00:02
+DCDaniel Caddaye removed Sohum Raut from View my bookings P:Med E:2 hours5 Apr at 00:02
+DCDaniel Caddaye archived list On Hold4 Apr at 18:14
+DCDaniel Caddaye moved Auto build tools setup from Working on now to Done4 Apr at 17:36
+DCDaniel Caddaye moved Setup leantesting from Working on now to Done4 Apr at 01:14
+DC
+Daniel Caddaye on Setup leantesting
+set up and invited all but not a big deal if people cannot join
+4 Apr at 01:14
+DCDaniel Caddaye moved JUnit Tests for Menu Class from Working on now to Done4 Apr at 01:13
+DC
+Daniel Caddaye on JUnit Tests for Menu Class
+Finished the final test
+4 Apr at 01:13
+DCDaniel Caddaye completed testMenuDispayBusinessSelection on JUnit Tests for Menu Class4 Apr at 01:13
+DCDaniel Caddaye marked the due date on JUnit Tests for Menu Class complete4 Apr at 01:13
+DCDaniel Caddaye joined JUnit Tests for Menu Class4 Apr at 01:13
+DCDaniel Caddaye removed Sohum Raut from JUnit Tests for Menu Class4 Apr at 01:13
+DCDaniel Caddaye added Checklist to Compile submission materials3 Apr at 23:40
+DCDaniel Caddaye added Compile submission materials to Working on now3 Apr at 23:40
+DCDaniel Caddaye moved Setup leantesting from On Hold to Working on now3 Apr at 23:39
+DCDaniel Caddaye joined Setup leantesting3 Apr at 23:39
+DCDaniel Caddaye removed Sohum Raut from Setup leantesting3 Apr at 23:39
+CPCory Patterson removed Sohum Raut from Develop User Stories2 Apr at 14:13
+CPCory Patterson removed Marco Riotto from Develop User Stories2 Apr at 14:13
+CPCory Patterson left Develop User Stories2 Apr at 14:13
+DCDaniel Caddaye changed the due date of JUnit Tests for Menu Class to 1 Apr at 23:591 Apr at 15:28
+DCDaniel Caddaye changed the due date of JUnit Tests for Menu Class to 1 Apr at 11:591 Apr at 15:27
+DCDaniel Caddaye archived list Backlog Part B1 Apr at 15:27
+DCDaniel Caddaye moved User updates personal information from Backlog Part B to Product Backlog1 Apr at 15:27
+DCDaniel Caddaye moved Owner can add more bookings from Backlog Part B to Product Backlog1 Apr at 15:26
+DCDaniel Caddaye moved Adding an Employee P:Low E:2 hours from Backlog Part B to Product Backlog1 Apr at 15:26
+DCDaniel Caddaye moved View Employee Availability P:Low E:1 hours from Backlog Part B to Product Backlog1 Apr at 15:26
+DCDaniel Caddaye moved Owner can update working times/dates P:Med E:4 hours from Backlog Part B to Product Backlog1 Apr at 15:26
+DCDaniel Caddaye moved User cancels a booking P:Low E: 3 hours from Product Backlog to Sprint Backlog1 Apr at 15:26
+DCDaniel Caddaye moved View my bookings P:Med E:2 hours from Product Backlog to Sprint Backlog1 Apr at 15:26
+DCDaniel Caddaye moved User can make a booking P:High E: 5 hours from Product Backlog to Sprint Backlog1 Apr at 15:26
+DCDaniel Caddaye moved Viewing Bookings P:Med E:3 hours from Product Backlog to Sprint Backlog1 Apr at 15:26
+DCDaniel Caddaye joined User cancels a booking P:Low E: 3 hours1 Apr at 15:26
+DCDaniel Caddaye added Marco Riotto to User can make a booking P:High E: 5 hours1 Apr at 15:26
+DCDaniel Caddaye left JUnit Tests for Menu Class1 Apr at 15:25
+DCDaniel Caddaye added Sohum Raut to JUnit Tests for Menu Class1 Apr at 15:25
+DCDaniel Caddaye completed testMenuDispayCustomerDashboard on JUnit Tests for Menu Class1 Apr at 15:25
+DCDaniel Caddaye deleted the Merge pull request #7 from s3383022/menuTest attachment from JUnit Tests for Menu Class31 Mar at 17:33
+DC
+Daniel Caddaye on JUnit Tests for Menu Class
+@sohumraut1 I added a third test, ill do one more tomorrow or tonight but i will be leaving one for you to do.
+31 Mar at 17:33
+DCDaniel Caddaye completed testMenuDispayRegisterScreen on JUnit Tests for Menu Class31 Mar at 17:32
+DCDaniel Caddaye marked the due date on Sprint Planning for Sprint 2 [April 1st - 9th] complete30 Mar at 22:51
+CPCory Patterson joined Viewing Bookings P:Med E:3 hours30 Mar at 17:35
+CPCory Patterson moved Develop unit test for login/register from Working on now to Done30 Mar at 14:10
+CPCory Patterson marked the due date on Develop unit test for login/register complete30 Mar at 14:10
+DCDaniel Caddaye moved Sprint Planning for Sprint 2 [April 1st - 9th] from Working on now to Done29 Mar at 17:45
+DCDaniel Caddaye completed Assign to team on Sprint Planning for Sprint 2 [April 1st - 9th]29 Mar at 17:45
+DCDaniel Caddaye added Sohum Raut to View my bookings P:Med E:2 hours29 Mar at 17:40
+DCDaniel Caddaye completed Add storypoints on Sprint Planning for Sprint 2 [April 1st - 9th]29 Mar at 17:39
+DCDaniel Caddaye added Mielstones to User cancels a booking P:Low E: 3 hours29 Mar at 17:38
+DCDaniel Caddaye added Milestones to View my bookings P:Med E:2 hours29 Mar at 17:37
+DCDaniel Caddaye added Milestones to Viewing Bookings P:Med E:3 hours29 Mar at 17:35
+DCDaniel Caddaye added Milestones to User can make a booking P:High E: 5 hours29 Mar at 17:33
+CP
+Cory Patterson on Develop class diagram
+@danielcaddayermit yep, I'll have a look tonight
+29 Mar at 17:09
+DC
+Daniel Caddaye on Develop class diagram
+Feel like this is 90% done. Worth checking out but ill check closer to submission if there is anything else missing or changed.
+29 Mar at 17:07
+DCDaniel Caddaye completed Set due dates on Sprint Planning for Sprint 2 [April 1st - 9th]29 Mar at 01:04
+DCDaniel Caddaye completed testMenuDispayLoginScreen on JUnit Tests for Menu Class29 Mar at 00:56
+DCDaniel Caddaye completed testMenuDispayMainMenu on JUnit Tests for Menu Class29 Mar at 00:56
+DCDaniel Caddaye added Checklist to JUnit Tests for Menu Class29 Mar at 00:52
+DCDaniel Caddaye completed Order backlog on Sprint Planning for Sprint 2 [April 1st - 9th]29 Mar at 00:50
+DCDaniel Caddaye added Checklist to Sprint Planning for Sprint 2 [April 1st - 9th]29 Mar at 00:49
+DCDaniel Caddaye joined Sprint Planning for Sprint 2 [April 1st - 9th]29 Mar at 00:48
+DCDaniel Caddaye added Sprint Planning for Sprint 2 [April 1st - 9th] to Working on now29 Mar at 00:48
+DCDaniel Caddaye removed Sohum Raut from Set up Story Points and do Naming Conventions29 Mar at 00:47
+DC
+Daniel Caddaye on System imports and exports data to file
+For part 2 update to support mutipal business in info file.
+29 Mar at 00:46
+DCDaniel Caddaye moved Complete User Flow Mockup of Booking App from Done to Mockups29 Mar at 00:38
+DCDaniel Caddaye moved Confirm Booking from Done to Mockups29 Mar at 00:38
+DCDaniel Caddaye left Mockup for login/ Register a user29 Mar at 00:38
+DCDaniel Caddaye moved User updates personal information from Product Backlog to Backlog Part B29 Mar at 00:09
+DCDaniel Caddaye moved Adding an Employee P:Low E:2 hours from Product Backlog to Backlog Part B29 Mar at 00:09
+DCDaniel Caddaye moved Owner can add more bookings from Product Backlog to Backlog Part B29 Mar at 00:09
+DCDaniel Caddaye moved View Employee Availability P:Low E:1 hours from Product Backlog to Backlog Part B29 Mar at 00:09
+DCDaniel Caddaye moved Owner can update working times/dates P:Med E:4 hours from Product Backlog to Backlog Part B29 Mar at 00:09
+DCDaniel Caddaye added Backlog Part B to this board29 Mar at 00:09
+DCDaniel Caddaye moved Setup leantesting from Done to on Hold29 Mar at 00:08
+DCDaniel Caddaye added on Hold to this board29 Mar at 00:08
+DCDaniel Caddaye moved Availabilities display from Done to Mockups29 Mar at 00:08
+DCDaniel Caddaye moved Menu(s) mockup from Done to Mockups29 Mar at 00:08
+DCDaniel Caddaye moved Mockup for login/ Register a user from Done to Mockups29 Mar at 00:08
+DCDaniel Caddaye marked the due date on Set up dummy data complete29 Mar at 00:08
+DCDaniel Caddaye moved Develop documentation on git. from Done to Working on now29 Mar at 00:07
+DCDaniel Caddaye moved Develop User Stories from Working on now to Done29 Mar at 00:07
+DCDaniel Caddaye added Cory Patterson to Auto build tools setup29 Mar at 00:07
+DCDaniel Caddaye left Auto build tools setup29 Mar at 00:07
+DCDaniel Caddaye removed Marco Riotto from User updates personal information29 Mar at 00:06
+DCDaniel Caddaye removed the due date from User updates personal information29 Mar at 00:06
+DCDaniel Caddaye removed Sohum Raut from Owner can add more bookings29 Mar at 00:06
+DCDaniel Caddaye moved JUnit Tests for Menu Class from Sprint Backlog to Working on now29 Mar at 00:05
+DC
+Daniel Caddaye on JUnit Tests for Menu Class
+@sohumraut1 I've merged this with master so you can see how the menu test works. If you do a different console print layout then adjust the test beforehand.
+
+The two test cases that are done are enough for you to get started on the menu.
+
+I will do some more test cases soon but you should try and code some also.
+29 Mar at 00:05
+DC
+Daniel Caddaye attached Merge pull request #7 from s3383022/menuTest to JUnit Tests for Menu Class  
+29 Mar at 00:01
+DC
+Daniel Caddaye on JUnit Tests for Menu Class
+I have added the menuTest class and completed the first two test cases.
+28 Mar at 23:59
+SR
+Sohum Raut on Program displays login page P:High E:3 hours
+Run the new utility object and use it to import all the data from file (business info and customer info). All this is is displaying text pretty much. There are no files to display.
+28 Mar at 18:37
+SR
+Sohum Raut on Program displays login page P:High E:3 hours
+Write a prompt print_f statement and then pass on the information to another function (register user function) Then print data about the business.
+28 Mar at 18:30 (edited)
+SRSohum Raut added Week 5 [Tute 28/3/17] to Meeting Records28 Mar at 18:25
+DCDaniel Caddaye removed Sohum Raut from JUnit Tests for Menu Class28 Mar at 17:49
+DCDaniel Caddaye joined JUnit Tests for Menu Class28 Mar at 17:49
+SRSohum Raut moved Setup leantesting from Sprint Backlog to Done28 Mar at 17:48
+SRSohum Raut joined Program displays login page P:High E:3 hours28 Mar at 17:41
+SRSohum Raut moved Complete User Flow Mockup of Booking App from Mockups to Done28 Mar at 17:00
+SR
+Sohum Raut attached Booking App for Assignment.bmpr to Complete User Flow Mockup of Booking App  
+28 Mar at 17:00
+SRSohum Raut joined Complete User Flow Mockup of Booking App28 Mar at 16:59
+SRSohum Raut added Complete User Flow Mockup of Booking App to Mockups28 Mar at 16:59
+SRSohum Raut left Program displays login page P:High E:3 hours28 Mar at 16:13
+SRSohum Raut removed the due date from Owner can add more bookings28 Mar at 16:08
+SRSohum Raut sent Setup leantesting to the board28 Mar at 16:08
+SRSohum Raut archived Setup leantesting28 Mar at 16:08
+SRSohum Raut moved Setup leantesting from Working on now to Sprint Backlog28 Mar at 16:07
+SRSohum Raut moved Availabilities display from Working on now to Done28 Mar at 16:07
+SRSohum Raut moved Mockup for login/ Register a user from Working on now to Done28 Mar at 16:07
+SRSohum Raut changed the due date of Menu(s) mockup to 28 Mar at 23:5928 Mar at 16:07
+SRSohum Raut moved Menu(s) mockup from Working on now to Done28 Mar at 16:07
+SRSohum Raut moved Confirm Booking from Working on now to Done28 Mar at 16:07
+SRSohum Raut moved Menu(s) mockup from Done to Working on now28 Mar at 15:54
+SRSohum Raut moved Confirm Booking from Done to Working on now28 Mar at 15:54
+SRSohum Raut moved Mockup for login/ Register a user from Done to Working on now28 Mar at 15:54
+SRSohum Raut moved Availabilities display from Done to Working on now28 Mar at 15:54
+SRSohum Raut moved JUnit Tests for Menu Class from Working on now to Sprint Backlog28 Mar at 15:54
+SR
+Sohum Raut on Setup leantesting
+I don't actually know what this means.
+28 Mar at 15:53
+SRSohum Raut moved Availabilities display from Mockups to Done28 Mar at 15:52
+SRSohum Raut moved Confirm Booking from Mockups to Done28 Mar at 15:52
+SRSohum Raut joined Confirm Booking28 Mar at 15:51
+SRSohum Raut joined Availabilities display28 Mar at 15:51
+DCDaniel Caddaye removed the due date from Login P:High E: 8 hours28 Mar at 15:51
+DCDaniel Caddaye removed the due date from Registering as a User P:High E:5 hours28 Mar at 15:51
+DCDaniel Caddaye removed the due date from Program displays login page P:High E:3 hours28 Mar at 15:51
+DC
+Daniel Caddaye on Mockup for login/ Register a user
+Ok cool @sohumraut1
+28 Mar at 15:50
+SR
+Sohum Raut on Mockup for login/ Register a user
+I ended up doing this also. It was easy enough to add this as an additional page to a Balsamiq mockup.
+28 Mar at 15:49
+SRSohum Raut moved Mockup for login/ Register a user from Mockups to Done28 Mar at 15:49
+SRSohum Raut added Daniel Caddaye to Mockup for login/ Register a user28 Mar at 15:48
+SRSohum Raut joined Mockup for login/ Register a user28 Mar at 15:48
+SRSohum Raut marked the due date on Menu(s) mockup complete28 Mar at 15:48
+SRSohum Raut moved Menu(s) mockup from Mockups to Done28 Mar at 15:47
+MRMarco Riotto moved User updates personal information from User Stories to Product Backlog28 Mar at 15:39
+MRMarco Riotto moved Owner can add more bookings from User Stories to Product Backlog28 Mar at 15:39
+MRMarco Riotto marked the due date on User updates personal information complete28 Mar at 15:37
+MRMarco Riotto marked the due date on Owner can add more bookings complete28 Mar at 15:34
+CPCory Patterson marked Prompt for registration details (listed in the variables of user class) incomplete on Registering as a User P:High E:5 hours28 Mar at 13:33
+CPCory Patterson completed Prompt for registration details (listed in the variables of user class) on Registering as a User P:High E:5 hours28 Mar at 13:33
+DCDaniel Caddaye moved System imports and exports data to file from Working on now to Done28 Mar at 03:09
+DCDaniel Caddaye completed write data to file(s) on System imports and exports data to file28 Mar at 03:09
+DCDaniel Caddaye completed username on businesses are already added via business.txt28 Mar at 01:13
+DCDaniel Caddaye completed password on businesses are already added via business.txt28 Mar at 01:13
+DCDaniel Caddaye completed owner name on businesses are already added via business.txt28 Mar at 01:13
+DCDaniel Caddaye completed business name on businesses are already added via business.txt28 Mar at 01:13
+DCDaniel Caddaye moved Set up dummy data from Working on now to Done28 Mar at 01:12
+DCDaniel Caddaye completed customer.txt on Set up dummy data28 Mar at 01:12
+DCDaniel Caddaye completed import customer data on System imports and exports data to file28 Mar at 01:12
+DC
+Daniel Caddaye attached utilities_class to Set up dummy data  
+27 Mar at 19:40
+DC
+Daniel Caddaye attached utilities_class to System imports and exports data to file  
+27 Mar at 19:40
+DCDaniel Caddaye completed Busness.txt on Set up dummy data27 Mar at 19:37
+DCDaniel Caddaye added Milestones to Set up dummy data27 Mar at 19:37
+DCDaniel Caddaye completed junit tests on System imports and exports data to file27 Mar at 19:36
+DCDaniel Caddaye completed import bussiness data on System imports and exports data to file27 Mar at 19:36
+DCDaniel Caddaye completed dummy data on System imports and exports data to file27 Mar at 19:36
+DCDaniel Caddaye added Milestones to System imports and exports data to file27 Mar at 19:36
+DCDaniel Caddaye joined System imports and exports data to file27 Mar at 19:35
+DCDaniel Caddaye added System imports and exports data to file to Working on now27 Mar at 19:35
+DC
+Daniel Caddaye on Set up dummy data
+ive set up the business info dummy data
+27 Mar at 19:34
+DCDaniel Caddaye joined Set up dummy data27 Mar at 19:34
+DCDaniel Caddaye removed Marco Riotto from Set up dummy data27 Mar at 19:34
+CPCory Patterson added Marco Riotto to Develop documentation on git.27 Mar at 11:19
+CPCory Patterson added Sohum Raut to Develop documentation on git.27 Mar at 11:19
+CPCory Patterson added Daniel Caddaye to Develop documentation on git.27 Mar at 11:19
+DC
+Daniel Caddaye attached #3 exceptions added to Develop exceptions for menus login and registration.  
+25 Mar at 01:03
+DCDaniel Caddaye moved Develop exceptions for menus login and registration. from Working on now to Done25 Mar at 01:01
+DCDaniel Caddaye changed the due date of Develop exceptions for menus login and registration. to 25 Mar at 23:5925 Mar at 01:01
+DCDaniel Caddaye marked the due date on Develop exceptions for menus login and registration. complete25 Mar at 01:01
+DCDaniel Caddaye changed the due date of Develop exceptions for menus login and registration. to 27 Mar at 23:5925 Mar at 00:08
+DCDaniel Caddaye removed the due date from User cancels a booking P:Low E: 3 hours24 Mar at 14:09
+DCDaniel Caddaye marked the due date on User cancels a booking P:Low E: 3 hours complete24 Mar at 14:09
+CPCory Patterson added Milestones to Login P:High E: 8 hours22 Mar at 11:58
+CPCory Patterson added Milestones to Registering as a User P:High E:5 hours22 Mar at 11:53
+CP
+Cory Patterson on Program displays login page P:High E:3 hours
+That milestone checklist isn't in order, sorry @sohumraut1
+22 Mar at 11:50
+CPCory Patterson added Milestones to Program displays login page P:High E:3 hours22 Mar at 11:46
+DC
+Daniel Caddaye on Develop class diagram
+Ive updated it now to reflect the current code structure. There still needs to be more done but we can update as we do/change things
+22 Mar at 00:54
+DC
+Daniel Caddaye on Develop class diagram
+I'm currently updating it as per current code status.
+21 Mar at 22:51
+DC
+Daniel Caddaye attached testing to Develop unit test for login/register  
+21 Mar at 22:21
+DC
+Daniel Caddaye attached testing to JUnit Tests for Menu Class  
+21 Mar at 22:21
+DCDaniel Caddaye moved Develop exceptions for menus login and registration. from Sprint Backlog to Working on now21 Mar at 22:21
+DC
+Daniel Caddaye attached exceptions to Develop exceptions for menus login and registration.  
+21 Mar at 22:20
+DCDaniel Caddaye changed the background of this board21 Mar at 22:18
+DCDaniel Caddaye changed the background of this board21 Mar at 22:18
+DCDaniel Caddaye enabled the GitHub Power-Up21 Mar at 22:15
+DC
+Daniel Caddaye on Week 4 [Tute 21/3/17]
+Prevention week :) bonus marks
+21 Mar at 19:06
+CPCory Patterson left User cancels a booking P:Low E: 3 hours21 Mar at 19:04
+CP
+Cory Patterson on User cancels a booking P:Low E: 3 hours
+finished user story
+21 Mar at 19:03
+CPCory Patterson removed Time Consideration from Registering as a User P:High E:5 hours21 Mar at 19:03
+CPCory Patterson removed Time Consideration from Program displays login page P:High E:3 hours21 Mar at 19:03
+CPCory Patterson removed Time Consideration from User cancels a booking P:Low E: 3 hours21 Mar at 19:03
+DCDaniel Caddaye moved User cancels a booking P:Low E: 3 hours from User Stories to Product Backlog21 Mar at 18:57
+DCDaniel Caddaye added Sohum Raut to Menu(s) mockup21 Mar at 18:56
+DCDaniel Caddaye left Menu(s) mockup21 Mar at 18:56
+CPCory Patterson joined Login P:High E: 8 hours21 Mar at 18:55
+CPCory Patterson removed Time Consideration from Login P:High E: 8 hours21 Mar at 18:55
+CPCory Patterson removed Time Consideration from View Employee Availability P:Low E:1 hours21 Mar at 18:43
+CPCory Patterson removed Time Consideration from Owner can update working times/dates P:Med E:4 hours21 Mar at 18:42
+CPCory Patterson removed Time Consideration from View my bookings P:Med E:2 hours21 Mar at 18:42
+DCDaniel Caddaye removed Cory Patterson from Viewing Bookings P:Med E:3 hours21 Mar at 18:42
+DCDaniel Caddaye removed Cory Patterson from Owner can update working times/dates P:Med E:4 hours21 Mar at 18:42
+CPCory Patterson removed Time Consideration from User can make a booking P:High E: 5 hours21 Mar at 18:42
+DCDaniel Caddaye left User can make a booking P:High E: 5 hours21 Mar at 18:41
+CPCory Patterson removed Time Consideration from Viewing Bookings P:Med E:3 hours21 Mar at 18:41
+CPCory Patterson removed Time Consideration from Adding an Employee P:Low E:2 hours21 Mar at 18:41
+DCDaniel Caddaye moved Develop documentation on git. from Doing to Done21 Mar at 18:36
+DCDaniel Caddaye changed the due date of Assignment Spec - Part A to tomorrow at 09:0021 Mar at 18:32
+DCDaniel Caddaye added Marco Riotto to Login P:High E: 8 hours21 Mar at 18:30
+DCDaniel Caddaye left Login P:High E: 8 hours21 Mar at 18:30
+DCDaniel Caddaye added Marco Riotto to Set up dummy data21 Mar at 18:28
+DCDaniel Caddaye added Set up dummy data to Doing21 Mar at 18:26
+DCDaniel Caddaye added Cory Patterson to Develop documentation on git.21 Mar at 18:11
+DCDaniel Caddaye added Develop documentation on git. to Doing21 Mar at 18:11
+DCDaniel Caddaye moved Develop unit test for login/register from Done to Doing21 Mar at 18:10
+DCDaniel Caddaye added Cory Patterson to Develop unit test for login/register21 Mar at 18:10
+DCDaniel Caddaye left Develop unit test for login/register21 Mar at 18:10
+DCDaniel Caddaye joined Develop exceptions for menus login and registration.21 Mar at 18:10
+DCDaniel Caddaye left Develop User Stories21 Mar at 18:09
+DCDaniel Caddaye added Develop exceptions for menus login and registration. to Sprint Backlog21 Mar at 18:07
+DCDaniel Caddaye changed the due date of Menu(s) mockup to 24 Mar at 23:5921 Mar at 18:04
+DCDaniel Caddaye added Checklist to Menu(s) mockup21 Mar at 18:04
+DCDaniel Caddaye joined Menu(s) mockup21 Mar at 18:03
+DCDaniel Caddaye added Menu(s) mockup to Mockups21 Mar at 18:01
+DCDaniel Caddaye removed the due date from Availabilities display21 Mar at 18:01
+SR
+Sohum Raut on JUnit Tests for Menu Class
+Create new JUnit test in Eclipse using the Wizard for Menu Class and remerge to Github as a Java file. Eg MenuTest.java.
+
+Write tests to check if the Menu Displays correctly
+Look out how to test Print Statements / Print Lines
+Test to make sure the Menu Displays as shown in the Mock Up.
+21 Mar at 18:01 (edited)
+DCDaniel Caddaye added Sohum Raut to Program displays login page P:High E:3 hours21 Mar at 18:00
+DCDaniel Caddaye changed the due date of Registering as a User P:High E:5 hours to 28 Mar at 23:5921 Mar at 18:00
+DCDaniel Caddaye changed the due date of Login P:High E: 8 hours to 28 Mar at 23:5921 Mar at 17:59
+DCDaniel Caddaye joined Login P:High E: 8 hours21 Mar at 17:59
+SRSohum Raut joined JUnit Tests for Menu Class21 Mar at 17:59
+SRSohum Raut added JUnit Tests for Menu Class to Doing21 Mar at 17:59
+SR
+Sohum Raut on Week 4 [Tute 21/3/17]
+Solved a notification error. I wasn't receiving the emails via Trello or Slack and was struggling with adding it into my workday. But solved the problem.
+21 Mar at 17:58
+DCDaniel Caddaye changed the due date of User updates personal information to 24 Mar at 23:5921 Mar at 17:58
+DCDaniel Caddaye added Marco Riotto to User updates personal information21 Mar at 17:58
+DCDaniel Caddaye changed the due date of User cancels a booking P:Low E: 3 hours to 24 Mar at 23:5921 Mar at 17:58
+DCDaniel Caddaye changed the due date of Owner can add more bookings to 24 Mar at 23:5921 Mar at 17:58
+SRSohum Raut moved Set up Story Points and do Naming Conventions from Doing to Done21 Mar at 17:57
+SRSohum Raut joined Set up Story Points and do Naming Conventions21 Mar at 17:57
+SRSohum Raut added Set up Story Points and do Naming Conventions to Doing21 Mar at 17:56
+CPCory Patterson added Week 4 [Tute 21/3/17] to Meeting Records21 Mar at 17:41
+DCDaniel Caddaye added Sohum Raut to Owner can add more bookings21 Mar at 17:33
+DCDaniel Caddaye moved Develop unit test for login/register from Doing to Done21 Mar at 15:18
+DCDaniel Caddaye joined Develop unit test for login/register21 Mar at 15:18
+DC
+Daniel Caddaye on Develop unit test for login/register
+junit file started but no implementation yet
+16 Mar at 23:43
+DC
+Daniel Caddaye on Auto build tools setup
+This is more complicated then i first thought
+16 Mar at 23:41
+DC
+Daniel Caddaye on Mockup for login/ Register a user
+updated alignment in GUI mockup
+16 Mar at 22:30
+DC
+Daniel Caddaye attached login_mockup.psd to Mockup for login/ Register a user  
+16 Mar at 22:30
+DCDaniel Caddaye deleted the login_mockup.psd attachment from Mockup for login/ Register a user16 Mar at 22:29
+DCDaniel Caddaye moved User can make a booking P:High E: 5 hours from User Stories to Product Backlog16 Mar at 22:23
+DCDaniel Caddaye completed 3 hours on Login P:High E: 8 hours16 Mar at 22:15
+DCDaniel Caddaye completed 3 hours on Registering as a User P:High E:5 hours16 Mar at 22:15
+DCDaniel Caddaye completed 1 hour on Program displays login page P:High E:3 hours16 Mar at 22:14
+CPCory Patterson completed 5 hours on User updates personal information16 Mar at 07:56
+CPCory Patterson completed 5 hours on User cancels a booking P:Low E: 3 hours16 Mar at 07:56
+CPCory Patterson completed 3 hours on Owner can add more bookings16 Mar at 07:56
+CPCory Patterson marked 3 hours incomplete on User can make a booking P:High E: 5 hours16 Mar at 07:56
+CPCory Patterson completed 5 hours on User can make a booking P:High E: 5 hours16 Mar at 07:56
+CPCory Patterson completed 3 hours on User can make a booking P:High E: 5 hours16 Mar at 07:56
+CPCory Patterson completed 1 hour on View Employee Availability P:Low E:1 hours16 Mar at 07:56
+CPCory Patterson completed 3 hours on Owner can update working times/dates P:Med E:4 hours16 Mar at 07:56
+CPCory Patterson completed 1 hour on Viewing Bookings P:Med E:3 hours16 Mar at 07:55
+CPCory Patterson completed 1 hour on View my bookings P:Med E:2 hours16 Mar at 07:55
+CPCory Patterson completed 1 hour on Adding an Employee P:Low E:2 hours16 Mar at 07:55
+CPCory Patterson completed 5 hours on Login P:High E: 8 hours16 Mar at 07:49
+CPCory Patterson completed 5 hours on Registering as a User P:High E:5 hours16 Mar at 07:48
+CPCory Patterson completed 3 hours on Program displays login page P:High E:3 hours16 Mar at 07:48
+CPCory Patterson joined Registering as a User P:High E:5 hours16 Mar at 07:41
+CPCory Patterson joined Owner can update working times/dates P:Med E:4 hours16 Mar at 07:41
+CPCory Patterson joined Viewing Bookings P:Med E:3 hours16 Mar at 07:41
+CPCory Patterson added Time Consideration to User updates personal information16 Mar at 07:40
+CPCory Patterson added Time Consideration to User cancels a booking P:Low E: 3 hours16 Mar at 07:40
+CPCory Patterson added Time Consideration to Owner can add more bookings16 Mar at 07:40
+CPCory Patterson added Time Consideration to User can make a booking P:High E: 5 hours16 Mar at 07:39
+CPCory Patterson added Time Consideration to Login P:High E: 8 hours16 Mar at 07:39
+CPCory Patterson added Time Consideration to Registering as a User P:High E:5 hours16 Mar at 07:39
+CPCory Patterson added Time Consideration to Program displays login page P:High E:3 hours16 Mar at 07:39
+CPCory Patterson added Time Consideration to View Employee Availability P:Low E:1 hours16 Mar at 07:39
+CPCory Patterson added Time Consideration to Owner can update working times/dates P:Med E:4 hours16 Mar at 07:39
+CPCory Patterson added Time Consideration to Viewing Bookings P:Med E:3 hours16 Mar at 07:38
+CPCory Patterson added Time Consideration to View my bookings P:Med E:2 hours16 Mar at 07:38
+CPCory Patterson added Time Consideration to Adding an Employee P:Low E:2 hours16 Mar at 07:36
+DCDaniel Caddaye moved Develop unit test for login/register from Sprint Backlog to Doing14 Mar at 18:43
+DCDaniel Caddaye moved Auto build tools setup from Done to Doing14 Mar at 18:38
+DCDaniel Caddaye joined Auto build tools setup14 Mar at 18:38
+CPCory Patterson joined User cancels a booking P:Low E: 3 hours14 Mar at 18:18
+SR
+Sohum Raut on Week 3 [Tute 14/3/17]
+Sohum has joined the group and added to Github, Trello and Slack. With all the correct permissions.
+14 Mar at 18:18
+DCDaniel Caddaye joined User can make a booking P:High E: 5 hours14 Mar at 18:17
+CPCory Patterson added Sohum Raut to Develop class diagram14 Mar at 18:16
+CPCory Patterson added Marco Riotto to Develop class diagram14 Mar at 18:16
+CPCory Patterson added Daniel Caddaye to Develop class diagram14 Mar at 18:16
+CPCory Patterson joined Develop class diagram14 Mar at 18:16
+DCDaniel Caddaye joined Develop User Stories14 Mar at 18:16
+DCDaniel Caddaye added Cory Patterson to Develop User Stories14 Mar at 18:16
+DCDaniel Caddaye added Sohum Raut to Develop User Stories14 Mar at 18:16
+DCDaniel Caddaye added Marco Riotto to Develop User Stories14 Mar at 18:16
+CPCory Patterson removed Sohum Raut from Develop class diagram14 Mar at 18:16
+SRSohum Raut joined Develop class diagram14 Mar at 18:15
+SRSohum Raut joined Setup leantesting14 Mar at 18:15
+CPCory Patterson added Sohum Raut to this board14 Mar at 18:15
+CPCory Patterson added Confirm Booking to Mockups14 Mar at 18:05
+DCDaniel Caddaye added User updates personal information to User Stories14 Mar at 18:05
+CPCory Patterson archived Select a Business14 Mar at 18:04
+DCDaniel Caddaye added User cancels a booking P:Low E: 3 hours to User Stories14 Mar at 18:04
+CPCory Patterson added Select a Business to Mockups14 Mar at 18:04
+CPCory Patterson added Availabilities display to Mockups14 Mar at 18:03
+CPCory Patterson moved Mockup for login/ Register a user from Done to Mockups14 Mar at 18:01
+CPCory Patterson added Mockups to this board14 Mar at 18:01
+DCDaniel Caddaye renamed this board (from Assignment)14 Mar at 17:54
+DCDaniel Caddaye added 1 Points to Colour Code14 Mar at 17:48
+DCDaniel Caddaye completed Names and student numbers on README file14 Mar at 17:45
+DCDaniel Caddaye added Owner can add more bookings to User Stories14 Mar at 17:44
+CPCory Patterson added Week 3 [Tute 14/3/17] to Meeting Records14 Mar at 17:43
+DCDaniel Caddaye added User can make a booking P:High E: 5 hours to User Stories14 Mar at 17:43
+DCDaniel Caddaye moved View Employee Availability P:Low E:1 hours from User Stories to Product Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Owner can update working times/dates P:Med E:4 hours from User Stories to Product Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Viewing Bookings P:Med E:3 hours from User Stories to Product Backlog14 Mar at 17:43
+DCDaniel Caddaye moved View my bookings P:Med E:2 hours from User Stories to Product Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Adding an Employee P:Low E:2 hours from User Stories to Product Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Login P:High E: 8 hours from Product Backlog to Sprint Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Registering as a User P:High E:5 hours from Product Backlog to Sprint Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Program displays login page P:High E:3 hours from Product Backlog to Sprint Backlog14 Mar at 17:43
+DCDaniel Caddaye moved Develop unit test for login/register from Doing to Sprint Backlog14 Mar at 17:42
+DCDaniel Caddaye moved Mockup for login/ Register a user from Doing to Done13 Mar at 17:32
+DC
+Daniel Caddaye on Mockup for login/ Register a user
+UI is rough but its only a mockup
+13 Mar at 17:30
+DC
+Daniel Caddaye attached login_mockup.psd to Mockup for login/ Register a user  
+13 Mar at 17:30
+DCDaniel Caddaye added Mockup for login/ Register a user to Doing13 Mar at 16:57
+DCDaniel Caddaye moved Login P:High E: 8 hours from User Stories to Product Backlog13 Mar at 16:56
+DCDaniel Caddaye moved Program displays login page P:High E:3 hours from User Stories to Product Backlog13 Mar at 16:56
+DCDaniel Caddaye moved Registering as a User P:High E:5 hours from User Stories to Product Backlog13 Mar at 16:56
+DCDaniel Caddaye moved README file from Functional Requirements to Done13 Mar at 16:56
+DCDaniel Caddaye completed short description of each person's contribution (include a percentage contributed) on README file13 Mar at 16:55
+DC
+Daniel Caddaye attached SEPT Assignment Part A.pdf to Assignment Spec - Part A  
+13 Mar at 16:46
+DCDaniel Caddaye added Assignment Spec - Part A to Documents13 Mar at 16:46
+DCDaniel Caddaye added Documents to this board13 Mar at 16:46
+DC
+Daniel Caddaye attached US_3.pdf to Program displays login page P:High E:3 hours  
+13 Mar at 16:46
+DCDaniel Caddaye added Program displays login page P:High E:3 hours to User Stories7 Mar at 18:45
+DCDaniel Caddaye added Owner can update working times/dates P:Med E:4 hours to User Stories7 Mar at 18:44
+CPCory Patterson added Adding an Employee P:Low E:2 hours to User Stories7 Mar at 18:42
+DCDaniel Caddaye moved Auto build tools setup from Doing to Done7 Mar at 18:37
+DCDaniel Caddaye moved Develop class diagram from Sprint Backlog to Doing7 Mar at 18:37
+DCDaniel Caddaye moved Develop unit test for login/register from Sprint Backlog to Doing7 Mar at 18:37
+DC
+Daniel Caddaye attached US_2.pdf to View Employee Availability P:Low E:1 hours  
+7 Mar at 18:32
+CPCory Patterson added Complete to Colour Code7 Mar at 18:14
+CPCory Patterson added Struggling to Colour Code7 Mar at 18:14
+CPCory Patterson added 5 Points to Colour Code7 Mar at 18:14
+CPCory Patterson added 8 Points to Colour Code7 Mar at 18:13
+CPCory Patterson added 3 Points to Colour Code7 Mar at 18:13
+CPCory Patterson added 2 Points to Colour Code7 Mar at 18:13
+DCDaniel Caddaye added Week 2 [Tute 7/3/17] to Meeting Records7 Mar at 18:10
+DCDaniel Caddaye added Meeting Records to this board7 Mar at 18:10
+DCDaniel Caddaye moved Develop class diagram from Product Backlog to Sprint Backlog7 Mar at 18:10
+DCDaniel Caddaye added Develop class diagram to Product Backlog7 Mar at 18:09
+DCDaniel Caddaye moved View Employee Availability P:Low E:1 hours from Functional Requirements to User Stories7 Mar at 18:06
+CPCory Patterson added Login P:High E: 8 hours to User Stories7 Mar at 17:58
+CPCory Patterson added Registering as a User P:High E:5 hours to User Stories7 Mar at 17:54
+DCDaniel Caddaye added Develop unit test for login/register to Sprint Backlog7 Mar at 17:54
+DC
+Daniel Caddaye attached US_1.pdf to View my bookings P:Med E:2 hours  
+7 Mar at 17:27
+CPCory Patterson added Viewing Bookings P:Med E:3 hours to User Stories7 Mar at 16:37
+DCDaniel Caddaye added Colour Code to this board7 Mar at 11:59
+DCDaniel Caddaye archived Sketch out product backlog7 Mar at 11:58
+DCDaniel Caddaye moved View my bookings P:Med E:2 hours from Functional Requirements to User Stories7 Mar at 11:46
+DCDaniel Caddaye added Sprint Backlog to this board7 Mar at 11:45
+DCDaniel Caddaye added Product Backlog to this board7 Mar at 11:45
+DCDaniel Caddaye added User Stories to this board7 Mar at 11:45
+DCDaniel Caddaye disabled the Slack Power-Up1 Mar at 09:45
+DCDaniel Caddaye enabled the Slack Power-Up1 Mar at 09:45
+DCDaniel Caddaye disabled the GitHub Power-Up1 Mar at 09:45
+DCDaniel Caddaye enabled the GitHub Power-Up1 Mar at 09:45
+DCDaniel Caddaye disabled the GitHub Power-Up1 Mar at 09:45
+DCDaniel Caddaye enabled the GitHub Power-Up1 Mar at 09:44
+CPCory Patterson added customerinfo.txt to Functional Requirements28 Feb at 19:05
+CPCory Patterson added Customer can view available times/days to Functional Requirements28 Feb at 19:00
+CPCory Patterson added View Employee Availability P:Low E:1 hours to Functional Requirements28 Feb at 18:58
+CPCory Patterson added View my bookings P:Med E:2 hours to Functional Requirements28 Feb at 18:57
+CPCory Patterson added Checklist to Owner can add:28 Feb at 18:56
+CPCory Patterson added Owner can add: to Functional Requirements28 Feb at 18:56
+DCDaniel Caddaye added Decided on programming language to Done28 Feb at 18:56
+CPCory Patterson added Checklist to businesses are already added via business.txt28 Feb at 18:54
+CPCory Patterson added businesses are already added via business.txt to Functional Requirements28 Feb at 18:54
+CPCory Patterson removed Checklist from User registration for Customers28 Feb at 18:53
+CPCory Patterson added Checklist to User registration for Customers28 Feb at 18:52
+CPCory Patterson added User registration for Customers to Functional Requirements28 Feb at 18:51
+CPCory Patterson added Authenticate and authorise users based on their role\ to Functional Requirements28 Feb at 18:50
+ZWZach Williams added Mohammad to this board28 Feb at 18:49
+ZWZach Williams joined this board28 Feb at 18:49
+CPCory Patterson added Checklist to README file28 Feb at 18:47
+CPCory Patterson added README file to Requirements28 Feb at 18:47
+MRMarco Riotto joined this board28 Feb at 18:46
