@@ -10,7 +10,7 @@ business, e.g., a hairdresser, a gym, or dentist.
 - Daniel Caddaye - s3383022. 30% overall contribution. Areas of contribution: Programming, Documenting, Testing.
 - Cory Patterson - s3600197. 30% overall contribution. Areas of contribution: Programming, Documenting, Testing.
 - Sohum Raut - s3377766. 10% overall contribution. Areas of contribution: Documenting, Design.
-- Marco Riotto - s3606584. 30% overall contribution. Areas of contribution: Programming, Documenting.
+- Marco Riotto - s3606584. 30% overall contribution. Areas of contribution: Programming, Documenting, Design.
 
 
 ## Tutorial
