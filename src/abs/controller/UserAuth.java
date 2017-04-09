@@ -84,9 +84,9 @@ public class UserAuth {
 	public boolean authUser(String email, String password) throws CredentialsInvalidException {
 
 		/* check if the list is empty */
-		if (this.customers == null && this.owners == null) {
+		if (this.customers.isEmpty() && this.owners.isEmpty()) {
 			return false;
-		} else if (!(this.customers == null)) {
+		} else if (!(this.customers.isEmpty())) {
 			/* step through the customer list */
 			for (int i = 0; i < customers.size(); i++) {
 
@@ -104,25 +104,28 @@ public class UserAuth {
 					}
 				}
 			}
-		} else if (!(this.owners == null)) {
-			/* step through the owner list */
-			for (int i = 0; i < owners.size(); i++) {
+		}
+		// Both aren't empty, wasn't found in customer so must be a owner or
+		// invalid
 
-				/* check the email is the same */
-				if (this.owners.get(i).getEmail().equals(email)) {
+		/* step through the owner list */
+		for (int i = 0; i < owners.size(); i++) {
 
-					/* check the password is the same */
-					if (this.owners.get(i).getPassword().equals(password)) {
+			/* check the email is the same */
+			if (this.owners.get(i).getEmail().equals(email)) {
 
-						/* set this user as the active user */
-						this.activeUser = this.owners.get(i);
+				/* check the password is the same */
+				if (this.owners.get(i).getPassword().equals(password)) {
 
-						/* end method */
-						return true;
-					}
+					/* set this user as the active user */
+					this.activeUser = this.owners.get(i);
+
+					/* end method */
+					return true;
 				}
 			}
 		}
+
 		/* went through both whole lists and didn't find the user */
 		throw new CredentialsInvalidException();
 

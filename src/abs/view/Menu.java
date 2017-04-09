@@ -383,7 +383,7 @@ public class Menu {
 		activeBusiness.displayBookings();
 
 		// user can book a time or go back
-		System.out.printf("\nWould you like to: \n1.Book an Appointment\n2.Go Back");
+		System.out.printf("\nWould you like to: \n1.Book an Appointment\n2.Go Back\n");
 
 		selection = sc.next();
 
@@ -421,7 +421,7 @@ public class Menu {
 		// display the user's bookings
 		((Customer) userAuth.getActiveUser()).viewBookings();
 
-		System.out.printf("\nWould you like to: \n1.Remove a Booking\n2.Go Back");
+		System.out.printf("\nWould you like to: \n1.Remove a Booking\n2.Go Back\n");
 		selection = sc.next();
 
 		while (valid != true) {

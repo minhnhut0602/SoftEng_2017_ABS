@@ -2,6 +2,7 @@ package abs.view;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
+import abs.model.Owner;
 import abs.model.User;
 
 /**
@@ -74,7 +75,7 @@ public class Main {
 		System.out.println();
 		if (select == null) {
 			mainMenu();
-		} else if (select.getClass().getName().equals("Owner")) {
+		} else if (select.getClass().getName().equals(Owner.class.getName())) {
 			ownerDash();
 		} else // A Customer
 			businessSelect();
@@ -90,7 +91,7 @@ public class Main {
 		System.out.println();
 		if (select == null) {
 			mainMenu();
-		} else if (select.getClass().getName().equals("Owner")) {
+		} else if (select.getClass().getName().equals(Owner.class.getName())) {
 			ownerDash();
 		} else // A Customer
 			businessSelect();
