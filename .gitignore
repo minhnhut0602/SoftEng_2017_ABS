@@ -156,3 +156,31 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/eclipse,macos,windows,intellij
+.idea/copyright/DC_2017.xml
+
+.idea/ant.xml
+
+.idea/dictionaries/danielcaddaye.xml
+
+.idea/inspectionProfiles/Project_Default.xml
+
+.idea/kotlinc.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/vcs.xml
+
+softengsem12017.eml
+
+softengsem12017.iml
+
+softengsem12017.iml
+
+softengsem12017.iml
+
+
+/ABS
+/Submission Materials
+/docs
