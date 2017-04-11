@@ -205,7 +205,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/git,macos,windows,eclipse,intellij,intellij+iml
-/Submission Materials/
-/ABS/*
-/docs/*
-/LICENSE.md
+Submission Materials/
+ABS/
+docs/
+LICENSE.md
