@@ -16,6 +16,9 @@ import abs.model.User;
 /**
  * Class that prints the menu screens, accepts and validates inputs then returns
  * results.
+ * 
+ * @since Alpha
+ * 
  *
  */
 public class Menu {
