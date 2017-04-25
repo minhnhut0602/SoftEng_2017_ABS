@@ -119,6 +119,7 @@ public class Customer extends AbstractUser {
 		
 		//fixing the null pointer exception
 		if(this.bookings.size() == 0){
+			System.out.println("Sorry, there are'nt any bookings left to cancel");
 			return false;
 		}
 
