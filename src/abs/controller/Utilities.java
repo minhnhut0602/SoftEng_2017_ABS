@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import abs.model.Availability;
 import abs.model.Booking;
@@ -37,6 +39,9 @@ import abs.model.User;
  * 
  */
 public class Utilities {
+
+	/** The data access logger */
+	private static final Logger logger = Logger.getLogger("Utilities Logger");
 
 	/** The file path where the data is stored. */
 	private String filePath;
@@ -546,5 +551,20 @@ public class Utilities {
 		}
 		return -1;
 
+	}
+
+	/**
+	 * Silent save saves the data currently stored in the instance of Utilities.
+	 * <i>On error prints to logger.</i>
+	 * 
+	 * @see #writeData(List, List)
+	 * 
+	 */
+	public void silentSave() {
+		int bus = writeBusinessData(this.businesses);
+		int cus = writeCustomerData(this.customers);
+		if ((bus == 0) && (cus == 0)) {
+			logger.log(Level.WARNING, "SilentSave Failed - Bus error code: " + bus + " Cus error code: " + cus);
+		}
 	}
 }

@@ -76,9 +76,13 @@ public class Main {
 		if (select == null) {
 			mainMenu();
 		} else if (select.getClass().getName().equals(Owner.class.getName())) {
+			utils.silentSave();
 			ownerDash();
 		} else // A Customer
+		{
+			utils.silentSave();
 			businessSelect();
+		}
 	}
 
 	/**
@@ -180,6 +184,7 @@ public class Main {
 		switch (select) {
 		case 1: // remove a booking
 			menu.cancelBooking();
+			utils.silentSave();
 			customerDash();
 			break;
 		case 2:// go back to dashboard
@@ -203,6 +208,7 @@ public class Main {
 		switch (select) {
 		case 1: // add a booking
 			menu.addBooking();
+			utils.silentSave();
 			customerDash();
 			break;
 		case 2: // return to the dashboard
