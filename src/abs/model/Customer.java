@@ -116,6 +116,11 @@ public class Customer extends AbstractUser {
 	 * @return
 	 */
 	public boolean cancelBooking(Booking booking) {
+		
+		//fixing the null pointer exception
+		if(this.bookings.size() == 0){
+			return false;
+		}
 
 		for (int i = 0; i < this.bookings.size(); i++) {
 			if (booking.getSlot().getDate().compareTo(this.bookings.get(i).getSlot().getDate()) == 0) {
