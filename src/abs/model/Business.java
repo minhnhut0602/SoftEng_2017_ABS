@@ -53,7 +53,6 @@ public class Business {
 	 */
 	public Business(String name, String desc, String address, int phone, List<Employee> staff, List<Booking> avBookings,
 			Owner owner) {
-		super();
 		this.name = name;
 		this.desc = desc;
 		this.address = address;
@@ -61,6 +60,17 @@ public class Business {
 		this.staff = staff;
 		this.avBookings = avBookings;
 		this.owner = owner;
+	}
+	
+	/**
+	 * generic constructor, no values set
+	 */
+	public Business(){
+		this.name = null;
+		this.desc = null;
+		this.address = null;
+		this.owner = null;
+		
 	}
 
 	/**
@@ -115,6 +125,15 @@ public class Business {
 	 */
 	public List<Employee> getStaff() {
 		return staff;
+	}
+	
+	/**
+	 * adds one employee to the employee list
+	 * 
+	 * @param employee
+	 */
+	public void addStaff(Employee employee){
+		this.staff.add(employee);
 	}
 
 	/**

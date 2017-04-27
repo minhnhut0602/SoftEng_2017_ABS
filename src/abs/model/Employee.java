@@ -30,6 +30,18 @@ public class Employee {
 		this.name = name;
 		this.availabilities = availabilities;
 	}
+	
+	
+	/**
+	 * 
+	 * Makes a new employee with no availabilities
+	 * 
+	 * @param name
+	 * 			the employee's name
+	 */
+	public Employee(String name){
+		this.name = name;
+	}
 
 	/**
 	 * Gets the availabilities.
