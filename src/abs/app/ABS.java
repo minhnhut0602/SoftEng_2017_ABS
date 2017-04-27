@@ -1,7 +1,7 @@
 package abs.app;
 
-import abs.controller.UserAuth;
-import abs.controller.Utilities;
+import abs.controller.Registry;
+import abs.controller.UserController;
 import abs.view.AppFrame;
 
 /**
@@ -10,20 +10,15 @@ import abs.view.AppFrame;
  */
 public class ABS {
 
-	/** The Utilities object. */
-	private final static Utilities utils = new Utilities();
-
-	/** The user Auth object. */
-	private static UserAuth userAuth;
-
 	public static void main(String[] args) {
 
-		utils.readData();
-		userAuth = new UserAuth(utils);
+		Registry.getUtils().readData();
 
 		// Load GUI
 		AppFrame appFrame = new AppFrame();
 		appFrame.revalidate();
+		// Set up controllers
+		new UserController(appFrame);
 
 	}
 
