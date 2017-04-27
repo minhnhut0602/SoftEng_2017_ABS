@@ -1,14 +1,18 @@
-package abs.view;
+package abs.app;
 
 import abs.controller.UserAuth;
 import abs.controller.Utilities;
 import abs.model.Owner;
 import abs.model.User;
+import abs.view.Menu;
 
 /**
  * The main class that runs the console based program.
+ * 
+ * @since Alpha
+ * 
  */
-public class Main {
+public class ConsoleApp {
 
 	/** The Utilities object. */
 	static Utilities utils = new Utilities();
@@ -45,7 +49,7 @@ public class Main {
 	}
 
 	/**
-	 * Controls the Main menu.
+	 * Controls the ConsoleApp menu.
 	 * 
 	 * @see Menu#mainMenu()
 	 */
@@ -60,7 +64,7 @@ public class Main {
 			register();
 			break;
 		default:
-			System.out.println("Invalid Return from the Main Menu");
+			System.out.println("Invalid Return from the ConsoleApp Menu");
 		}
 
 	}
