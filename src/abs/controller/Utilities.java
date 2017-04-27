@@ -60,6 +60,9 @@ public class Utilities {
 
 	/** The customers. */
 	private List<User> customers;
+	
+	/** the owners of all the businesses */
+	private List<User> owners;
 
 	/**
 	 * 
@@ -116,6 +119,36 @@ public class Utilities {
 		}
 		return customers;
 	}
+	
+	
+	/**
+	 * getter for owner list
+	 * 
+	 * @return owner list
+	 */
+	public List<User> getOwners(){
+		return owners;
+	}
+	
+	
+	/**
+	 * adds a single owner to the list of owners
+	 * 
+	 * 
+	 * @param owner
+	 * @return success
+	 */
+	public boolean addOwner(Owner owner){
+		if (owner != null) { // Not null
+			if (!owners.contains(owner)) { // Not existing.
+				this.owners.add(owner);
+				return true;
+			} else {
+				return false;
+			}
+		} else
+			return false;
+	}
 
 	/**
 	 * Reads the data from business info file and instantiates it.
@@ -126,6 +159,7 @@ public class Utilities {
 	public int readBusinessData() {
 
 		businesses = new ArrayList<Business>();
+		owners = new ArrayList<User>();
 
 		try {
 			FileReader reader = new FileReader(filePath + businessInfoFileName);
@@ -158,6 +192,8 @@ public class Utilities {
 																	// encryption
 
 					Owner owner = new Owner(ownerName, ownerEmail, ownerPass);
+					
+					owners.add(owner);
 
 					// Checks if document is empty
 					String emTest = bufferedReader.readLine();
