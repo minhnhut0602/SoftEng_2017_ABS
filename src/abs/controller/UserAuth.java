@@ -10,6 +10,7 @@ import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.Customer;
 import abs.model.User;
+import abs.model.Employee;
 
 /**
  * The UserAuth class.
@@ -26,7 +27,6 @@ import abs.model.User;
 public class UserAuth {
 
 	/** The Utilities object. */
-	@SuppressWarnings("unused")
 	private Utilities utils;
 
 	/** The list of registered customers. */
@@ -37,6 +37,7 @@ public class UserAuth {
 
 	/** The owners. */
 	private List<User> owners;
+	
 
 	/**
 	 * Instantiates a new user auth.
@@ -197,6 +198,33 @@ public class UserAuth {
 		return true;
 
 	}
+	
+	/**
+	 * Registering an Employee
+	 * 
+	 * @param name
+	 * is the name of the employee
+	 * 
+	 * @param business
+	 * is the business it is linked
+	 * 
+	 */
+	public boolean registerEmployee(String name, Business business){
+		/** no need to validate name */
+		
+		/** validate if the business exists */
+		for(Business b: utils.getBusiness()){
+			if(b.equals(business)){
+				/** then register the Employee */
+				business.addStaff(new Employee(name));
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
 
 	/**
 	 * Validate an email.
