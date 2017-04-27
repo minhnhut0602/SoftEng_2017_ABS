@@ -2,6 +2,8 @@ package abs.model;
 
 import java.util.List;
 
+import abs.controller.Utilities;
+
 /**
  * The Owner class extends abstractUser.
  *
@@ -78,6 +80,35 @@ public class Owner extends AbstractUser {
 					+ bookings.get(i).getStatus());
 
 		}
+	}
+	
+	
+	/**
+	 * book on behalf of a customer
+	 * 
+	 * @param custEmail
+	 * this is the customer's email to search for
+	 * @param business
+	 * the business you are booking them into
+	 * @param booking
+	 * the booking time to actually book
+	 * @return
+	 */
+	public boolean bookForCustomer(String custEmail, Business business, Booking booking, Utilities utils){
+		//try to search for customer
+		User customer = utils.searchCustomers(custEmail);
+		if(customer != null){
+			//then the customer was found
+			//make sure the booking is actually in the business
+			if(business.getAvBookings().contains(booking)){
+				//so add a booking for that customer 
+				((Customer)customer).addBooking(booking);
+				return true;
+			}
+			
+		}
+		
+		return false;
 	}
 
 }

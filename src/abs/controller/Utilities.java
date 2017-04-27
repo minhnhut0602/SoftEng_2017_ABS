@@ -613,6 +613,10 @@ public class Utilities {
 	public User searchCustomers(String email){
 		User found = null;
 		
+		if(customers == null || customers.size() == 0){
+			return found;
+		}
+		
 		for(User customer: customers){
 			if(customer.getEmail().compareTo(email) == 0){
 				/** then this is the customer*/
