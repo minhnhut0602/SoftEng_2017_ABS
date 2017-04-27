@@ -27,7 +27,6 @@ import abs.model.Employee;
 public class UserAuth {
 
 	/** The Utilities object. */
-	@SuppressWarnings("unused")
 	private Utilities utils;
 
 	/** The list of registered customers. */
@@ -39,8 +38,6 @@ public class UserAuth {
 	/** The owners. */
 	private List<User> owners;
 	
-	/** The Businesses */
-	private List<Business> businesses;
 
 	/**
 	 * Instantiates a new user auth.
@@ -61,7 +58,6 @@ public class UserAuth {
 		for (Business business : utils.getBusiness()) {
 			owners.add(business.getOwner());
 		}
-		this.businesses = utils.getBusiness();
 
 	}
 
@@ -217,7 +213,7 @@ public class UserAuth {
 		/** no need to validate name */
 		
 		/** validate if the business exists */
-		for(Business b: businesses){
+		for(Business b: utils.getBusiness()){
 			if(b.equals(business)){
 				/** then register the Employee */
 				business.addStaff(new Employee(name));
