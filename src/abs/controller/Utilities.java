@@ -603,4 +603,25 @@ public class Utilities {
 			logger.log(Level.WARNING, "SilentSave Failed - Bus error code: " + bus + " Cus error code: " + cus);
 		}
 	}
+	
+	
+	/**
+	 * search customer list by email
+	 * @param email
+	 * @return customer 
+	 */
+	public User searchCustomers(String email){
+		User found = null;
+		
+		for(User customer: customers){
+			if(customer.getEmail().compareTo(email) == 0){
+				/** then this is the customer*/
+				found = customer;
+			}
+		}
+		
+		return found;
+	}
+	
+	
 }
