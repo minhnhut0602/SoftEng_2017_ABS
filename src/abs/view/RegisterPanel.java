@@ -23,6 +23,8 @@ public class RegisterPanel extends JPanel {
 
 	private static final long serialVersionUID = 7012676670912272410L;
 
+	private static JLabel status;
+
 	public RegisterPanel() {
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
@@ -76,6 +78,10 @@ public class RegisterPanel extends JPanel {
 		content.setLayout(new BorderLayout());
 		content.add(title, BorderLayout.NORTH);
 		content.add(registerInfo, BorderLayout.CENTER);
+		
+		status = new JLabel("");
+		status.setHorizontalAlignment(JLabel.CENTER);
+		content.add(status, BorderLayout.SOUTH);
 
 		this.setLayout(new BorderLayout());
 		this.add(content, BorderLayout.CENTER);
@@ -95,18 +101,22 @@ public class RegisterPanel extends JPanel {
 					UserController.register(nameField.getText(), emailField.getText(), passField.getText(),
 							addressField.getText(), phoneField.getText(), ownerField.isSelected());
 				} catch (CredentialsInvalidException e1) {
-					// TODO Auto-generated catch block
+					getStatus().setText(e1.getMessage());
 
 				} catch (RegistrationValidationException e1) {
-					// TODO Auto-generated catch block
+					getStatus().setText(e1.getMessage());
 
 				} catch (RegistrationNonUniqueException e1) {
-					// TODO Auto-generated catch block
+					getStatus().setText(e1.getMessage());
 
 				}
 			}
 
 		});
+	}
+
+	public static JLabel getStatus() {
+		return status;
 	}
 
 }

@@ -72,14 +72,20 @@ public class UserController {
 	}
 
 	public static void login(String email, String password) throws CredentialsInvalidException {
-		Registry.getUserAuth().authUser(email, password);
 
+		Registry.getUserAuth().authUser(email, password);
+		appFrame.repaint();
+		appFrame.revalidate();
 		// Update display and move to appropriate dash
 
 		if (Registry.getUserAuth().getActiveUser().getClass().getName().equals(Owner.class.getName())) {
 			OwnerController.dashboard();
+			LoginPanel.getStatus().setText("Owner Login Successful");
+
 		} else {
 			CustomerController.dashboard();
+			LoginPanel.getStatus().setText("Customer Login Successful");
+
 		}
 
 	}
@@ -87,16 +93,21 @@ public class UserController {
 	public static void register(String name, String email, String password, String address, String phone,
 			Boolean isOwner)
 			throws CredentialsInvalidException, RegistrationValidationException, RegistrationNonUniqueException {
-
+		boolean success = false;
 		if (isOwner) {
 			// TODO Register as an owner
+			// success = true;
+			RegisterPanel.getStatus().setText("Owner Registation Successful");
 		} else {
 			Registry.getUserAuth().registerUser(name, email, password, address, phone);
-
+			// success = true;
+			RegisterPanel.getStatus().setText("Customer Registation Successful");
 		}
 
 		// TODO Update display and move to login screen
-		reloadWelcomeScreen();
+		if (success) {
+			reloadWelcomeScreen();
+		}
 	}
 
 }

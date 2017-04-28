@@ -20,8 +20,10 @@ public class LoginPanel extends JPanel {
 
 	private static final long serialVersionUID = 9010219234482904288L;
 
-	public LoginPanel() {
+	private static JLabel status;
 
+	public LoginPanel() {
+		
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
 
@@ -53,6 +55,10 @@ public class LoginPanel extends JPanel {
 		content.add(title, BorderLayout.NORTH);
 		content.add(loginInfo, BorderLayout.CENTER);
 
+		status = new JLabel("");
+		status.setHorizontalAlignment(JLabel.CENTER);
+		content.add(status, BorderLayout.SOUTH);
+
 		this.setLayout(new BorderLayout());
 		this.add(content, BorderLayout.CENTER);
 
@@ -70,12 +76,14 @@ public class LoginPanel extends JPanel {
 				try {
 					UserController.login(emailField.getText(), passField.getText());
 				} catch (CredentialsInvalidException e1) {
-					// TODO Auto-generated catch block
-
+					getStatus().setText(e1.getMessage());
 				}
 			}
 
 		});
 	}
 
+	public static JLabel getStatus() {
+		return status;
+	}
 }
