@@ -58,14 +58,14 @@ public class ABSMenuBar extends JMenuBar {
 		login.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UserController.loadLoginScreen(appFrame.getContent());
+				UserController.loadLoginScreen();
 			}
 		});
 
 		register.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UserController.loadRegisterScreen(appFrame.getContent());
+				UserController.loadRegisterScreen();
 			}
 		});
 

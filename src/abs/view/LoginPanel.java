@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.view;
 
 import java.awt.BorderLayout;

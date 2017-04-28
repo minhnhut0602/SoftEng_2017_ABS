@@ -1,6 +1,3 @@
-/**
- * 
- */
 package abs.view;
 
 import java.awt.BorderLayout;
@@ -8,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -65,6 +63,11 @@ public class RegisterPanel extends JPanel {
 		registerInfo.add(phone);
 		registerInfo.add(phoneField);
 
+		JLabel owner = new JLabel("Are you a bussiness owner:");
+		JCheckBox ownerField = new JCheckBox();
+		registerInfo.add(owner);
+		registerInfo.add(ownerField);
+
 		JButton back = new JButton("Back");
 		JButton register = new JButton("Register");
 		registerInfo.add(register);
@@ -90,7 +93,7 @@ public class RegisterPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					UserController.register(nameField.getText(), emailField.getText(), passField.getText(),
-							addressField.getText(), phoneField.getText());
+							addressField.getText(), phoneField.getText(), ownerField.isSelected());
 				} catch (CredentialsInvalidException e1) {
 					// TODO Auto-generated catch block
 

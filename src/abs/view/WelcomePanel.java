@@ -1,6 +1,5 @@
 package abs.view;
 
-import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -57,19 +56,16 @@ public class WelcomePanel extends JPanel {
 		login.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UserController.loadLoginScreen(thisPanel());
+				UserController.loadLoginScreen();
 			}
 		});
 
 		register.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UserController.loadRegisterScreen(thisPanel());
+				UserController.loadRegisterScreen();
 			}
 		});
 	}
 
-	private Container thisPanel() {
-		return this;
-	}
 }
