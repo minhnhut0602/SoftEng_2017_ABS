@@ -29,15 +29,8 @@ public class UserAuth {
 	/** The Utilities object. */
 	private Utilities utils;
 
-	/** The list of registered customers. */
-	private List<User> customers;
-
 	/** The active user for the login session. */
 	private User activeUser;
-
-	/** The owners. */
-	private List<User> owners;
-	
 
 	/**
 	 * Instantiates a new user auth.
@@ -52,8 +45,6 @@ public class UserAuth {
 	public UserAuth(Utilities utils) {
 		this.activeUser = null;
 		this.utils = utils;
-		this.customers = utils.getCustomers();
-		this.owners = utils.getOwners();
 
 	}
 
@@ -79,22 +70,24 @@ public class UserAuth {
 	 *             the password invalid exception
 	 */
 	public boolean authUser(String email, String password) throws CredentialsInvalidException {
+		List<User> customers = utils.getCustomers();
+		List<User> owners = utils.getOwners();
 
 		/* check if the list is empty */
-		if (this.customers.isEmpty() && this.owners.isEmpty()) {
+		if (customers.isEmpty() && owners.isEmpty()) {
 			return false;
-		} else if (!(this.customers.isEmpty())) {
+		} else if (!(customers.isEmpty())) {
 			/* step through the customer list */
 			for (int i = 0; i < customers.size(); i++) {
 
 				/* check the email is the same */
-				if (this.customers.get(i).getEmail().equals(email)) {
+				if (customers.get(i).getEmail().equals(email)) {
 
 					/* check the password is the same */
-					if (this.customers.get(i).getPassword().equals(password)) {
+					if (customers.get(i).getPassword().equals(password)) {
 
 						/* set this user as the active user */
-						this.activeUser = this.customers.get(i);
+						this.activeUser = customers.get(i);
 
 						/* end method */
 						return true;
@@ -109,13 +102,13 @@ public class UserAuth {
 		for (int i = 0; i < owners.size(); i++) {
 
 			/* check the email is the same */
-			if (this.owners.get(i).getEmail().equals(email)) {
+			if (owners.get(i).getEmail().equals(email)) {
 
 				/* check the password is the same */
-				if (this.owners.get(i).getPassword().equals(password)) {
+				if (owners.get(i).getPassword().equals(password)) {
 
 					/* set this user as the active user */
-					this.activeUser = this.owners.get(i);
+					this.activeUser = owners.get(i);
 
 					/* end method */
 					return true;
@@ -150,6 +143,9 @@ public class UserAuth {
 	public boolean registerUser(String name, String email, String password, String address, String phone)
 			throws RegistrationValidationException, RegistrationNonUniqueException {
 
+		List<User> customers = utils.getCustomers();
+		// List<User> owners = utils.getOwners();
+
 		/* VALIDATE NAME */
 		if (name == null || name == "") {
 			throw new RegistrationValidationException("Name", name);
@@ -181,46 +177,46 @@ public class UserAuth {
 		 * be registered
 		 */
 		if (customers != null) {
-			for (int i = 0; i < this.customers.size(); i++) {
-				if (this.customers.get(i).getEmail().compareTo(email) == 0) {
+			for (int i = 0; i < customers.size(); i++) {
+				if (customers.get(i).getEmail().compareTo(email) == 0) {
 					throw new RegistrationNonUniqueException(email);
 				}
 			}
 		}
 		/* REGISTER NEW USER */
 		Customer customer = new Customer(name, email, address, phone, password);
-		this.customers.add(customer);
+		utils.addCustomers(customer);
 		this.setActiveUser(customer);
+
 		return true;
 
 	}
-	
+
 	/**
 	 * Registering an Employee
 	 * 
 	 * @param name
-	 * is the name of the employee
+	 *            is the name of the employee
 	 * 
 	 * @param business
-	 * is the business it is linked
+	 *            is the business it is linked
 	 * 
 	 */
-	public boolean registerEmployee(String name, Business business){
+	public boolean registerEmployee(String name, Business business) {
 		/** no need to validate name */
-		
+
 		/** validate if the business exists */
-		for(Business b: utils.getBusiness()){
-			if(b.equals(business)){
+		for (Business b : utils.getBusiness()) {
+			if (b.equals(business)) {
 				/** then register the Employee */
 				business.addStaff(new Employee(name));
 				return true;
 			}
 		}
-		
+
 		return false;
-		
+
 	}
-	
 
 	/**
 	 * Validate an email.

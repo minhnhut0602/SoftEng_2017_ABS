@@ -1,5 +1,8 @@
 package abs.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
@@ -15,6 +18,8 @@ import abs.view.RegisterPanel;
  *
  */
 public class UserController {
+	/** The data access logger */
+	private static final Logger logger = Logger.getLogger("UserController Logger");
 
 	private static AppFrame appFrame;
 
@@ -80,10 +85,13 @@ public class UserController {
 
 		if (Registry.getUserAuth().getActiveUser().getClass().getName().equals(Owner.class.getName())) {
 			OwnerController.dashboard();
+			logger.log(Level.INFO, "Owner Login Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
 			LoginPanel.getStatus().setText("Owner Login Successful");
 
 		} else {
 			CustomerController.dashboard();
+			logger.log(Level.INFO,
+					"Customer Login Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
 			LoginPanel.getStatus().setText("Customer Login Successful");
 
 		}
@@ -97,17 +105,28 @@ public class UserController {
 		if (isOwner) {
 			// TODO Register as an owner
 			// success = true;
+			logger.log(Level.INFO,
+					"Owner Registration Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
+
 			RegisterPanel.getStatus().setText("Owner Registation Successful");
 		} else {
 			Registry.getUserAuth().registerUser(name, email, password, address, phone);
-			// success = true;
+			 success = true;
+			logger.log(Level.INFO,
+					"Customer Registration Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
+
 			RegisterPanel.getStatus().setText("Customer Registation Successful");
 		}
 
 		// TODO Update display and move to login screen
 		if (success) {
+			Registry.getUtils().silentSave();
 			reloadWelcomeScreen();
 		}
 	}
 
+	public static void logout() {
+		Registry.getUtils().silentSave();
+		reloadWelcomeScreen();
+	}
 }
