@@ -15,6 +15,7 @@ import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;
 import abs.model.Customer;
+import abs.model.Employee;
 import abs.model.Owner;
 import abs.model.User;
 
@@ -98,71 +99,68 @@ public class BookingTest {
 		// cancel a non existing booking
 		assertFalse(((Customer) customer).cancelBooking(booking2));
 	}
-	
+
 	@Test
-	public void bookForCust(){
+	public void bookForCust() {
 		Utilities util = new Utilities();
-		
-		//grab the first availability for a business
+
+		// grab the first availability for a business
 		Business b = util.getBusiness().get(0);
-		//make a customer and add to customers
+		// make a customer and add to customers
 		Customer c = new Customer("Cory", "cory@email", "1234 street street", "01234 0123", "password");
 		util.addCustomers(c);
-		//grab the first available booking for that business
-		//getAvBookings only grabs the available ones anyway
+		// grab the first available booking for that business
+		// getAvBookings only grabs the available ones anyway
 		Booking booking = b.getAvBookings().get(0);
-		//get the owner for that business
+		// get the owner for that business
 		Owner o = b.getOwner();
-		
-		//now test the functionality
+
+		// now test the functionality
 		assertTrue(o.bookForCustomer(c.getEmail(), b, booking, util));
-		
-		
+
 	}
-	
+
 	@Test
-	public void bookForNonExistingCust(){
-		//tests to see if the booking fails if the customer doesn't exist
-		
+	public void bookForNonExistingCust() {
+		// tests to see if the booking fails if the customer doesn't exist
+
 		Utilities utils = new Utilities();
-		
-		//make a customer that isn't on the system
+
+		// make a customer that isn't on the system
 		Customer c = new Customer("Cory", "cory@email", "1234 street street", "01234 0123", "password");
-		//grab the first availability for a business
+		// grab the first availability for a business
 		Business b = utils.getBusiness().get(0);
-		//grab the first available booking for that business
-		//getAvBookings only grabs the available ones anyway
+		// grab the first available booking for that business
+		// getAvBookings only grabs the available ones anyway
 		Booking booking = b.getAvBookings().get(0);
-		//get the owner for that business
+		// get the owner for that business
 		Owner o = b.getOwner();
-		
+
 		assertFalse(o.bookForCustomer(c.getEmail(), b, booking, utils));
-		
+
 	}
-	
+
 	@Test
-	public void bookForCustNoBooking(){
+	public void bookForCustNoBooking() {
 		Utilities utils = new Utilities();
-		
-		//grab the first availability for a business
+
+		// grab the first availability for a business
 		Business b = utils.getBusiness().get(0);
-		//grab the first customer from the list
+		// grab the first customer from the list
 		User c = utils.getCustomers().get(0);
-		
-		//fake booking
-		Booking booking = new Booking(new Availability("3/7/18", "11:00"), "Cory", "Available");
-		
-		//get the owner for that business
+		// Fake employee
+
+		Employee cory = new Employee("Cory");
+
+		// fake booking
+		Booking booking = new Booking(new Availability("3/7/18", "11:00"), cory, "Available");
+
+		// get the owner for that business
 		Owner o = b.getOwner();
-		
-		//now test the functionality
+
+		// now test the functionality
 		assertFalse(o.bookForCustomer(c.getEmail(), b, booking, utils));
-		
-		
+
 	}
-	
-	
-	
-	
-	
+
 }

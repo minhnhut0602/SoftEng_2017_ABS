@@ -77,4 +77,9 @@ public class Availability {
 		return "Availability [date=" + date + ", time=" + time + "]";
 	}
 
+	public int getBlocks() {
+		// TODO setup class for blocks
+		return 0;
+	}
+
 }

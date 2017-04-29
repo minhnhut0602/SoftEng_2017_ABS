@@ -18,8 +18,8 @@ import javax.swing.border.Border;
 public class AppStyle {
 	/* Colours */
 	public static final Color mainBackgroundColor = Color.DARK_GRAY;
-	public static final Color mainForgroundColor = Color.LIGHT_GRAY;
-	public static final Color mainFontColor = Color.WHITE;
+	public static final Color mainForgroundColor = Color.WHITE;
+	public static final Color mainFontColor = Color.GRAY;
 
 	/* Fonts */
 	public static final Font boldLargeFont = new Font((new JLabel()).getFont().getName(), Font.BOLD, 25);
