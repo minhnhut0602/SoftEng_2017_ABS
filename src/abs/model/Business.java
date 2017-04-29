@@ -12,6 +12,9 @@ import java.util.List;
  */
 public class Business {
 
+	public final int BLOCK_LENGTH = 30; // Block length for business
+										// (Default 30)
+
 	/** The business name. */
 	private String name;
 
@@ -61,16 +64,16 @@ public class Business {
 		this.avBookings = avBookings;
 		this.owner = owner;
 	}
-	
+
 	/**
 	 * generic constructor, no values set
 	 */
-	public Business(){
+	public Business() {
 		this.name = null;
 		this.desc = null;
 		this.address = null;
 		this.owner = null;
-		
+
 	}
 
 	/**
@@ -126,13 +129,13 @@ public class Business {
 	public List<Employee> getStaff() {
 		return staff;
 	}
-	
+
 	/**
 	 * adds one employee to the employee list
 	 * 
 	 * @param employee
 	 */
-	public void addStaff(Employee employee){
+	public void addStaff(Employee employee) {
 		this.staff.add(employee);
 	}
 

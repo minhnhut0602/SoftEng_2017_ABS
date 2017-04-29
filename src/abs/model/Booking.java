@@ -9,7 +9,7 @@ public class Booking {
 	private Availability slot;
 
 	/** The staff assigned to this booking (String). */
-	private String staff;
+	private Employee staff;
 
 	/** The business. */
 	private Business business;
@@ -27,7 +27,7 @@ public class Booking {
 	 * @param status
 	 *            the status of the booking a string (booked or available)
 	 */
-	public Booking(Availability slot, String staff, String status) {
+	public Booking(Availability slot, Employee staff, String status) {
 		this.slot = slot;
 		this.staff = staff;
 		this.status = status;
@@ -47,7 +47,7 @@ public class Booking {
 	 *
 	 * @return the staff
 	 */
-	public String getStaff() {
+	public Employee getStaff() {
 		return staff;
 	}
 
@@ -100,6 +100,11 @@ public class Booking {
 
 		return "Booking [slot=" + slot + ", staff=" + staff + ", busniness=" + business + ", status=" + status + "]";
 
+	}
+
+	public String getService() {
+		// TODO Set up services
+		return null;
 	}
 
 }

@@ -64,7 +64,7 @@ public class Utilities {
 
 	/** The customers. */
 	private List<User> customers;
-	
+
 	/** the owners of all the businesses */
 	private List<User> owners;
 
@@ -123,18 +123,16 @@ public class Utilities {
 		}
 		return customers;
 	}
-	
-	
+
 	/**
 	 * getter for owner list
 	 * 
 	 * @return owner list
 	 */
-	public List<User> getOwners(){
+	public List<User> getOwners() {
 		return owners;
 	}
-	
-	
+
 	/**
 	 * adds a single owner to the list of owners
 	 * 
@@ -142,7 +140,7 @@ public class Utilities {
 	 * @param owner
 	 * @return success
 	 */
-	public boolean addOwner(Owner owner){
+	public boolean addOwner(Owner owner) {
 		if (owner != null) { // Not null
 			if (!owners.contains(owner)) { // Not existing.
 				this.owners.add(owner);
@@ -196,7 +194,7 @@ public class Utilities {
 																	// encryption
 
 					Owner owner = new Owner(ownerName, ownerEmail, ownerPass);
-					
+
 					owners.add(owner);
 
 					// Checks if document is empty
@@ -236,9 +234,9 @@ public class Utilities {
 									i++;
 									i++;
 									avBookings.add(new Booking((new Availability(bookings[i - 1], bookings[i])),
-											bookings[i - 2], bookings[i + 1]));
+											searchEmplyees(bookings[i - 2], staff), bookings[i + 1]));
 									i++;
-									// TODO match employeeID to employee object.
+
 								} // close for
 
 							} // Else incorrect bookings format
@@ -314,7 +312,7 @@ public class Utilities {
 									if (business.getName().equals(bookingIn[i - 2])) {
 										for (Booking booking : business.getAvBookings()) {
 											if (booking.getStatus().equals("Booked")) {
-												if (booking.getStaff().equals(bookingIn[i - 1])) {
+												if (booking.getStaff().getName().equals(bookingIn[i - 1])) {
 													if (booking.getSlot().getDate().equals(bookingIn[i])
 															&& booking.getSlot().getTime().equals(bookingIn[i + 1])) {
 														customer.addBooking(booking);
@@ -456,13 +454,13 @@ public class Utilities {
 				List<Booking> avBookings = business.getAvBookings();
 				for (int i = 0; i < avBookings.size(); i++) {
 					if (i == 0) {
-						bufferedWriter.write(avBookings.get(i).getStaff());
+						bufferedWriter.write(avBookings.get(i).getStaff().getName());
 						Availability slot = avBookings.get(i).getSlot();
 						bufferedWriter.write(splitChar + slot.getDate());
 						bufferedWriter.write(splitChar + slot.getTime());
 						bufferedWriter.write(splitChar + (avBookings.get(i).getStatus()));
 					} else {
-						bufferedWriter.write(splitChar + avBookings.get(i).getStaff());
+						bufferedWriter.write(splitChar + avBookings.get(i).getStaff().getName());
 						Availability slot = avBookings.get(i).getSlot();
 						bufferedWriter.write(splitChar + slot.getDate());
 						bufferedWriter.write(splitChar + slot.getTime());
@@ -531,13 +529,13 @@ public class Utilities {
 					for (int j = 0; j < bookings.size(); j++) {
 						if (j == 0) {
 							bufferedWriter.write(bookings.get(j).getBusiness().getName());
-							bufferedWriter.write(splitChar + bookings.get(j).getStaff());
+							bufferedWriter.write(splitChar + bookings.get(j).getStaff().getName());
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
 							bufferedWriter.write(splitChar + slot.getTime());
 						} else {
 							bufferedWriter.write(bookings.get(j).getBusiness().getName());
-							bufferedWriter.write(splitChar + bookings.get(j).getStaff());
+							bufferedWriter.write(splitChar + bookings.get(j).getStaff().getName());
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
 							bufferedWriter.write(splitChar + slot.getTime());
@@ -607,29 +605,45 @@ public class Utilities {
 			logger.log(Level.WARNING, "SilentSave Failed - Bus error code: " + bus + " Cus error code: " + cus);
 		}
 	}
-	
-	
+
 	/**
 	 * search customer list by email
+	 * 
 	 * @param email
-	 * @return customer 
+	 * @return customer
 	 */
-	public User searchCustomers(String email){
+	public User searchCustomers(String email) {
 		User found = null;
-		
-		if(customers == null || customers.size() == 0){
+
+		if (customers == null || customers.size() == 0) {
 			return found;
 		}
-		
-		for(User customer: customers){
-			if(customer.getEmail().compareTo(email) == 0){
-				/** then this is the customer*/
+
+		for (User customer : customers) {
+			if (customer.getEmail().compareTo(email) == 0) {
+				/** then this is the customer */
 				found = customer;
 			}
 		}
-		
+
 		return found;
 	}
-	
-	
+
+	public Employee searchEmplyees(String name, List<Employee> emps) {
+		Employee found = null;
+		List<Employee> staff = emps;
+		if (staff.isEmpty()) {
+			return found;
+		}
+
+		for (Employee emp : staff) {
+			if (emp.getName().compareTo(name) == 0) {
+				/** then this is the customer */
+				found = emp;
+			}
+		}
+
+		return found;
+	}
+
 }
