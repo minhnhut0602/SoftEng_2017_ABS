@@ -41,26 +41,50 @@ public class OwnerController {
 
 
 	public static void addBooking() {
+		//text field for time, date
+		
+		//add booking
 
 	}
 	
 	public static void makeCustBooking(){
+		//grab the customers email
+		
+		//select a booking
+		
+		//pass to customer 
 		
 	}
 
 	public static void addAvBooking() {
+		//text field for time, date
+		
+		//create new availability for the business
+		
 
 	}
 
 	public static void removeBooking() {
+		
+		//select a booking
+		
+		//click remove button
 
 	}
 
 	public static void addEmployee() {
+		
+		//enter details very much like the register thing
+		
+		//create the employee and link to business
 
 	}
 
 	public static void newBusiness() {
+		
+		//get business details
+		
+		//make new business type, add to business array
 
 	}
 	
