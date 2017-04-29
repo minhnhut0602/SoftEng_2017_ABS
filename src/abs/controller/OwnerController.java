@@ -10,6 +10,7 @@ import abs.model.Owner;
 import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
 import abs.view.OwnerDashboard;
+import abs.view.RegisterPanel;
 
 /**
  *
@@ -48,6 +49,15 @@ public class OwnerController {
 	}
 	
 	public static void makeCustBooking(){
+		
+		// Remove all content and load a login panel
+		appFrame.getContent().removeAll();
+		appFrame.getContent().add(new BookingForCustomer());
+
+		// Refresh frame
+		appFrame.repaint();
+		appFrame.revalidate();
+		
 		//grab the customers email
 		
 		//select a booking
@@ -92,6 +102,19 @@ public class OwnerController {
 		Registry.getUtils().silentSave();
 		UserController.reloadWelcomeScreen();
 
+	}
+
+	public static void reloadDashboard() {
+		
+	}
+	
+	/**
+	 * might need to add extra fields for the booking selection
+	 * @param email
+	 */
+	
+	public static void bookForCust(String email){
+		
 	}
 
 }
