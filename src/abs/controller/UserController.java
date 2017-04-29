@@ -84,6 +84,7 @@ public class UserController {
 		// Update display and move to appropriate dash
 
 		if (Registry.getUserAuth().getActiveUser().getClass().getName().equals(Owner.class.getName())) {
+			new OwnerController(appFrame);
 			OwnerController.dashboard();
 			logger.log(Level.INFO, "Owner Login Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
 			LoginPanel.getStatus().setText("Owner Login Successful");
@@ -103,15 +104,15 @@ public class UserController {
 			throws CredentialsInvalidException, RegistrationValidationException, RegistrationNonUniqueException {
 		boolean success = false;
 		if (isOwner) {
-			// TODO Register as an owner
-			// success = true;
+			Registry.getUserAuth().registerOwner(name, email, password);
+			success = true;
 			logger.log(Level.INFO,
 					"Owner Registration Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
 
 			RegisterPanel.getStatus().setText("Owner Registation Successful");
 		} else {
 			Registry.getUserAuth().registerUser(name, email, password, address, phone);
-			 success = true;
+			success = true;
 			logger.log(Level.INFO,
 					"Customer Registration Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
 
