@@ -17,6 +17,7 @@ public class AppFrame extends JFrame {
 	private static final long serialVersionUID = 8091808348699216867L;
 	private static JPanel welcomePanel = new WelcomePanel();
 	private static JPanel content = new JPanel();
+	private static JPanel ownerDashboard = new OwnerDashboard();
 
 	public AppFrame() {
 		super("Appointment Booking System");
@@ -66,4 +67,13 @@ public class AppFrame extends JFrame {
 
 		return content;
 	}
+
+	public static JPanel getOwnerDashboard() {
+		return ownerDashboard;
+	}
+
+	public static void setOwnerDashboard(JPanel ownerDashboard) {
+		AppFrame.ownerDashboard = ownerDashboard;
+	}
+	
 }

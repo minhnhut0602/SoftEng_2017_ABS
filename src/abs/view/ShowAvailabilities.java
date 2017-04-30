@@ -53,12 +53,14 @@ public class ShowAvailabilities extends JPanel{
 			if(b.getAvBookings().get(i).getStatus().compareTo("Available") == 0){
 				aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
 				aButts.get(i).setBackground(Color.GREEN);
+				aButts.get(i).setBooking(b.getAvBookings().get(i));
 				aButts.get(i).setEnabled(true);
 				selectAvailabilities.add(aButts.get(i));
 			}else{
 				//must be booked already
 				aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
 				aButts.get(i).setBackground(Color.RED);
+				aButts.get(i).setBooking(b.getAvBookings().get(i));
 				aButts.get(i).setEnabled(false);
 				selectAvailabilities.add(aButts.get(i));
 			}

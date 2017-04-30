@@ -104,7 +104,7 @@ public class Owner extends AbstractUser {
 		User customer = utils.searchCustomers(custEmail);
 		if(customer != null){
 			//then the customer was found
-			//make sure the booking is actually in the business
+			//make sure the booking is actually in the business, just do double check
 			if(business.getAvBookings().contains(booking)){
 				//so add a booking for that customer 
 				((Customer)customer).addBooking(booking);
@@ -137,6 +137,8 @@ public class Owner extends AbstractUser {
 			cust.addBooking(booking);
 			//update the status of the availability
 			booking.setStatus("Booked");
+			
+			return true;
 		}
 		
 		return false;

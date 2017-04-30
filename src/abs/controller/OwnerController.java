@@ -153,6 +153,25 @@ public class OwnerController {
 	}
 	
 	public static void createCustBooking(Customer c, Business b, Booking booking){
+		//pass to owner method already written
+		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
+		if(o.bookForCustomer(c, b, booking) != true){
+			//log something i suppose
+			System.out.println("didn't book");
+		}else{
+			//go back to dashboard 
+			appFrame.getContent().removeAll();
+			appFrame.getContent().add(AppFrame.getOwnerDashboard());
+
+			// Update available buttons
+			ABSMenuBar.toggleButton("login", true);
+			ABSMenuBar.toggleButton("register", true);
+			ABSMenuBar.toggleButton("logout", false);
+
+			// Refresh frame
+			appFrame.repaint();
+			appFrame.revalidate();
+		}
 		
 	}
 
