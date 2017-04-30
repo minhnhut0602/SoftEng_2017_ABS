@@ -41,6 +41,11 @@ public class OwnerController {
 		appFrame.getContent().removeAll();
 		appFrame.getContent().add(new OwnerDashboard());
 
+		// Update available buttons
+		ABSMenuBar.toggleButton("login", false);
+		ABSMenuBar.toggleButton("register", false);
+		ABSMenuBar.toggleButton("logout", true);
+
 		// Refresh frame
 		appFrame.repaint();
 		appFrame.revalidate();
