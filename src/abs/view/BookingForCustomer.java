@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -66,18 +67,20 @@ public class BookingForCustomer extends JPanel {
 		//cast active user to owner
 		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
 		
+		List<String> displayBusinesses = new ArrayList<String>();
+		
 		//get rid of businesses that you aren't the owner of
 		for(int i = 0; i < businesses.size(); i++){
 			for(int j = 0; j < o.getBusinesses().size(); j++){
-				if(businesses.get(i).compareTo(o.getBusinesses().get(j).getName()) != 0){
+				if(businesses.get(i).compareTo(o.getBusinesses().get(j).getName()) == 0){
 					//then get rid of them off the list
-					businesses.remove(i);
+					displayBusinesses.add(businesses.get(i));
 				}
 			}
 		}
 		
 		
-		JComboBox<Object> businessSelect = new JComboBox<>(businesses.toArray());
+		JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
 		customerBookingInfo.add(businessSelect);
 		
 		

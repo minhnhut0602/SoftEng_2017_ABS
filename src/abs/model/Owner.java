@@ -1,5 +1,6 @@
 package abs.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import abs.controller.Utilities;
@@ -13,7 +14,7 @@ import abs.controller.Utilities;
 public class Owner extends AbstractUser {
 
 	/** The owners business. */
-	private List<Business> businesses;
+	private List<Business> businesses = new ArrayList<Business>();
 
 	/**
 	 * Instantiates a new owner.
