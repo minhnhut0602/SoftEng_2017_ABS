@@ -601,7 +601,7 @@ public class Utilities {
 	public void silentSave() {
 		int bus = writeBusinessData(this.businesses);
 		int cus = writeCustomerData(this.customers);
-		if ((bus == 0) && (cus == 0)) {
+		if ((bus != 0) || (cus != 0)) {
 			logger.log(Level.WARNING, "SilentSave Failed - Bus error code: " + bus + " Cus error code: " + cus);
 		}
 	}
@@ -645,27 +645,27 @@ public class Utilities {
 
 		return found;
 	}
-	
-	public Business findBusiness(Object business){
+
+	public Business findBusiness(Object business) {
 		Business b = null;
-		
-		//search the business list and compare business names
-		for(int i = 0; i < businesses.size(); i++){
-			if(businesses.get(i).getName().compareTo((String)business) == 0){
+
+		// search the business list and compare business names
+		for (int i = 0; i < businesses.size(); i++) {
+			if (businesses.get(i).getName().compareTo((String) business) == 0) {
 				b = businesses.get(i);
 			}
 		}
-		
+
 		return b;
 	}
-	
-	public boolean addBusiness(Business business){
-		
+
+	public boolean addBusiness(Business business) {
+
 		this.businesses.add(business);
-		
-		//also add the business to the owner 
+
+		// also add the business to the owner
 		business.getOwner().addBusiness(business);
-		
+
 		return true;
 	}
 

@@ -128,6 +128,7 @@ public class Customer extends AbstractUser {
 				// compare the time
 				if (booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) == 0) {
 					// double booked the time, return false
+					// TODO change to logger
 					System.out.println("You already have an appointment booked at this time");
 					return false;
 
@@ -167,9 +168,10 @@ public class Customer extends AbstractUser {
 	 * @return true, if successful
 	 */
 	public boolean cancelBooking(Booking booking) {
-		
-		//fixing the null pointer exception
-		if(this.bookings.size() == 0){
+
+		// fixing the null pointer exception
+		if (this.bookings.size() == 0) {
+			// TODO change to logger
 			System.out.println("Sorry, there are'nt any bookings left to cancel");
 			return false;
 		}
@@ -193,10 +195,12 @@ public class Customer extends AbstractUser {
 	public void viewBookings() {
 
 		if (this.bookings.size() == 0) {
+			// TODO change to logger
 			System.out.println("Sorry, you don't have any bookings yet. Add one to view it here");
 		} else {
 			// loop over the list of bookings stored for this user
 			for (int i = 0; i < this.bookings.size(); i++) {
+				// TODO change to logger
 				System.out.println("Here are your bookings!");
 				// print the booking date and time
 				System.out.println("<<-|[" + i + "]" + this.bookings.get(i).getSlot().getTime() + " "
