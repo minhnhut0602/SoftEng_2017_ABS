@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
+import abs.model.Business;
 import abs.model.Owner;
 import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
@@ -22,6 +23,8 @@ public class UserController {
 	private static final Logger logger = Logger.getLogger("UserController Logger");
 
 	private static AppFrame appFrame;
+
+	private static Business activeBusiness = null;
 
 	/**
 	 * Initialise the UserController
@@ -111,7 +114,7 @@ public class UserController {
 			RegisterPanel.getStatus().setText("Owner Registation Successful");
 		} else {
 			Registry.getUserAuth().registerUser(name, email, password, address, phone);
-			 success = true;
+			success = true;
 			logger.log(Level.INFO,
 					"Customer Registration Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
 
@@ -128,5 +131,13 @@ public class UserController {
 	public static void logout() {
 		Registry.getUtils().silentSave();
 		reloadWelcomeScreen();
+	}
+
+	public static Business getActiveBusiness() {
+		return activeBusiness;
+	}
+
+	public static void setActiveBusiness(Business activeBusiness) {
+		UserController.activeBusiness = activeBusiness;
 	}
 }
