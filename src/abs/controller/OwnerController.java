@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
+import abs.model.Booking;
 import abs.model.Business;
 import abs.model.Customer;
 import abs.model.Owner;
@@ -65,11 +66,6 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 		
-		//grab the customers email, done in BookingForCustomer view
-		
-		//select a booking
-		
-		//pass to customer 
 		
 	}
 
@@ -156,7 +152,7 @@ public class OwnerController {
 		return bNames;
 	}
 	
-	public static void createCustBooking(Customer c, Business b, ){
+	public static void createCustBooking(Customer c, Business b, Booking booking){
 		
 	}
 

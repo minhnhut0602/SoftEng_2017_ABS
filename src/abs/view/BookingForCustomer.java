@@ -20,6 +20,7 @@ import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
+import abs.model.Owner;
 import abs.view.style.AppStyle;
 
 public class BookingForCustomer extends JPanel {
@@ -62,6 +63,18 @@ public class BookingForCustomer extends JPanel {
 		
 		//takes an array of business names to select from
 		List<String> businesses = OwnerController.getBusinessNames();
+		//cast active user to owner
+		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
+		
+		//get rid of businesses that you aren't the owner of
+		for(int i = 0; i < businesses.size(); i++){
+			for(int j = 0; j < o.getBusinesses().size(); j++){
+				if(businesses.get(i).compareTo(o.getBusinesses().get(j).getName()) != 0){
+					//then get rid of them off the list
+					businesses.remove(i);
+				}
+			}
+		}
 		
 		
 		JComboBox<Object> businessSelect = new JComboBox<>(businesses.toArray());

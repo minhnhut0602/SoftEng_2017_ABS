@@ -1,6 +1,7 @@
 package abs.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -8,9 +9,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -45,22 +43,48 @@ public class ShowAvailabilities extends JPanel{
 		title.setHorizontalAlignment(JLabel.CENTER);
 		
 		JPanel selectAvailabilities = new JPanel();
+		selectAvailabilities.setLayout(new FlowLayout());
 		
-		List<JButton> aButts = new ArrayList<JButton>();
+		List<AvButton> aButts = new ArrayList<AvButton>();
 		
 		//create a button for each availability
 		for(int i = 0; i < b.getAvBookings().size(); i++){
-			aButts.add(i, new JButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
-			selectAvailabilities.add(aButts.get(i));
+			//check if available or booked and add accordingly
+			if(b.getAvBookings().get(i).getStatus().compareTo("Available") == 0){
+				aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
+				aButts.get(i).setBackground(Color.GREEN);
+				aButts.get(i).setEnabled(true);
+				selectAvailabilities.add(aButts.get(i));
+			}else{
+				//must be booked already
+				aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
+				aButts.get(i).setBackground(Color.RED);
+				aButts.get(i).setEnabled(false);
+				selectAvailabilities.add(aButts.get(i));
+			}
+			
 		}
+		
+		selectAvailabilities.setBorder(AppStyle.margin);
+		selectAvailabilities.setBackground(AppStyle.mainForgroundColor);
+		
+		JPanel info = new JPanel();
+		info.setBorder(AppStyle.margin);
+		info.setBackground(AppStyle.mainForgroundColor);
+		info.add(title);
+
+		this.setLayout(new GridLayout(0, 1));
+		this.add(info);
+		this.add(selectAvailabilities);
 		
 		//create the action listener for all of them
 		for(int i = 0; i < aButts.size(); i++){
 			aButts.get(i).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e){
+					AvButton butt = (AvButton) e.getSource();
 					//pass back to controller
-					OwnerController.
+					OwnerController.createCustBooking(c, b, butt.getBooking());
 				}
 			});
 		}

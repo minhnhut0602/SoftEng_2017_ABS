@@ -13,7 +13,7 @@ import abs.controller.Utilities;
 public class Owner extends AbstractUser {
 
 	/** The owners business. */
-	private Business business;
+	private List<Business> businesses;
 
 	/**
 	 * Instantiates a new owner.
@@ -53,8 +53,8 @@ public class Owner extends AbstractUser {
 	 * @return the business
 	 */
 	// returns Business
-	public Business getBusiness() {
-		return business;
+	public List<Business> getBusinesses() {
+		return businesses;
 	}
 
 	/**
@@ -64,22 +64,26 @@ public class Owner extends AbstractUser {
 	 *            the new business
 	 */
 	// set the Business
-	public void setBusiness(Business business) {
-		this.business = business;
+	public void setBusiness(List<Business> business) {
+		this.businesses = business;
 	}
 
 	/**
 	 * shows all the times a business is booked
 	 */
 	public void viewBookings() {
-		// save the booking temporarily
-		List<Booking> bookings = business.getAvBookings();
+		
+		for(int i = 0; i < businesses.size(); i++){
+			// save the booking temporarily
+			List<Booking> bookings = businesses.get(i).getAvBookings();
 
-		for (int i = 0; i < bookings.size(); i++) {
-			System.out.println(bookings.get(i).getSlot().getTime() + " " + bookings.get(i).getSlot().getDate() + " "
-					+ bookings.get(i).getStatus());
+			for (int j = 0; j < bookings.size(); j++) {
+				System.out.println(bookings.get(j).getSlot().getTime() + " " + bookings.get(i).getSlot().getDate() + " "
+						+ bookings.get(j).getStatus());
 
+			}
 		}
+		
 	}
 	
 	
@@ -131,10 +135,14 @@ public class Owner extends AbstractUser {
 			//make the booking for the customer
 			cust.addBooking(booking);
 			//update the status of the availability
-			booking.setStatus("");
+			booking.setStatus("Booked");
 		}
 		
 		return false;
+	}
+
+	public void addBusiness(Business business) {
+		this.businesses.add(business);
 	}
 
 }

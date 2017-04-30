@@ -244,7 +244,7 @@ public class Utilities {
 					} // Else no employees or bookings
 
 					Business business = new Business(name, desc, address, number, staff, avBookings, owner);
-					owner.setBusiness(business);
+					owner.addBusiness(business);
 					for (Booking booking : avBookings) {
 						booking.setBusiness(business);
 					}

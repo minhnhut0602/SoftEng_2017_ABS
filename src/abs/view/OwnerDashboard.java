@@ -20,7 +20,6 @@ public class OwnerDashboard extends JPanel {
 	 * 
 	 */
 	public OwnerDashboard() {
-		// TODO Auto-generated constructor stub
 
 		this.setBorder(AppStyle.margin);
 		setBackground(AppStyle.mainBackgroundColor);
