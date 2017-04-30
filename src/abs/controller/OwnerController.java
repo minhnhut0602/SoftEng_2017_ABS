@@ -16,6 +16,7 @@ import abs.model.User;
 import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
 import abs.view.BookingForCustomer;
+import abs.view.NewBusiness;
 import abs.view.OwnerDashboard;
 import abs.view.RegisterPanel;
 import abs.view.ShowAvailabilities;
@@ -95,7 +96,17 @@ public class OwnerController {
 
 	public static void newBusiness() {
 		
+		//load up window
+		// Remove all content and load a login panel
+		appFrame.getContent().removeAll();
+		appFrame.getContent().add(new NewBusiness());
+
+		// Refresh frame
+		appFrame.repaint();
+		appFrame.revalidate();
+		
 		//get business details
+		
 		
 		//make new business type, add to business array
 
@@ -108,7 +119,18 @@ public class OwnerController {
 	}
 
 	public static void reloadDashboard() {
-		
+		//go back to dashboard 
+		appFrame.getContent().removeAll();
+		appFrame.getContent().add(AppFrame.getOwnerDashboard());
+
+		// Update available buttons
+		ABSMenuBar.toggleButton("login", true);
+		ABSMenuBar.toggleButton("register", true);
+		ABSMenuBar.toggleButton("logout", false);
+
+		// Refresh frame
+		appFrame.repaint();
+		appFrame.revalidate();
 	}
 	
 	/**
@@ -159,19 +181,35 @@ public class OwnerController {
 			//log something i suppose
 			System.out.println("didn't book");
 		}else{
-			//go back to dashboard 
-			appFrame.getContent().removeAll();
-			appFrame.getContent().add(AppFrame.getOwnerDashboard());
-
-			// Update available buttons
-			ABSMenuBar.toggleButton("login", true);
-			ABSMenuBar.toggleButton("register", true);
-			ABSMenuBar.toggleButton("logout", false);
-
-			// Refresh frame
-			appFrame.repaint();
-			appFrame.revalidate();
+			//go back to dashboard
+			reloadDashboard();
 		}
+		
+	}
+
+	public static void registerBusiness(String name, String desc, String address, String phone) {
+		
+		//remove spaces for phone number
+		phone = phone.replaceAll("\\s","");
+		
+		try{
+			Integer.parseInt(phone);
+			
+		}catch(NumberFormatException e){
+			//log error or something
+		}
+		
+		//get the owner
+		Owner owner = (Owner) Registry.getUserAuth().getActiveUser();
+		
+		//make a business object
+		Business b = new Business(name, desc, address, Integer.parseInt(phone), owner);
+		
+		//pass to utilities class
+		Registry.getUtils().addBusiness(b);
+		
+		//then move back to the dashboard
+		reloadDashboard();
 		
 	}
 

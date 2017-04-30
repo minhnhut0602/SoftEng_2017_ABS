@@ -658,5 +658,15 @@ public class Utilities {
 		
 		return b;
 	}
+	
+	public boolean addBusiness(Business business){
+		
+		this.businesses.add(business);
+		
+		//also add the business to the owner 
+		business.getOwner().addBusiness(business);
+		
+		return true;
+	}
 
 }
