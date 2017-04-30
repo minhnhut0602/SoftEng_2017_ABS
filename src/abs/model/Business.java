@@ -166,6 +166,22 @@ public class Business {
 	public Owner getOwner() {
 		return owner;
 	}
+	
+	public Employee findStaff(String name){
+		Employee employee = null;
+		
+		for(Employee e: staff){
+			if(e.getName().compareTo(name) == 0){
+				employee = e;
+			}
+		}
+		return employee;
+		
+	}
+	
+	public void addBookingTime(Booking booking){
+		avBookings.add(booking);
+	}
 
 	/*
 	 * (non-Javadoc)

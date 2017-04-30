@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-
+import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;
 import abs.model.Customer;
 import abs.model.Employee;
 import abs.model.Owner;
 import abs.view.ABSMenuBar;
+import abs.view.AddAvEmployee;
 import abs.view.AddEmployee;
 import abs.view.AppFrame;
 import abs.view.BookingForCustomer;
@@ -45,14 +46,6 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 	}
-
-
-	public static void addBooking() {
-		//text field for time, date
-		
-		//add booking
-
-	}
 	
 	public static void makeCustBooking(){
 		
@@ -68,11 +61,25 @@ public class OwnerController {
 	}
 
 	public static void addAvBooking() {
-		//text field for time, date
-		
-		//create new availability for the business
+		//boot up the screen
+		appFrame.getContent().removeAll();
+		appFrame.getContent().add(new AddAvEmployee());
+
+		// Refresh frame
+		appFrame.repaint();
+		appFrame.revalidate();
 		
 
+	}
+	
+	public static void addAvBooking(String time, String date, String employee, String business){
+		Business b = Registry.getUtils().findBusiness(business);
+		Employee e = b.findStaff(employee);
+		
+		//turn time, date, employee and Business into Booking
+		 new Booking(new Availability(date, time), e, "Available", b);
+		
+		
 	}
 
 	public static void removeBooking() {

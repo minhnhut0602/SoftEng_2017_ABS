@@ -1,6 +1,6 @@
 package abs.view;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -12,13 +12,9 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+
 
 import abs.controller.OwnerController;
-import abs.controller.Registry;
-import abs.exceptions.CredentialsInvalidException;
-import abs.exceptions.RegistrationNonUniqueException;
-import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.Customer;
 import abs.view.style.AppStyle;
