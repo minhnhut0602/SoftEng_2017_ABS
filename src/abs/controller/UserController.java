@@ -123,7 +123,6 @@ public class UserController {
 			RegisterPanel.getStatus().setText("Customer Registation Successful");
 		}
 
-		// TODO Update display and move to login screen
 		if (success) {
 			Registry.getUtils().silentSave();
 			reloadWelcomeScreen();

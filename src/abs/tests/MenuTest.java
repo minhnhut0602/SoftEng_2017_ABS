@@ -146,14 +146,6 @@ public class MenuTest {
 	}
 
 	@Test
-	public void testMenuDispayOwnerDashboard() {
-
-		fail("Implemented in Part B of assignmnet"); // TODO in part B of
-														// assignment
-
-	}
-
-	@Test
 	public void testMenuDispayCustomerDashboard() {
 		dummyIn = "1"; // Sending dummy input to menu
 		Scanner fakeIn = new Scanner(new ByteArrayInputStream(dummyIn.getBytes()));
