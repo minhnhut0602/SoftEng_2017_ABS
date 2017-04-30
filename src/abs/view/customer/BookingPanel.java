@@ -1,4 +1,4 @@
-package abs.view;
+package abs.view.customer;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -10,8 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import abs.controller.CustomerController;
-import abs.controller.UserController;
 import abs.model.Booking;
+import abs.view.GUIComponents.AvButton;
 import abs.view.factory.BookingFactory;
 
 public class BookingPanel extends JPanel {
@@ -25,7 +25,7 @@ public class BookingPanel extends JPanel {
 		ButtonGroup group = new ButtonGroup();
 
 		for (Booking booking : bookings) {
-			JButton button = BookingFactory.bookingButton(booking);
+			AvButton button = BookingFactory.bookingButton(booking);
 			group.add(button);
 			buttonPanel.add(button);
 
@@ -33,16 +33,15 @@ public class BookingPanel extends JPanel {
 			button.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// Add bookings
-
-					// Refresh screen
 					CustomerController.addBooking(booking);
 				}
 			});
 		}
-
+		this.add(buttonPanel);
+		
 		JButton back = new JButton("Back");
-
+		
+		this.add(back);
 		back.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
