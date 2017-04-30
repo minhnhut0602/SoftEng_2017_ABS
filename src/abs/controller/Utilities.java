@@ -244,7 +244,7 @@ public class Utilities {
 					} // Else no employees or bookings
 
 					Business business = new Business(name, desc, address, number, staff, avBookings, owner);
-					owner.setBusiness(business);
+					owner.addBusiness(business);
 					for (Booking booking : avBookings) {
 						booking.setBusiness(business);
 					}
@@ -644,6 +644,29 @@ public class Utilities {
 		}
 
 		return found;
+	}
+	
+	public Business findBusiness(Object business){
+		Business b = null;
+		
+		//search the business list and compare business names
+		for(int i = 0; i < businesses.size(); i++){
+			if(businesses.get(i).getName().compareTo((String)business) == 0){
+				b = businesses.get(i);
+			}
+		}
+		
+		return b;
+	}
+	
+	public boolean addBusiness(Business business){
+		
+		this.businesses.add(business);
+		
+		//also add the business to the owner 
+		business.getOwner().addBusiness(business);
+		
+		return true;
 	}
 
 }

@@ -32,6 +32,25 @@ public class Booking {
 		this.staff = staff;
 		this.status = status;
 	}
+	
+	/**
+	 * Instantiates a new booking.
+	 *
+	 * @param slot
+	 *            the slot an availability
+	 * @param staff
+	 *            the staff a string
+	 * @param status
+	 *            the status of the booking a string (booked or available)
+	 * @param business
+	 * the business to add
+	 */
+	public Booking(Availability slot, Employee staff, String status, Business business) {
+		this.slot = slot;
+		this.staff = staff;
+		this.status = status;
+		this.business = business;
+	}
 
 	/**
 	 * Gets the slot.

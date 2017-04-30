@@ -1,5 +1,6 @@
 package abs.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import abs.controller.Utilities;
@@ -13,7 +14,7 @@ import abs.controller.Utilities;
 public class Owner extends AbstractUser {
 
 	/** The owners business. */
-	private Business business;
+	private List<Business> businesses = new ArrayList<Business>();
 
 	/**
 	 * Instantiates a new owner.
@@ -53,8 +54,8 @@ public class Owner extends AbstractUser {
 	 * @return the business
 	 */
 	// returns Business
-	public Business getBusiness() {
-		return business;
+	public List<Business> getBusinesses() {
+		return businesses;
 	}
 
 	/**
@@ -64,22 +65,26 @@ public class Owner extends AbstractUser {
 	 *            the new business
 	 */
 	// set the Business
-	public void setBusiness(Business business) {
-		this.business = business;
+	public void setBusiness(List<Business> business) {
+		this.businesses = business;
 	}
 
 	/**
 	 * shows all the times a business is booked
 	 */
 	public void viewBookings() {
-		// save the booking temporarily
-		List<Booking> bookings = business.getAvBookings();
+		
+		for(int i = 0; i < businesses.size(); i++){
+			// save the booking temporarily
+			List<Booking> bookings = businesses.get(i).getAvBookings();
 
-		for (int i = 0; i < bookings.size(); i++) {
-			System.out.println(bookings.get(i).getSlot().getTime() + " " + bookings.get(i).getSlot().getDate() + " "
-					+ bookings.get(i).getStatus());
+			for (int j = 0; j < bookings.size(); j++) {
+				System.out.println(bookings.get(j).getSlot().getTime() + " " + bookings.get(i).getSlot().getDate() + " "
+						+ bookings.get(j).getStatus());
 
+			}
 		}
+		
 	}
 	
 	
@@ -99,7 +104,7 @@ public class Owner extends AbstractUser {
 		User customer = utils.searchCustomers(custEmail);
 		if(customer != null){
 			//then the customer was found
-			//make sure the booking is actually in the business
+			//make sure the booking is actually in the business, just do double check
 			if(business.getAvBookings().contains(booking)){
 				//so add a booking for that customer 
 				((Customer)customer).addBooking(booking);
@@ -109,6 +114,38 @@ public class Owner extends AbstractUser {
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * 
+	 * Makes a booking on behalf of a customer 
+	 * 
+	 * @param cust
+	 * the customer to book for
+	 * @param b
+	 * the business
+	 * @param booking
+	 * the booking time and date
+	 * @return
+	 * true if booking is made, false if not
+	 */
+	public boolean bookForCustomer(Customer cust, Business b, Booking booking){
+		
+		//check the booking exists
+		if(b.getAvBookings().contains(booking)){
+			//make the booking for the customer
+			cust.addBooking(booking);
+			//update the status of the availability
+			booking.setStatus("Booked");
+			
+			return true;
+		}
+		
+		return false;
+	}
+
+	public void addBusiness(Business business) {
+		this.businesses.add(business);
 	}
 
 }

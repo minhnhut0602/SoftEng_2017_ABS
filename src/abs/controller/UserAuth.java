@@ -11,6 +11,7 @@ import abs.model.Business;
 import abs.model.Customer;
 import abs.model.User;
 import abs.model.Employee;
+import abs.model.Owner;
 
 /**
  * The UserAuth class.
@@ -388,6 +389,46 @@ public class UserAuth {
 	 */
 	public void setActiveUser(User activeUser) {
 		this.activeUser = activeUser;
+
+	}
+
+	public boolean registerOwner(String name, String email, String password)
+			throws RegistrationValidationException, RegistrationNonUniqueException {
+
+		List<User> owners = utils.getOwners();
+
+		/* VALIDATE NAME */
+		if (name == null || name == "") {
+			throw new RegistrationValidationException("Name", name);
+			/* ERROR: name is empty */
+		}
+
+		/* VALIDATE EMAIL AND PASSWORD */
+		if (email == null || email == "") {
+			throw new RegistrationValidationException("Email", email);
+		}
+
+		if (password == null || password == "") {
+			throw new RegistrationValidationException("Email", email);
+		}
+
+		/*
+		 * check to see if the email exists, meaning the customer must already
+		 * be registered
+		 */
+		if (owners != null) {
+			for (int i = 0; i < owners.size(); i++) {
+				if (owners.get(i).getEmail().compareTo(email) == 0) {
+					throw new RegistrationNonUniqueException(email);
+				}
+			}
+		}
+		/* REGISTER NEW USER */
+		Owner owner = new Owner(name, email, password);
+		utils.addOwner(owner);
+		this.setActiveUser(owner);
+
+		return true;
 
 	}
 }
