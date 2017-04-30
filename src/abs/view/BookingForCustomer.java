@@ -1,21 +1,25 @@
-package abs.controller;
+package abs.view;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import abs.controller.OwnerController;
+import abs.controller.Registry;
 import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
+import abs.model.Business;
 import abs.view.style.AppStyle;
 
 public class BookingForCustomer extends JPanel {
@@ -46,17 +50,24 @@ public class BookingForCustomer extends JPanel {
 		customerBookingInfo.add(email);
 		customerBookingInfo.add(emailField);
 		
-		//need to add some sort of way to select availabilities
-		
 
 		content.setLayout(new BorderLayout());
 		content.add(title, BorderLayout.NORTH);
 		content.add(customerBookingInfo, BorderLayout.CENTER);
 		
 		JButton back = new JButton("Back");
-		JButton book = new JButton("Book");
+		JButton book = new JButton("Next");
 		customerBookingInfo.add(book);
 		customerBookingInfo.add(back);
+		
+		//takes an array of business names to select from
+		List<String> businesses = OwnerController.getBusinessNames();
+		
+		
+		JComboBox<Object> businessSelect = new JComboBox<>(businesses.toArray());
+		customerBookingInfo.add(businessSelect);
+		
+		
 		
 
 		this.setLayout(new BorderLayout());
@@ -73,7 +84,7 @@ public class BookingForCustomer extends JPanel {
 		book.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				OwnerController.bookForCust(emailField.getText());
+				OwnerController.checkEmail(emailField.getText(), businessSelect.getSelectedItem());
 			}
 
 		});

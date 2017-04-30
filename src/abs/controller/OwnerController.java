@@ -1,16 +1,23 @@
 package abs.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
+import abs.model.Business;
+import abs.model.Customer;
 import abs.model.Owner;
+import abs.model.User;
 import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
+import abs.view.BookingForCustomer;
 import abs.view.OwnerDashboard;
 import abs.view.RegisterPanel;
+import abs.view.ShowAvailabilities;
 
 /**
  *
@@ -58,7 +65,7 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 		
-		//grab the customers email
+		//grab the customers email, done in BookingForCustomer view
 		
 		//select a booking
 		
@@ -113,7 +120,43 @@ public class OwnerController {
 	 * @param email
 	 */
 	
-	public static void bookForCust(String email){
+	public static void checkEmail(String email, Object business){
+		
+		//have to convert business from Object to Business
+		Business b = Registry.getUtils().findBusiness(business);
+		
+		//make sure the customer exists, then change screens
+		Customer cust = (Customer)Registry.getUtils().searchCustomers(email);
+		
+		if(cust != null){
+			//change screens to show availabilities
+			appFrame.getContent().removeAll();
+			appFrame.getContent().add(new ShowAvailabilities(cust, b));
+
+			// Refresh frame
+			appFrame.repaint();
+			appFrame.revalidate();
+		}
+		
+	}
+
+	public static List<String> getBusinessNames() {
+		List<String> bNames = new ArrayList<String>();
+		
+		List<Business> businesses = Registry.getUtils().getBusiness();
+		
+		if(businesses.size() == 0){
+			return null;
+		}
+		
+		for(int i = 0; i < businesses.size(); i++){
+			bNames.add(businesses.get(i).getName());
+		}
+		
+		return bNames;
+	}
+	
+	public static void createCustBooking(Customer c, Business b, ){
 		
 	}
 

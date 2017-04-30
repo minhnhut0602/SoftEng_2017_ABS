@@ -645,5 +645,18 @@ public class Utilities {
 
 		return found;
 	}
+	
+	public Business findBusiness(Object business){
+		Business b = null;
+		
+		//search the business list and compare business names
+		for(int i = 0; i < businesses.size(); i++){
+			if(businesses.get(i).getName().compareTo((String)business) == 0){
+				b = businesses.get(i);
+			}
+		}
+		
+		return b;
+	}
 
 }

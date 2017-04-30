@@ -110,5 +110,31 @@ public class Owner extends AbstractUser {
 		
 		return false;
 	}
+	
+	/**
+	 * 
+	 * Makes a booking on behalf of a customer 
+	 * 
+	 * @param cust
+	 * the customer to book for
+	 * @param b
+	 * the business
+	 * @param booking
+	 * the booking time and date
+	 * @return
+	 * true if booking is made, false if not
+	 */
+	public boolean bookForCustomer(Customer cust, Business b, Booking booking){
+		
+		//check the booking exists
+		if(b.getAvBookings().contains(booking)){
+			//make the booking for the customer
+			cust.addBooking(booking);
+			//update the status of the availability
+			booking.setStatus("");
+		}
+		
+		return false;
+	}
 
 }
