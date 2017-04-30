@@ -2,6 +2,8 @@ package abs.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * The customer class extends abstractUser.
@@ -10,6 +12,8 @@ import java.util.List;
  * @see User
  */
 public class Customer extends AbstractUser {
+	/** The data access logger */
+	private static final Logger logger = Logger.getLogger("Model:Customer Logger");
 
 	/** The customers address. */
 	private String address;
@@ -111,6 +115,7 @@ public class Customer extends AbstractUser {
 		// check to see if the list is empty
 
 		if (this.bookings.isEmpty()) {
+			booking.setStatus("Booked");
 			return this.bookings.add(booking);
 
 		}
@@ -128,35 +133,35 @@ public class Customer extends AbstractUser {
 				// compare the time
 				if (booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) == 0) {
 					// double booked the time, return false
-					// TODO change to logger
-					System.out.println("You already have an appointment booked at this time");
+
+					logger.log(Level.WARNING, "You already have an appointment booked at this time");
 					return false;
 
 				} else if (booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) > 0) {
 					// the booking is after the current booking, so put here
 					this.bookings.add(i + 1, booking);
-
+					booking.setStatus("Booked");
 					return true;
 				}
 			} else if (booking.getSlot().getDate().compareTo(this.bookings.get(i).getSlot().getDate()) > 0) {
 				// then the booking is the first to be made for this day, just
 				// insert at that position
 				this.bookings.add(i, booking);
-
+				booking.setStatus("Booked");
 				return true;
 
 			} else if (i == this.bookings.size()) {
 				// if you get to this statement that means you can just append
 				// to the list since it got to the end
 				this.bookings.add(booking);
-
+				booking.setStatus("Booked");
 				return true;
 			}
 		}
 
 		// if all else fails add at this position
 		this.bookings.add(position, booking);
-
+		booking.setStatus("Booked");
 		return true;
 	}
 
@@ -171,8 +176,7 @@ public class Customer extends AbstractUser {
 
 		// fixing the null pointer exception
 		if (this.bookings.size() == 0) {
-			// TODO change to logger
-			System.out.println("Sorry, there are'nt any bookings left to cancel");
+			logger.log(Level.WARNING, "Sorry, there are'nt any bookings left to cancel");
 			return false;
 		}
 
@@ -182,6 +186,7 @@ public class Customer extends AbstractUser {
 				if (booking.getSlot().getTime().compareTo(this.bookings.get(i).getSlot().getTime()) == 0) {
 					// remove the booking
 					this.bookings.remove(i);
+					booking.setStatus("Available");
 					return true;
 				}
 			}
@@ -191,16 +196,18 @@ public class Customer extends AbstractUser {
 
 	/**
 	 * View bookings prints the customers bookings.
+	 * 
+	 * @deprecated
+	 * @since alpha
 	 */
 	public void viewBookings() {
 
 		if (this.bookings.size() == 0) {
-			// TODO change to logger
-			System.out.println("Sorry, you don't have any bookings yet. Add one to view it here");
+			logger.log(Level.WARNING, "Sorry, you don't have any bookings yet. Add one to view it here");
 		} else {
 			// loop over the list of bookings stored for this user
 			for (int i = 0; i < this.bookings.size(); i++) {
-				// TODO change to logger
+
 				System.out.println("Here are your bookings!");
 				// print the booking date and time
 				System.out.println("<<-|[" + i + "]" + this.bookings.get(i).getSlot().getTime() + " "
