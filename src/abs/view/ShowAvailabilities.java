@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -47,25 +48,46 @@ public class ShowAvailabilities extends JPanel{
 		
 		List<AvButton> aButts = new ArrayList<AvButton>();
 		
-		//create a button for each availability
-		for(int i = 0; i < b.getAvBookings().size(); i++){
-			//check if available or booked and add accordingly
-			if(b.getAvBookings().get(i).getStatus().compareTo("Available") == 0){
-				aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
-				aButts.get(i).setBackground(Color.GREEN);
-				aButts.get(i).setBooking(b.getAvBookings().get(i));
-				aButts.get(i).setEnabled(true);
-				selectAvailabilities.add(aButts.get(i));
-			}else{
-				//must be booked already
-				aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
-				aButts.get(i).setBackground(Color.RED);
-				aButts.get(i).setBooking(b.getAvBookings().get(i));
-				aButts.get(i).setEnabled(false);
-				selectAvailabilities.add(aButts.get(i));
-			}
+		if(b.getAvBookings().size() == 0 || b.getAvBookings() == null){
+			//print a message
+			JLabel message = new JLabel("There's no available booking times for this business");
+			message.setFont(AppStyle.boldMedFont);
+			message.setHorizontalAlignment(JLabel.CENTER);
 			
+			JPanel display = new JPanel();
+			display.setBorder(AppStyle.margin);
+			display.setBackground(AppStyle.mainForgroundColor);
+			display.add(message);
+			
+			
+		}else{
+			//create a button for each availability
+			for(int i = 0; i < b.getAvBookings().size(); i++){
+				//check if available or booked and add accordingly
+				if(b.getAvBookings().get(i).getStatus().compareTo("Available") == 0){
+					aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
+					aButts.get(i).setBackground(Color.GREEN);
+					aButts.get(i).setBooking(b.getAvBookings().get(i));
+					aButts.get(i).setEnabled(true);
+					selectAvailabilities.add(aButts.get(i));
+				}else{
+					//must be booked already
+					aButts.add(i, new AvButton(b.getAvBookings().get(i).getSlot().getDate() + " -> " + b.getAvBookings().get(i).getSlot().getTime()));
+					aButts.get(i).setBackground(Color.RED);
+					aButts.get(i).setBooking(b.getAvBookings().get(i));
+					aButts.get(i).setEnabled(false);
+					selectAvailabilities.add(aButts.get(i));
+				}
+				
+			}
 		}
+		
+		
+		//add back button
+		JButton back = new JButton("Home");
+		selectAvailabilities.add(back);
+		
+
 		
 		selectAvailabilities.setBorder(AppStyle.margin);
 		selectAvailabilities.setBackground(AppStyle.mainForgroundColor);
@@ -90,6 +112,14 @@ public class ShowAvailabilities extends JPanel{
 				}
 			});
 		}
+		
+		back.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				OwnerController.reloadDashboard();
+			}
+
+		});
 		
 	}
 

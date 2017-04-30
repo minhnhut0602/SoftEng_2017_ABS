@@ -70,6 +70,15 @@ public class Employee {
 	public void setAvailabilities(List<Availability> availabilities) {
 		this.availabilities = availabilities;
 	}
+	
+	/**
+	 * adds one availability at a time
+	 * @param avail
+	 * the availability to be added
+	 */
+	public void addAvailabilities(Availability avail){
+		this.availabilities.add(avail);
+	}
 
 	/*
 	 * (non-Javadoc)

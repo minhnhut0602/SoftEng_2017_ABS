@@ -2,23 +2,20 @@ package abs.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import abs.exceptions.CredentialsInvalidException;
-import abs.exceptions.RegistrationNonUniqueException;
-import abs.exceptions.RegistrationValidationException;
+
 import abs.model.Booking;
 import abs.model.Business;
 import abs.model.Customer;
+import abs.model.Employee;
 import abs.model.Owner;
-import abs.model.User;
 import abs.view.ABSMenuBar;
+import abs.view.AddEmployee;
 import abs.view.AppFrame;
 import abs.view.BookingForCustomer;
 import abs.view.NewBusiness;
 import abs.view.OwnerDashboard;
-import abs.view.RegisterPanel;
 import abs.view.ShowAvailabilities;
 
 /**
@@ -88,9 +85,14 @@ public class OwnerController {
 
 	public static void addEmployee() {
 		
-		//enter details very much like the register thing
-		
-		//create the employee and link to business
+		//load up window
+		// Remove all content and load a login panel
+		appFrame.getContent().removeAll();
+		appFrame.getContent().add(new AddEmployee());
+
+		// Refresh frame
+		appFrame.repaint();
+		appFrame.revalidate();
 
 	}
 
@@ -209,6 +211,22 @@ public class OwnerController {
 		Registry.getUtils().addBusiness(b);
 		
 		//then move back to the dashboard
+		reloadDashboard();
+		
+	}
+
+	public static void addEmployee(String name, Object business) {
+		
+		//have to convert business from Object to Business
+		Business b = Registry.getUtils().findBusiness(business);
+		
+		//now create the employee
+		
+		Employee staff = new Employee(name);
+		
+		b.addStaff(staff);
+		
+		//go back to the dashboard
 		reloadDashboard();
 		
 	}
