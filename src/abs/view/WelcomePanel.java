@@ -23,7 +23,6 @@ public class WelcomePanel extends JPanel {
 	 * 
 	 */
 	public WelcomePanel() {
-		// TODO Auto-generated constructor stub
 
 		this.setBorder(AppStyle.margin);
 		setBackground(AppStyle.mainBackgroundColor);

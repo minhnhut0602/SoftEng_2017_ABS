@@ -1,20 +1,20 @@
 package abs.view.factory;
 
-import java.awt.Color;
-
 import javax.swing.JTextPane;
 
 import abs.model.Booking;
 import abs.view.GUIComponents.AvButton;
+import abs.view.style.AppStyle;
 
 public class BookingFactory {
 
 	public static String bookingString(Booking booking) {
 
-		String length = (booking.getSlot().getBlocks() * booking.getBusiness().BLOCK_LENGTH) + "Mins";
+		String length = (booking.getSlot().getBlocks() * booking.getBusiness().BLOCK_LENGTH) + " Mins";
 
-		String bookingString = "Type: " + booking.getService() + " Date: " + booking.getSlot().getDate() + " Start Time: "
-				+ booking.getSlot().getTime() + " Length: " + length + " Staff: " + booking.getStaff().getName();
+		String bookingString = "Type: " + booking.getService() + ", Date: " + booking.getSlot().getDate()
+				+ ", Start Time: " + booking.getSlot().getTime() + ", Length: " + length + ", Staff: "
+				+ booking.getStaff().getName();
 
 		return bookingString;
 	}
@@ -26,9 +26,9 @@ public class BookingFactory {
 		bookingPane.setText(bookingString(booking));
 
 		if (booking.getStatus().compareTo("Available") == 0) {
-			bookingPane.setBackground(Color.GREEN);
+			bookingPane.setBackground(AppStyle.successColor);
 		} else {
-			bookingPane.setBackground(Color.RED);
+			bookingPane.setBackground(AppStyle.warningColor);
 		}
 
 		return bookingPane;
@@ -39,10 +39,10 @@ public class BookingFactory {
 		bookingButton.setBooking(booking);
 
 		if (booking.getStatus().compareTo("Available") == 0) {
-			bookingButton.setBackground(Color.GREEN);
+			bookingButton.setForeground(AppStyle.successColor);
 			bookingButton.setEnabled(true);
 		} else {
-			bookingButton.setBackground(Color.RED);
+			bookingButton.setBackground(AppStyle.warningColor);
 			bookingButton.setEnabled(false);
 		}
 
@@ -53,7 +53,7 @@ public class BookingFactory {
 		JTextPane bookingPane = new JTextPane();
 
 		bookingPane.setEditable(false);
-		bookingPane.setBackground(Color.GREEN);
+		bookingPane.setBackground(AppStyle.successColor);
 		bookingPane
 				.setText("Type: Haircut" + "Date: 1/5" + "Start Time: 8:30 am" + "Length: 0.5 hrs" + "Staff: Daniel");
 

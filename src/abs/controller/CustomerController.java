@@ -1,5 +1,8 @@
 package abs.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import abs.model.Booking;
 import abs.model.Customer;
 import abs.view.ABSMenuBar;
@@ -13,6 +16,7 @@ import abs.view.customer.RemoveBookingPanel;
  */
 public class CustomerController {
 
+	private static final Logger logger = Logger.getLogger("Controller:Customer Logger");
 	private static AppFrame appFrame;
 
 	/**
@@ -23,15 +27,16 @@ public class CustomerController {
 	}
 
 	public static void dashboard() {
-		// TODO Show dashboard
 
-		// Check for any bus, if none show error else set the active to 1st for
+		// TODO Check for any bus, if none show error else set the active to 1st
+		// for
 		// now
 		UserController.setActiveBusiness(Registry.getUtils().getBusiness().get(0));
+
 		// Remove all content and load a Bookings panel
 		appFrame.getContent().removeAll();
 
-		// Creates a new bookings panel with active bus bookings
+		// Creates a new dash panel
 		appFrame.getContent().add(new CustomerDashboard());
 
 		// Update available buttons
@@ -48,9 +53,13 @@ public class CustomerController {
 
 		if (booking != null) {
 			// add booking
-			((Customer) Registry.getUserAuth().getActiveUser()).addBooking(booking);
+			if (((Customer) Registry.getUserAuth().getActiveUser()).addBooking(booking)) {
+				logger.log(Level.INFO, "Booking Successfull");
+			} else {
+				logger.log(Level.WARNING, "Booking Failed");
+			}
 
-			// Update success message ?
+			// TODO on screen success message
 		}
 
 		// Remove all content and load a Bookings panel
@@ -69,15 +78,18 @@ public class CustomerController {
 
 		if (booking != null) {
 			// Remove booking
-			((Customer) Registry.getUserAuth().getActiveUser()).cancelBooking(booking);
-
-			// Update success message ?
+			if (((Customer) Registry.getUserAuth().getActiveUser()).cancelBooking(booking)) {
+				logger.log(Level.INFO, "Booking Cancelled");
+			} else {
+				logger.log(Level.WARNING, "Booking Failed to Cancel");
+			}
+			// TODO Update success message
 		}
 
-		// Remove all content and load a Bookings panel
+		// Remove all content and load a remove panel
 		appFrame.getContent().removeAll();
 
-		// creates new bookings panel with users bookings
+		// creates new remove panel with users bookings
 		appFrame.getContent()
 				.add(new RemoveBookingPanel(((Customer) Registry.getUserAuth().getActiveUser()).getBookings()));
 

@@ -534,7 +534,7 @@ public class Utilities {
 							bufferedWriter.write(splitChar + slot.getDate());
 							bufferedWriter.write(splitChar + slot.getTime());
 						} else {
-							bufferedWriter.write(bookings.get(j).getBusiness().getName());
+							bufferedWriter.write(splitChar + bookings.get(j).getBusiness().getName());
 							bufferedWriter.write(splitChar + bookings.get(j).getStaff().getName());
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
