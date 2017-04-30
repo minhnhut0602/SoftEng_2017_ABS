@@ -93,6 +93,7 @@ public class UserController {
 			LoginPanel.getStatus().setText("Owner Login Successful");
 
 		} else {
+			new CustomerController(appFrame);
 			CustomerController.dashboard();
 			logger.log(Level.INFO,
 					"Customer Login Successful ID: " + Registry.getUserAuth().getActiveUser().getEmail());
