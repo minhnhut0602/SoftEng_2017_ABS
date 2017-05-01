@@ -1,4 +1,4 @@
-package abs.view;
+package abs.view.GUIComponents;
 
 import java.awt.BorderLayout;
 import java.text.DateFormat;
@@ -8,6 +8,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
+
+import abs.view.AppFrame;
 
 /**
  *

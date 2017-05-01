@@ -9,6 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+import abs.view.GUIComponents.StatusBar;
+import abs.view.owner.OwnerDashboard;
+
 /**
  * @since Beta
  */
@@ -44,7 +47,7 @@ public class AppFrame extends JFrame {
 	 * @param dialog
 	 *            Dialog in questions to centre.
 	 */
-	static void setDialogLocation(JFrame frame, JDialog dialog) {
+	public static void setDialogLocation(JFrame frame, JDialog dialog) {
 		Dimension dialogDimension = dialog.getSize();
 		Dimension frameDimension = frame.getSize();
 		Point frameLocation = frame.getLocation();

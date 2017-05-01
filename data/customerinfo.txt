@@ -1,7 +1,13 @@
 # Customer Info
 # name,email,address,phone,password
+<<<<<<< HEAD
 Stacy Drum,stacy.d@gmail.com,123 Mobe Street Bendigo VIC 3550,0355555555,stacypassword
 # Bookings
 Cory's Counselling,Mary,4/4/17,12:00
 Jerry Lucio,bigj@live.com.au,45 Victoria Pde Melbourne Vic 3000,0414141414,bigjpass
+=======
+Stacy Drum,stacy.d@gmail.com,123 Mobe Street Bendigo VIC 3550,0355555555,stacypassword
+#
+Jerry Lucio,bigj@live.com.au,45 Victoria Pde Melbourne Vic 3000,0414141414,bigjpass
+>>>>>>> master
 #

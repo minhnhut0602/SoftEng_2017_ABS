@@ -20,6 +20,8 @@ public class AppStyle {
 	public static final Color mainBackgroundColor = Color.DARK_GRAY;
 	public static final Color mainForgroundColor = Color.WHITE;
 	public static final Color mainFontColor = Color.GRAY;
+	public static Color successColor = new Color(111, 195, 102);
+	public static Color warningColor = new Color(238, 125, 125);
 
 	/* Fonts */
 	public static final Font boldLargeFont = new Font((new JLabel()).getFont().getName(), Font.BOLD, 25);
