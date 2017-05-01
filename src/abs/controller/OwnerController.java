@@ -78,8 +78,12 @@ public class OwnerController {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
 
-		// turn time, date, employee and Business into Booking
-		new Booking(new Availability(date, time), e, "Available", b);
+		// turn time, date, employee and Business into Booking		
+		//add this booking to the business
+		b.addBookingTime(new Booking(new Availability(date, time), e, "Available", b));
+		
+		//return to the dashboard
+		reloadDashboard();
 
 	}
 
