@@ -9,9 +9,9 @@ import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.Customer;
-import abs.model.User;
 import abs.model.Employee;
 import abs.model.Owner;
+import abs.model.User;
 
 /**
  * The UserAuth class.
@@ -157,7 +157,7 @@ public class UserAuth {
 		/* VALIDATE EMAIL AND PASSWORD */
 		if (email == null || email == "" || validateEmail(email) == false) {
 			throw new RegistrationValidationException("Email", email);
-			
+
 		}
 
 		if (password == null || password == "") {
@@ -230,54 +230,13 @@ public class UserAuth {
 	public boolean validateEmail(String email) {
 
 		/* VALIDATE EMAIL */
-		int counter, emailLength;
 
-		if (email.length() == 0 /* || email.matches(".*[ \\(),:;<>[]\"].*") */) {
-			return false;
-			/* ERROR: password or email is empty */
+		String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+		Boolean emailValid = email.matches(regex);
+		System.out.println("is e-mail: " + email + " :Valid = " + emailValid);
 
-		} else {
+		return emailValid;
 
-			emailLength = email.length();
-			int counterAt = 0;
-			int counterPeriod = 0;
-
-			/*
-			 * loop through individual characters in the string 'email' and
-			 * compares to '@' and '.com', there should only be one of each
-			 * example in the string of each, and they must be in order '@'
-			 * followed by '.'
-			 */
-			for (counter = 0; counter <= emailLength - 1; counter++) {
-
-				if (counterAt > 1 || counterPeriod > 1) {
-					return false;
-					/* ERROR: too many '@' or '.com' */
-
-				} else {
-
-					if (email.charAt(counter) == '@') {
-						counterAt += 1;
-					}
-
-					if (email.toLowerCase().contains(".com") && counterAt < 1) {
-						return false;
-						/* ERROR: '.com' found before '@' */
-
-					} else if (email.toLowerCase().contains(".com")) {
-						counterPeriod += 1;
-
-					}
-					if (counterPeriod > 1) {
-						return false;
-						/* ERROR: more than one '.com' found */
-
-					}
-				}
-			}
-		}
-
-		return true;
 	}
 
 	/**
@@ -287,22 +246,32 @@ public class UserAuth {
 	 *            the phone
 	 * @return true, if successful
 	 */
+
 	public boolean validatePhone(String phone) {
-		if (phone.replaceAll(" ", "").matches("[0-9]+")) {
-			if (phone.length() == 10 || phone.length() == 8) {
-				/* Do nothing */
+
+		/* VALIDATE PHONE */
+
+		String regex = "[0-9]+";
+		phone = phone.replaceAll(" ", "");
+
+		/* check is either 8 or 10 digit */
+		if (phone.length() == 8 || phone.length() == 10) {
+
+			/* check is numeric */
+			if (phone.matches(regex)) {
+				System.out.println("phone: " + phone + " :Valid = true");
+				return true;
+
 			} else {
+				System.out.println("phone(numeric): " + phone + " :Valid = false");
 				return false;
-				/* ERROR: phone number incorrect length */
 			}
 
 		} else {
+			System.out.println("phone(8/10): " + phone + " :Valid = false");
 			return false;
-			/* ERROR: phone number has illegal characters */
-
 		}
 
-		return true;
 	}
 
 	/**
@@ -323,10 +292,17 @@ public class UserAuth {
 			addressToks.add(index, addressTokeniser.nextToken());
 			index++;
 		}
+		if (index < 6) {
+			System.out.println("address too short: false");
+			return false;
+		}
+		// for(int counter = 0; counter < addressToks.size(); counter++){
+		// System.out.println(addressToks.get(counter));
+		// }
 
 		/* checks the first entry for a number */
 		int currentFocus = 0;
-		if (addressToks.get(currentFocus).contains("[0-9]+")) {
+		if (addressToks.get(currentFocus).matches("[0-9]+")) {
 			currentFocus++;
 		}
 
@@ -334,10 +310,11 @@ public class UserAuth {
 		 * loops through all tokens checking for illegal characters, stops on
 		 * last two
 		 */
-		while (currentFocus < addressToks.size() - 3) {
-			if (addressToks.get(currentFocus).contains("[a-zA-Z,]+")) {
+		while (currentFocus < addressToks.size() - 2) {
+			if (addressToks.get(currentFocus).matches("[a-zA-Z,]+")) {
 				currentFocus++;
 			} else {
+				System.out.println("address invalid characters: false");
 				return false;
 				/* ERROR: line in address is not in correct format */
 			}
@@ -351,25 +328,32 @@ public class UserAuth {
 				if (addressToks.get(currentFocus).length() == 4) {
 					currentFocus++;
 				} else {
+					System.out.println("address postcode invalid: false");
 					return false;
 					/* ERROR: Post code not 4 digits */
 
 				}
 			}
 			if (addressToks.get(currentFocus).matches("[a-zA-Z]+")) {
-				if (addressToks.get(currentFocus).toUpperCase().matches("VIC|NSW|ACT|WA|SA|TAS")) {
-					currentFocus++;
-				} else {
-					return false;
-					/* ERROR: invalid state provided */
 
+				String stateArray[] = new String[] { "VIC", "NSW", "ACT", "WA", "SA", "TAS" };
+
+				for (int counter = 0; counter < stateArray.length; counter++) {
+
+					if (addressToks.get(currentFocus).toUpperCase().equals(stateArray[counter]) == true) {
+						currentFocus++;
+						return true;
+					}
 				}
+				System.out.println("address invalid state: false");
+				return false;
+				/* ERROR: invalid state provided */
+
 			}
-
-		} /* While loop end */
-
+		}
+		System.out.println("address is valid: true");
 		return true;
-	}
+	} /* While loop end */
 
 	/**
 	 * Gets the active user/logged in user.
