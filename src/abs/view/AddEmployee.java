@@ -39,7 +39,7 @@ public class AddEmployee extends JPanel{
 		JPanel employeeInfo = new JPanel();
 
 		JLabel name = new JLabel("Name of Employee:");
-		JTextField nameField = new JTextField(15);
+		final JTextField nameField = new JTextField(15);
 		employeeInfo.add(name);
 		employeeInfo.add(nameField);
 		
@@ -71,7 +71,7 @@ public class AddEmployee extends JPanel{
 		}
 		
 		
-		JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
+		final JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
 		employeeInfo.add(businessSelect);
 		
 		

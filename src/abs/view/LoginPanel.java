@@ -40,9 +40,9 @@ public class LoginPanel extends JPanel {
 
 		JPanel loginInfo = new JPanel();
 		JLabel email = new JLabel("Email:");
-		JTextField emailField = new JTextField(15);
+		final JTextField emailField = new JTextField(15);
 		JLabel pass = new JLabel("Password:");
-		JTextField passField = new JTextField(15);
+		final JTextField passField = new JTextField(15);
 
 		loginInfo.add(email);
 		loginInfo.add(emailField);

@@ -41,7 +41,7 @@ public class BookingForCustomer extends JPanel {
 		JPanel customerBookingInfo = new JPanel();
 
 		JLabel email = new JLabel("Email:");
-		JTextField emailField = new JTextField(15);
+		final JTextField emailField = new JTextField(15);
 		customerBookingInfo.add(email);
 		customerBookingInfo.add(emailField);
 		
@@ -79,7 +79,7 @@ public class BookingForCustomer extends JPanel {
 				}
 			}
 			
-			JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
+			final JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
 			customerBookingInfo.add(businessSelect);
 			
 			book.addActionListener(new ActionListener() {

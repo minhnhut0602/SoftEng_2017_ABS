@@ -23,7 +23,7 @@ root
 Cory,3/4/17,8am-5pm,4/4/17,4pm-6pm,6/4/17,10am-2pm
 Mary,6/4/17,8am-2pm,7/4/17,2pm-6pm
 # Bookings
-Cory,3/4/17,10:30,Booked,Cory,3/4/17,11:00,Booked,Mary,4/4/17,12:00,Available,Mary,7/4/17,2:00,Available,Mary,7/4/17,2:30,Available
+Cory,3/4/17,10:30,Booked,Cory,3/4/17,11:00,Booked,Mary,4/4/17,12:00,Booked,Mary,7/4/17,2:00,Available,Mary,7/4/17,2:30,Available
 # Business Info
 Marco's Manicures
 Since marco lost his hands he loves to help you with yours!
@@ -50,3 +50,14 @@ Sohum,3/4/17,8am-5pm,4/4/17,4pm-6pm,5/4/17,10am-2pm,6/4/17,8am-2pm
 Wendy,3/4/17,2pm-5pm,6/4/17,10am-6pm
 # Bookings
 Sohum,3/4/17,10:00,Available,Sohum,3/4/17,11:30,Available,Sohum,3/4/17,12:30,Available,Sohum,4/4/17,1:00,Available,Wendy,7/4/17,1:30,Available,Wendy,7/4/17,3:00,Available
+# Business Info
+marcos dickbois'R'Us
+we love pussy
+1234 fuck off
+12341234
+Cory
+admin@coryscounselling.com
+root
+# Employees
+# Bookings
+

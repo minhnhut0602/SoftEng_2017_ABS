@@ -155,8 +155,9 @@ public class UserAuth {
 		}
 
 		/* VALIDATE EMAIL AND PASSWORD */
-		if (email == null || email == "") {
+		if (email == null || email == "" || validateEmail(email) == false) {
 			throw new RegistrationValidationException("Email", email);
+			
 		}
 
 		if (password == null || password == "") {
@@ -276,7 +277,7 @@ public class UserAuth {
 			}
 		}
 
-		return false;
+		return true;
 	}
 
 	/**

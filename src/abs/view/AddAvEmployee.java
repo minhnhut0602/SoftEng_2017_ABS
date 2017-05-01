@@ -48,12 +48,12 @@ public class AddAvEmployee extends JPanel{
 		//fields
 		
 		JLabel time = new JLabel("Time:");
-		JTextField timeField = new JTextField(15);
+		final JTextField timeField = new JTextField(15);
 		availInfo.add(time);
 		availInfo.add(timeField);
 
 		JLabel date = new JLabel("Date:");
-		JTextField dateField = new JTextField(15);
+		final JTextField dateField = new JTextField(15);
 		availInfo.add(date);
 		availInfo.add(dateField);
 		
@@ -99,10 +99,10 @@ public class AddAvEmployee extends JPanel{
 				}
 			}
 			
-			JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
+			final JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
 			availInfo.add(businessSelect);
 			
-			JComboBox<Object> employeeSelect = new JComboBox<>(displayEmployees.toArray());
+			final JComboBox<Object> employeeSelect = new JComboBox<>(displayEmployees.toArray());
 			availInfo.add(employeeSelect);
 			
 			

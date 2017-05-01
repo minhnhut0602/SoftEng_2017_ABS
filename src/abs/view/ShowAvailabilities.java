@@ -26,7 +26,7 @@ public class ShowAvailabilities extends JPanel{
 	 */
 	private static final long serialVersionUID = -5036821010971686445L;
 
-	public ShowAvailabilities(Customer c, Business b){
+	public ShowAvailabilities(final Customer c, final Business b){
 		
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);

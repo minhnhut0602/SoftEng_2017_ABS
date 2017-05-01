@@ -44,22 +44,22 @@ public class NewBusiness extends JPanel{
 		// registerInfo.setLayout(new GridLayout(0, 2));
 
 		JLabel name = new JLabel("Name:");
-		JTextField nameField = new JTextField(15);
+		final JTextField nameField = new JTextField(15);
 		businessInfo.add(name);
 		businessInfo.add(nameField);
 
 		JLabel desc = new JLabel("Description:");
-		JTextField descField = new JTextField(15);
+		final JTextField descField = new JTextField(15);
 		businessInfo.add(desc);
 		businessInfo.add(descField);
 
 		JLabel address = new JLabel("Address:");
-		JTextField addressField = new JTextField(15);
+		final JTextField addressField = new JTextField(15);
 		businessInfo.add(address);
 		businessInfo.add(addressField);
 
 		JLabel phone = new JLabel("Phone Number:");
-		JTextField phoneField = new JTextField(15);
+		final JTextField phoneField = new JTextField(15);
 		businessInfo.add(phone);
 		businessInfo.add(phoneField);
 

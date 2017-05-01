@@ -41,32 +41,32 @@ public class RegisterPanel extends JPanel {
 		// registerInfo.setLayout(new GridLayout(0, 2));
 
 		JLabel name = new JLabel("Name:");
-		JTextField nameField = new JTextField(15);
+		final JTextField nameField = new JTextField(15);
 		registerInfo.add(name);
 		registerInfo.add(nameField);
 
 		JLabel email = new JLabel("Email:");
-		JTextField emailField = new JTextField(15);
+		final JTextField emailField = new JTextField(15);
 		registerInfo.add(email);
 		registerInfo.add(emailField);
 
 		JLabel pass = new JLabel("Password:");
-		JTextField passField = new JTextField(15);
+		final JTextField passField = new JTextField(15);
 		registerInfo.add(pass);
 		registerInfo.add(passField);
 
 		JLabel address = new JLabel("Address:");
-		JTextField addressField = new JTextField(15);
+		final JTextField addressField = new JTextField(15);
 		registerInfo.add(address);
 		registerInfo.add(addressField);
 
 		JLabel phone = new JLabel("Phone Number:");
-		JTextField phoneField = new JTextField(15);
+		final JTextField phoneField = new JTextField(15);
 		registerInfo.add(phone);
 		registerInfo.add(phoneField);
 
 		JLabel owner = new JLabel("Are you a bussiness owner:");
-		JCheckBox ownerField = new JCheckBox();
+		final JCheckBox ownerField = new JCheckBox();
 		registerInfo.add(owner);
 		registerInfo.add(ownerField);
 
