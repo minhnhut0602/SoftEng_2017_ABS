@@ -28,16 +28,13 @@ public class CustomerController {
 
 	public static void dashboard() {
 
-		// TODO Check for any bus, if none show error else set the active to 1st
-		// for
-		// now
-		UserController.setActiveBusiness(Registry.getUtils().getBusiness().get(0));
+		// TODO MAYBE: Check for null businesses, show error msg.
 
 		// Remove all content and load a Bookings panel
 		appFrame.getContent().removeAll();
 
 		// Creates a new dash panel
-		appFrame.getContent().add(new CustomerDashboard());
+		appFrame.getContent().add(new CustomerDashboard(appFrame));
 
 		// Update available buttons
 		ABSMenuBar.toggleButton("login", false);

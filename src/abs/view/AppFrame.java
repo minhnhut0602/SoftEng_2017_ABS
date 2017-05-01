@@ -47,7 +47,7 @@ public class AppFrame extends JFrame {
 	 * @param dialog
 	 *            Dialog in questions to centre.
 	 */
-	static void setDialogLocation(JFrame frame, JDialog dialog) {
+	public static void setDialogLocation(JFrame frame, JDialog dialog) {
 		Dimension dialogDimension = dialog.getSize();
 		Dimension frameDimension = frame.getSize();
 		Point frameLocation = frame.getLocation();
