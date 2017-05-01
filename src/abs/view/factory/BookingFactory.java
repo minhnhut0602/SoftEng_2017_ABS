@@ -10,12 +10,22 @@ public class BookingFactory {
 
 	public static String bookingString(Booking booking) {
 
-		String length = (booking.getSlot().getBlocks() * booking.getBusiness().BLOCK_LENGTH) + " Mins";
+		String bookingString = "";
+		String length;
 
-		String bookingString = "Type: " + booking.getService() + ", Date: " + booking.getSlot().getDate()
-				+ ", Start Time: " + booking.getSlot().getTime() + ", Length: " + length + ", Staff: "
-				+ booking.getStaff().getName();
+		if (booking.getService() != null) {
+			bookingString = bookingString + "Type: " + booking.getService() + ", ";
+		}
+		bookingString = bookingString + "Date: " + booking.getSlot().getDate() + ", Start Time: "
+				+ booking.getSlot().getTime();
 
+		if (booking.getSlot().getBlocks() > 0) {
+			length = (booking.getSlot().getBlocks() * booking.getBusiness().BLOCK_LENGTH) + " Mins";
+		} else {
+			length = booking.getBusiness().BLOCK_LENGTH + " Mins";
+		}
+		bookingString = bookingString + ", Length: " + length + ", ";
+		bookingString = bookingString + "Staff: " + booking.getStaff().getName();
 		return bookingString;
 	}
 
