@@ -415,6 +415,7 @@ public class Menu {
 	 *
 	 * @return the int value of the users selection
 	 */
+	@SuppressWarnings("deprecation")
 	public int myBookings() {
 
 		String selection;

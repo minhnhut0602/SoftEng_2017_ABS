@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 
 import abs.controller.CustomerController;
 import abs.controller.UserController;
+import abs.view.AppFrame;
+import abs.view.GUIComponents.BusInfoDialog;
 import abs.view.style.AppStyle;
 
 /**
@@ -20,12 +22,14 @@ public class CustomerDashboard extends JPanel {
 
 	private static final long serialVersionUID = 5508017813109824688L;
 
-	public CustomerDashboard() {
+	public CustomerDashboard(AppFrame appFrame) {
 
 		this.setBorder(AppStyle.margin);
 		setBackground(AppStyle.mainBackgroundColor);
 
 		JPanel buttonPanel = new JPanel();
+		buttonPanel.setBorder(AppStyle.margin);
+		buttonPanel.setBackground(AppStyle.mainForgroundColor);
 		buttonPanel.setLayout(new FlowLayout());
 
 		// TODO add bus selection bar
@@ -34,22 +38,18 @@ public class CustomerDashboard extends JPanel {
 
 		// TODO show users bookings on screen
 
-		// makes the buttons
+		// User options buttons
 		JButton addBooking = new JButton("Make a Booking");
 		JButton removeBooking = new JButton("Remove a Booking");
 		JButton viewBusInfo = new JButton("View Business Info");
 
 		JButton logout = new JButton("Save & Logout");
 
-		// adds the buttons to the frame
 		buttonPanel.add(addBooking);
 		buttonPanel.add(removeBooking);
 		buttonPanel.add(viewBusInfo);
 
 		buttonPanel.add(logout);
-
-		buttonPanel.setBorder(AppStyle.margin);
-		buttonPanel.setBackground(AppStyle.mainForgroundColor);
 
 		JLabel title = new JLabel("Customer Dashboard");
 		title.setFont(AppStyle.boldLargeFont);
@@ -81,7 +81,9 @@ public class CustomerDashboard extends JPanel {
 		viewBusInfo.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO add dialog
+				BusInfoDialog infoDoalog = new BusInfoDialog(appFrame);
+				AppFrame.setDialogLocation(appFrame, infoDoalog);
+				infoDoalog.setVisible(true);
 			}
 		});
 

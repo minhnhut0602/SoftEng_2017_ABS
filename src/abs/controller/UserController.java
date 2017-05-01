@@ -135,6 +135,15 @@ public class UserController {
 	}
 
 	public static Business getActiveBusiness() {
+		if (activeBusiness == null) {// If none set yet
+			// And if some exist in the system
+			if (!(Registry.getUtils().getBusiness().isEmpty())) {
+				// Set the first bus as active
+				setActiveBusiness(Registry.getUtils().getBusiness().get(0));
+			} else {
+				logger.log(Level.WARNING, "System has no business registered");
+			}
+		}
 		return activeBusiness;
 	}
 

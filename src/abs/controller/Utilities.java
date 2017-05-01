@@ -189,9 +189,8 @@ public class Utilities {
 					// Create owner user.
 					String ownerName = bufferedReader.readLine();
 					String ownerEmail = bufferedReader.readLine();
-					String ownerPass = bufferedReader.readLine();// TODO update
-																	// for
-																	// encryption
+					String ownerPass = bufferedReader.readLine();
+					// TODO update for encryption/hashing
 
 					Owner owner = new Owner(ownerName, ownerEmail, ownerPass);
 
