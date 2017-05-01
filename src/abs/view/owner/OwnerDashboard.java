@@ -7,9 +7,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import abs.controller.OwnerController;
+import abs.controller.Registry;
+import abs.model.Booking;
+import abs.model.Business;
+import abs.model.Employee;
+import abs.model.Owner;
 import abs.view.style.AppStyle;
 
 public class OwnerDashboard extends JPanel {
@@ -83,7 +89,8 @@ public class OwnerDashboard extends JPanel {
 		deleteAvail.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				OwnerController.removeBooking();
+				
+				OwnerController.removeBooking(JOptionPane.showInputDialog(null, "Choose a Business", "input", 3, null, OwnerController.getBusinessNames(Registry.getUserAuth().getActiveUser()).toArray(), null));
 			}
 		});
 		
