@@ -13,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 import abs.controller.OwnerController;
 import abs.model.Business;
 import abs.model.Customer;

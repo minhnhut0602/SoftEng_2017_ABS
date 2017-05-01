@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,7 +14,6 @@ import javax.swing.JTextField;
 
 import abs.controller.OwnerController;
 import abs.controller.Registry;
-import abs.controller.UserController;
 import abs.model.Business;
 import abs.model.Employee;
 import abs.model.Owner;

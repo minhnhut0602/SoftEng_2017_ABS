@@ -5,16 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import abs.controller.OwnerController;
-import abs.controller.UserController;
-import abs.exceptions.CredentialsInvalidException;
-import abs.exceptions.RegistrationNonUniqueException;
-import abs.exceptions.RegistrationValidationException;
 import abs.view.style.AppStyle;
 
 public class NewBusiness extends JPanel{

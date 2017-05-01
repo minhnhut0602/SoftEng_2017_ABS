@@ -12,10 +12,6 @@ import javax.swing.JPanel;
 
 import abs.controller.OwnerController;
 import abs.controller.Registry;
-import abs.model.Booking;
-import abs.model.Business;
-import abs.model.Employee;
-import abs.model.Owner;
 import abs.view.style.AppStyle;
 
 public class OwnerDashboard extends JPanel {
