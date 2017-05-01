@@ -136,7 +136,7 @@ public class AddAvEmployee extends JPanel{
 		back.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UserController.reloadWelcomeScreen();
+				OwnerController.reloadDashboard();
 			}
 
 		});
