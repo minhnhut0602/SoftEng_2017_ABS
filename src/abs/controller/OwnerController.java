@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.swing.JOptionPane;
+
 import abs.model.Availability;
 import abs.model.Booking;
 import abs.model.Business;
 import abs.model.Customer;
 import abs.model.Employee;
 import abs.model.Owner;
+import abs.model.User;
 import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
 import abs.view.owner.AddAvEmployee;
@@ -17,6 +20,7 @@ import abs.view.owner.AddEmployee;
 import abs.view.owner.BookingForCustomer;
 import abs.view.owner.NewBusiness;
 import abs.view.owner.OwnerDashboard;
+import abs.view.owner.RemoveAvailabilities;
 import abs.view.owner.ShowAvailabilities;
 
 /**
@@ -87,13 +91,20 @@ public class OwnerController {
 
 	}
 
-	public static void removeBooking() {
+	
+	public static void removeBooking(Object businessName) {
 
-		// select a booking
+		List<Booking> bookings =  Registry.getUtils().findBusiness(businessName).getAvBookings();
+		
+		appFrame.getContent().removeAll();
+		appFrame.getContent().add(new RemoveAvailabilities(bookings));
 
-		// click remove button
+		// Refresh frame
+		appFrame.repaint();
+		appFrame.revalidate();
 
 	}
+
 
 	public static void addEmployee() {
 
@@ -187,6 +198,28 @@ public class OwnerController {
 
 		return bNames;
 	}
+	
+	public static List<String> getBusinessNames(User user) {
+		
+		//convert user to owner
+		Owner o = (Owner)user;
+		
+		List<String> bNames = new ArrayList<String>();
+
+		List<Business> businesses = Registry.getUtils().getBusiness();
+
+		if (businesses.size() == 0) {
+			return null;
+		}
+
+		for (int i = 0; i < businesses.size(); i++) {
+			if(businesses.get(i).getOwner().equals(o)){
+				bNames.add(businesses.get(i).getName());
+			}
+		}
+
+		return bNames;
+	}
 
 	public static void createCustBooking(Customer c, Business b, Booking booking) {
 		// pass to owner method already written
@@ -241,6 +274,27 @@ public class OwnerController {
 		// go back to the dashboard
 		reloadDashboard();
 
+	}
+
+	public static Object getEmployees(Object business) {
+		//grab a list of employees from the
+		return null;
+	}
+
+	public static void deleteBooking(Booking booking) {
+		//check to see if it is booked, don't let them delete if it is booked
+		if(booking.getStatus().compareTo("Booked") == 0){
+			JOptionPane.showMessageDialog(null, "Someone has booked that already, you can't just pretend it never existed");
+		}else{
+			//they can remove it
+			booking.getBusiness().removeBooking(booking);
+			logger.info("Booking removed");
+			
+			// Refresh frame
+			appFrame.repaint();
+			appFrame.revalidate();
+		}
+		
 	}
 
 }

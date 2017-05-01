@@ -212,4 +212,9 @@ public class Business {
 
 	}
 
+	public void removeBooking(Booking booking) {
+		avBookings.remove(booking);
+		
+	}
+
 }
