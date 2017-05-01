@@ -13,6 +13,7 @@ import javax.swing.JTextPane;
 
 import abs.controller.UserController;
 import abs.view.AppFrame;
+import abs.view.style.AppStyle;
 
 /**
  * The business information dialog.
@@ -27,13 +28,18 @@ public class BusInfoDialog extends JDialog {
 	public BusInfoDialog(AppFrame appFrame) {
 		super(appFrame, true);
 
+		this.setBackground(AppStyle.mainBackgroundColor);
+
 		/* Content */
 		JPanel contentPane = (JPanel) getContentPane();
 		contentPane.setLayout(new GridLayout(0, 1));
+		contentPane.setBorder(AppStyle.margin);
+		contentPane.setBackground(AppStyle.mainForgroundColor);
 
 		// Name
 		JPanel namePanel = new JPanel();
-		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		namePanel.setBackground(AppStyle.mainForgroundColor);
+		namePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		JTextPane name = new JTextPane();
 		name.setEditable(false);
 		name.setText(UserController.getActiveBusiness().getName());
@@ -42,6 +48,7 @@ public class BusInfoDialog extends JDialog {
 
 		// Description
 		JPanel descPanel = new JPanel();
+		descPanel.setBackground(AppStyle.mainForgroundColor);
 		descPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		JTextPane desc = new JTextPane();
 		desc.setEditable(false);
@@ -51,6 +58,7 @@ public class BusInfoDialog extends JDialog {
 
 		// Phone number
 		JPanel phonePanel = new JPanel();
+		phonePanel.setBackground(AppStyle.mainForgroundColor);
 		phonePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		JTextPane phone = new JTextPane();
 		JLabel phoneLabel = new JLabel("Phone Number: ");
@@ -62,6 +70,7 @@ public class BusInfoDialog extends JDialog {
 
 		// Address
 		JPanel addressPanel = new JPanel();
+		addressPanel.setBackground(AppStyle.mainForgroundColor);
 		addressPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		JTextPane address = new JTextPane();
 		JLabel addressLabel = new JLabel("Address: ");
