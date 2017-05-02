@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import abs.controller.UserController;
@@ -61,7 +62,7 @@ public class RegisterPanel extends JPanel {
 		registerForm.add(emailField);
 
 		JLabel pass = new JLabel("Password:");
-		final JTextField passField = new JTextField(15);
+		final JPasswordField passField = new JPasswordField(15);
 		registerForm.add(pass);
 		registerForm.add(passField);
 
@@ -104,7 +105,7 @@ public class RegisterPanel extends JPanel {
 		this.add(content, BorderLayout.CENTER);
 
 		appFrame.getRootPane().setDefaultButton(register);
-		
+
 		back.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -117,8 +118,9 @@ public class RegisterPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					UserController.register(nameField.getText(), emailField.getText(), passField.getText(),
-							addressField.getText(), phoneField.getText(), ownerField.isSelected());
+					UserController.register(nameField.getText(), emailField.getText(),
+							String.valueOf(passField.getPassword()), addressField.getText(), phoneField.getText(),
+							ownerField.isSelected());
 				} catch (CredentialsInvalidException e1) {
 					getStatus().setText(e1.getMessage());
 

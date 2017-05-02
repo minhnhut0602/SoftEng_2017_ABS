@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import abs.controller.UserController;
@@ -53,7 +54,7 @@ public class LoginPanel extends JPanel {
 		loginForm.add(emailField);
 
 		JLabel pass = new JLabel("Password:");
-		final JTextField passField = new JTextField(15);
+		final JPasswordField passField = new JPasswordField(15);
 		loginForm.add(pass);
 		loginForm.add(passField);
 
@@ -78,7 +79,7 @@ public class LoginPanel extends JPanel {
 		this.add(content, BorderLayout.CENTER);
 
 		appFrame.getRootPane().setDefaultButton(login);
-		
+
 		back.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -91,7 +92,7 @@ public class LoginPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					UserController.login(emailField.getText(), passField.getText());
+					UserController.login(emailField.getText(), String.valueOf(passField.getPassword()));
 				} catch (CredentialsInvalidException e1) {
 					getStatus().setText(e1.getMessage());
 				}
