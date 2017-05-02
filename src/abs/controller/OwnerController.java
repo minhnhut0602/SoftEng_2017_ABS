@@ -81,10 +81,12 @@ public class OwnerController {
 	public static void addAvBooking(String time, String date, String employee, String business) {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
-
+		
+		Availability a = new Availability(date, time);
 		// turn time, date, employee and Business into Booking		
 		//add this booking to the business
-		b.addBookingTime(new Booking(new Availability(date, time), e, "Available", b));
+		b.addBookingTime(new Booking(a, e, "Available", b));
+		e.addAvailabilities(a);
 		logger.info("Booking added successfully");
 		
 		//return to the dashboard
@@ -296,6 +298,7 @@ public class OwnerController {
 			logger.warning("Cannot delete availability that is already booked");
 		}else{
 			//they can remove it
+			booking.getStaff().removeAvailability(booking.getSlot());
 			booking.getBusiness().removeBooking(booking);
 			logger.info("Booking removed");
 			
