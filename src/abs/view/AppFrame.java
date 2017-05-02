@@ -78,5 +78,5 @@ public class AppFrame extends JFrame {
 	public static void setOwnerDashboard(JPanel ownerDashboard) {
 		AppFrame.ownerDashboard = ownerDashboard;
 	}
-	
+
 }

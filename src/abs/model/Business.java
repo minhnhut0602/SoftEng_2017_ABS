@@ -75,19 +75,20 @@ public class Business {
 		this.owner = null;
 
 	}
-	
+
 	/**
 	 * to create a business without setting any employees or availabilities
+	 * 
 	 * @param name
-	 * name of business
+	 *            name of business
 	 * @param desc
-	 * description
+	 *            description
 	 * @param address
-	 * business address
+	 *            business address
 	 * @param phone
-	 * business phone number
+	 *            business phone number
 	 */
-	public Business(String name, String desc, String address, int phone, Owner owner){
+	public Business(String name, String desc, String address, int phone, Owner owner) {
 		this.name = name;
 		this.desc = desc;
 		this.address = address;
@@ -166,20 +167,20 @@ public class Business {
 	public Owner getOwner() {
 		return owner;
 	}
-	
-	public Employee findStaff(String name){
+
+	public Employee findStaff(String name) {
 		Employee employee = null;
-		
-		for(Employee e: staff){
-			if(e.getName().compareTo(name) == 0){
+
+		for (Employee e : staff) {
+			if (e.getName().compareTo(name) == 0) {
 				employee = e;
 			}
 		}
 		return employee;
-		
+
 	}
-	
-	public void addBookingTime(Booking booking){
+
+	public void addBookingTime(Booking booking) {
 		avBookings.add(booking);
 	}
 
@@ -214,7 +215,7 @@ public class Business {
 
 	public void removeBooking(Booking booking) {
 		avBookings.remove(booking);
-		
+
 	}
 
 }

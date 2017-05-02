@@ -78,7 +78,7 @@ public class RegisterPanel extends JPanel {
 		content.setLayout(new BorderLayout());
 		content.add(title, BorderLayout.NORTH);
 		content.add(registerInfo, BorderLayout.CENTER);
-		
+
 		status = new JLabel("");
 		status.setHorizontalAlignment(JLabel.CENTER);
 		content.add(status, BorderLayout.SOUTH);

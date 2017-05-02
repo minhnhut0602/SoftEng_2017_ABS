@@ -23,7 +23,7 @@ public class LoginPanel extends JPanel {
 	private static JLabel status;
 
 	public LoginPanel() {
-		
+
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
 
