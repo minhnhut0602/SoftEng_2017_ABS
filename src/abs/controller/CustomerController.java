@@ -5,8 +5,8 @@ import java.util.logging.Logger;
 
 import abs.model.Booking;
 import abs.model.Customer;
-import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
+import abs.view.GUIComponents.ABSMenuBar;
 import abs.view.customer.BookingPanel;
 import abs.view.customer.CustomerDashboard;
 import abs.view.customer.RemoveBookingPanel;

@@ -8,10 +8,10 @@ import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.Owner;
-import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
 import abs.view.LoginPanel;
 import abs.view.RegisterPanel;
+import abs.view.GUIComponents.ABSMenuBar;
 
 /**
  * The user controller handles the login/registration and logout functions.
@@ -130,7 +130,13 @@ public class UserController {
 	}
 
 	public static void logout() {
+		// Reset active user and business
+		Registry.getUserAuth().setActiveUser(null);
+		setActiveBusiness(null);
+
+		// Save
 		Registry.getUtils().silentSave();
+
 		reloadWelcomeScreen();
 	}
 

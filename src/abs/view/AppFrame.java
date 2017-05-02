@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+import abs.view.GUIComponents.ABSMenuBar;
 import abs.view.GUIComponents.StatusBar;
 import abs.view.owner.OwnerDashboard;
 

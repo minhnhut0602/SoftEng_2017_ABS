@@ -1,4 +1,4 @@
-package abs.view;
+package abs.view.GUIComponents;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +11,7 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 import abs.controller.UserController;
+import abs.view.AppFrame;
 
 /**
  *
@@ -72,7 +73,7 @@ public class ABSMenuBar extends JMenuBar {
 		logout.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UserController.reloadWelcomeScreen();
+				UserController.logout();
 			}
 		});
 
