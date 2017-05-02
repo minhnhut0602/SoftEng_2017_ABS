@@ -79,6 +79,10 @@ public class Employee {
 	public void addAvailabilities(Availability avail) {
 		this.availabilities.add(avail);
 	}
+	
+	public void removeAvailability(Availability avail){
+		this.availabilities.remove(avail);
+	}
 
 	/*
 	 * (non-Javadoc)
