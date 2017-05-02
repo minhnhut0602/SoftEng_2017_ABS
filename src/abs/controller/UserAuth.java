@@ -191,14 +191,13 @@ public class UserAuth {
 	}
 
 	/**
-	 * Registering an Employee
-	 * 
+	 * Registering an Employee.
+	 *
 	 * @param name
 	 *            is the name of the employee
-	 * 
 	 * @param business
 	 *            is the business it is linked
-	 * 
+	 * @return true, if successful
 	 */
 	public boolean registerEmployee(String name, Business business) {
 		/** no need to validate name */

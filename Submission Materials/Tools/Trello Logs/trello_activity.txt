@@ -1,3 +1,172 @@
+All
+Comments
+DCDaniel Caddaye completed Updated Slack Logs {Daniel} on Documentation Update2 minutes ago
+DCDaniel Caddaye completed Update testing screenshots {Daniel} on Documentation Update9 minutes ago
+CPCory Patterson completed Display availabilities (like a calendar maybe?) on Owner Dashboard Checklist13 minutes ago
+CP
+Cory Patterson on Logging framework for our code
+I'm adding this to the owner controller now
+23 minutes ago
+DCDaniel Caddaye added Sohum Raut to Documentation Update34 minutes ago
+DCDaniel Caddaye added Marco Riotto to Documentation Update34 minutes ago
+DCDaniel Caddaye added Cory Patterson to Documentation Update34 minutes ago
+DCDaniel Caddaye joined Documentation Update34 minutes ago
+DCDaniel Caddaye added Checklist to Documentation Update35 minutes ago
+DCDaniel Caddaye added Documentation Update to Working on now35 minutes ago
+DC
+Daniel Caddaye on Logging framework for our code
+also added for UserAuth
+36 minutes ago
+DC
+Daniel Caddaye on Logging framework for our code
+Ive finished this for customer side GUI
+36 minutes ago
+DCDaniel Caddaye left Logging framework for our code36 minutes ago
+CP
+Cory Patterson on Week 9 tute 2/5/17
+With the second thing for part C:
+
+I believe we should change the availabilities class to store the start and end time, even if this is just one string as was entered in the demo, then have a function that turns this into a 2d array of 'blocks' which are 30 mins each with a status. Then the employee can just store the one object which has all their bookings. That's what I was thinking anyways, any other ideas are welcome
+2 hours ago
+CPCory Patterson added Week 9 tute 2/5/17 to Meeting Records2 hours ago
+DCDaniel Caddaye moved Validation for registering from Sprint Backlog to Done - Part B2 hours ago
+DCDaniel Caddaye moved Implement a GUI from Working on now to Done - Part B2 hours ago
+DCDaniel Caddaye completed add a booking on Implement a GUI2 hours ago
+CPCory Patterson moved Owner Dashboard Checklist from Done - Part B to Working on nowyesterday at 23:38
+CPCory Patterson moved Owner can add more bookings P : High E: 3 hrs from Working on now to Done - Part Byesterday at 23:38
+CPCory Patterson moved Business Owner can add employee availabilities P: low E: 3 hrs from Working on now to Done - Part Byesterday at 23:38
+CPCory Patterson moved Adding an Employee P:Low E:2 hours from Working on now to Done - Part Byesterday at 23:38
+CPCory Patterson completed update/add employees aval on Implement a GUIyesterday at 23:38
+CPCory Patterson completed Owner Dash on Implement a GUIyesterday at 23:38
+CPCory Patterson moved Owner Dashboard Checklist from Working on now to Done - Part Byesterday at 23:38
+CPCory Patterson completed delete availabilities (for employees) on Owner Dashboard Checklistyesterday at 23:37
+CPCory Patterson completed add availabilities (for employees?) on Owner Dashboard Checklistyesterday at 23:37
+DCDaniel Caddaye completed Customer Dash on Implement a GUIyesterday at 23:10
+CPCory Patterson added Sohum Raut to Sohum To-Doyesterday at 21:38
+CP
+Cory Patterson on Sohum To-Do
+@sohumraut1 check this out
+yesterday at 20:17
+CPCory Patterson added Checklist to Sohum To-Doyesterday at 20:14
+CPCory Patterson added Sohum To-Do to Working on nowyesterday at 20:14
+DCDaniel Caddaye completed business info dialoge on Implement a GUIyesterday at 20:03
+MRMarco Riotto left Week 8.2 tute 1/5/17yesterday at 18:11
+MRMarco Riotto joined Week 8.2 tute 1/5/17yesterday at 18:11
+DCDaniel Caddaye added Week 8.2 tute 1/5/17 to Meeting Recordsyesterday at 17:53
+DCDaniel Caddaye added Marco Riotto to Logging framework for our codeyesterday at 17:45
+DCDaniel Caddaye added Cory Patterson to Logging framework for our codeyesterday at 17:45
+DCDaniel Caddaye completed Add booking for customer on Implement a GUIyesterday at 17:44
+DCDaniel Caddaye completed add employee screen on Implement a GUIyesterday at 17:44
+DCDaniel Caddaye completed New business screen on Implement a GUIyesterday at 17:44
+DC
+Daniel Caddaye on Logging framework for our code
+continuing, added to most places its needed. Add as we go now
+yesterday at 01:02
+DC
+Daniel Caddaye on Implement a GUI
+customer dash half done
+yesterday at 01:01
+DCDaniel Caddaye completed add/remove booking screen on Implement a GUIyesterday at 01:01
+DCDaniel Caddaye added Cory Patterson to Implement a GUI30 Apr at 19:03
+DC
+Daniel Caddaye on Implement a GUI
+Working on now add/remove bookings for customer and bus info dialog
+30 Apr at 19:03
+CPCory Patterson moved Business Owner can add employee availabilities P: low E: 3 hrs from Sprint Backlog to Working on now30 Apr at 18:19
+CPCory Patterson removed Marco Riotto from Business Owner can add employee availabilities P: low E: 3 hrs30 Apr at 18:19
+CPCory Patterson joined Business Owner can add employee availabilities P: low E: 3 hrs30 Apr at 18:19
+CPCory Patterson moved Business owner adds an employee P: Med E: 3 from Working on now to Done - Part B30 Apr at 18:18
+CPCory Patterson completed add an employee on Owner Dashboard Checklist30 Apr at 17:45
+CPCory Patterson completed Add a new Business on Owner Dashboard Checklist30 Apr at 17:28
+CPCory Patterson completed logout on Owner Dashboard Checklist30 Apr at 16:45
+CPCory Patterson moved Adding an Employee P:Low E:2 hours from Done - Part B to Working on now30 Apr at 16:44
+CPCory Patterson moved The business owner can book on a customer's behalf P: Med E: 2 from Sprint Backlog to Done - Part B30 Apr at 16:44
+CPCory Patterson joined The business owner can book on a customer's behalf P: Med E: 230 Apr at 16:44
+CPCory Patterson completed make a booking for a customer on Owner Dashboard Checklist30 Apr at 16:43
+CPCory Patterson completed Login as Owner on Owner Dashboard Checklist30 Apr at 13:03
+CPCory Patterson added Checklist to Owner Dashboard Checklist30 Apr at 13:01
+CPCory Patterson joined Owner Dashboard Checklist30 Apr at 13:00
+CPCory Patterson added Owner Dashboard Checklist to Working on now30 Apr at 13:00
+CPCory Patterson left a user can book a specific type of appointment P: low E: 528 Apr at 19:12
+CPCory Patterson moved a user can book a specific type of appointment P: low E: 5 from User Stories to Sprint Backlog28 Apr at 19:12
+CPCory Patterson left The business owner can book on a customer's behalf P: Med E: 228 Apr at 19:09
+CPCory Patterson moved The business owner can book on a customer's behalf P: Med E: 2 from User Stories to Sprint Backlog28 Apr at 19:09
+DCDaniel Caddaye completed Register on Implement a GUI28 Apr at 16:44
+DCDaniel Caddaye completed Login on Implement a GUI28 Apr at 16:44
+DCDaniel Caddaye marked Login incomplete on Implement a GUI28 Apr at 00:27
+DCDaniel Caddaye completed Login on Implement a GUI28 Apr at 00:27
+DCDaniel Caddaye completed Splash Screen on Implement a GUI28 Apr at 00:27
+CPCory Patterson removed Time Consideration from Owner can add more bookings P : High E: 3 hrs27 Apr at 22:18
+CP
+Cory Patterson on Owner can add more bookings P : High E: 3 hrs
+waiting on GUI to implement
+27 Apr at 22:18
+CPCory Patterson moved Owner can add more bookings P : High E: 3 hrs from Sprint Backlog to Working on now27 Apr at 22:18
+DC
+Daniel Caddaye on Assignment Spec - Part B
+Extension until Wednesday the 3rd 9 AM
+27 Apr at 21:37
+DC
+Daniel Caddaye on Implement a GUI
+@board please add any screens I may have forgotten
+27 Apr at 21:32
+DCDaniel Caddaye added Checklist to Implement a GUI27 Apr at 21:28
+CP
+Cory Patterson on Business owner adds an employee P: Med E: 3
+Register employee method done, need GUI to link it up
+27 Apr at 19:11
+CPCory Patterson moved Adding an Employee P:Low E:2 hours from Sprint Backlog to Done - Part B27 Apr at 19:01
+CPCory Patterson added Marco Riotto to Validation for registering27 Apr at 17:14
+CPCory Patterson added Validation for registering to Sprint Backlog27 Apr at 17:14
+CPCory Patterson added Checklist to Business Owner can add employee availabilities P: low E: 3 hrs27 Apr at 17:08
+DCDaniel Caddaye changed the due date of Assignment Spec - Part B to tomorrow at 09:0027 Apr at 17:03
+DCDaniel Caddaye added Cory Patterson to Owner can add more bookings P : High E: 3 hrs27 Apr at 15:50
+DCDaniel Caddaye moved Owner can add more bookings P : High E: 3 hrs from Product Backlog to Sprint Backlog27 Apr at 15:49
+DCDaniel Caddaye added Marco Riotto to Business Owner can add employee availabilities P: low E: 3 hrs27 Apr at 15:42
+DCDaniel Caddaye moved Logging framework for our code from Part B Requirements to Working on now27 Apr at 15:38
+CPCory Patterson removed Sohum Raut from The business owner can book on a customer's behalf P: Med E: 227 Apr at 15:35
+CPCory Patterson joined The business owner can book on a customer's behalf P: Med E: 227 Apr at 15:35
+CPCory Patterson removed Sohum Raut from a user can book a specific type of appointment P: low E: 527 Apr at 15:35
+CPCory Patterson joined a user can book a specific type of appointment P: low E: 527 Apr at 15:35
+DCDaniel Caddaye added Week 8 [Tute 27/4/17] to Meeting Records27 Apr at 15:19
+DC
+Daniel Caddaye on Implement a GUI
+Currently starting by making the current features functional via GUI
+26 Apr at 23:58
+DCDaniel Caddaye moved Implement a GUI from Part B Requirements to Working on now26 Apr at 23:58
+CPCory Patterson moved Business owner adds an employee P: Med E: 3 from Sprint Backlog to Working on now26 Apr at 17:32
+DCDaniel Caddaye joined Logging framework for our code25 Apr at 16:46
+DCDaniel Caddaye joined Implement a GUI25 Apr at 16:46
+DCDaniel Caddaye added Marco Riotto to View Employee Availability P:Low E:1 hours25 Apr at 16:45
+DCDaniel Caddaye added Cory Patterson to Adding an Employee P:Low E:2 hours25 Apr at 16:45
+DCDaniel Caddaye moved Adding an Employee P:Low E:2 hours from Product Backlog to Sprint Backlog25 Apr at 16:45
+DCDaniel Caddaye moved View Employee Availability P:Low E:1 hours from Product Backlog to Sprint Backlog25 Apr at 16:45
+DCDaniel Caddaye moved The availabilities are saved for next time P: high E: 1 from User Stories to Done - Part B25 Apr at 16:45
+DCDaniel Caddaye moved US: Business Owner can add employee availabilities P: low E: 3 from User Stories to Done - Part B25 Apr at 16:44
+DCDaniel Caddaye added Done - Part B to this board25 Apr at 16:44
+DCDaniel Caddaye moved Business Owner can add employee availabilities P: low E: 3 hrs from Product Backlog to Sprint Backlog25 Apr at 16:43
+CPCory Patterson moved Business owner adds an employee P: Med E: 3 from Product Backlog to Sprint Backlog25 Apr at 11:21
+CPCory Patterson moved Business owner adds an employee P: Med E: 3 from User Stories to Product Backlog25 Apr at 11:21
+CPCory Patterson added Sohum Raut to The business owner can book on a customer's behalf P: Med E: 224 Apr at 21:40
+CPCory Patterson added Sohum Raut to a user can book a specific type of appointment P: low E: 524 Apr at 21:40
+CPCory Patterson added Marco Riotto to The availabilities are saved for next time P: high E: 124 Apr at 21:40
+CPCory Patterson added Daniel Caddaye to US: Business Owner can add employee availabilities P: low E: 324 Apr at 21:40
+CPCory Patterson joined Business owner adds an employee P: Med E: 324 Apr at 21:40
+CPCory Patterson added The business owner can book on a customer's behalf P: Med E: 2 to User Stories24 Apr at 21:37
+CPCory Patterson added a user can book a specific type of appointment P: low E: 5 to User Stories24 Apr at 21:36
+CPCory Patterson added The availabilities are saved for next time P: high E: 1 to User Stories24 Apr at 21:36
+CPCory Patterson added US: Business Owner can add employee availabilities P: low E: 3 to User Stories24 Apr at 21:36
+CPCory Patterson added Business owner adds an employee P: Med E: 3 to User Stories24 Apr at 21:35
+CPCory Patterson added Logging framework for our code to Part B Requirements24 Apr at 20:57
+CPCory Patterson added Implement a GUI to Part B Requirements24 Apr at 20:36
+CPCory Patterson added Checklist to Customer can create a booking, business owner can create a booking on customer's behalf24 Apr at 20:35
+CPCory Patterson added Customer can create a booking, business owner can create a booking on customer's behalf to Part B Requirements24 Apr at 20:35
+CPCory Patterson added Checklist to Business owner or Config file can define activities that take different amounts of time24 Apr at 20:32
+CPCory Patterson added Business owner or Config file can define activities that take different amounts of time to Part B Requirements24 Apr at 20:32
+CPCory Patterson added Checklist to Business Owner can add employees and their working days/times24 Apr at 20:30
+CPCory Patterson added Business Owner can add employees and their working days/times to Part B Requirements24 Apr at 20:30
+CPCory Patterson added Part B to this board24 Apr at 20:29
+CPCory Patterson added Week 7 [Tute 11/4/17] to Meeting Records11 Apr at 18:32
 Daniel Caddaye completed slack logs on Compile submission materials5 minutes ago
 DCDaniel Caddaye completed compile meeting minutes on Compile submission materials34 minutes ago
 DCDaniel Caddaye completed high level architecture diagram & exported class diagram on Compile submission materials34 minutes ago

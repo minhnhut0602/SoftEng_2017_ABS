@@ -88,15 +88,17 @@ public class Owner extends AbstractUser {
 	}
 
 	/**
-	 * book on behalf of a customer
-	 * 
+	 * book on behalf of a customer.
+	 *
 	 * @param custEmail
 	 *            this is the customer's email to search for
 	 * @param business
 	 *            the business you are booking them into
 	 * @param booking
 	 *            the booking time to actually book
-	 * @return
+	 * @param utils
+	 *            the utils
+	 * @return true, if successful
 	 */
 	public boolean bookForCustomer(String custEmail, Business business, Booking booking, Utilities utils) {
 		// try to search for customer

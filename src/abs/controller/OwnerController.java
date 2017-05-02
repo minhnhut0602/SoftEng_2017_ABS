@@ -34,7 +34,10 @@ public class OwnerController {
 	private static AppFrame appFrame;
 
 	/**
-	 * 
+	 * Instantiates a new owner controller.
+	 *
+	 * @param appFrame
+	 *            the app frame
 	 */
 	public OwnerController(AppFrame appFrame) {
 		OwnerController.appFrame = appFrame;
@@ -81,8 +84,8 @@ public class OwnerController {
 	public static void addAvBooking(String time, String date, String employee, String business) {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
-		
-		Availability a = new Availability(date, time);
+
+    Availability a = new Availability(date, time);
 		// turn time, date, employee and Business into Booking		
 		//add this booking to the business
 		b.addBookingTime(new Booking(a, e, "Available", b));
@@ -90,15 +93,15 @@ public class OwnerController {
 		logger.info("Booking added successfully");
 		
 		//return to the dashboard
+
 		reloadDashboard();
 
 	}
 
-	
 	public static void removeBooking(Object businessName) {
 
-		List<Booking> bookings =  Registry.getUtils().findBusiness(businessName).getAvBookings();
-		
+		List<Booking> bookings = Registry.getUtils().findBusiness(businessName).getAvBookings();
+
 		appFrame.getContent().removeAll();
 		appFrame.getContent().add(new RemoveAvailabilities(bookings));
 
@@ -107,7 +110,6 @@ public class OwnerController {
 		appFrame.revalidate();
 
 	}
-
 
 	public static void addEmployee() {
 
@@ -159,9 +161,12 @@ public class OwnerController {
 	}
 
 	/**
-	 * might need to add extra fields for the booking selection
-	 * 
+	 * might need to add extra fields for the booking selection.
+	 *
 	 * @param email
+	 *            the owners email
+	 * @param business
+	 *            the business
 	 */
 
 	public static void checkEmail(String email, Object business) {
@@ -202,12 +207,12 @@ public class OwnerController {
 		logger.info("Business names found");
 		return bNames;
 	}
-	
+
 	public static List<String> getBusinessNames(User user) {
-		
-		//convert user to owner
-		Owner o = (Owner)user;
-		
+
+		// convert user to owner
+		Owner o = (Owner) user;
+
 		List<String> bNames = new ArrayList<String>();
 
 		List<Business> businesses = Registry.getUtils().getBusiness();
@@ -218,7 +223,7 @@ public class OwnerController {
 		}
 
 		for (int i = 0; i < businesses.size(); i++) {
-			if(businesses.get(i).getOwner().equals(o)){
+			if (businesses.get(i).getOwner().equals(o)) {
 				bNames.add(businesses.get(i).getName());
 			}
 		}
@@ -287,11 +292,12 @@ public class OwnerController {
 	}
 
 	public static Object getEmployees(Object business) {
-		//grab a list of employees from the
+		// grab a list of employees from the
 		return null;
 	}
 
 	public static void deleteBooking(Booking booking) {
+
 		//check to see if it is booked, don't let them delete if it is booked
 		if(booking.getStatus().compareTo("Booked") == 0){
 			JOptionPane.showMessageDialog(null, "Someone has booked that already, you can't just pretend it never existed");
@@ -299,14 +305,15 @@ public class OwnerController {
 		}else{
 			//they can remove it
 			booking.getStaff().removeAvailability(booking.getSlot());
+
 			booking.getBusiness().removeBooking(booking);
 			logger.info("Booking removed");
-			
+
 			// Refresh frame
 			appFrame.repaint();
 			appFrame.revalidate();
 		}
-		
+
 	}
 
 }
