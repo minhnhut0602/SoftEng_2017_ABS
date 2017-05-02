@@ -10,7 +10,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import abs.controller.CustomerController;
 import abs.controller.OwnerController;
 import abs.model.Booking;
 import abs.view.GUIComponents.AvButton;

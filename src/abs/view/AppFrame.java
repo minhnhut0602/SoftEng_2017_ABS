@@ -25,7 +25,7 @@ public class AppFrame extends JFrame {
 	public AppFrame() {
 		super("Appointment Booking System");
 
-		setBounds(200, 200, 700, 500);
+		setBounds(200, 200, 820, 650);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
 
