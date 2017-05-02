@@ -13,7 +13,9 @@ import javax.swing.border.Border;
  * <p>
  * Allows for easier updating or changes to look and feel.
  * </p>
- *
+ * 
+ * @version 1.0
+ * @since 1.0
  */
 public class AppStyle {
 	/* Colours */

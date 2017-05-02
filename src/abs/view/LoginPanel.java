@@ -18,14 +18,26 @@ import abs.exceptions.CredentialsInvalidException;
 import abs.view.style.AppStyle;
 
 /**
- *
+ * The LoginPanel.
+ * 
+ * @since 1.0
+ * @version 1.1
+ * @see javax.swing.JPanel JPanel
  */
 public class LoginPanel extends JPanel {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 9010219234482904288L;
 
+	/** The status JLabel */
 	private static JLabel status;
 
+	/**
+	 * Instantiates a new login panel.
+	 *
+	 * @param appFrame
+	 *            the app frame for default button
+	 */
 	public LoginPanel(AppFrame appFrame) {
 
 		this.setBorder(AppStyle.margin);
@@ -101,6 +113,11 @@ public class LoginPanel extends JPanel {
 		});
 	}
 
+	/**
+	 * Gets the status JLabel object.
+	 *
+	 * @return the status
+	 */
 	public static JLabel getStatus() {
 		return status;
 	}

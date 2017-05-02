@@ -12,15 +12,22 @@ import javax.swing.border.BevelBorder;
 import abs.view.AppFrame;
 
 /**
- *
+ * The ABS Status Bar.
+ * 
+ * @serial 1.0
+ * @version 0.8
+ * @see javax.swing.JPanel JPanel
  */
 public class StatusBar extends JPanel {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -6575923166424062757L;
 
 	/**
+	 * Instantiates a new status bar.
+	 *
 	 * @param appFrame
-	 *            the parent frame, for easy reference
+	 *            the app frame for reference
 	 */
 	public StatusBar(AppFrame appFrame) {
 		setLayout(new BorderLayout());

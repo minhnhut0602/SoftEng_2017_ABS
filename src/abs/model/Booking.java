@@ -1,7 +1,10 @@
 package abs.model;
 
 /**
- * The Class Booking.
+ * The Booking object.
+ * 
+ * @since alpha
+ * @version 1.1
  */
 public class Booking {
 

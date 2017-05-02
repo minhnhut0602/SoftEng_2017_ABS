@@ -39,7 +39,8 @@ import abs.model.User;
  * @see #silentSave()
  * 
  * 
- * @version 1.01
+ * @version 1.02
+ * @since Alpha
  * 
  */
 public class Utilities {

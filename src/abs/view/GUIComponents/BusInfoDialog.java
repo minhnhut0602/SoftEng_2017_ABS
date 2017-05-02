@@ -16,15 +16,24 @@ import abs.view.AppFrame;
 import abs.view.style.AppStyle;
 
 /**
- * The business information dialog.
+ * The Class BusInfoDialog.
  * 
- * Displays the active businesses name, description, phone number and address.
- *
+ * @since 1.0
+ * @version 1.1
+ * @see abs.model.Business
+ * @see javax.swing.JDialog JDialog
  */
 public class BusInfoDialog extends JDialog {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -3772278382357317912L;
 
+	/**
+	 * Instantiates a new bus info dialog.
+	 *
+	 * @param appFrame
+	 *            the app frame
+	 */
 	public BusInfoDialog(AppFrame appFrame) {
 		super(appFrame, true);
 
@@ -43,6 +52,7 @@ public class BusInfoDialog extends JDialog {
 		JTextPane name = new JTextPane();
 		name.setEditable(false);
 		name.setText(UserController.getActiveBusiness().getName());
+		name.setFont(AppStyle.boldMedFont);
 		namePanel.add(name);
 		contentPane.add(namePanel);
 

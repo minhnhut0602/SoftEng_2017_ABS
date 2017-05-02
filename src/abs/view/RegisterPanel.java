@@ -15,7 +15,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import abs.controller.UserController;
-import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.view.style.AppStyle;
@@ -121,8 +120,6 @@ public class RegisterPanel extends JPanel {
 					UserController.register(nameField.getText(), emailField.getText(),
 							String.valueOf(passField.getPassword()), addressField.getText(), phoneField.getText(),
 							ownerField.isSelected());
-				} catch (CredentialsInvalidException e1) {
-					getStatus().setText(e1.getMessage());
 
 				} catch (RegistrationValidationException e1) {
 					getStatus().setText(e1.getMessage());
