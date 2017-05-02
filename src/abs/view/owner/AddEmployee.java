@@ -17,14 +17,14 @@ import abs.controller.Registry;
 import abs.model.Owner;
 import abs.view.style.AppStyle;
 
-public class AddEmployee extends JPanel{
+public class AddEmployee extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1128355995004422553L;
-	
-	public AddEmployee(){
+
+	public AddEmployee() {
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
 
@@ -42,40 +42,35 @@ public class AddEmployee extends JPanel{
 		JTextField nameField = new JTextField(15);
 		employeeInfo.add(name);
 		employeeInfo.add(nameField);
-		
 
 		content.setLayout(new BorderLayout());
 		content.add(title, BorderLayout.NORTH);
 		content.add(employeeInfo, BorderLayout.CENTER);
-		
+
 		JButton back = new JButton("Back");
 		JButton book = new JButton("Add");
 		employeeInfo.add(book);
 		employeeInfo.add(back);
-		
-		//takes an array of business names to select from
+
+		// takes an array of business names to select from
 		List<String> businesses = OwnerController.getBusinessNames();
-		//cast active user to owner
+		// cast active user to owner
 		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
-		
+
 		List<String> displayBusinesses = new ArrayList<String>();
-		
-		//get rid of businesses that you aren't the owner of
-		for(int i = 0; i < businesses.size(); i++){
-			for(int j = 0; j < o.getBusinesses().size(); j++){
-				if(businesses.get(i).compareTo(o.getBusinesses().get(j).getName()) == 0){
-					//then get rid of them off the list
+
+		// get rid of businesses that you aren't the owner of
+		for (int i = 0; i < businesses.size(); i++) {
+			for (int j = 0; j < o.getBusinesses().size(); j++) {
+				if (businesses.get(i).compareTo(o.getBusinesses().get(j).getName()) == 0) {
+					// then get rid of them off the list
 					displayBusinesses.add(businesses.get(i));
 				}
 			}
 		}
-		
-		
+
 		JComboBox<Object> businessSelect = new JComboBox<>(displayBusinesses.toArray());
 		employeeInfo.add(businessSelect);
-		
-		
-		
 
 		this.setLayout(new BorderLayout());
 		this.add(content, BorderLayout.CENTER);
@@ -87,7 +82,7 @@ public class AddEmployee extends JPanel{
 			}
 
 		});
-		
+
 		book.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -97,5 +92,4 @@ public class AddEmployee extends JPanel{
 		});
 	}
 
-	
 }

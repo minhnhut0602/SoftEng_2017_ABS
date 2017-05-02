@@ -17,18 +17,18 @@ import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.view.style.AppStyle;
 
-public class NewBusiness extends JPanel{
+public class NewBusiness extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6588274112916489787L;
-	
+
 	/**
-	 * Very similar to the register as a new user page
-	 * window with appropriate text fields to register a new business
+	 * Very similar to the register as a new user page window with appropriate
+	 * text fields to register a new business
 	 */
-	public NewBusiness(){
+	public NewBusiness() {
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
 
@@ -86,8 +86,9 @@ public class NewBusiness extends JPanel{
 		register.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//make the business object
-				OwnerController.registerBusiness(nameField.getText(), descField.getText(), addressField.getText(), phoneField.getText());
+				// make the business object
+				OwnerController.registerBusiness(nameField.getText(), descField.getText(), addressField.getText(),
+						phoneField.getText());
 			}
 
 		});
