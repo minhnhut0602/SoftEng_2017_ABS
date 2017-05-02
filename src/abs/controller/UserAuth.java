@@ -21,6 +21,8 @@ import abs.model.User;
  * active user.
  * </p>
  * 
+ * @version 1.5
+ * @since Alpha
  * @see #getActiveUser()
  * @see #authUser(String, String)
  * @see #registerUser(String, String, String, String, String)
@@ -48,16 +50,6 @@ public class UserAuth {
 		this.utils = utils;
 
 	}
-
-	/* constructor that creates it's own utilities object if needed */
-	// public UserAuth() {
-	// util = new Utilities();
-	// customers = new ArrayList<User>();
-	// this.customers = util.getCustomers();
-	// if (customers == null) {
-	// customers = new ArrayList<User>();
-	// }
-	// }
 
 	/**
 	 * Auth user.
@@ -147,30 +139,30 @@ public class UserAuth {
 		List<User> customers = utils.getCustomers();
 		// List<User> owners = utils.getOwners();
 
-		/* VALIDATE NAME */
-		if (name == null || name == "") {
+		/* VALIDATE NAME not empty */
+		if (name.isEmpty() == true) {
 			throw new RegistrationValidationException("Name", name);
-			/* ERROR: name is empty */
 
 		}
 
-		/* VALIDATE EMAIL AND PASSWORD */
-		if (email == null || email == "" || validateEmail(email) == false) {
+		/* VALIDATE EMAIL */
+		if (email.isEmpty() == true || validateEmail(email) == false) {
 			throw new RegistrationValidationException("Email", email);
 
 		}
 
-		if (password == null || password == "") {
+		/* VALIDATE PASSWORD */
+		if (password.isEmpty() == true) {
 			throw new RegistrationValidationException("Email", email);
 		}
 
 		/* VALIDATE ADDRESS */
-		if (address == null || address == "") {
+		if (address.isEmpty() == true || validateAddress(address) == false) {
 			throw new RegistrationValidationException("Address", address);
 		}
 
 		/* VALIDATE PHONE */
-		if (phone == null || phone == "") {
+		if (phone.isEmpty() == true || validatePhone(phone) == false) {
 			throw new RegistrationValidationException("Phone", phone);
 		}
 
@@ -178,7 +170,7 @@ public class UserAuth {
 		 * check to see if the email exists, meaning the customer must already
 		 * be registered
 		 */
-		if (customers != null) {
+		if (customers.isEmpty() == false) {
 			for (int i = 0; i < customers.size(); i++) {
 				if (customers.get(i).getEmail().compareTo(email) == 0) {
 					throw new RegistrationNonUniqueException(email);
@@ -293,7 +285,7 @@ public class UserAuth {
 			index++;
 		}
 		if (index < 6) {
-			System.out.println("address too short: false");
+			System.out.println("address too short: False");
 			return false;
 		}
 		// for(int counter = 0; counter < addressToks.size(); counter++){
