@@ -85,6 +85,7 @@ public class OwnerController {
 		// turn time, date, employee and Business into Booking		
 		//add this booking to the business
 		b.addBookingTime(new Booking(new Availability(date, time), e, "Available", b));
+		logger.info("Booking added successfully");
 		
 		//return to the dashboard
 		reloadDashboard();
@@ -130,9 +131,6 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 
-		// get business details
-
-		// make new business type, add to business array
 
 	}
 
@@ -146,6 +144,7 @@ public class OwnerController {
 		// go back to dashboard
 		appFrame.getContent().removeAll();
 		appFrame.getContent().add(AppFrame.getOwnerDashboard());
+		logger.info("Reloading dashboard");
 
 		// Update available buttons
 		ABSMenuBar.toggleButton("login", false);
@@ -180,6 +179,8 @@ public class OwnerController {
 			appFrame.repaint();
 			appFrame.revalidate();
 		}
+		
+		logger.warning("That email does not exist");
 
 	}
 
@@ -189,13 +190,14 @@ public class OwnerController {
 		List<Business> businesses = Registry.getUtils().getBusiness();
 
 		if (businesses.size() == 0) {
+			logger.warning("There are no businesses in the system");
 			return null;
 		}
 
 		for (int i = 0; i < businesses.size(); i++) {
 			bNames.add(businesses.get(i).getName());
 		}
-
+		logger.info("Business names found");
 		return bNames;
 	}
 	
@@ -209,6 +211,7 @@ public class OwnerController {
 		List<Business> businesses = Registry.getUtils().getBusiness();
 
 		if (businesses.size() == 0) {
+			logger.warning("No businesses found. How are you even an owner then " + o.getName() + "?");
 			return null;
 		}
 
@@ -217,7 +220,7 @@ public class OwnerController {
 				bNames.add(businesses.get(i).getName());
 			}
 		}
-
+		logger.info("Business names found");
 		return bNames;
 	}
 
@@ -226,9 +229,10 @@ public class OwnerController {
 		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
 		if (o.bookForCustomer(c, b, booking) != true) {
 			// log something i suppose
-			System.out.println("didn't book");
+			logger.warning("Booking Unsuccessfull");
 		} else {
 			// go back to dashboard
+			logger.info("Booking Successfull");
 			reloadDashboard();
 		}
 
@@ -241,22 +245,25 @@ public class OwnerController {
 
 		try {
 			Integer.parseInt(phone);
+			
+			// get the owner
+			Owner owner = (Owner) Registry.getUserAuth().getActiveUser();
+
+			// make a business object
+			Business b = new Business(name, desc, address, Integer.parseInt(phone), owner);
+
+			// pass to utilities class
+			Registry.getUtils().addBusiness(b);
+			
+			logger.info("New business registered: " + b.getName());
+
+			// then move back to the dashboard
+			reloadDashboard();
 
 		} catch (NumberFormatException e) {
 			// log error or something
+			logger.warning(e + "Thats not a number, This is a number -> 1234567890");
 		}
-
-		// get the owner
-		Owner owner = (Owner) Registry.getUserAuth().getActiveUser();
-
-		// make a business object
-		Business b = new Business(name, desc, address, Integer.parseInt(phone), owner);
-
-		// pass to utilities class
-		Registry.getUtils().addBusiness(b);
-
-		// then move back to the dashboard
-		reloadDashboard();
 
 	}
 
@@ -270,7 +277,8 @@ public class OwnerController {
 		Employee staff = new Employee(name);
 
 		b.addStaff(staff);
-
+		
+		logger.info("Employee: " + staff.getName() + " added to " + b.getName());
 		// go back to the dashboard
 		reloadDashboard();
 
@@ -285,6 +293,7 @@ public class OwnerController {
 		//check to see if it is booked, don't let them delete if it is booked
 		if(booking.getStatus().compareTo("Booked") == 0){
 			JOptionPane.showMessageDialog(null, "Someone has booked that already, you can't just pretend it never existed");
+			logger.warning("Cannot delete availability that is already booked");
 		}else{
 			//they can remove it
 			booking.getBusiness().removeBooking(booking);
