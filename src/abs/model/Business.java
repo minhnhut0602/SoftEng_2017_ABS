@@ -77,8 +77,8 @@ public class Business {
 	}
 
 	/**
-	 * to create a business without setting any employees or availabilities
-	 * 
+	 * to create a business without setting any employees or availabilities.
+	 *
 	 * @param name
 	 *            name of business
 	 * @param desc
@@ -87,6 +87,8 @@ public class Business {
 	 *            business address
 	 * @param phone
 	 *            business phone number
+	 * @param owner
+	 *            the owner of this business
 	 */
 	public Business(String name, String desc, String address, int phone, Owner owner) {
 		this.name = name;

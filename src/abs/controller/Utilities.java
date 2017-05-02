@@ -139,7 +139,8 @@ public class Utilities {
 	 * 
 	 * 
 	 * @param owner
-	 * @return success
+	 *            the owner to add
+	 * @return true, if success
 	 */
 	public boolean addOwner(Owner owner) {
 		if (owner != null) { // Not null
@@ -610,7 +611,8 @@ public class Utilities {
 	 * search customer list by email
 	 * 
 	 * @param email
-	 * @return customer
+	 *            the customers email
+	 * @return customer object
 	 */
 	public User searchCustomers(String email) {
 		User found = null;

@@ -11,7 +11,7 @@ import abs.view.style.AppStyle;
  * 
  * @version 1.3
  * @since 1.0
- * @see abs.model.Bookings
+ * @see abs.model.Booking
  */
 public class BookingFactory {
 
