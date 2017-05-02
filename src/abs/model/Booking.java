@@ -1,7 +1,10 @@
 package abs.model;
 
 /**
- * The Class Booking.
+ * The Booking object.
+ * 
+ * @since alpha
+ * @version 1.1
  */
 public class Booking {
 
@@ -32,7 +35,7 @@ public class Booking {
 		this.staff = staff;
 		this.status = status;
 	}
-	
+
 	/**
 	 * Instantiates a new booking.
 	 *
@@ -43,7 +46,7 @@ public class Booking {
 	 * @param status
 	 *            the status of the booking a string (booked or available)
 	 * @param business
-	 * the business to add
+	 *            the business to add
 	 */
 	public Booking(Availability slot, Employee staff, String status, Business business) {
 		this.slot = slot;

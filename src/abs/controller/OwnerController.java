@@ -13,8 +13,8 @@ import abs.model.Customer;
 import abs.model.Employee;
 import abs.model.Owner;
 import abs.model.User;
-import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
+import abs.view.GUIComponents.ABSMenuBar;
 import abs.view.owner.AddAvEmployee;
 import abs.view.owner.AddEmployee;
 import abs.view.owner.BookingForCustomer;
@@ -34,7 +34,10 @@ public class OwnerController {
 	private static AppFrame appFrame;
 
 	/**
-	 * 
+	 * Instantiates a new owner controller.
+	 *
+	 * @param appFrame
+	 *            the app frame
 	 */
 	public OwnerController(AppFrame appFrame) {
 		OwnerController.appFrame = appFrame;
@@ -82,20 +85,19 @@ public class OwnerController {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
 
-		// turn time, date, employee and Business into Booking		
-		//add this booking to the business
+		// turn time, date, employee and Business into Booking
+		// add this booking to the business
 		b.addBookingTime(new Booking(new Availability(date, time), e, "Available", b));
-		
-		//return to the dashboard
+
+		// return to the dashboard
 		reloadDashboard();
 
 	}
 
-	
 	public static void removeBooking(Object businessName) {
 
-		List<Booking> bookings =  Registry.getUtils().findBusiness(businessName).getAvBookings();
-		
+		List<Booking> bookings = Registry.getUtils().findBusiness(businessName).getAvBookings();
+
 		appFrame.getContent().removeAll();
 		appFrame.getContent().add(new RemoveAvailabilities(bookings));
 
@@ -104,7 +106,6 @@ public class OwnerController {
 		appFrame.revalidate();
 
 	}
-
 
 	public static void addEmployee() {
 
@@ -148,9 +149,9 @@ public class OwnerController {
 		appFrame.getContent().add(AppFrame.getOwnerDashboard());
 
 		// Update available buttons
-		ABSMenuBar.toggleButton("login", true);
-		ABSMenuBar.toggleButton("register", true);
-		ABSMenuBar.toggleButton("logout", false);
+		ABSMenuBar.toggleButton("login", false);
+		ABSMenuBar.toggleButton("register", false);
+		ABSMenuBar.toggleButton("logout", true);
 
 		// Refresh frame
 		appFrame.repaint();
@@ -158,9 +159,12 @@ public class OwnerController {
 	}
 
 	/**
-	 * might need to add extra fields for the booking selection
-	 * 
+	 * might need to add extra fields for the booking selection.
+	 *
 	 * @param email
+	 *            the owners email
+	 * @param business
+	 *            the business
 	 */
 
 	public static void checkEmail(String email, Object business) {
@@ -198,12 +202,12 @@ public class OwnerController {
 
 		return bNames;
 	}
-	
+
 	public static List<String> getBusinessNames(User user) {
-		
-		//convert user to owner
-		Owner o = (Owner)user;
-		
+
+		// convert user to owner
+		Owner o = (Owner) user;
+
 		List<String> bNames = new ArrayList<String>();
 
 		List<Business> businesses = Registry.getUtils().getBusiness();
@@ -213,7 +217,7 @@ public class OwnerController {
 		}
 
 		for (int i = 0; i < businesses.size(); i++) {
-			if(businesses.get(i).getOwner().equals(o)){
+			if (businesses.get(i).getOwner().equals(o)) {
 				bNames.add(businesses.get(i).getName());
 			}
 		}
@@ -277,24 +281,25 @@ public class OwnerController {
 	}
 
 	public static Object getEmployees(Object business) {
-		//grab a list of employees from the
+		// grab a list of employees from the
 		return null;
 	}
 
 	public static void deleteBooking(Booking booking) {
-		//check to see if it is booked, don't let them delete if it is booked
-		if(booking.getStatus().compareTo("Booked") == 0){
-			JOptionPane.showMessageDialog(null, "Someone has booked that already, you can't just pretend it never existed");
-		}else{
-			//they can remove it
+		// check to see if it is booked, don't let them delete if it is booked
+		if (booking.getStatus().compareTo("Booked") == 0) {
+			JOptionPane.showMessageDialog(null,
+					"Someone has booked that already, you can't just pretend it never existed");
+		} else {
+			// they can remove it
 			booking.getBusiness().removeBooking(booking);
 			logger.info("Booking removed");
-			
+
 			// Refresh frame
 			appFrame.repaint();
 			appFrame.revalidate();
 		}
-		
+
 	}
 
 }

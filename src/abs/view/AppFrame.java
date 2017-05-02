@@ -9,19 +9,32 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+import abs.view.GUIComponents.ABSMenuBar;
 import abs.view.GUIComponents.StatusBar;
 import abs.view.owner.OwnerDashboard;
 
 /**
- * @since Beta
+ * The ABS AppFrame.
+ * 
+ * @see javax.swing.JFrame JFrame
  */
 public class AppFrame extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 8091808348699216867L;
+
+	/** The welcome panel. */
 	private static JPanel welcomePanel = new WelcomePanel();
+
+	/** The content panel. */
 	private static JPanel content = new JPanel();
+
+	/** The owner dashboard. */
 	private static JPanel ownerDashboard = new OwnerDashboard();
 
+	/**
+	 * Instantiates a new app frame.
+	 */
 	public AppFrame() {
 		super("Appointment Booking System");
 
@@ -40,12 +53,14 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Position a dialog in centre of Frame.
-	 * 
+	 * Sets the dialog location.
+	 *
 	 * @param frame
-	 *            Parent frame to centre on.
+	 *            the JFrame
 	 * @param dialog
-	 *            Dialog in questions to centre.
+	 *            the JDialog
+	 * @see javax.swing.JFrame JFrame
+	 * @see javax.swing.JDialog JDialog
 	 */
 	public static void setDialogLocation(JFrame frame, JDialog dialog) {
 		Dimension dialogDimension = dialog.getSize();
@@ -56,7 +71,11 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * @return
+	 * Gets the welcome panel.
+	 *
+	 * @return the welcome panel
+	 * 
+	 * @see abs.view.WelcomePanel WelcomePanel
 	 */
 	public static JPanel getWelcomePanel() {
 
@@ -64,19 +83,35 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * @return
+	 * Gets the content.
+	 *
+	 * @return the content
 	 */
 	public JPanel getContent() {
-
 		return content;
 	}
 
+	/**
+	 * Gets the owner dashboard.
+	 *
+	 * @return the owner dashboard
+	 * 
+	 * @see abs.view.owner.OwnerDashboard OwnerDashboard
+	 */
 	public static JPanel getOwnerDashboard() {
 		return ownerDashboard;
 	}
 
+	/**
+	 * Sets the owner dashboard.
+	 *
+	 * @param ownerDashboard
+	 *            the new owner dashboard
+	 * 
+	 * @see abs.view.owner.OwnerDashboard OwnerDashboard
+	 */
 	public static void setOwnerDashboard(JPanel ownerDashboard) {
 		AppFrame.ownerDashboard = ownerDashboard;
 	}
-	
+
 }

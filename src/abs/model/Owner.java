@@ -73,8 +73,8 @@ public class Owner extends AbstractUser {
 	 * shows all the times a business is booked
 	 */
 	public void viewBookings() {
-		
-		for(int i = 0; i < businesses.size(); i++){
+
+		for (int i = 0; i < businesses.size(); i++) {
 			// save the booking temporarily
 			List<Booking> bookings = businesses.get(i).getAvBookings();
 
@@ -84,63 +84,64 @@ public class Owner extends AbstractUser {
 
 			}
 		}
-		
+
 	}
-	
-	
+
 	/**
-	 * book on behalf of a customer
-	 * 
+	 * book on behalf of a customer.
+	 *
 	 * @param custEmail
-	 * this is the customer's email to search for
+	 *            this is the customer's email to search for
 	 * @param business
-	 * the business you are booking them into
+	 *            the business you are booking them into
 	 * @param booking
-	 * the booking time to actually book
-	 * @return
+	 *            the booking time to actually book
+	 * @param utils
+	 *            the utils
+	 * @return true, if successful
 	 */
-	public boolean bookForCustomer(String custEmail, Business business, Booking booking, Utilities utils){
-		//try to search for customer
+	public boolean bookForCustomer(String custEmail, Business business, Booking booking, Utilities utils) {
+		// try to search for customer
 		User customer = utils.searchCustomers(custEmail);
-		if(customer != null){
-			//then the customer was found
-			//make sure the booking is actually in the business, just do double check
-			if(business.getAvBookings().contains(booking)){
-				//so add a booking for that customer 
-				((Customer)customer).addBooking(booking);
+		if (customer != null) {
+			// then the customer was found
+			// make sure the booking is actually in the business, just do double
+			// check
+			if (business.getAvBookings().contains(booking)) {
+				// so add a booking for that customer
+				((Customer) customer).addBooking(booking);
 				return true;
 			}
-			
+
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 * 
-	 * Makes a booking on behalf of a customer 
+	 * Makes a booking on behalf of a customer
 	 * 
 	 * @param cust
-	 * the customer to book for
+	 *            the customer to book for
 	 * @param b
-	 * the business
+	 *            the business
 	 * @param booking
-	 * the booking time and date
-	 * @return
-	 * true if booking is made, false if not
+	 *            the booking time and date
+	 * @return true if booking is made, false if not
 	 */
-	public boolean bookForCustomer(Customer cust, Business b, Booking booking){
-		
-		//check the booking exists
-		if(b.getAvBookings().contains(booking)){
-			//make the booking for the customer
+	public boolean bookForCustomer(Customer cust, Business b, Booking booking) {
+
+		// check the booking exists
+		if (b.getAvBookings().contains(booking)) {
+			// make the booking for the customer
 			cust.addBooking(booking);
-			//update the status of the availability
+			// update the status of the availability
 			booking.setStatus("Booked");
-			
+
 			return true;
 		}
-		
+
 		return false;
 	}
 

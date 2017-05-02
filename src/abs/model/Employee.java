@@ -30,16 +30,15 @@ public class Employee {
 		this.name = name;
 		this.availabilities = availabilities;
 	}
-	
-	
+
 	/**
 	 * 
 	 * Makes a new employee with no availabilities
 	 * 
 	 * @param name
-	 * 			the employee's name
+	 *            the employee's name
 	 */
-	public Employee(String name){
+	public Employee(String name) {
 		this.name = name;
 	}
 
@@ -70,13 +69,14 @@ public class Employee {
 	public void setAvailabilities(List<Availability> availabilities) {
 		this.availabilities = availabilities;
 	}
-	
+
 	/**
 	 * adds one availability at a time
+	 * 
 	 * @param avail
-	 * the availability to be added
+	 *            the availability to be added
 	 */
-	public void addAvailabilities(Availability avail){
+	public void addAvailabilities(Availability avail) {
 		this.availabilities.add(avail);
 	}
 

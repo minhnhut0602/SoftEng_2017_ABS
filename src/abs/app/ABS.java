@@ -5,8 +5,7 @@ import abs.controller.UserController;
 import abs.view.AppFrame;
 
 /**
- * The GUI ABS Application.
- *
+ * The ABS GUI App.
  */
 public class ABS {
 
@@ -17,7 +16,8 @@ public class ABS {
 		// Load GUI
 		AppFrame appFrame = new AppFrame();
 		appFrame.revalidate();
-		// Set up controllers
+
+		// Set up controller
 		new UserController(appFrame);
 
 	}

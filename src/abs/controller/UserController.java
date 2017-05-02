@@ -8,22 +8,28 @@ import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.model.Business;
 import abs.model.Owner;
-import abs.view.ABSMenuBar;
 import abs.view.AppFrame;
 import abs.view.LoginPanel;
 import abs.view.RegisterPanel;
+import abs.view.GUIComponents.ABSMenuBar;
 
 /**
  * The user controller handles the login/registration and logout functions.
- *
+ * 
+ * @version 1.0
+ * @see OwnerController
+ * @see CustomerController
  *
  */
 public class UserController {
-	/** The data access logger */
-	private static final Logger logger = Logger.getLogger("UserController Logger");
 
+	/** The user controller logger */
+	private static final Logger logger = Logger.getLogger("Controller:User Logger");
+
+	/** The app frame. */
 	private static AppFrame appFrame;
 
+	/** The active business. */
 	private static Business activeBusiness = null;
 
 	/**
@@ -36,10 +42,13 @@ public class UserController {
 		UserController.appFrame = appFrame;
 	}
 
+	/**
+	 * Load/reload login screen.
+	 */
 	public static void loadLoginScreen() {
 		// Remove all content and load a login panel
 		appFrame.getContent().removeAll();
-		appFrame.getContent().add(new LoginPanel());
+		appFrame.getContent().add(new LoginPanel(appFrame));
 
 		// Update available buttons
 		ABSMenuBar.toggleButton("Register", true);
@@ -50,10 +59,13 @@ public class UserController {
 		appFrame.revalidate();
 	}
 
+	/**
+	 * Load/reload register screen.
+	 */
 	public static void loadRegisterScreen() {
 		// Remove all content and load a login panel
 		appFrame.getContent().removeAll();
-		appFrame.getContent().add(new RegisterPanel());
+		appFrame.getContent().add(new RegisterPanel(appFrame));
 
 		// Update available buttons
 		ABSMenuBar.toggleButton("Register", false);
@@ -64,6 +76,9 @@ public class UserController {
 		appFrame.revalidate();
 	}
 
+	/**
+	 * Reload welcome screen.
+	 */
 	public static void reloadWelcomeScreen() {
 		// Remove all content and load a login panel
 		appFrame.getContent().removeAll();
@@ -79,6 +94,16 @@ public class UserController {
 		appFrame.revalidate();
 	}
 
+	/**
+	 * Login a user.
+	 *
+	 * @param email
+	 *            the email
+	 * @param password
+	 *            the password
+	 * @throws CredentialsInvalidException
+	 *             if the users credentials are invalid or null
+	 */
 	public static void login(String email, String password) throws CredentialsInvalidException {
 
 		Registry.getUserAuth().authUser(email, password);
@@ -103,9 +128,28 @@ public class UserController {
 
 	}
 
+	/**
+	 * Register a new customer or owner
+	 *
+	 * @param name
+	 *            the users name
+	 * @param email
+	 *            the users email
+	 * @param password
+	 *            the users password
+	 * @param address
+	 *            the users address
+	 * @param phone
+	 *            the users phone
+	 * @param isOwner
+	 *            is the user is an owner
+	 * @throws RegistrationValidationException
+	 *             if the registration details are invalid or null
+	 * @throws RegistrationNonUniqueException
+	 *             is the user is pre existing
+	 */
 	public static void register(String name, String email, String password, String address, String phone,
-			Boolean isOwner)
-			throws CredentialsInvalidException, RegistrationValidationException, RegistrationNonUniqueException {
+			Boolean isOwner) throws RegistrationValidationException, RegistrationNonUniqueException {
 		boolean success = false;
 		if (isOwner) {
 			Registry.getUserAuth().registerOwner(name, email, password);
@@ -129,11 +173,25 @@ public class UserController {
 		}
 	}
 
+	/**
+	 * Logout the user, save and reload welcome screen.
+	 */
 	public static void logout() {
+		// Reset active user and business
+		Registry.getUserAuth().setActiveUser(null);
+		setActiveBusiness(null);
+
+		// Save
 		Registry.getUtils().silentSave();
+
 		reloadWelcomeScreen();
 	}
 
+	/**
+	 * Gets the active business.
+	 *
+	 * @return the active business
+	 */
 	public static Business getActiveBusiness() {
 		if (activeBusiness == null) {// If none set yet
 			// And if some exist in the system
@@ -147,6 +205,12 @@ public class UserController {
 		return activeBusiness;
 	}
 
+	/**
+	 * Sets the active business.
+	 *
+	 * @param activeBusiness
+	 *            the new active business
+	 */
 	public static void setActiveBusiness(Business activeBusiness) {
 		UserController.activeBusiness = activeBusiness;
 	}

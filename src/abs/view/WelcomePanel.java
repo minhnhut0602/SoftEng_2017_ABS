@@ -13,14 +13,19 @@ import abs.controller.UserController;
 import abs.view.style.AppStyle;
 
 /**
- *
+ * The Class WelcomePanel.
+ * 
+ * @since 1.0
+ * @version 1.0
+ * @see javax.swing.JPanel JPanel
  */
 public class WelcomePanel extends JPanel {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -3600797565957836983L;
 
 	/**
-	 * 
+	 * Instantiates a new welcome panel.
 	 */
 	public WelcomePanel() {
 

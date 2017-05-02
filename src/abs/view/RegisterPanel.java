@@ -1,6 +1,9 @@
 package abs.view;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,10 +11,10 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import abs.controller.UserController;
-import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
 import abs.exceptions.RegistrationValidationException;
 import abs.view.style.AppStyle;
@@ -25,7 +28,7 @@ public class RegisterPanel extends JPanel {
 
 	private static JLabel status;
 
-	public RegisterPanel() {
+	public RegisterPanel(AppFrame appFrame) {
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
 
@@ -38,53 +41,69 @@ public class RegisterPanel extends JPanel {
 		title.setHorizontalAlignment(JLabel.CENTER);
 
 		JPanel registerInfo = new JPanel();
-		// registerInfo.setLayout(new GridLayout(0, 2));
+		registerInfo.setBorder(AppStyle.margin);
+		registerInfo.setBackground(AppStyle.mainForgroundColor);
+		registerInfo.setLayout(new GridBagLayout());
+
+		JPanel registerForm = new JPanel();
+		registerForm.setLayout(new GridLayout(0, 1));
+		registerForm.setBorder(AppStyle.margin);
+		registerForm.setBackground(AppStyle.mainForgroundColor);
 
 		JLabel name = new JLabel("Name:");
 		final JTextField nameField = new JTextField(15);
-		registerInfo.add(name);
-		registerInfo.add(nameField);
+		registerForm.add(name);
+		registerForm.add(nameField);
 
 		JLabel email = new JLabel("Email:");
 		final JTextField emailField = new JTextField(15);
-		registerInfo.add(email);
-		registerInfo.add(emailField);
+		registerForm.add(email);
+		registerForm.add(emailField);
 
 		JLabel pass = new JLabel("Password:");
-		final JTextField passField = new JTextField(15);
-		registerInfo.add(pass);
-		registerInfo.add(passField);
+		final JPasswordField passField = new JPasswordField(15);
+		registerForm.add(pass);
+		registerForm.add(passField);
 
 		JLabel address = new JLabel("Address:");
 		final JTextField addressField = new JTextField(15);
-		registerInfo.add(address);
-		registerInfo.add(addressField);
+		registerForm.add(address);
+		registerForm.add(addressField);
 
 		JLabel phone = new JLabel("Phone Number:");
 		final JTextField phoneField = new JTextField(15);
-		registerInfo.add(phone);
-		registerInfo.add(phoneField);
+		registerForm.add(phone);
+		registerForm.add(phoneField);
 
-		JLabel owner = new JLabel("Are you a bussiness owner:");
+		JPanel ownerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		ownerPanel.setBackground(AppStyle.mainForgroundColor);
+		JLabel owner = new JLabel("Are you a bussiness owner?");
 		final JCheckBox ownerField = new JCheckBox();
-		registerInfo.add(owner);
-		registerInfo.add(ownerField);
+		ownerPanel.add(owner);
+		ownerPanel.add(ownerField);
+		registerForm.add(ownerPanel);
 
+		JPanel buttonPanel = new JPanel(new FlowLayout());
+		buttonPanel.setBackground(AppStyle.mainForgroundColor);
 		JButton back = new JButton("Back");
 		JButton register = new JButton("Register");
-		registerInfo.add(register);
-		registerInfo.add(back);
+		buttonPanel.add(register);
+		buttonPanel.add(back);
+		registerForm.add(buttonPanel);
 
+		registerInfo.add(registerForm);
 		content.setLayout(new BorderLayout());
 		content.add(title, BorderLayout.NORTH);
 		content.add(registerInfo, BorderLayout.CENTER);
-		
+
 		status = new JLabel("");
 		status.setHorizontalAlignment(JLabel.CENTER);
 		content.add(status, BorderLayout.SOUTH);
 
 		this.setLayout(new BorderLayout());
 		this.add(content, BorderLayout.CENTER);
+
+		appFrame.getRootPane().setDefaultButton(register);
 
 		back.addActionListener(new ActionListener() {
 			@Override
@@ -98,10 +117,9 @@ public class RegisterPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					UserController.register(nameField.getText(), emailField.getText(), passField.getText(),
-							addressField.getText(), phoneField.getText(), ownerField.isSelected());
-				} catch (CredentialsInvalidException e1) {
-					getStatus().setText(e1.getMessage());
+					UserController.register(nameField.getText(), emailField.getText(),
+							String.valueOf(passField.getPassword()), addressField.getText(), phoneField.getText(),
+							ownerField.isSelected());
 
 				} catch (RegistrationValidationException e1) {
 					getStatus().setText(e1.getMessage());
@@ -109,9 +127,10 @@ public class RegisterPanel extends JPanel {
 				} catch (RegistrationNonUniqueException e1) {
 					getStatus().setText(e1.getMessage());
 
+				} catch (NumberFormatException e1) {
+					getStatus().setText("Sorry but the Phone Number can only contain digits");
 				}
 			}
-
 		});
 	}
 

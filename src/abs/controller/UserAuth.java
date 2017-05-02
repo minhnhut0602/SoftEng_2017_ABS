@@ -3,6 +3,8 @@ package abs.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import abs.exceptions.CredentialsInvalidException;
 import abs.exceptions.RegistrationNonUniqueException;
@@ -14,18 +16,22 @@ import abs.model.Owner;
 import abs.model.User;
 
 /**
- * The UserAuth class.
+ * The User Authentication class.
  * 
  * <p>
  * This class validates and authenticates login and register requests.stores the
  * active user.
  * </p>
  * 
+ * @version 1.5
+ * @since Alpha
  * @see #getActiveUser()
  * @see #authUser(String, String)
  * @see #registerUser(String, String, String, String, String)
  */
 public class UserAuth {
+	/** The user authentication logger */
+	private static final Logger logger = Logger.getLogger("UserAuth Logger");
 
 	/** The Utilities object. */
 	private Utilities utils;
@@ -48,16 +54,6 @@ public class UserAuth {
 		this.utils = utils;
 
 	}
-
-	/* constructor that creates it's own utilities object if needed */
-	// public UserAuth() {
-	// util = new Utilities();
-	// customers = new ArrayList<User>();
-	// this.customers = util.getCustomers();
-	// if (customers == null) {
-	// customers = new ArrayList<User>();
-	// }
-	// }
 
 	/**
 	 * Auth user.
@@ -147,30 +143,30 @@ public class UserAuth {
 		List<User> customers = utils.getCustomers();
 		// List<User> owners = utils.getOwners();
 
-		/* VALIDATE NAME */
-		if (name == null || name == "") {
+		/* VALIDATE NAME not empty */
+		if (name.isEmpty() == true) {
 			throw new RegistrationValidationException("Name", name);
-			/* ERROR: name is empty */
 
 		}
 
-		/* VALIDATE EMAIL AND PASSWORD */
-		if (email == null || email == "" || validateEmail(email) == false) {
+		/* VALIDATE EMAIL */
+		if (email.isEmpty() == true || validateEmail(email) == false) {
 			throw new RegistrationValidationException("Email", email);
 
 		}
 
-		if (password == null || password == "") {
+		/* VALIDATE PASSWORD */
+		if (password.isEmpty() == true) {
 			throw new RegistrationValidationException("Email", email);
 		}
 
 		/* VALIDATE ADDRESS */
-		if (address == null || address == "") {
+		if (address.isEmpty() == true || validateAddress(address) == false) {
 			throw new RegistrationValidationException("Address", address);
 		}
 
 		/* VALIDATE PHONE */
-		if (phone == null || phone == "") {
+		if (phone.isEmpty() == true || validatePhone(phone) == false) {
 			throw new RegistrationValidationException("Phone", phone);
 		}
 
@@ -178,7 +174,7 @@ public class UserAuth {
 		 * check to see if the email exists, meaning the customer must already
 		 * be registered
 		 */
-		if (customers != null) {
+		if (customers.isEmpty() == false) {
 			for (int i = 0; i < customers.size(); i++) {
 				if (customers.get(i).getEmail().compareTo(email) == 0) {
 					throw new RegistrationNonUniqueException(email);
@@ -195,14 +191,13 @@ public class UserAuth {
 	}
 
 	/**
-	 * Registering an Employee
-	 * 
+	 * Registering an Employee.
+	 *
 	 * @param name
 	 *            is the name of the employee
-	 * 
 	 * @param business
 	 *            is the business it is linked
-	 * 
+	 * @return true, if successful
 	 */
 	public boolean registerEmployee(String name, Business business) {
 		/** no need to validate name */
@@ -233,7 +228,7 @@ public class UserAuth {
 
 		String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
 		Boolean emailValid = email.matches(regex);
-		System.out.println("is e-mail: " + email + " :Valid = " + emailValid);
+		logger.log(Level.INFO, "Is an E-mail: " + email + " :Valid = " + emailValid);
 
 		return emailValid;
 
@@ -259,16 +254,16 @@ public class UserAuth {
 
 			/* check is numeric */
 			if (phone.matches(regex)) {
-				System.out.println("phone: " + phone + " :Valid = true");
+				logger.log(Level.INFO, "Phone: " + phone + " :Valid = true");
 				return true;
 
 			} else {
-				System.out.println("phone(numeric): " + phone + " :Valid = false");
+				logger.log(Level.INFO, "phone(numeric): " + phone + " :Valid = false");
 				return false;
 			}
 
 		} else {
-			System.out.println("phone(8/10): " + phone + " :Valid = false");
+			logger.log(Level.INFO, "phone(8/10): " + phone + " :Valid = false");
 			return false;
 		}
 
@@ -293,7 +288,7 @@ public class UserAuth {
 			index++;
 		}
 		if (index < 6) {
-			System.out.println("address too short: false");
+			logger.log(Level.INFO, "address too short: False");
 			return false;
 		}
 		// for(int counter = 0; counter < addressToks.size(); counter++){
@@ -314,7 +309,7 @@ public class UserAuth {
 			if (addressToks.get(currentFocus).matches("[a-zA-Z,]+")) {
 				currentFocus++;
 			} else {
-				System.out.println("address invalid characters: false");
+				logger.log(Level.INFO, "address invalid characters: false");
 				return false;
 				/* ERROR: line in address is not in correct format */
 			}
@@ -328,7 +323,7 @@ public class UserAuth {
 				if (addressToks.get(currentFocus).length() == 4) {
 					currentFocus++;
 				} else {
-					System.out.println("address postcode invalid: false");
+					logger.log(Level.INFO, "address postcode invalid: false");
 					return false;
 					/* ERROR: Post code not 4 digits */
 
@@ -345,13 +340,13 @@ public class UserAuth {
 						return true;
 					}
 				}
-				System.out.println("address invalid state: false");
+				logger.log(Level.INFO, "address invalid state: false");
 				return false;
 				/* ERROR: invalid state provided */
 
 			}
 		}
-		System.out.println("address is valid: true");
+		logger.log(Level.INFO, "address is valid: true");
 		return true;
 	} /* While loop end */
 

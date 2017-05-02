@@ -13,12 +13,14 @@ import javax.swing.border.Border;
  * <p>
  * Allows for easier updating or changes to look and feel.
  * </p>
- *
+ * 
+ * @version 1.0
+ * @since 1.0
  */
 public class AppStyle {
 	/* Colours */
 	public static final Color mainBackgroundColor = Color.DARK_GRAY;
-	public static final Color mainForgroundColor = Color.WHITE;
+	public static final Color mainForgroundColor = Color.LIGHT_GRAY;
 	public static final Color mainFontColor = Color.GRAY;
 	public static Color successColor = new Color(111, 195, 102);
 	public static Color warningColor = new Color(238, 125, 125);

@@ -6,9 +6,23 @@ import abs.model.Booking;
 import abs.view.GUIComponents.AvButton;
 import abs.view.style.AppStyle;
 
+/**
+ * A factory for creating Booking View objects.
+ * 
+ * @version 1.3
+ * @since 1.0
+ * @see abs.model.Booking
+ */
 public class BookingFactory {
 
-	public static String bookingString(Booking booking) {
+	/**
+	 * Formatted booking string.
+	 *
+	 * @param booking
+	 *            the booking
+	 * @return the formatted string
+	 */
+	private static String bookingString(Booking booking) {
 
 		String bookingString = "";
 		String length;
@@ -29,6 +43,15 @@ public class BookingFactory {
 		return bookingString;
 	}
 
+	/**
+	 * Booking JTextPane.
+	 *
+	 * @param booking
+	 *            the booking
+	 * @return the JTextPane
+	 * 
+	 * @see javax.swing.JTextPane JTextPane
+	 */
 	public static JTextPane bookingPane(Booking booking) {
 		JTextPane bookingPane = new JTextPane();
 
@@ -44,6 +67,14 @@ public class BookingFactory {
 		return bookingPane;
 	}
 
+	/**
+	 * Booking Button.
+	 *
+	 * @param booking
+	 *            the booking
+	 * @return the ABvButton object
+	 * @see abs.view.GUIComponents.AvButton AvButton
+	 */
 	public static AvButton bookingButton(Booking booking) {
 		AvButton bookingButton = new AvButton(bookingString(booking));
 		bookingButton.setBooking(booking);
@@ -57,17 +88,6 @@ public class BookingFactory {
 		}
 
 		return bookingButton;
-	}
-
-	public static JTextPane TestBookingPane() {
-		JTextPane bookingPane = new JTextPane();
-
-		bookingPane.setEditable(false);
-		bookingPane.setBackground(AppStyle.successColor);
-		bookingPane
-				.setText("Type: Haircut" + "Date: 1/5" + "Start Time: 8:30 am" + "Length: 0.5 hrs" + "Staff: Daniel");
-
-		return bookingPane;
 	}
 
 }
