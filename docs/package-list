@@ -1,5 +1,11 @@
+abs.app
 abs.controller
 abs.exceptions
 abs.model
 abs.tests
 abs.view
+abs.view.GUIComponents
+abs.view.customer
+abs.view.factory
+abs.view.owner
+abs.view.style
