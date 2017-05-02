@@ -39,7 +39,7 @@ public class UserController {
 	public static void loadLoginScreen() {
 		// Remove all content and load a login panel
 		appFrame.getContent().removeAll();
-		appFrame.getContent().add(new LoginPanel());
+		appFrame.getContent().add(new LoginPanel(appFrame));
 
 		// Update available buttons
 		ABSMenuBar.toggleButton("Register", true);
@@ -53,7 +53,7 @@ public class UserController {
 	public static void loadRegisterScreen() {
 		// Remove all content and load a login panel
 		appFrame.getContent().removeAll();
-		appFrame.getContent().add(new RegisterPanel());
+		appFrame.getContent().add(new RegisterPanel(appFrame));
 
 		// Update available buttons
 		ABSMenuBar.toggleButton("Register", false);
