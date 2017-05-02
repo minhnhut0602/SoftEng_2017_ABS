@@ -85,14 +85,14 @@ public class OwnerController {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
 
-    Availability a = new Availability(date, time);
-		// turn time, date, employee and Business into Booking		
-		//add this booking to the business
+		Availability a = new Availability(date, time);
+		// turn time, date, employee and Business into Booking
+		// add this booking to the business
 		b.addBookingTime(new Booking(a, e, "Available", b));
 		e.addAvailabilities(a);
 		logger.info("Booking added successfully");
-		
-		//return to the dashboard
+
+		// return to the dashboard
 
 		reloadDashboard();
 
@@ -135,12 +135,10 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 
-
 	}
 
 	public static void logout() {
-		Registry.getUtils().silentSave();
-		UserController.reloadWelcomeScreen();
+		UserController.logout();
 
 	}
 
@@ -186,7 +184,7 @@ public class OwnerController {
 			appFrame.repaint();
 			appFrame.revalidate();
 		}
-		
+
 		logger.warning("That email does not exist");
 
 	}
@@ -252,7 +250,7 @@ public class OwnerController {
 
 		try {
 			Integer.parseInt(phone);
-			
+
 			// get the owner
 			Owner owner = (Owner) Registry.getUserAuth().getActiveUser();
 
@@ -261,7 +259,7 @@ public class OwnerController {
 
 			// pass to utilities class
 			Registry.getUtils().addBusiness(b);
-			
+
 			logger.info("New business registered: " + b.getName());
 
 			// then move back to the dashboard
@@ -284,7 +282,7 @@ public class OwnerController {
 		Employee staff = new Employee(name);
 
 		b.addStaff(staff);
-		
+
 		logger.info("Employee: " + staff.getName() + " added to " + b.getName());
 		// go back to the dashboard
 		reloadDashboard();
@@ -298,12 +296,13 @@ public class OwnerController {
 
 	public static void deleteBooking(Booking booking) {
 
-		//check to see if it is booked, don't let them delete if it is booked
-		if(booking.getStatus().compareTo("Booked") == 0){
-			JOptionPane.showMessageDialog(null, "Someone has booked that already, you can't just pretend it never existed");
+		// check to see if it is booked, don't let them delete if it is booked
+		if (booking.getStatus().compareTo("Booked") == 0) {
+			JOptionPane.showMessageDialog(null,
+					"Someone has booked that already, you can't just pretend it never existed");
 			logger.warning("Cannot delete availability that is already booked");
-		}else{
-			//they can remove it
+		} else {
+			// they can remove it
 			booking.getStaff().removeAvailability(booking.getSlot());
 
 			booking.getBusiness().removeBooking(booking);
