@@ -24,7 +24,7 @@ import abs.view.GUIComponents.ABSMenuBar;
 public class UserController {
 
 	/** The user controller logger */
-	private static final Logger logger = Logger.getLogger("Controller:User Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	/** The app frame. */
 	private static AppFrame appFrame;

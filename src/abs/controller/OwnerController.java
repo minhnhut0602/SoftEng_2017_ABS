@@ -29,7 +29,7 @@ import abs.view.owner.ShowAvailabilities;
 public class OwnerController {
 
 	/** The data access logger */
-	private static final Logger logger = Logger.getLogger("OwnerController Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	private static AppFrame appFrame;
 
