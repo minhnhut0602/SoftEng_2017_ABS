@@ -15,7 +15,7 @@ import abs.view.customer.RemoveBookingPanel;
  * The Customer Controller, controls the customers functions and views.
  * 
  * @version 1.0
- * 
+ * @since 1.0
  * @see UserController
  * @see OwnerController
  */

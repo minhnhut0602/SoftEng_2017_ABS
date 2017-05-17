@@ -5,7 +5,9 @@ package abs.exceptions;
  * an existing email address.
  * 
  * This exception stores the email.
- *
+ * 
+ * @since Alpha
+ * @version 1.0
  */
 public class RegistrationNonUniqueException extends Exception {
 

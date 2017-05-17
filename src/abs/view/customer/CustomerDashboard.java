@@ -27,7 +27,7 @@ import abs.view.factory.BookingFactory;
 import abs.view.style.AppStyle;
 
 /**
- *
+ * TODO Javadocs
  */
 public class CustomerDashboard extends JPanel {
 

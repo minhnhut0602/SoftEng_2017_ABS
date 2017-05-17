@@ -28,7 +28,8 @@ import abs.model.User;
  * <p>
  * 
  * @see abs.model.Booking Booking
- *
+ * @since Alpha
+ * @version 1.2
  */
 public class BookingTest {
 

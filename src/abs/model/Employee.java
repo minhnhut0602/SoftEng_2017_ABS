@@ -7,8 +7,12 @@ import java.util.List;
  * 
  * The employee class.
  * 
- * Has Availability
+ * <p>
+ * An employee has availabilities.
+ * </p>
  *
+ * @since Alpha
+ * @version 1.1
  */
 public class Employee {
 
@@ -79,8 +83,12 @@ public class Employee {
 	public void addAvailabilities(Availability avail) {
 		this.availabilities.add(avail);
 	}
-	
-	public void removeAvailability(Availability avail){
+
+	/**
+	 * @param Availability
+	 *            to be removed
+	 */
+	public void removeAvailability(Availability avail) {
 		this.availabilities.remove(avail);
 	}
 

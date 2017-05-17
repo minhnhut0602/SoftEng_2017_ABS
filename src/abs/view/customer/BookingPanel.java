@@ -18,6 +18,9 @@ import abs.view.GUIComponents.AvButton;
 import abs.view.factory.BookingFactory;
 import abs.view.style.AppStyle;
 
+/**
+ * TODO Javadocs
+ */
 public class BookingPanel extends JPanel {
 
 	private static final long serialVersionUID = 9167183798502593801L;

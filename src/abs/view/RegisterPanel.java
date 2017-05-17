@@ -20,7 +20,7 @@ import abs.exceptions.RegistrationValidationException;
 import abs.view.style.AppStyle;
 
 /**
- *
+ * TODO Javadocs
  */
 public class RegisterPanel extends JPanel {
 

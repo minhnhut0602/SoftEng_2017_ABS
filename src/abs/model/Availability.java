@@ -7,6 +7,8 @@ package abs.model;
  * with it.
  * </p>
  *
+ * @since Alpha
+ * @version 1.1
  */
 public class Availability {
 

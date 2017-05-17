@@ -4,6 +4,8 @@ package abs.exceptions;
  * RegistrationValidationException throws when the user enters an invalid input
  * on the registration form.
  *
+ * @since Alpha
+ * @version 1.0
  */
 public class RegistrationValidationException extends Exception {
 

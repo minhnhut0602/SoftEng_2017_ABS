@@ -27,7 +27,9 @@ import abs.view.Menu;
  * expected.
  * 
  * @see abs.view.Menu Menu
- *
+ * @since Alpha
+ * @version 1.1
+ * @deprecated
  */
 public class MenuTest {
 

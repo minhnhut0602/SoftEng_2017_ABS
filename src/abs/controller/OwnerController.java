@@ -24,7 +24,12 @@ import abs.view.owner.RemoveAvailabilities;
 import abs.view.owner.ShowAvailabilities;
 
 /**
- *
+ * The Owner Controller, controls the owners functions and views.
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @see UserController
+ * @see CustomerController
  */
 public class OwnerController {
 

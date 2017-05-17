@@ -18,8 +18,8 @@ import abs.model.User;
  * results.
  * 
  * @since Alpha
- * 
- *
+ * @version 1.3
+ * @deprecated
  */
 public class Menu {
 
@@ -415,7 +415,6 @@ public class Menu {
 	 *
 	 * @return the int value of the users selection
 	 */
-	@SuppressWarnings("deprecation")
 	public int myBookings() {
 
 		String selection;

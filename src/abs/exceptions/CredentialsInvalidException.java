@@ -3,7 +3,9 @@ package abs.exceptions;
 /**
  * The credentials invalid exception is thrown when a user tried to login with
  * an invalid email or invalid password.
- *
+ * 
+ * @since Alpha
+ * @version 1.1
  */
 public class CredentialsInvalidException extends Exception {
 
