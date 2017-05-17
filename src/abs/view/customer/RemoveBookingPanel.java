@@ -20,7 +20,13 @@ import abs.view.factory.BookingFactory;
 import abs.view.style.AppStyle;
 
 /**
- * TODO Javadocs
+ * The panel for removing users bookings.
+ * 
+ * @since 1.0
+ * @version 1.0
+ * @serial 311702363942509643
+ * @see javax.swing.JPanel JPanel
+ * @see abs.model.Booking Booking
  */
 public class RemoveBookingPanel extends JPanel {
 
