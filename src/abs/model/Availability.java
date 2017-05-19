@@ -15,6 +15,8 @@ public class Availability {
 
 	/** The time. */
 	private String time;
+        
+        private int block_count;
 
 	/**
 	 * Instantiates a new availability.
@@ -27,6 +29,13 @@ public class Availability {
 	public Availability(String date, String time) {
 		this.date = date;
 		this.time = time;
+                this.block_count = 1;
+	}
+        
+        public Availability(String date, String time, int blockCount) {
+		this.date = date;
+		this.time = time;
+                this.block_count = blockCount;
 	}
 
 	/**
@@ -74,12 +83,12 @@ public class Availability {
 	 */
 	@Override
 	public String toString() {
-		return "Availability [date=" + date + ", time=" + time + "]";
+		return "Availability [date=" + date + ", time=" + time + ", block count="+ block_count +"]";
 	}
 
 	public int getBlocks() {
 		// TODO setup class for blocks
-		return 0;
+                return block_count;
 	}
 
 }

@@ -8,6 +8,7 @@ package abs.model;
  */
 public class Booking {
 
+        public final int AVAILABE_TIME = 30;
 	/** The bookings slot. */
 	private Availability slot;
 
@@ -19,7 +20,10 @@ public class Booking {
 
 	/** The status (Booked/Available). */
 	private String status;
-
+        
+        /** The length of time for book appointments */
+        private int availableTime; 
+        
 	/**
 	 * Instantiates a new booking.
 	 *
@@ -34,6 +38,26 @@ public class Booking {
 		this.slot = slot;
 		this.staff = staff;
 		this.status = status;
+                this.availableTime = AVAILABE_TIME;
+	}
+        
+        /**
+	 * Instantiates a new booking.
+	 *
+	 * @param slot
+	 *            the slot an availability
+	 * @param staff
+	 *            the staff a string
+	 * @param status
+	 *            the status of the booking a string (booked or available)
+         * @param time
+	 *            the length of available time
+	 */
+        public Booking(Availability slot, Employee staff, String status, int time) {
+		this.slot = slot;
+		this.staff = staff;
+		this.status = status;
+                this.availableTime = time;
 	}
 
 	/**
@@ -100,6 +124,15 @@ public class Booking {
 	public String getStatus() {
 		return status;
 	}
+        
+        /**
+	 * Gets the time.
+	 *
+	 * @return the time
+	 */
+	public int getTime() {
+		return availableTime;
+	}
 
 	/**
 	 * Sets the status.
@@ -111,6 +144,16 @@ public class Booking {
 		this.status = status;
 
 	}
+        
+        /**
+         * Sets the time
+         * 
+         * @param time
+         *              the new times
+         */
+        public void setTimes(int time){
+                this.availableTime = time;
+        }
 
 	/*
 	 * (non-Javadoc)
