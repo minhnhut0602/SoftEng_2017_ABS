@@ -22,6 +22,7 @@ import abs.view.owner.NewBusiness;
 import abs.view.owner.OwnerDashboard;
 import abs.view.owner.RemoveAvailabilities;
 import abs.view.owner.ShowAvailabilities;
+import static java.lang.Integer.parseInt;
 
 /**
  *
@@ -29,7 +30,7 @@ import abs.view.owner.ShowAvailabilities;
 public class OwnerController {
 
 	/** The data access logger */
-	private static final Logger logger = Logger.getLogger("OwnerController Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	private static AppFrame appFrame;
 
@@ -81,11 +82,11 @@ public class OwnerController {
 
 	}
 
-	public static void addAvBooking(String time, String date, String employee, String business) {
+	public static void addAvBooking(String time, String date, String blockcount, String employee, String business) {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
 
-		Availability a = new Availability(date, time);
+		Availability a = new Availability(date, time, parseInt(blockcount));
 		// turn time, date, employee and Business into Booking
 		// add this booking to the business
 		b.addBookingTime(new Booking(a, e, "Available", b));
