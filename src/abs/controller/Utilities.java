@@ -46,7 +46,7 @@ import abs.model.User;
 public class Utilities {
 
 	/** The data access logger */
-	private static final Logger logger = Logger.getLogger("Utilities Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	/** The file path where the data is stored. */
 	private String filePath;

@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class Customer extends AbstractUser {
 	/** The data access logger */
-	private static final Logger logger = Logger.getLogger("Model:Customer Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	/** The customers address. */
 	private String address;

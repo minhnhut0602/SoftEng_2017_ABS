@@ -31,7 +31,7 @@ import abs.model.User;
  */
 public class UserAuth {
 	/** The user authentication logger */
-	private static final Logger logger = Logger.getLogger("UserAuth Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	/** The Utilities object. */
 	private Utilities utils;
@@ -52,7 +52,6 @@ public class UserAuth {
 	public UserAuth(Utilities utils) {
 		this.activeUser = null;
 		this.utils = utils;
-
 	}
 
 	/**
