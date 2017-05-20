@@ -12,6 +12,7 @@ import abs.model.Business;
  * 
  * @version 1.0
  * @since 1.0
+ * @serial 4977825788220922261
  * @see abs.model.Business Business
  * @see javax.swing.JButton JButton
  */

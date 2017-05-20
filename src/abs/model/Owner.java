@@ -10,6 +10,9 @@ import abs.controller.Utilities;
  *
  * @see AbstractUser
  * @see User
+ * 
+ * @version 1.3
+ * @since Alpha
  */
 public class Owner extends AbstractUser {
 
@@ -26,16 +29,9 @@ public class Owner extends AbstractUser {
 	 * @param password
 	 *            the password
 	 */
-
 	public Owner(String name, String email, String password) {
 		super(name, email, password);
 	}
-
-	// // construct an owner type object
-	// public Owner(String name, String email, String password, List<Booking>
-	// bookings) {
-	// super(name, email, password, bookings);
-	// }
 
 	/*
 	 * (non-Javadoc)
@@ -53,7 +49,6 @@ public class Owner extends AbstractUser {
 	 *
 	 * @return the business
 	 */
-	// returns Business
 	public List<Business> getBusinesses() {
 		return businesses;
 	}
@@ -64,7 +59,6 @@ public class Owner extends AbstractUser {
 	 * @param business
 	 *            the new business
 	 */
-	// set the Business
 	public void setBusiness(List<Business> business) {
 		this.businesses = business;
 	}
@@ -145,6 +139,12 @@ public class Owner extends AbstractUser {
 		return false;
 	}
 
+	/**
+	 * A a business the user owns
+	 * 
+	 * @param business
+	 *            to be added
+	 */
 	public void addBusiness(Business business) {
 		this.businesses.add(business);
 	}

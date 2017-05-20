@@ -11,6 +11,9 @@ import abs.view.AppFrame;
 
 /**
  * The ABS GUI App.
+ * 
+ * @since 1.0
+ * @version 1.1
  */
 public class ABS {
 

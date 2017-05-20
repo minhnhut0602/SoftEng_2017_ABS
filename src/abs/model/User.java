@@ -8,6 +8,9 @@ package abs.model;
  * </p>
  * 
  * @see AbstractUser
+ * 
+ * @since Alpha
+ * @version 1.0
  *
  */
 public interface User {

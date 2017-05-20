@@ -6,6 +6,9 @@ package abs.exceptions;
  * 
  * This exception stores the users inputed value.
  *
+ * @since Alpha
+ * 
+ * @version 1.0
  */
 public class MenuInputException extends Exception {
 

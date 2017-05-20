@@ -27,7 +27,18 @@ import abs.view.factory.BookingFactory;
 import abs.view.style.AppStyle;
 
 /**
- *
+ * The customer dashboard.
+ * 
+ * <p>
+ * the user can access all their functions from this panel.
+ * </p>
+ * 
+ * @since 1.0
+ * @version 1.5
+ * @serial 5508017813109824688
+ * @see javax.swing.JPanel JPanel
+ * @see abs.controller.CustomerController Customer Controller
+ * @see abs.model.Customer Customer
  */
 public class CustomerDashboard extends JPanel {
 

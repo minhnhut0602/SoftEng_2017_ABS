@@ -10,6 +10,9 @@ import java.util.logging.Logger;
  *
  * @see AbstractUser
  * @see User
+ * 
+ * @since Alpha
+ * @version 1.3
  */
 public class Customer extends AbstractUser {
 	/** The data access logger */
@@ -43,13 +46,6 @@ public class Customer extends AbstractUser {
 		this.address = address;
 		this.phone = phone;
 	}
-
-	// public Customer(String name, String email, String address, String phone,
-	// String password, List<Booking> bookings) {
-	// super(name, email, password, bookings);
-	// this.address = address;
-	// this.phone = phone;
-	// }
 
 	/**
 	 * Gets the address.

@@ -21,6 +21,8 @@ import abs.exceptions.RegistrationValidationException;
  * </p>
  *
  * @see abs.controller.UserAuth UserAuth
+ * @since Alpha
+ * @version 1.1
  */
 public class LoginTest {
 
@@ -159,17 +161,17 @@ public class LoginTest {
 		}
 		assertTrue(result == true);
 	}
-	
+
 	@Test
-	public void testValidateEmailTrue(){
-		//try validating an email that should work
+	public void testValidateEmailTrue() {
+		// try validating an email that should work
 		assertTrue(auth.validateEmail("cory@gmail.com"));
-		
+
 	}
-	
+
 	@Test
-	public void testValidateEmailFalse(){
-		//try validating an email that shouldn't work
+	public void testValidateEmailFalse() {
+		// try validating an email that shouldn't work
 		assertFalse(auth.validateEmail("corygmail.c om"));
 	}
 

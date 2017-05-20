@@ -11,9 +11,12 @@ import org.junit.runners.Suite.SuiteClasses;
  * <i>Note please add here any additional tests created.</i>
  * </p>
  *
+ * <p>
+ * <i>Menu Test is excluded as deprecated.</i>
+ * </p>
  */
 @RunWith(Suite.class)
-@SuiteClasses({ FileTest.class, LoginTest.class, MenuTest.class, BookingTest.class })
+@SuiteClasses({ FileTest.class, LoginTest.class, BookingTest.class })
 public class AllTests {
 
 }

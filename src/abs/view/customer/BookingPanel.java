@@ -18,6 +18,15 @@ import abs.view.GUIComponents.AvButton;
 import abs.view.factory.BookingFactory;
 import abs.view.style.AppStyle;
 
+/**
+ * The bookings panel. Shows the bookings for the active business.
+ * 
+ * @since 1.0
+ * @version 1.1
+ * @serial 9167183798502593801
+ * @see javax.swing.JPanel JPanel
+ * @see ads.model.Booking Booking
+ */
 public class BookingPanel extends JPanel {
 
 	private static final long serialVersionUID = 9167183798502593801L;

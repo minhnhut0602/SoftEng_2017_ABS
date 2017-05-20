@@ -9,6 +9,7 @@ import abs.model.Booking;
  * 
  * @version 1.0
  * @since 1.0
+ * @serial 6924951867221607392
  * @see abs.model.Booking Booking
  * @see javax.swing.JButton JButton
  */

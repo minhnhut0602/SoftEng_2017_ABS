@@ -20,13 +20,14 @@ import abs.view.style.AppStyle;
  * 
  * @since 1.0
  * @version 1.1
+ * @serial 3772278382357317912
  * @see abs.model.Business
  * @see javax.swing.JDialog JDialog
  */
 public class BusInfoDialog extends JDialog {
 
 	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -3772278382357317912L;
+	private static final long serialVersionUID = 3772278382357317912L;
 
 	/**
 	 * Instantiates a new bus info dialog.

@@ -17,6 +17,7 @@ import abs.view.GUIComponents.ABSMenuBar;
  * The user controller handles the login/registration and logout functions.
  * 
  * @version 1.0
+ * @since 1.0
  * @see OwnerController
  * @see CustomerController
  *

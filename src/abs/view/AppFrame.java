@@ -17,6 +17,9 @@ import abs.view.owner.OwnerDashboard;
  * The ABS AppFrame.
  * 
  * @see javax.swing.JFrame JFrame
+ * @serial 8091808348699216867
+ * @since 1.0
+ * @version 1.5
  */
 public class AppFrame extends JFrame {
 
