@@ -1,6 +1,8 @@
 package abs.view.owner;
 
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,32 +38,42 @@ public class NewBusiness extends JPanel {
 		title.setHorizontalAlignment(JLabel.CENTER);
 
 		JPanel businessInfo = new JPanel();
+		businessInfo.setBorder(AppStyle.margin);
+		businessInfo.setBackground(AppStyle.mainForgroundColor);
+		businessInfo.setLayout(new GridBagLayout());
 		// registerInfo.setLayout(new GridLayout(0, 2));
+		
+		JPanel registerBusiness = new JPanel();
+		registerBusiness.setLayout(new GridLayout(0, 1));
+		registerBusiness.setBorder(AppStyle.margin);
+		registerBusiness.setBackground(AppStyle.mainForgroundColor);
 
 		JLabel name = new JLabel("Name:");
 		JTextField nameField = new JTextField(15);
-		businessInfo.add(name);
-		businessInfo.add(nameField);
+		registerBusiness.add(name);
+		registerBusiness.add(nameField);
 
 		JLabel desc = new JLabel("Description:");
 		JTextField descField = new JTextField(15);
-		businessInfo.add(desc);
-		businessInfo.add(descField);
+		registerBusiness.add(desc);
+		registerBusiness.add(descField);
 
 		JLabel address = new JLabel("Address:");
 		JTextField addressField = new JTextField(15);
-		businessInfo.add(address);
-		businessInfo.add(addressField);
+		registerBusiness.add(address);
+		registerBusiness.add(addressField);
 
 		JLabel phone = new JLabel("Phone Number:");
 		JTextField phoneField = new JTextField(15);
-		businessInfo.add(phone);
-		businessInfo.add(phoneField);
+		registerBusiness.add(phone);
+		registerBusiness.add(phoneField);
 
 		JButton back = new JButton("Back");
 		JButton register = new JButton("Register");
-		businessInfo.add(register);
-		businessInfo.add(back);
+		registerBusiness.add(register);
+		registerBusiness.add(back);
+		
+		businessInfo.add(registerBusiness);
 
 		content.setLayout(new BorderLayout());
 		content.add(title, BorderLayout.NORTH);

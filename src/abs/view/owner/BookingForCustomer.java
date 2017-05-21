@@ -28,6 +28,7 @@ public class BookingForCustomer extends JPanel {
 
 		this.setBorder(AppStyle.margin);
 		this.setBackground(AppStyle.mainBackgroundColor);
+		this.setLayout(new BorderLayout());
 
 		JPanel content = new JPanel();
 		content.setBorder(AppStyle.margin);
