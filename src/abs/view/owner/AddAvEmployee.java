@@ -53,6 +53,11 @@ public class AddAvEmployee extends JPanel {
 		JTextField dateField = new JTextField(15);
 		availInfo.add(date);
 		availInfo.add(dateField);
+                
+                JLabel block_count = new JLabel("Block:");
+		JTextField blockField = new JTextField(10);
+		availInfo.add(block_count);
+		availInfo.add(blockField);
 
 		// cast active user to owner
 		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
@@ -104,7 +109,7 @@ public class AddAvEmployee extends JPanel {
 			addAv.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					OwnerController.addAvBooking(timeField.getText(), dateField.getText(),
+					OwnerController.addAvBooking(timeField.getText(), dateField.getText(), blockField.getText(),
 							(String) employeeSelect.getSelectedItem(), (String) businessSelect.getSelectedItem());
 				}
 

@@ -22,6 +22,7 @@ import abs.view.owner.NewBusiness;
 import abs.view.owner.OwnerDashboard;
 import abs.view.owner.RemoveAvailabilities;
 import abs.view.owner.ShowAvailabilities;
+import static java.lang.Integer.parseInt;
 
 /**
  * The Owner Controller, controls the owners functions and views.
@@ -86,11 +87,11 @@ public class OwnerController {
 
 	}
 
-	public static void addAvBooking(String time, String date, String employee, String business) {
+	public static void addAvBooking(String time, String date, String blockcount, String employee, String business) {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
 
-		Availability a = new Availability(date, time);
+		Availability a = new Availability(date, time, parseInt(blockcount));
 		// turn time, date, employee and Business into Booking
 		// add this booking to the business
 		b.addBookingTime(new Booking(a, e, "Available", b));

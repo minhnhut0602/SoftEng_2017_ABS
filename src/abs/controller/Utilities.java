@@ -18,6 +18,7 @@ import abs.model.Customer;
 import abs.model.Employee;
 import abs.model.Owner;
 import abs.model.User;
+import static java.lang.Integer.parseInt;
 
 /**
  * The Utilities class provides reads and imports data from file and can export
@@ -234,8 +235,9 @@ public class Utilities {
 																			// bookings
 									i++;
 									i++;
-									avBookings.add(new Booking((new Availability(bookings[i - 1], bookings[i])),
-											searchEmplyees(bookings[i - 2], staff), bookings[i + 1]));
+                                                                        i++;
+									avBookings.add(new Booking((new Availability(bookings[i - 2], bookings[i - 1], parseInt(bookings[i]))),
+											searchEmplyees(bookings[i - 3], staff), bookings[i + 1]));
 									i++;
 
 								} // close for
@@ -303,6 +305,7 @@ public class Utilities {
 							for (int i = 0; i < bookingIn.length; i++) {
 								i++;
 								i++;
+                                                                i++;
 
 								// Booking booking = new Booking((new
 								// Availability(bookingIn[i], bookingIn[i +
@@ -310,12 +313,12 @@ public class Utilities {
 								// bookingIn[i - 1], "Booked");
 
 								for (Business business : businesses) {
-									if (business.getName().equals(bookingIn[i - 2])) {
+									if (business.getName().equals(bookingIn[i - 3])) {
 										for (Booking booking : business.getAvBookings()) {
 											if (booking.getStatus().equals("Booked")) {
-												if (booking.getStaff().getName().equals(bookingIn[i - 1])) {
-													if (booking.getSlot().getDate().equals(bookingIn[i])
-															&& booking.getSlot().getTime().equals(bookingIn[i + 1])) {
+												if (booking.getStaff().getName().equals(bookingIn[i - 2])) {
+													if (booking.getSlot().getDate().equals(bookingIn[i - 1])
+															&& booking.getSlot().getTime().equals(bookingIn[i]) && booking.getSlot().getTime().equals(bookingIn[i + 1])) {
 														customer.addBooking(booking);
 													}
 												}
@@ -459,12 +462,14 @@ public class Utilities {
 						Availability slot = avBookings.get(i).getSlot();
 						bufferedWriter.write(splitChar + slot.getDate());
 						bufferedWriter.write(splitChar + slot.getTime());
+                                                bufferedWriter.write(splitChar + slot.getBlocks());
 						bufferedWriter.write(splitChar + (avBookings.get(i).getStatus()));
 					} else {
 						bufferedWriter.write(splitChar + avBookings.get(i).getStaff().getName());
 						Availability slot = avBookings.get(i).getSlot();
 						bufferedWriter.write(splitChar + slot.getDate());
 						bufferedWriter.write(splitChar + slot.getTime());
+                                                bufferedWriter.write(splitChar + slot.getBlocks());
 						bufferedWriter.write(splitChar + (avBookings.get(i).getStatus()));
 					}
 
@@ -534,12 +539,14 @@ public class Utilities {
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
 							bufferedWriter.write(splitChar + slot.getTime());
+                                                        bufferedWriter.write(splitChar + slot.getBlocks());
 						} else {
 							bufferedWriter.write(splitChar + bookings.get(j).getBusiness().getName());
 							bufferedWriter.write(splitChar + bookings.get(j).getStaff().getName());
 							Availability slot = bookings.get(j).getSlot();
 							bufferedWriter.write(splitChar + slot.getDate());
 							bufferedWriter.write(splitChar + slot.getTime());
+                                                        bufferedWriter.write(splitChar + slot.getBlocks());
 						}
 
 					}
