@@ -43,6 +43,9 @@ public class OwnerController {
 		OwnerController.appFrame = appFrame;
 	}
 
+	/**
+	 * displays the dahsboard
+	 */
 	public static void dashboard() {
 		// Remove all content and load the dashboard
 		appFrame.getContent().removeAll();
@@ -57,7 +60,10 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 	}
-
+	
+	/**
+	 * displays select customer screen
+	 */
 	public static void makeCustBooking() {
 
 		// Remove all content and load a login panel
@@ -70,6 +76,9 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * displays the add availability screen
+	 */
 	public static void addAvBooking() {
 		// boot up the screen
 		appFrame.getContent().removeAll();
@@ -81,6 +90,13 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * takes inputs from the add booking screen and creates the new booking. Reloads the dashboard
+	 * @param time
+	 * @param date
+	 * @param employee
+	 * @param business
+	 */
 	public static void addAvBooking(String time, String date, String employee, String business) {
 		Business b = Registry.getUtils().findBusiness(business);
 		Employee e = b.findStaff(employee);
@@ -98,6 +114,10 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * grabs all the bookings from a business and displays them
+	 * @param businessName
+	 */
 	public static void removeBooking(Object businessName) {
 
 		List<Booking> bookings = Registry.getUtils().findBusiness(businessName).getAvBookings();
@@ -111,6 +131,9 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * displays the add employee screen
+	 */
 	public static void addEmployee() {
 
 		// load up window
@@ -124,6 +147,9 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * displays the add business screen
+	 */
 	public static void newBusiness() {
 
 		// load up window
@@ -137,11 +163,17 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * logout the owner
+	 */
 	public static void logout() {
 		UserController.logout();
 
 	}
 
+	/**
+	 * reload the dashboard
+	 */
 	public static void reloadDashboard() {
 		// go back to dashboard
 		appFrame.getContent().removeAll();
@@ -167,6 +199,11 @@ public class OwnerController {
 	 *            the business
 	 */
 
+	/**
+	 * checks to see if the email entered is a valid customer email
+	 * @param email
+	 * @param business
+	 */
 	public static void checkEmail(String email, Object business) {
 
 		// have to convert business from Object to Business
@@ -189,6 +226,10 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * grabs all the business names
+	 * @return arraylist of names
+	 */
 	public static List<String> getBusinessNames() {
 		List<String> bNames = new ArrayList<String>();
 
@@ -206,6 +247,11 @@ public class OwnerController {
 		return bNames;
 	}
 
+	/**
+	 * gets business names for a specific user
+	 * @param user
+	 * @return
+	 */
 	public static List<String> getBusinessNames(User user) {
 
 		// convert user to owner
@@ -229,6 +275,15 @@ public class OwnerController {
 		return bNames;
 	}
 
+	/**
+	 * creates the customer booking
+	 * @param c
+	 * is the customer
+	 * @param b
+	 * is the business
+	 * @param booking
+	 * is the booking
+	 */
 	public static void createCustBooking(Customer c, Business b, Booking booking) {
 		// pass to owner method already written
 		Owner o = (Owner) Registry.getUserAuth().getActiveUser();
@@ -243,6 +298,13 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * registers a business with the fields given
+	 * @param name
+	 * @param desc
+	 * @param address
+	 * @param phone
+	 */
 	public static void registerBusiness(String name, String desc, String address, String phone) {
 
 		// remove spaces for phone number
@@ -272,6 +334,13 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * adds an employee
+	 * @param name
+	 * of the employee
+	 * @param business
+	 * which business it's for
+	 */
 	public static void addEmployee(String name, Object business) {
 
 		// have to convert business from Object to Business
@@ -289,11 +358,20 @@ public class OwnerController {
 
 	}
 
+	/**
+	 * gets all the employees from a business
+	 * @param business
+	 * @return
+	 */
 	public static Object getEmployees(Object business) {
 		// grab a list of employees from the
 		return null;
 	}
 
+	/**
+	 * deletes a booking from the system
+	 * @param booking
+	 */
 	public static void deleteBooking(Booking booking) {
 
 		// check to see if it is booked, don't let them delete if it is booked
