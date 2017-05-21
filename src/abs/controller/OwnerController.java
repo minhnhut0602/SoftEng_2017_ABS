@@ -66,7 +66,7 @@ public class OwnerController {
 		appFrame.repaint();
 		appFrame.revalidate();
 	}
-	
+
 	/**
 	 * displays select customer screen
 	 */
@@ -97,9 +97,12 @@ public class OwnerController {
 	}
 
 	/**
-	 * takes inputs from the add booking screen and creates the new booking. Reloads the dashboard
+	 * takes inputs from the add booking screen and creates the new booking.
+	 * Reloads the dashboard
+	 * 
 	 * @param time
 	 * @param date
+	 * @param blockcount
 	 * @param employee
 	 * @param business
 	 */
@@ -122,6 +125,7 @@ public class OwnerController {
 
 	/**
 	 * grabs all the bookings from a business and displays them
+	 * 
 	 * @param businessName
 	 */
 	public static void removeBooking(Object businessName) {
@@ -207,6 +211,7 @@ public class OwnerController {
 
 	/**
 	 * checks to see if the email entered is a valid customer email
+	 * 
 	 * @param email
 	 * @param business
 	 */
@@ -234,6 +239,7 @@ public class OwnerController {
 
 	/**
 	 * grabs all the business names
+	 * 
 	 * @return arraylist of names
 	 */
 	public static List<String> getBusinessNames() {
@@ -255,6 +261,7 @@ public class OwnerController {
 
 	/**
 	 * gets business names for a specific user
+	 * 
 	 * @param user
 	 * @return
 	 */
@@ -283,12 +290,13 @@ public class OwnerController {
 
 	/**
 	 * creates the customer booking
+	 * 
 	 * @param c
-	 * is the customer
+	 *            is the customer
 	 * @param b
-	 * is the business
+	 *            is the business
 	 * @param booking
-	 * is the booking
+	 *            is the booking
 	 */
 	public static void createCustBooking(Customer c, Business b, Booking booking) {
 		// pass to owner method already written
@@ -306,6 +314,7 @@ public class OwnerController {
 
 	/**
 	 * registers a business with the fields given
+	 * 
 	 * @param name
 	 * @param desc
 	 * @param address
@@ -342,10 +351,11 @@ public class OwnerController {
 
 	/**
 	 * adds an employee
+	 * 
 	 * @param name
-	 * of the employee
+	 *            of the employee
 	 * @param business
-	 * which business it's for
+	 *            which business it's for
 	 */
 	public static void addEmployee(String name, Object business) {
 
@@ -366,6 +376,7 @@ public class OwnerController {
 
 	/**
 	 * gets all the employees from a business
+	 * 
 	 * @param business
 	 * @return
 	 */
@@ -376,6 +387,7 @@ public class OwnerController {
 
 	/**
 	 * deletes a booking from the system
+	 * 
 	 * @param booking
 	 */
 	public static void deleteBooking(Booking booking) {

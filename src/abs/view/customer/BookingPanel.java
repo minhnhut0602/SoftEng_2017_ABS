@@ -28,7 +28,7 @@ import static java.lang.Integer.parseInt;
  * @version 1.1
  * @serial 9167183798502593801
  * @see javax.swing.JPanel JPanel
- * @see ads.model.Booking Booking
+ * @see abs.model.Booking Booking
  */
 public class BookingPanel extends JPanel {
 

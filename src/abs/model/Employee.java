@@ -85,7 +85,7 @@ public class Employee {
 	}
 
 	/**
-	 * @param Availability
+	 * @param avail Availability
 	 *            to be removed
 	 */
 	public void removeAvailability(Availability avail) {
