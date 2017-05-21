@@ -17,6 +17,9 @@ import abs.model.Booking;
 import abs.view.GUIComponents.AvButton;
 import abs.view.factory.BookingFactory;
 import abs.view.style.AppStyle;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import static java.lang.Integer.parseInt;
 
 public class BookingPanel extends JPanel {
 
@@ -44,6 +47,13 @@ public class BookingPanel extends JPanel {
 		infoPanel.add(subTitle, BorderLayout.CENTER);
 
 		this.add(infoPanel, BorderLayout.NORTH);
+                
+                JPanel availInfo = new JPanel();
+                
+                JLabel lblBlockCount = new JLabel("Block Count:");
+		final JTextField blockCount = new JTextField(15);
+		availInfo.add(lblBlockCount);
+		availInfo.add(blockCount);
 
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(0, 1));
@@ -52,6 +62,7 @@ public class BookingPanel extends JPanel {
 
 		ButtonGroup group = new ButtonGroup();
 		List<AvButton> aButts = new ArrayList<AvButton>();
+                buttonPanel.add(availInfo);
 		for (Booking booking : bookings) {
 			AvButton button = BookingFactory.bookingButton(booking);
 			group.add(button);
@@ -78,9 +89,38 @@ public class BookingPanel extends JPanel {
 			aButts.get(i).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					AvButton butt = (AvButton) e.getSource();
+                                        int nBlockCount = 0;
+
+                                        if (blockCount.getText().compareTo("") == 0) {
+                                            JOptionPane.showMessageDialog(null, "Please input Block Count.");
+                                            blockCount.setText("");
+                                            return;
+                                        }
+                                        else {
+                                            //if (blockCount.getText())
+                                            try{
+                                                nBlockCount = parseInt(blockCount.getText());
+                                            }
+                                            catch(Exception ex){
+                                                JOptionPane.showMessageDialog(null, "Block Count isn't number.");
+                                                blockCount.setText("");
+                                                return;
+                                            }
+                                        }
+                                                                                
+                                        AvButton butt = (AvButton) e.getSource();
+                                        if (butt.getBooking().getSlot().getBlocks() < nBlockCount){
+                                            JOptionPane.showMessageDialog(null, "There isn't enough available time.");
+                                            blockCount.setText("");
+                                            return;
+                                        }
+                                        
+                                        
+                                        butt.getBooking().getSlot().setBlockCount(nBlockCount);
 					CustomerController.addBooking(butt.getBooking());
+                                        blockCount.setText("");
 				}
+                         
 			});
 		}
 
