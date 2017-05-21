@@ -16,12 +16,13 @@ import abs.view.AppFrame;
  * 
  * @serial 1.0
  * @version 0.8
+ * @serial 6575923166424062757
  * @see javax.swing.JPanel JPanel
  */
 public class StatusBar extends JPanel {
 
 	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -6575923166424062757L;
+	private static final long serialVersionUID = 6575923166424062757L;
 
 	/**
 	 * Instantiates a new status bar.

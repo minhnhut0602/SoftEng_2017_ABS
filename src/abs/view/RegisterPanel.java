@@ -20,7 +20,12 @@ import abs.exceptions.RegistrationValidationException;
 import abs.view.style.AppStyle;
 
 /**
- *
+ * The registration panel.
+ * 
+ * @since 1.0
+ * @version 1.2
+ * @serial 7012676670912272410
+ * @see javax.swing.JPanel JPanel
  */
 public class RegisterPanel extends JPanel {
 

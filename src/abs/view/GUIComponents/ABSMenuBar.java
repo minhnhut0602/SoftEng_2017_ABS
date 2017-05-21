@@ -18,6 +18,7 @@ import abs.view.AppFrame;
  * 
  * @version 1.0
  * @since 1.0
+ * @serial 8937570503113435406
  * @see javax.swing.JMenuBar JMenuBar
  */
 public class ABSMenuBar extends JMenuBar {

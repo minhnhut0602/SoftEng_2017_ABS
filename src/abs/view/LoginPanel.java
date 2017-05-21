@@ -22,6 +22,7 @@ import abs.view.style.AppStyle;
  * 
  * @since 1.0
  * @version 1.1
+ * @serial 9010219234482904288
  * @see javax.swing.JPanel JPanel
  */
 public class LoginPanel extends JPanel {

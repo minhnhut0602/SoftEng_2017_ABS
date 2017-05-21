@@ -10,7 +10,7 @@ import abs.view.Menu;
  * The main class that runs the console based program.
  * 
  * @since Alpha
- * 
+ * @deprecated
  */
 public class ConsoleApp {
 

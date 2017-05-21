@@ -9,11 +9,14 @@ import java.util.List;
  * <p>
  * The business stores its availabilities and staff.
  * </p>
+ * 
+ * @since Alpha
+ * @version 1.2
  */
 public class Business {
 
-	public final int BLOCK_LENGTH = 30; // Block length for business
-										// (Default 30)
+	/** Block length for business (Default 30 min) */
+	public final int BLOCK_LENGTH = 30;
 
 	/** The business name. */
 	private String name;
@@ -53,6 +56,9 @@ public class Business {
 	 *            the available bookings
 	 * @param owner
 	 *            the owner
+	 * 
+	 * @see #Business()
+	 * @see #Business(String, String, String, int, Owner)
 	 */
 	public Business(String name, String desc, String address, int phone, List<Employee> staff, List<Booking> avBookings,
 			Owner owner) {
@@ -66,7 +72,10 @@ public class Business {
 	}
 
 	/**
-	 * generic constructor, no values set
+	 * Generic constructor, no values set
+	 * 
+	 * @see #Business(String, String, String, int, Owner)
+	 * @see #Business(String, String, String, int, List, List, Owner)
 	 */
 	public Business() {
 		this.name = null;
@@ -77,7 +86,7 @@ public class Business {
 	}
 
 	/**
-	 * to create a business without setting any employees or availabilities.
+	 * To create a business without setting any employees or availabilities.
 	 *
 	 * @param name
 	 *            name of business
@@ -89,6 +98,9 @@ public class Business {
 	 *            business phone number
 	 * @param owner
 	 *            the owner of this business
+	 * 
+	 * @see #Business()
+	 * @see #Business(String, String, String, int, List, List, Owner)
 	 */
 	public Business(String name, String desc, String address, int phone, Owner owner) {
 		this.name = name;
@@ -153,7 +165,7 @@ public class Business {
 	}
 
 	/**
-	 * adds one employee to the employee list
+	 * Adds one employee to the employee list
 	 * 
 	 * @param employee
 	 */
@@ -215,6 +227,12 @@ public class Business {
 
 	}
 
+	/**
+	 * Remove a booking from the business
+	 * 
+	 * @param booking
+	 *            to be removed
+	 */
 	public void removeBooking(Booking booking) {
 		avBookings.remove(booking);
 

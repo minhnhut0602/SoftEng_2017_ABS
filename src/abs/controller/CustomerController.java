@@ -15,14 +15,14 @@ import abs.view.customer.RemoveBookingPanel;
  * The Customer Controller, controls the customers functions and views.
  * 
  * @version 1.0
- * 
+ * @since 1.0
  * @see UserController
  * @see OwnerController
  */
 public class CustomerController {
 
 	/** The Customer Controller logger. */
-	private static final Logger logger = Logger.getLogger("Controller:Customer Logger");
+	private static final Logger logger = Logger.getLogger("ABSLogger");
 
 	/** The app frame. */
 	private static AppFrame appFrame;

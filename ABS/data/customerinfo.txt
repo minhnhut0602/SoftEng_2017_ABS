@@ -2,6 +2,6 @@
 # name,email,address,phone,password
 Stacy Drum,stacy.d@gmail.com,123 Mobe Street Bendigo VIC 3550,0355555555,stacypassword
 # Bookings
-Daniel's Dentists,Daniel,3/4/17,10:00
+Daniel's Dentists,Daniel,3/4/17,10:00,3
 Jerry Lucio,bigj@live.com.au,45 Victoria Pde Melbourne Vic 3000,0414141414,bigjpass
 #

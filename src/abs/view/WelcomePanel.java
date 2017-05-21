@@ -17,6 +17,7 @@ import abs.view.style.AppStyle;
  * 
  * @since 1.0
  * @version 1.0
+ * @serial 3600797565957836983
  * @see javax.swing.JPanel JPanel
  */
 public class WelcomePanel extends JPanel {
