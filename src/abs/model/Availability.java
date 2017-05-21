@@ -75,6 +75,10 @@ public class Availability {
 	public void setTime(String time) {
 		this.time = time;
 	}
+        
+        public void setBlockCount(int blockCount){
+                this.block_count = blockCount;
+        }
 
 	/*
 	 * (non-Javadoc)
