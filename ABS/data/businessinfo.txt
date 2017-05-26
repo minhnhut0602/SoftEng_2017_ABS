@@ -10,7 +10,7 @@ root
 Daniel,3/4/17,8am-5pm,4/4/17,4pm-6pm,5/4/17,10am-2pm
 Gary,6/4/17,8am-2pm,7/4/17,2pm-6pm
 # Bookings
-Daniel,3/4/17,10:00,3,Booked,Daniel,3/4/17,10:30,2,Available,Daniel,3/4/17,11:00,1,Available,Daniel,3/4/17,11:30,3,Available,Daniel,4/4/17,12:00,4,Available,Gary,7/4/17,2:00,2,Available,Gary,7/4/17,2:30,3,Available,Daniel,18/5/17,10:50,2,Available
+Daniel,3/4/17,10:00,3,Available,Daniel,3/4/17,10:30,2,Available,Daniel,3/4/17,11:00,1,Available,Daniel,3/4/17,11:30,3,Available,Daniel,4/4/17,12:00,4,Available,Gary,7/4/17,2:00,2,Available,Gary,7/4/17,2:30,3,Available,Daniel,18/5/17,10:50,2,Available
 # Business Info
 Cory's Counselling
 Cory isnt alowd to leave, so tell him your problems.
