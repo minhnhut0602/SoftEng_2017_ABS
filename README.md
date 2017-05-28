@@ -5,7 +5,7 @@ This is basically a booking system that can be used by any business, allowing a
 customer to book a time slot for an appointment. The system can be for any kind of
 business, e.g., a hairdresser, a gym, or dentist.
 
-Get the latest release [here.](https://github.com/s3383022/SoftEng_2017_ABS/releases/latestGet
+Get the latest release [here.](https://github.com/s3383022/SoftEng_2017_ABS/releases/latest)
 
 ## Contributors
 
