@@ -1,5 +1,233 @@
-All
-Comments
+Daniel Caddaye on Part C Submission Documents
+User stories, user guide and PM report uploaded
+10 minutes ago (edited)
+DCDaniel Caddaye completed User manual (copy From git wiki on Sunday Night) - daniel doing on Part C Submission Documents17 minutes ago
+CPCory Patterson completed User stories - Marco on Part C Submission Documents22 minutes ago
+CP
+Cory Patterson on Part C Submission Documents
+@sohumraut1 I've removed you from the user stories task and Marco is going to complete it so we don't have to wait.
+28 minutes ago
+DCDaniel Caddaye moved Application pitch from Working on now to Done - Part C42 minutes ago
+DC
+Daniel Caddaye on Part C Submission Documents
+@marcoriotto2 OK cool, Its 1% i think haha
+an hour ago
+MR
+Marco Riotto on Part C Submission Documents
+@danielcaddayermit hey man, just finished up the video, pretty dodgy job but i think it will get the 2% or whatever. its currently exporting. ill throw it up in the slack for you to download :)
+an hour ago
+DC
+Daniel Caddaye on Part C Submission Documents
+usage (Customer), description update on wiki
+an hour ago
+CP
+Cory Patterson on Part C Submission Documents
+changelog updated on the wiki
+an hour ago
+CPCory Patterson completed I'll go back through the commits and turn them into a changelog - Cory on Part C Submission Documentsan hour ago
+SR
+Sohum Raut on Part C Submission Documents
+@corypatterson3 I know you want to sleep but this report is literally worth 50% of my entire grade and it's massive. And doing it is going to take me all the way upto midnight I think. I really don't have time before then. I'm sorry. If it's only 15 minutes to do it, can you please do the user stories?
+2 hours ago
+CP
+Cory Patterson on Part C Submission Documents
+@sohumraut1
+It is due at 9am but that doesn't mean we can't hand it in early. We should have it done in the next couple of hours, there'snot too much stuff to actually do. Plus I want to go to bed but i won't be able to do that without knowing that it's submitted first because if something goes wrong at 3am in the morning or whatever I won't know about it until it's too late
+2 hours ago
+SR
+Sohum Raut on Part C Submission Documents
+@corypatterson3 Isn't it due at 9am tomorrow morning? Also, what do you mean by same format as past submissions? Where are the user stories?
+2 hours ago
+CP
+Cory Patterson on Part C Submission Documents
+@sohumraut1 i realise that you want to work on your other assignment but you must understand that we are all trying our best to get this assignment completed before midnight tonight and I'm only asking 15 mins of your time to literally just copy out the user stories into the same format we've been using on all our past submissions
+2 hours ago
+CP
+Cory Patterson on Part C Submission Documents
+I've done the post mortem report, its only a couple pages long so if i've missed something please let me know and i'll complete it immediately
+2 hours ago
+CPCory Patterson completed post mortem report - Cory on Part C Submission Documents2 hours ago
+SR
+Sohum Raut on Part C Submission Documents
+@corypatterson3 I'm happy to work on the report or do the user stories. I'm good with whatever. But I just won't be starting on it till after midnight. What do you mean by same format?
+4 hours ago (edited)
+CP
+Cory Patterson on Part C Submission Documents
+@sohumraut1 if you don't want to work on the report could you turn the user stories into the same format as the other parts we did. It'll be pretty quick, only like 15 mins. That would help a lot
+4 hours ago
+DC
+Daniel Caddaye on Part C Submission Documents
+@sohumraut1 You will need to discuss this with @corypatterson3
+5 hours ago
+SR
+Sohum Raut on Part C Submission Documents
+@danielcaddayermit I've got a major assignment, a 4,000 word report worth 50% of my grade for another unit due tonight at midnight so I can't start on this this till after midnight. What exactly needs to be done with it?
+5 hours ago
+DC
+Daniel Caddaye on Part C Submission Documents
+Added more design documents and class diagram.
+
+@sohumraut1 Could you help @corypatterson3 with the report. (link is above)
+yesterday at 22:20 (edited)
+DCDaniel Caddaye completed update Design/Architecture doc on Part C Submission Documentsyesterday at 22:19
+DCDaniel Caddaye completed update class diagram - daniel doing on Part C Submission Documentsyesterday at 21:18
+CP
+Cory Patterson on Part C Submission Documents
+OK no worries
+yesterday at 21:03
+DC
+Daniel Caddaye on Part C Submission Documents
+I did the release notes already, I also did some updates to the change log
+yesterday at 20:59
+DCDaniel Caddaye completed Release notes - (I assume the release notes are like system requirements and a brief description of functionality) - Cory on Part C Submission Documentsyesterday at 20:59
+CP
+Cory Patterson on Part C Submission Documents
+Haven't had a chance yet sorry @danielcaddayermit turns out my family had plans
+
+I will get on it tomorrow evening
+Don't do any more than you set out to do. I will complete the usage guide for the wiki, make sure the user stories are up to date and the post mortem report just leave half the questions for me and I shall submit it tomorrow evening. Again really sorry, thought I was free
+yesterday at 20:17
+DC
+Daniel Caddaye on Part C Submission Documents
+@corypatterson3 @marcoriotto2 @sohumraut1 how are you guys going with this stuff?
+yesterday at 19:30
+DCDaniel Caddaye completed update testing and bug reports on Part C Submission Documents26 May at 20:11
+DCDaniel Caddaye completed update wiki build/install documentation on Part C Submission Documents26 May at 20:03
+DC
+Daniel Caddaye on Part C Submission Documents
+updated installation and changelog on wiki
+26 May at 20:03
+DCDaniel Caddaye joined Release Notes26 May at 19:54
+DC
+Daniel Caddaye on Part C Submission Documents
+app build, javadocs, release notes, peer review added.
+26 May at 19:48
+DCDaniel Caddaye archived pitch video - Marco to finish26 May at 19:37
+DCDaniel Caddaye converted pitch video - Marco to finish from a checklist item on Part C Submission Documents26 May at 19:36
+DCDaniel Caddaye completed release notes on Part C Submission Documents26 May at 19:36
+DCDaniel Caddaye added Release Notes to Done - Part C25 May at 23:29
+CPCory Patterson added Week 12 [tute 23/5/17] to Meeting Records23 May at 18:31
+DCDaniel Caddaye added Sohum Raut to Application pitch23 May at 16:43
+DCDaniel Caddaye moved Application pitch from Part C Tasks to Working on now23 May at 16:43
+DCDaniel Caddaye added Checklist to Part C Submission Documents23 May at 16:40
+DCDaniel Caddaye marked the due date on Assignment Spec - Part C incomplete21 May at 22:21
+DCDaniel Caddaye changed the due date of Assignment Spec - Part C to tomorrow at 09:0021 May at 22:21
+DC
+Daniel Caddaye on Assignment Spec - Part C
+Due date updated for documentation submission
+21 May at 22:21
+DC
+Daniel Caddaye on Assignment Spec - Part C
+Software submitted.
+21 May at 22:21
+DCDaniel Caddaye marked the due date on Assignment Spec - Part C complete21 May at 22:21
+DC
+Daniel Caddaye attached 2017-05-21 (2).png to Assignment Spec - Part C 
+21 May at 22:21
+DC
+Daniel Caddaye attached SoftEng_2017_ABS-1.1.zip to Assignment Spec - Part C  
+21 May at 22:18
+DCDaniel Caddaye moved View Employee Availability P:Low E:1 hours from Sprint Backlog to Graveyard21 May at 22:08
+DCDaniel Caddaye moved Polish owner dashboard from Working on now to Done - Part C21 May at 22:08
+DCDaniel Caddaye moved Code Comments from Working on now to Done - Part C21 May at 22:08
+DCDaniel Caddaye removed Marco Riotto from View Employee Availability P:Low E:1 hours21 May at 22:08
+SRSohum Raut moved a user can book a specific type of appointment P: low E: 5 from Working on now to Done - Part C21 May at 17:48
+DCDaniel Caddaye changed the due date of Part C Submission Documents to tomorrow at 09:0019 May at 14:10
+DC
+Daniel Caddaye attached #48 Comments update to Code Comments  
+17 May at 23:40
+DC
+Daniel Caddaye on Part C Submission Documents
+I have shared the post mortem google doc, use that for answering questions and filling it out then we can pretty it up after
+17 May at 23:27
+DC
+Daniel Caddaye on Code Comments
+All but view.owner is done
+17 May at 23:27 (edited)
+DC
+Daniel Caddaye attached Comments_update to Code Comments  
+17 May at 23:27
+DC
+Daniel Caddaye attached #47 Logger updated to write to file to Updated logger to write to file  
+17 May at 21:41
+DCDaniel Caddaye moved Part C Submission Documents from Part C Tasks to Working on now17 May at 21:40
+SR
+Sohum Raut on a user can book a specific type of appointment P: low E: 5
+Alter save function to include types of bookings. Mainly just the name and how many spaces it takes up.
+
+Utilitis class. Update the reading and writing functions and then get the services displaying.
+
+Change Model for the services. Add a staff member. Add a service type.
+
+Create a new file in factory. Factory is how all the bookings display.
+17 May at 14:12
+DC
+Daniel Caddaye on Alter save function to include types of bookings
+Yeah I guess
+17 May at 14:11
+SRSohum Raut archived Alter save function to include types of bookings17 May at 14:11
+SR
+Sohum Raut on Alter save function to include types of bookings
+@danielcaddayermit Can I just merge them into one card then?
+17 May at 14:10
+DC
+Daniel Caddaye on Alter save function to include types of bookings
+It's apart if the card above. This isn't a user feature it's just a step to the other card.
+17 May at 14:08
+SR
+Sohum Raut on Alter save function to include types of bookings
+What is meant exactly by type of bookings?
+
+Is there a user story for this card?
+
+@danielcaddayermit
+17 May at 14:06
+DCDaniel Caddaye added Cory Patterson to Part C Submission Documents17 May at 03:49
+DCDaniel Caddaye added Marco Riotto to Part C Submission Documents17 May at 03:49
+DCDaniel Caddaye joined Part C Submission Documents17 May at 03:49
+DCDaniel Caddaye added Sohum Raut to Part C Submission Documents17 May at 03:49
+DCDaniel Caddaye moved Alter save function to include types of bookings from Part C Tasks to Working on now17 May at 03:48
+DCDaniel Caddaye added Sohum Raut to Alter save function to include types of bookings17 May at 03:48
+DCDaniel Caddaye added Marco Riotto to Application pitch17 May at 03:48
+DCDaniel Caddaye moved Polish owner dashboard from Part C Tasks to Working on now17 May at 03:48
+DCDaniel Caddaye added Cory Patterson to Polish owner dashboard17 May at 03:48
+DCDaniel Caddaye moved Code Comments from Part C Tasks to Working on now17 May at 03:48
+DCDaniel Caddaye added Cory Patterson to Code Comments17 May at 03:48
+DCDaniel Caddaye joined Code Comments17 May at 03:48
+DCDaniel Caddaye moved User updates personal information P: Very Low E: 3 hrs from Story Points - Colour Code to Graveyard17 May at 03:48
+DCDaniel Caddaye added Graveyard to this board17 May at 03:48
+DCDaniel Caddaye moved User updates personal information P: Very Low E: 3 hrs from Product Backlog to Story Points - Colour Code17 May at 03:47
+DCDaniel Caddaye joined Updated logger to write to file17 May at 03:47
+DC
+Daniel Caddaye attached Loggerupdate to Updated logger to write to file  
+17 May at 03:47
+DCDaniel Caddaye added Updated logger to write to file to Done - Part C17 May at 03:47
+DC
+Daniel Caddaye on Application pitch
+Demo software - Screen cap, System in use and showing features.
+
+Educational for users and businesses.
+
+Promoting key/best features.
+16 May at 18:03
+DCDaniel Caddaye added Week 11 [Tute 16/5/17] to Meeting Records16 May at 17:52
+DCDaniel Caddaye moved a user can book a specific type of appointment P: low E: 5 from Sprint Backlog to Working on now16 May at 17:50
+DCDaniel Caddaye added Sohum Raut to a user can book a specific type of appointment P: low E: 516 May at 17:50
+DC
+Daniel Caddaye on Week 10 [Tute 2/5/17]
+@sohumraut1 here is where your task was listed after the meeting last week
+16 May at 00:51
+DCDaniel Caddaye added Part C Submission Documents to Part C Tasks10 May at 14:03
+DCDaniel Caddaye added Done - Part C to this board10 May at 14:02
+DCDaniel Caddaye moved Documentation Update from Working on now to Done - Part B10 May at 14:02
+DCDaniel Caddaye moved Sohum To-Do from Working on now to Done - Part B10 May at 14:01
+DCDaniel Caddaye completed Updated Mockups {Sohum} on Documentation Update10 May at 14:01
+CPCory Patterson added Alter save function to include types of bookings to Part C Tasks10 May at 13:15
+CPCory Patterson added Polish owner dashboard to Part C Tasks10 May at 13:13
+CPCory Patterson added Checklist to Application pitch10 May at 13:12
+CPCory Patterson added Application pitch to Part C Tasks10 May at 13:12
+CPCory Patterson added Code Comments to Part C Tasks10 May at 13:11
+CPCory Patterson added Part C Tasks to this board10 May at 13:11
 DCDaniel Caddaye completed Updated Slack Logs {Daniel} on Documentation Update2 minutes ago
 DCDaniel Caddaye completed Update testing screenshots {Daniel} on Documentation Update9 minutes ago
 CPCory Patterson completed Display availabilities (like a calendar maybe?) on Owner Dashboard Checklist13 minutes ago
