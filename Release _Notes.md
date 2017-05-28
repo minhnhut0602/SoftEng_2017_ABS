@@ -6,5 +6,10 @@
 ### Known Issues:
 - ABS will allow overlapping bookings if added as such by owner.
 
-### Incomplete fetures:
-- ABS doesnt allow an owner to canncell an already booked booking.
+### Incomplete features:
+- ABS doesn't allow an owner to cancel an already booked booking.
+
+### Other Notes:
+- This release meets the requirements for the assignment part C specification. It utilises a GUI.
+- See the usage and installation pages on the wiki for more information.
+- See the /docs folder for the systems javadocs website. (Launch the index.html)
